@@ -6,11 +6,41 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
+		<key>00E3B1DC-4476-45B4-A2B5-D402D1D1A17A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FC9F0D22-2740-43D0-A373-ED7F8B97BD9A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>0F7E9933-3CD8-45EB-964D-D32043E959DB</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0CC40071-F05B-4DD6-9F85-DBA41A8A2384</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Pass in URL to add to Open List</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>21F4ADCB-89D9-4F20-BBC4-38096152CCE0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -39,17 +69,27 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
+		<key>36BB0BEC-4605-472E-9818-02E08FD04C07</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E5C20E8F-24B4-4E07-949C-FE1082BCF2BB</string>
+				<string>8464FEEF-E6AF-4DB5-9D7A-98932BB4E7B9</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Browse in Alfred</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
+		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
+		<array/>
 		<key>44D5B0B5-FC29-4217-8655-6EAC07BE2712</key>
 		<array>
 			<dict>
@@ -66,6 +106,28 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>7BDFD687-1656-4DB8-935D-3096F42E266F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>58C9C91C-054B-49D4-BFED-2C87E5163A6F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>30660F7A-7649-4BAC-9250-7914F67C63E4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -105,6 +167,28 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>6FB551F4-2AC6-491B-A2E4-567583FD533C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0CC40071-F05B-4DD6-9F85-DBA41A8A2384</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>768087C3-5E29-44B7-90E3-73A433618BF5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5C20E8F-24B4-4E07-949C-FE1082BCF2BB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<array>
 			<dict>
@@ -120,7 +204,86 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>8464FEEF-E6AF-4DB5-9D7A-98932BB4E7B9</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Browse in Alfred</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5F9FBA59-C2CC-4D8B-AC13-B8738B0C37E4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C0E10F81-8007-4B7F-8EDD-C6113F063CD4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>198E6930-07E8-4A45-AC5A-F0349467AE4C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C4229CD0-DE92-4CAC-885F-9EEB115FD830</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8464FEEF-E6AF-4DB5-9D7A-98932BB4E7B9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>768087C3-5E29-44B7-90E3-73A433618BF5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CAD65936-403B-4947-B81D-8A938ACE03C7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Run in Background (no Terminal Window)</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -132,6 +295,63 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>B0A5B1A6-C1D8-4641-B2BA-C684D12D61A0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D5846EB5-AAF7-43F6-B3C3-A0E537D51836</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8464FEEF-E6AF-4DB5-9D7A-98932BB4E7B9</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Browse in Alfred</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DC3D2F9E-309B-49AA-92C7-580CC8FE6A87</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8419ACD0-4077-4763-99FF-65EB19584569</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>06A688B4-4B08-4625-A674-2FC44C0AF479</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B47DF37B-6CEB-4BB0-A00A-668C6A8F79C2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EC1CA97C-97D3-46C0-8DEE-2DE5A1EDD093</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2C1E3F61-4F37-4364-AF65-05E4181C562F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -160,6 +380,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Evan Lovely</string>
@@ -176,6 +407,11 @@
 			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
+				<key>script</key>
+				<string>mkdir -p ~/projects/{query}
+rm -rf ~/projects/active
+ln -s "~/projects/{query}" ~/projects/active
+echo "Active Project set to {query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -183,6 +419,27 @@
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>FC9F0D22-2740-43D0-A373-ED7F8B97BD9A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,pn</string>
+				<key>subtext</key>
+				<string>Add a project base folder</string>
+				<key>text</key>
+				<string>New Project</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>00E3B1DC-4476-45B4-A2B5-D402D1D1A17A</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -271,7 +528,8 @@ echo "Active Project set to {query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>ls -l ~/projects/ | grep active | sed 's,^.*projects/,,'</string>
+				<string>PROJECT="`ls -l ~/projects/ | grep active | sed 's,^.*projects/,,'`"
+/opt/local/bin/terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to view." -execute "open ~/projects/active"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -367,6 +625,25 @@ echo "Active Project set to {query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Project Links Folder</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>5FA64466-7453-4ADB-8208-3288DAFC9F00</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
@@ -385,19 +662,18 @@ echo "Links Directory set to {query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-				</array>
-				<key>name</key>
-				<string>Set Project Links Folder</string>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>ln -s "{query}" ~/projects/active/assets
+echo "Assets Directory set to {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>5FA64466-7453-4ADB-8208-3288DAFC9F00</string>
+			<string>EEA16608-8F1C-49D2-AEA3-E647FF0DBBDB</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -423,18 +699,170 @@ echo "Links Directory set to {query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Project Scripts Folder</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>ln -s "{query}" ~/projects/active/assets
-echo "Assets Directory set to {query}"</string>
+				<string>ln -s "{query}" ~/projects/active/scripts
+echo "Scripts Directory set to {query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>EEA16608-8F1C-49D2-AEA3-E647FF0DBBDB</string>
+			<string>768087C3-5E29-44B7-90E3-73A433618BF5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>ln -s "{query}" ~/projects/active/theme
+echo "Theme Directory set to {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5F9FBA59-C2CC-4D8B-AC13-B8738B0C37E4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Project Theme Folder</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>ln -s "{query}" ~/projects/active/files
+echo "Files Directory set to {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2C1E3F61-4F37-4364-AF65-05E4181C562F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Project Files Directory</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>EC1CA97C-97D3-46C0-8DEE-2DE5A1EDD093</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>5</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>G</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>595BB5D1-CBD3-4B99-860D-8C472D67F689</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string>~/projects/active</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.browseinalfred</string>
+			<key>uid</key>
+			<string>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p go</string>
+				<key>subtext</key>
+				<string>View Project Folder Shortcuts</string>
+				<key>text</key>
+				<string>Go</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -442,9 +870,9 @@ echo "Assets Directory set to {query}"</string>
 			<key>config</key>
 			<dict/>
 			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
+			<string>alfred.workflow.action.browseinalfred</string>
 			<key>uid</key>
-			<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+			<string>8464FEEF-E6AF-4DB5-9D7A-98932BB4E7B9</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -632,7 +1060,7 @@ echo "Assets Directory set to {query}"</string>
 				<string>,p assets</string>
 				<key>scopes</key>
 				<array>
-					<string>~/projects/asp/assets</string>
+					<string>~/projects/active/assets</string>
 				</array>
 				<key>subtext</key>
 				<string>Find Assets in Active Project (Comps, Wireframes, etc)</string>
@@ -647,6 +1075,349 @@ echo "Assets Directory set to {query}"</string>
 			<string>alfred.workflow.input.filefilter</string>
 			<key>uid</key>
 			<string>92CA46FE-4B37-4C2D-8F0C-94B51D5CDF61</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemOMUserTags</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>,p sass</string>
+				<key>scopes</key>
+				<array>
+					<string>~/projects/active/theme</string>
+				</array>
+				<key>subtext</key>
+				<string>Show SASS files in Active Project's Theme</string>
+				<key>title</key>
+				<string>SASS</string>
+				<key>types</key>
+				<array>
+					<string>org.sass-lang</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>36BB0BEC-4605-472E-9818-02E08FD04C07</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<false/>
+						<key>value</key>
+						<string>tpl</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>,p tpl</string>
+				<key>scopes</key>
+				<array>
+					<string>~/projects/active/theme</string>
+				</array>
+				<key>subtext</key>
+				<string>Show .tpl.php Files in Theme Directory</string>
+				<key>title</key>
+				<string>TPL</string>
+				<key>types</key>
+				<array>
+					<string>public.php-script</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>C4229CD0-DE92-4CAC-885F-9EEB115FD830</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<false/>
+						<key>value</key>
+						<string>tpl</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>,p tpl*</string>
+				<key>scopes</key>
+				<array>
+					<string>~/projects/active/site-root</string>
+				</array>
+				<key>subtext</key>
+				<string>Search for tpl.php files in site root</string>
+				<key>title</key>
+				<string>TPL*</string>
+				<key>types</key>
+				<array>
+					<string>public.php-script</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>D5846EB5-AAF7-43F6-B3C3-A0E537D51836</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p push</string>
+				<key>subtext</key>
+				<string>Git Push in Site Root (after pulling)</string>
+				<key>text</key>
+				<string>Push</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C0E10F81-8007-4B7F-8EDD-C6113F063CD4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>cd ~/projects/active/site-root &amp;&amp;
+git pull &amp;&amp;
+git push &amp;&amp;
+/opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Push Done (after pulling)"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>198E6930-07E8-4A45-AC5A-F0349467AE4C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p pull</string>
+				<key>subtext</key>
+				<string>Git Pull in Site Root</string>
+				<key>text</key>
+				<string>Pull</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>264BCFE5-5582-42A5-801C-A69D6644A7C1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>cd ~/projects/active/site-root &amp;&amp;
+git pull &amp;&amp;
+/opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Pull Done"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0ECAD813-8E11-4FA9-BB00-C776D79E91FE</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -694,18 +1465,176 @@ echo "Assets Directory set to {query}"</string>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>1</integer>
 				<key>script</key>
 				<string>cd ~/projects/active/site-root &amp;&amp;
-git pull &amp;&amp;
-/opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Pull Done"</string>
+sh {query}</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>0ECAD813-8E11-4FA9-BB00-C776D79E91FE</string>
+			<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>,p scripts</string>
+				<key>scopes</key>
+				<array>
+					<string>~/projects/active/scripts</string>
+				</array>
+				<key>subtext</key>
+				<string>Launch Custom Shell Scripts for Active Project in Site Root. Hold CMD for Terminal Window.</string>
+				<key>title</key>
+				<string>Scripts</string>
+				<key>types</key>
+				<array>
+					<string>public.shell-script</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>CAD65936-403B-4947-B81D-8A938ACE03C7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>1</integer>
+				<key>script</key>
+				<string>cd ~/projects/active/site-root &amp;&amp;
+sh {query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>mkdir -p ~/projects/active/settings
+echo "{query}" &gt; ~/projects/active/settings/url.txt</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>30660F7A-7649-4BAC-9250-7914F67C63E4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p set url</string>
+				<key>subtext</key>
+				<string>Set site URL</string>
+				<key>text</key>
+				<string>Set URL</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>58C9C91C-054B-49D4-BFED-2C87E5163A6F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>cd ~/projects/active/theme
+compass watch</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>8419ACD0-4077-4763-99FF-65EB19584569</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>cd ~/projects/active/site-root
+sh ~/projects/scripts/start-drupal.sh</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>06A688B4-4B08-4625-A674-2FC44C0AF479</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -715,45 +1644,190 @@ git pull &amp;&amp;
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>,p pull</string>
+				<string>,p start</string>
 				<key>subtext</key>
-				<string>Git Pull in Site Root</string>
+				<string>Start Project</string>
 				<key>text</key>
-				<string>Pull</string>
+				<string>Start</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>264BCFE5-5582-42A5-801C-A69D6644A7C1</string>
+			<string>DC3D2F9E-309B-49AA-92C7-580CC8FE6A87</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>open ~/projects/active/
+cd ~/projects/active/site-root
+git pull
+drush updb -y
+drush cc all
+terminal-notifier -title "Project Helper" -message "Server up, Compass watching, Git Pulled &amp; UPDBed, &amp; Drupal Cache Cleared"
+open `cat ~/projects/active/settings/url.txt` -a 'Google Chrome Canary'</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>B47DF37B-6CEB-4BB0-A00A-668C6A8F79C2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>touch ~/projects/active/scripts/to-open.sh
+echo "open {query}" &gt;&gt; ~/projects/active/scripts/to-open.sh
+/opt/local/bin/terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/projects/active/scripts/to-open.sh"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0CC40071-F05B-4DD6-9F85-DBA41A8A2384</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Set to open with Project</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>6FB551F4-2AC6-491B-A2E4-567583FD533C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>,p open</string>
+				<key>subtext</key>
+				<string>Open files, folders, and URLs that have been set.</string>
+				<key>text</key>
+				<string>Open Stuff</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>sh ~/projects/active/scripts/to-open.sh
+/opt/local/bin/terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/projects/active/scripts/to-open.sh"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>21F4ADCB-89D9-4F20-BBC4-38096152CCE0</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>## Suggested Utilities
+
+If you install Terminal Notifier, the workflow can provide you with richer notifications.
+
+	gem install terminal-notifier</string>
 	<key>uidata</key>
 	<dict>
+		<key>00E3B1DC-4476-45B4-A2B5-D402D1D1A17A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>06A688B4-4B08-4625-A674-2FC44C0AF479</key>
+		<dict>
+			<key>ypos</key>
+			<real>4570</real>
+		</dict>
+		<key>0CC40071-F05B-4DD6-9F85-DBA41A8A2384</key>
+		<dict>
+			<key>ypos</key>
+			<real>5150</real>
+		</dict>
 		<key>0ECAD813-8E11-4FA9-BB00-C776D79E91FE</key>
 		<dict>
 			<key>ypos</key>
-			<real>2200</real>
+			<real>2330</real>
 		</dict>
 		<key>0F7E9933-3CD8-45EB-964D-D32043E959DB</key>
 		<dict>
 			<key>ypos</key>
 			<real>1500</real>
 		</dict>
+		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
+		<dict>
+			<key>ypos</key>
+			<real>5270</real>
+		</dict>
+		<key>198E6930-07E8-4A45-AC5A-F0349467AE4C</key>
+		<dict>
+			<key>ypos</key>
+			<real>2210</real>
+		</dict>
+		<key>21F4ADCB-89D9-4F20-BBC4-38096152CCE0</key>
+		<dict>
+			<key>ypos</key>
+			<real>5270</real>
+		</dict>
 		<key>264BCFE5-5582-42A5-801C-A69D6644A7C1</key>
 		<dict>
 			<key>ypos</key>
-			<real>2200</real>
+			<real>2330</real>
 		</dict>
 		<key>279C4C88-EE1B-4977-AFD5-EC907831075C</key>
 		<dict>
 			<key>ypos</key>
 			<real>580</real>
+		</dict>
+		<key>2C1E3F61-4F37-4364-AF65-05E4181C562F</key>
+		<dict>
+			<key>ypos</key>
+			<real>1130</real>
+		</dict>
+		<key>30660F7A-7649-4BAC-9250-7914F67C63E4</key>
+		<dict>
+			<key>ypos</key>
+			<real>3760</real>
+		</dict>
+		<key>36BB0BEC-4605-472E-9818-02E08FD04C07</key>
+		<dict>
+			<key>ypos</key>
+			<real>1720</real>
 		</dict>
 		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
 		<dict>
@@ -770,65 +1844,165 @@ git pull &amp;&amp;
 			<key>ypos</key>
 			<real>130</real>
 		</dict>
+		<key>58C9C91C-054B-49D4-BFED-2C87E5163A6F</key>
+		<dict>
+			<key>ypos</key>
+			<real>3760</real>
+		</dict>
+		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
+		<dict>
+			<key>ypos</key>
+			<real>1300</real>
+		</dict>
 		<key>598A781A-BE08-4063-B23E-5B8426BC63E1</key>
 		<dict>
 			<key>ypos</key>
 			<real>580</real>
 		</dict>
+		<key>5F9FBA59-C2CC-4D8B-AC13-B8738B0C37E4</key>
+		<dict>
+			<key>ypos</key>
+			<real>1020</real>
+		</dict>
 		<key>5FA64466-7453-4ADB-8208-3288DAFC9F00</key>
 		<dict>
 			<key>ypos</key>
-			<real>710</real>
+			<real>690</real>
 		</dict>
 		<key>660DD24D-570B-42B2-83B3-44EB3E477149</key>
 		<dict>
 			<key>ypos</key>
-			<real>830</real>
+			<real>800</real>
+		</dict>
+		<key>6FB551F4-2AC6-491B-A2E4-567583FD533C</key>
+		<dict>
+			<key>ypos</key>
+			<real>5150</real>
+		</dict>
+		<key>768087C3-5E29-44B7-90E3-73A433618BF5</key>
+		<dict>
+			<key>ypos</key>
+			<real>910</real>
 		</dict>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<dict>
 			<key>ypos</key>
 			<real>130</real>
 		</dict>
-		<key>92CA46FE-4B37-4C2D-8F0C-94B51D5CDF61</key>
+		<key>8419ACD0-4077-4763-99FF-65EB19584569</key>
 		<dict>
 			<key>ypos</key>
-			<real>1620</real>
+			<real>4450</real>
 		</dict>
-		<key>A440DEC7-CFB5-4835-8F5F-304F75D7380E</key>
+		<key>8464FEEF-E6AF-4DB5-9D7A-98932BB4E7B9</key>
 		<dict>
 			<key>ypos</key>
 			<real>1500</real>
 		</dict>
+		<key>92CA46FE-4B37-4C2D-8F0C-94B51D5CDF61</key>
+		<dict>
+			<key>ypos</key>
+			<real>1610</real>
+		</dict>
+		<key>A440DEC7-CFB5-4835-8F5F-304F75D7380E</key>
+		<dict>
+			<key>ypos</key>
+			<real>1620</real>
+		</dict>
 		<key>B0A5B1A6-C1D8-4641-B2BA-C684D12D61A0</key>
 		<dict>
 			<key>ypos</key>
-			<real>2080</real>
+			<real>2450</real>
+		</dict>
+		<key>B47DF37B-6CEB-4BB0-A00A-668C6A8F79C2</key>
+		<dict>
+			<key>ypos</key>
+			<real>4690</real>
+		</dict>
+		<key>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</key>
+		<dict>
+			<key>ypos</key>
+			<real>1020</real>
+		</dict>
+		<key>C0E10F81-8007-4B7F-8EDD-C6113F063CD4</key>
+		<dict>
+			<key>ypos</key>
+			<real>2210</real>
+		</dict>
+		<key>C4229CD0-DE92-4CAC-885F-9EEB115FD830</key>
+		<dict>
+			<key>ypos</key>
+			<real>1830</real>
+		</dict>
+		<key>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</key>
+		<dict>
+			<key>ypos</key>
+			<real>910</real>
+		</dict>
+		<key>CAD65936-403B-4947-B81D-8A938ACE03C7</key>
+		<dict>
+			<key>ypos</key>
+			<real>3140</real>
 		</dict>
 		<key>D291A93E-DCCF-4FB7-BCF2-65823832034C</key>
 		<dict>
 			<key>ypos</key>
-			<real>2080</real>
+			<real>2450</real>
+		</dict>
+		<key>D5846EB5-AAF7-43F6-B3C3-A0E537D51836</key>
+		<dict>
+			<key>ypos</key>
+			<real>1940</real>
+		</dict>
+		<key>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</key>
+		<dict>
+			<key>ypos</key>
+			<real>3200</real>
+		</dict>
+		<key>DC3D2F9E-309B-49AA-92C7-580CC8FE6A87</key>
+		<dict>
+			<key>ypos</key>
+			<real>4570</real>
+		</dict>
+		<key>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</key>
+		<dict>
+			<key>ypos</key>
+			<real>1390</real>
 		</dict>
 		<key>E5C20E8F-24B4-4E07-949C-FE1082BCF2BB</key>
 		<dict>
 			<key>ypos</key>
 			<real>330</real>
 		</dict>
+		<key>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</key>
+		<dict>
+			<key>ypos</key>
+			<real>3080</real>
+		</dict>
+		<key>EC1CA97C-97D3-46C0-8DEE-2DE5A1EDD093</key>
+		<dict>
+			<key>ypos</key>
+			<real>1130</real>
+		</dict>
 		<key>EEA16608-8F1C-49D2-AEA3-E647FF0DBBDB</key>
 		<dict>
 			<key>ypos</key>
-			<real>830</real>
+			<real>800</real>
 		</dict>
 		<key>EEE42D25-C472-441A-A97B-7A43F081A9F8</key>
 		<dict>
 			<key>ypos</key>
-			<real>710</real>
+			<real>690</real>
 		</dict>
 		<key>FC9F0D22-2740-43D0-A373-ED7F8B97BD9A</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
+		</dict>
+		<key>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</key>
+		<dict>
+			<key>ypos</key>
+			<real>1390</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
