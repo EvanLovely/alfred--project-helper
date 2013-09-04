@@ -604,7 +604,8 @@ echo "Active Project set to {query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>ln -s "{query}" ~/projects/active/site-root</string>
+				<string>rm -rf ~/projects/active/site-root
+ln -s "{query}" ~/projects/active/site-root</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -659,7 +660,8 @@ echo "Active Project set to {query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>ln -s "{query}" ~/projects/active/links
+				<string>rm -rf ~/projects/active/links
+ln -s "{query}" ~/projects/active/links
 echo "Links Directory set to {query}"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -734,7 +736,8 @@ echo "Assets Directory set to {query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>ln -s "{query}" ~/projects/active/scripts
+				<string>rm -rf ~/projects/active/scripts
+ln -s "{query}" ~/projects/active/scripts
 echo "Scripts Directory set to {query}"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -752,7 +755,8 @@ echo "Scripts Directory set to {query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>ln -s "{query}" ~/projects/active/theme
+				<string>rm -rf ~/projects/active/theme
+ln -s "{query}" ~/projects/active/theme
 echo "Theme Directory set to {query}"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -789,7 +793,8 @@ echo "Theme Directory set to {query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>ln -s "{query}" ~/projects/active/files
+				<string>rm -rf ~/projects/active/files
+ln -s "{query}" ~/projects/active/files
 echo "Files Directory set to {query}"</string>
 				<key>type</key>
 				<integer>0</integer>
