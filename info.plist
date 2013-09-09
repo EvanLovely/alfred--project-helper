@@ -2017,7 +2017,7 @@ sh ~/projects/active/scripts/to-open.sh
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>,p notes fd</string>
+				<string>,p fd</string>
 				<key>subtext</key>
 				<string>Search notes for 'Question: Answer' by passing in Question</string>
 				<key>text</key>
@@ -2067,7 +2067,7 @@ sh ~/projects/active/scripts/to-open.sh
 NOTES=$(cat ~/projects/active/settings.yml | grep ^notes: | sed "s/notes: //")
 ANSWER=$(cat "$NOTES" | grep "\w*:\s" | grep -i $QUESTION)
 echo $ANSWER
-echo $ANSWER | sed "s/.*: //" | pbcopy
+echo $ANSWER | sed "s/.*: //" | tr -d '\n' | pbcopy
 echo "Answer in clipboard"</string>
 				<key>type</key>
 				<integer>0</integer>
