@@ -59,3 +59,12 @@ This way, no matter what project you are working on, you can use the same comman
 ## Custom Scripts
 
 Create a folder called `scripts` in `~/projects/active` or in `~/projects` and then you can run them via `,p scripts {query}` (which will run in the site root.)
+
+## Help with development of this project via Git
+
+1. Open Alfred Prefs, go to Workflow, make a new Blank Workflow. Name it anything.
+2. Click the plus in the upper right > Actions > Run Script
+3. Click Open Workflow Folder
+4. Go to this folder in Terminal
+5. Delete all files inside the folder
+6. Clone the repo directly in here by running `git clone git@github.com:EvanLovely/alfred--project-helper.git .`
