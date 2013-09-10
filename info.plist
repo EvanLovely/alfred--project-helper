@@ -551,10 +551,13 @@
 				<integer>127</integer>
 				<key>script</key>
 				<string>mkdir -p ~/projects/{query}
+mkdir -p ~/projects/{query}/scripts
+cp templates/start-in-site-root.sh templates/start-in-theme.sh templates/open-at-start.sh ~/projects/{query}/scripts/
+cp templates/settings.yml ~/projects/{query}
+echo "Just a placeholder to help identify this in folder views" &gt; ~/projects/{query}/{query}.txt
 rm -rf ~/projects/active
-ln -s "~/projects/{query}" ~/projects/active
-mkdir -p ~/projects/active/scripts
-echo "Active Project set to {query}"</string>
+ln -s ~/projects/{query} ~/projects/active
+terminal-notifier -title "Project Helper" -message "{query} Project Made."</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1870,9 +1873,8 @@ sh {query}</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>touch ~/projects/active/scripts/to-open.sh
-echo "open {query}" &gt;&gt; ~/projects/active/scripts/to-open.sh
-/opt/local/bin/terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/projects/active/scripts/to-open.sh"</string>
+				<string>echo "open {query}" &gt;&gt; ~/projects/active/scripts/open-at-start.sh
+terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/projects/active/scripts/open-at-start.sh"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1907,8 +1909,8 @@ echo "open {query}" &gt;&gt; ~/projects/active/scripts/to-open.sh
 				<integer>0</integer>
 				<key>script</key>
 				<string>cd ~/projects/active/theme
-sh ~/projects/active/scripts/start-theme.sh
-terminal-notifier -title "Project Helper" -subtitle "Theme Scripts Done" -message "Click to Edit" -execute "open -t ~/projects/scripts/start-theme.sh"</string>
+sh ~/projects/active/scripts/start-in-theme.sh
+terminal-notifier -title "Project Helper" -subtitle "Theme Scripts Done" -message "Click to Edit" -execute "open -t ~/projects/scripts/start-in-theme.sh"</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.terminalcommand</string>
@@ -1945,8 +1947,8 @@ terminal-notifier -title "Project Helper" -subtitle "Theme Scripts Done" -messag
 				<integer>0</integer>
 				<key>script</key>
 				<string>cd ~/projects/active/site-root
-sh ~/projects/active/scripts/start-site-root.sh
-terminal-notifier -title "Project Helper" -subtitle "Site Root Scripts Done" -message "Click to Edit" -execute "open -t ~/projects/active/scripts/start-site-root.sh"</string>
+sh ~/projects/active/scripts/start-in-site-root.sh
+terminal-notifier -title "Project Helper" -subtitle "Site Root Scripts Done" -message "Click to Edit" -execute "open -t ~/projects/active/scripts/start-in-site-root.sh"</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.terminalcommand</string>
@@ -1961,11 +1963,9 @@ terminal-notifier -title "Project Helper" -subtitle "Site Root Scripts Done" -me
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>open ~/projects/active/
-open "`fdefonly ~/projects/active/settings.yml url-dev`" -a "`fdefonly ~/projects/settings.yml browser`"
-open "`fdefonly ~/projects/active/settings.yml url-staging`" -a "`fdefonly ~/projects/settings.yml browser`"
-sh ~/projects/active/scripts/to-open.sh
-/opt/local/bin/terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/projects/active/scripts/to-open.sh"</string>
+				<string>source ~/.bash_profile
+sh ~/projects/active/scripts/open-at-start.sh
+terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/projects/active/scripts/open-at-start.sh"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
