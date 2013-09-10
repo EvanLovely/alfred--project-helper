@@ -553,6 +553,7 @@
 				<string>mkdir -p ~/projects/{query}
 rm -rf ~/projects/active
 ln -s "~/projects/{query}" ~/projects/active
+mkdir -p ~/projects/active/scripts
 echo "Active Project set to {query}"</string>
 				<key>type</key>
 				<integer>0</integer>
