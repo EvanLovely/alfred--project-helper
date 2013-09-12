@@ -159,6 +159,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>4BE50937-5D0C-4EB2-9566-8C139D9D6377</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>21F4ADCB-89D9-4F20-BBC4-38096152CCE0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>58C9C91C-054B-49D4-BFED-2C87E5163A6F</key>
 		<array>
 			<dict>
@@ -458,14 +469,6 @@
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>21F4ADCB-89D9-4F20-BBC4-38096152CCE0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
 		</array>
 		<key>DD98A496-0BDF-4D7B-8F6B-95D646E2726C</key>
 		<array>
@@ -552,12 +555,12 @@
 				<key>script</key>
 				<string>mkdir -p ~/projects/{query}
 mkdir -p ~/projects/{query}/scripts
-cp templates/start-in-site-root.sh templates/start-in-theme.sh templates/open-at-start.sh ~/projects/{query}/scripts/
+cp templates/start-in-site-root.sh templates/shutdown.sh templates/start-in-theme.sh templates/open-at-start.sh ~/projects/{query}/scripts/
 cp templates/settings.yml ~/projects/{query}
 echo "Just a placeholder to help identify this in folder views" &gt; ~/projects/{query}/{query}.txt
 rm -rf ~/projects/active
 ln -s ~/projects/{query} ~/projects/active
-terminal-notifier -title "Project Helper" -message "{query} Project Made."</string>
+/opt/local/bin/terminal-notifier -title "Project Helper" -message "{query} Project Made."</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -667,7 +670,10 @@ terminal-notifier -title "Project Helper" -message "{query} Project Made."</stri
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>rm -rf ~/projects/active &amp;&amp;
+				<string>/opt/local/bin/terminal-notifier -message "Shutting down…" -title "Project Helper"
+sh ~/projects/scripts/shutdown.sh
+sh ~/projects/active/scripts/shutdown.sh
+rm -rf ~/projects/active &amp;&amp;
 ln -s "{query}" ~/projects/active
 echo "Active Project set to {query}"</string>
 				<key>type</key>
@@ -1927,7 +1933,7 @@ terminal-notifier -title "Project Helper" -subtitle "Theme Scripts Done" -messag
 				<key>keyword</key>
 				<string>,p start</string>
 				<key>subtext</key>
-				<string>Start Project</string>
+				<string>Run the Start in Site Root &amp; Theme Scripts</string>
 				<key>text</key>
 				<string>Start</string>
 				<key>withspace</key>
@@ -1954,6 +1960,27 @@ terminal-notifier -title "Project Helper" -subtitle "Site Root Scripts Done" -me
 			<string>alfred.workflow.action.terminalcommand</string>
 			<key>uid</key>
 			<string>06A688B4-4B08-4625-A674-2FC44C0AF479</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p open</string>
+				<key>subtext</key>
+				<string>Open Apps, Sites, 'n Stuff</string>
+				<key>text</key>
+				<string>Open</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4BE50937-5D0C-4EB2-9566-8C139D9D6377</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2189,6 +2216,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>250</real>
 		</dict>
+		<key>4BE50937-5D0C-4EB2-9566-8C139D9D6377</key>
+		<dict>
+			<key>ypos</key>
+			<real>4680</real>
+		</dict>
 		<key>58C9C91C-054B-49D4-BFED-2C87E5163A6F</key>
 		<dict>
 			<key>ypos</key>
@@ -2332,7 +2364,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>DC3D2F9E-309B-49AA-92C7-580CC8FE6A87</key>
 		<dict>
 			<key>ypos</key>
-			<real>4570</real>
+			<real>4510</real>
 		</dict>
 		<key>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</key>
 		<dict>
