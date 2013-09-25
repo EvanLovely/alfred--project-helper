@@ -50,6 +50,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>19CC55F5-651D-4A1E-A1F3-5EDE535BA460</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BEB157AD-443A-4863-87EE-BF5711627340</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>204D01B1-B8F6-4D69-8CAE-3BF94B287705</key>
 		<array>
 			<dict>
@@ -170,6 +181,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>54F101B9-E517-4EAB-838A-F848D5EC1B89</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1EFFF3DB-9730-4315-B50C-A9A66EC509BF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>58C9C91C-054B-49D4-BFED-2C87E5163A6F</key>
 		<array>
 			<dict>
@@ -281,6 +303,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>E5C20E8F-24B4-4E07-949C-FE1082BCF2BB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7D564432-AED6-4563-9276-510B6943999A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>491E748E-DBF1-45DA-8522-F87DC884D100</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -445,6 +478,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>3C371E38-966D-48AB-A350-B9F0A79C6ABC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B254C2C8-904D-49D8-81CB-3C454E91A9E0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1332,6 +1376,18 @@ echo "Notes File set to {query}"</string>
 						<key>words</key>
 						<true/>
 					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemWhereFroms</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
 				</array>
 				<key>includesystem</key>
 				<false/>
@@ -1651,6 +1707,161 @@ git pull &amp;&amp;
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p set ssh</string>
+				<key>subtext</key>
+				<string>Pass in what command you want to start a new Terminal window in (include `ssh`)</string>
+				<key>text</key>
+				<string>Set SSH</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>54F101B9-E517-4EAB-838A-F848D5EC1B89</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>echo "ssh_staging: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1EFFF3DB-9730-4315-B50C-A9A66EC509BF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>SSH="$(cat ~/projects/active/settings.yml | grep ^ssh_staging: | sed "s/ssh_staging: //")"
+terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/projects/active/settings.yml"
+$SSH</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>B254C2C8-904D-49D8-81CB-3C454E91A9E0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>,p ssh</string>
+				<key>subtext</key>
+				<string>Can optionally passing in what server if more than 1 is declared</string>
+				<key>text</key>
+				<string>SSH</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>echo "rsync: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>491E748E-DBF1-45DA-8522-F87DC884D100</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p set rsync</string>
+				<key>subtext</key>
+				<string>Easy files transfer</string>
+				<key>text</key>
+				<string>Set rsync</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>7D564432-AED6-4563-9276-510B6943999A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p rsync</string>
+				<key>text</key>
+				<string>Rsync Files</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>19CC55F5-651D-4A1E-A1F3-5EDE535BA460</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>cd ~/projects/active/site-root
+RSYNC="$(cat ~/projects/active/settings.yml | grep ^rsync_staging: | sed "s/rsync_staging: //")"
+terminal-notifier -title "Project Helper" -subtitle "$RSYNC" -message "Click to edit" -execute "open ~/projects/active/settings.yml"
+$RSYNC
+/opt/local/bin/terminal-notifier -message "Done" -title "Project Helper" -subtitle "Drush Files Rsync Done"
+afplay /System/Library/Sounds/Submarine.aiff</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BEB157AD-443A-4863-87EE-BF5711627340</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>anchorfields</key>
 				<true/>
 				<key>daterange</key>
@@ -1761,7 +1972,7 @@ sh {query}</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "url-dev: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
+				<string>echo "url_dev: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1778,7 +1989,7 @@ sh {query}</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "url-staging: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
+				<string>echo "url_staging: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1841,7 +2052,7 @@ sh {query}</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>echo "url-production: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
+				<string>echo "url_production: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2161,6 +2372,16 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2210</real>
 		</dict>
+		<key>19CC55F5-651D-4A1E-A1F3-5EDE535BA460</key>
+		<dict>
+			<key>ypos</key>
+			<real>2890</real>
+		</dict>
+		<key>1EFFF3DB-9730-4315-B50C-A9A66EC509BF</key>
+		<dict>
+			<key>ypos</key>
+			<real>2560</real>
+		</dict>
 		<key>204D01B1-B8F6-4D69-8CAE-3BF94B287705</key>
 		<dict>
 			<key>ypos</key>
@@ -2216,10 +2437,20 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>250</real>
 		</dict>
+		<key>491E748E-DBF1-45DA-8522-F87DC884D100</key>
+		<dict>
+			<key>ypos</key>
+			<real>2780</real>
+		</dict>
 		<key>4BE50937-5D0C-4EB2-9566-8C139D9D6377</key>
 		<dict>
 			<key>ypos</key>
 			<real>4680</real>
+		</dict>
+		<key>54F101B9-E517-4EAB-838A-F848D5EC1B89</key>
+		<dict>
+			<key>ypos</key>
+			<real>2560</real>
 		</dict>
 		<key>58C9C91C-054B-49D4-BFED-2C87E5163A6F</key>
 		<dict>
@@ -2271,6 +2502,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>130</real>
 		</dict>
+		<key>7D564432-AED6-4563-9276-510B6943999A</key>
+		<dict>
+			<key>ypos</key>
+			<real>2780</real>
+		</dict>
 		<key>8419ACD0-4077-4763-99FF-65EB19584569</key>
 		<dict>
 			<key>ypos</key>
@@ -2311,6 +2547,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2450</real>
 		</dict>
+		<key>B254C2C8-904D-49D8-81CB-3C454E91A9E0</key>
+		<dict>
+			<key>ypos</key>
+			<real>2670</real>
+		</dict>
 		<key>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</key>
 		<dict>
 			<key>ypos</key>
@@ -2320,6 +2561,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3770</real>
+		</dict>
+		<key>BEB157AD-443A-4863-87EE-BF5711627340</key>
+		<dict>
+			<key>ypos</key>
+			<real>2890</real>
 		</dict>
 		<key>C0E10F81-8007-4B7F-8EDD-C6113F063CD4</key>
 		<dict>
@@ -2360,6 +2606,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>470</real>
+		</dict>
+		<key>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</key>
+		<dict>
+			<key>ypos</key>
+			<real>2670</real>
 		</dict>
 		<key>DC3D2F9E-309B-49AA-92C7-580CC8FE6A87</key>
 		<dict>
