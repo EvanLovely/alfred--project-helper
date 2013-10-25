@@ -416,6 +416,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>BC6CBA90-1AE1-46E1-A513-814392563217</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>145B1B59-27E3-4B25-9136-773DF58C0137</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>BD7CC7DF-5025-4CA6-B1D0-3BE09215D9F6</key>
 		<array>
 			<dict>
@@ -998,25 +1009,6 @@ echo "Assets Directory set to {query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-				</array>
-				<key>name</key>
-				<string>Set Project Scripts Folder</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
@@ -1030,6 +1022,25 @@ echo "Scripts Directory set to {query}"</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>768087C3-5E29-44B7-90E3-73A433618BF5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Project Scripts Folder</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2411,6 +2422,45 @@ fi
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string># @todo close all SourceTree windows first
+open ~/projects/active/site-root -a SourceTree</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>145B1B59-27E3-4B25-9136-773DF58C0137</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p sourcetree</string>
+				<key>subtext</key>
+				<string>Open Git Repo in SourceTree</string>
+				<key>text</key>
+				<string>SourceTree View</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>BC6CBA90-1AE1-46E1-A513-814392563217</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -2525,6 +2575,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>1220</real>
+		</dict>
+		<key>145B1B59-27E3-4B25-9136-773DF58C0137</key>
+		<dict>
+			<key>ypos</key>
+			<real>5700</real>
 		</dict>
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<dict>
@@ -2755,6 +2810,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3770</real>
+		</dict>
+		<key>BC6CBA90-1AE1-46E1-A513-814392563217</key>
+		<dict>
+			<key>ypos</key>
+			<real>5700</real>
 		</dict>
 		<key>BD7CC7DF-5025-4CA6-B1D0-3BE09215D9F6</key>
 		<dict>
