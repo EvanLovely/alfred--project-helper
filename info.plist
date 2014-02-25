@@ -821,6 +821,7 @@ rm -rf ~/active
 mkdir ~/active
 ln -s "{query}" ~/active/files
 ln -s `getsetting site_root` ~/active/site-root
+ln -s `getsetting theme` ~/active/theme
 sh ~/active/files/scripts/open-at-start.sh
 /opt/local/bin/terminal-notifier -message "Please run (,p start) in Alfred" -title "Active Project Switched"
 </string>
@@ -918,7 +919,9 @@ echo "Development Browser Set"</string>
 				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
-addsetting site_root "{query}"</string>
+addsetting site_root "{query}"
+rm -rf ~/active/site-root
+ln -s "{query}" ~/active/site-root</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1027,25 +1030,6 @@ echo "Assets Directory set to {query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-				</array>
-				<key>name</key>
-				<string>Set Project Scripts Folder</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
@@ -1059,6 +1043,25 @@ echo "Scripts Directory set to {query}"</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>768087C3-5E29-44B7-90E3-73A433618BF5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Project Scripts Folder</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1091,11 +1094,12 @@ echo "Scripts Directory set to {query}"</string>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>0</integer>
 				<key>script</key>
-				<string>rm -rf ~/active/theme
-ln -s "{query}" ~/active/theme
-echo "Theme Directory set to {query}"</string>
+				<string>source bash_functions
+addsetting theme "{query}"
+rm -rf ~/active/theme
+ln -s "{query}" ~/active/theme</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
