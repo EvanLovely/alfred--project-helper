@@ -814,11 +814,14 @@ open ~/Dropbox/projects/{query}\ files
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>/opt/local/bin/terminal-notifier -message "Shutting down…" -title "Project Helper"
-sh ~/active/scripts/shutdown.sh
+				<string>source bash_functions
+/opt/local/bin/terminal-notifier -message "Shutting down…" -title "Project Helper"
+sh ~/active/files/scripts/shutdown.sh
 rm -rf ~/active
-ln -s "{query}" ~/active
-sh ~/active/scripts/open-at-start.sh
+mkdir ~/active
+ln -s "{query}" ~/active/files
+ln -s `getsetting site_root` ~/active/site-root
+sh ~/active/files/scripts/open-at-start.sh
 /opt/local/bin/terminal-notifier -message "Please run (,p start) in Alfred" -title "Active Project Switched"
 </string>
 				<key>type</key>
@@ -912,10 +915,10 @@ echo "Development Browser Set"</string>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>0</integer>
 				<key>script</key>
-				<string>rm -rf ~/active/site-root
-ln -s "{query}" ~/active/site-root</string>
+				<string>source bash_functions
+addsetting site_root "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1046,8 +1049,8 @@ echo "Assets Directory set to {query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>rm -rf ~/active/scripts
-ln -s "{query}" ~/active/scripts
+				<string>rm -rf ~/active/files/scripts
+ln -s "{query}" ~/active/files/scripts
 echo "Scripts Directory set to {query}"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -2078,7 +2081,7 @@ sh "{query}"</string>
 				<string>,p scripts</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/scripts</string>
+					<string>~/active/files/scripts</string>
 					<string>~/projects/scripts</string>
 				</array>
 				<key>subtext</key>
@@ -2239,8 +2242,8 @@ sh "{query}"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "open \"{query}\"" &gt;&gt; ~/active/scripts/open-at-start.sh
-terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/active/scripts/open-at-start.sh"</string>
+				<string>echo "open \"{query}\"" &gt;&gt; ~/active/files/scripts/open-at-start.sh
+terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/active/files/scripts/open-at-start.sh"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2275,7 +2278,7 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<integer>0</integer>
 				<key>script</key>
 				<string>cd ~/active/theme
-sh ~/active/scripts/start-in-theme.sh
+sh ~/active/files/scripts/start-in-theme.sh
 terminal-notifier -title "Project Helper" -subtitle "Theme Scripts Done" -message "Click to Edit" -execute "open -t ~/projects/scripts/start-in-theme.sh"</string>
 			</dict>
 			<key>type</key>
@@ -2313,8 +2316,8 @@ terminal-notifier -title "Project Helper" -subtitle "Theme Scripts Done" -messag
 				<integer>0</integer>
 				<key>script</key>
 				<string>cd ~/active/site-root
-sh ~/active/scripts/start-in-site-root.sh
-terminal-notifier -title "Project Helper" -subtitle "Site Root Scripts Done" -message "Click to Edit" -execute "open -t ~/active/scripts/start-in-site-root.sh"</string>
+sh ~/active/files/scripts/start-in-site-root.sh
+terminal-notifier -title "Project Helper" -subtitle "Site Root Scripts Done" -message "Click to Edit" -execute "open -t ~/active/files/scripts/start-in-site-root.sh"</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.terminalcommand</string>
@@ -2351,8 +2354,8 @@ terminal-notifier -title "Project Helper" -subtitle "Site Root Scripts Done" -me
 				<integer>127</integer>
 				<key>script</key>
 				<string>source ~/.bash_profile
-sh ~/active/scripts/open-at-start.sh
-terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/active/scripts/open-at-start.sh"</string>
+sh ~/active/files/scripts/open-at-start.sh
+terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/active/files/scripts/open-at-start.sh"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>

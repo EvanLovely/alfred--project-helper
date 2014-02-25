@@ -18,8 +18,26 @@ fdefonly() {
 
 # Remove all cases of a definition
 rdef() {
+  # Use: `rdef file.txt definition`
   cat "$1" | grep -v $2: > /tmp/definition.txt
   cat /tmp/definition.txt > "$1"
+}
+
+getsetting() {
+  fdefonly ~/active/files/settings.yml $1
+}
+
+addsetting() {
+  echo "$1: $2" >> ~/active/files/settings.yml
+}
+
+replacesetting() {
+  rdef ~/active/files/settings.yml $1
+  addsetting $1 $2
+}
+
+removesetting() {
+  rdef ~/active/files/settings.yml $1
 }
 
 # Adds/List Mavericks Tags via Native Utilities. Source: http://apple.stackexchange.com/a/119370
