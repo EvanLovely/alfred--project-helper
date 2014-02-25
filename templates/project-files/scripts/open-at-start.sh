@@ -8,4 +8,4 @@
 
 # You can add to this by finding something in Alfred and Showing it's Actions (right arrow), the hitting the Set to Open in Project action. Also, you can pass it URLs by doing `,p set start {url}`
 # Also, if you do `open -g` then it doesn't bring it to the foreground.
-open ~/projects/active
+open ~/active

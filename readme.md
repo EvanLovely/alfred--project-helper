@@ -49,7 +49,7 @@ When you have links you go to often (Project Management sites, Dev Sites, Hosted
 
 # Switching Projects
 
-Once you've made a few projects using `,pn`, you can switch between them by using `,ps {project name}`. You can always view the active project's folder by going to `~/projects/active` and see all projects by looking in `~/projects`. When you switch to a project, it just sym links the project folder, which itself contains symlinks to your site root, theme folder, project files etc, to `~/projects/active`. 
+Once you've made a few projects using `,pn`, you can switch between them by using `,ps {project name}`. You can always view the active project's folder by going to `~/active` and see all projects by looking in `~/projects`. When you switch to a project, it just sym links the project folder, which itself contains symlinks to your site root, theme folder, project files etc, to `~/active`. 
 
 This way, no matter what project you are working on, you can use the same commands to do the same thing, but just for a different project. Muscle memory will improve productivity.
 
@@ -58,7 +58,7 @@ This way, no matter what project you are working on, you can use the same comman
 
 ## Custom Scripts
 
-Create a folder called `scripts` in `~/projects/active` or in `~/projects` and then you can run them via `,p scripts {query}` (which will run in the site root.)
+Create a folder called `scripts` in `~/active` or in `~/projects` and then you can run them via `,p scripts {query}` (which will run in the site root.)
 
 ## Help with development of this project via Git
 

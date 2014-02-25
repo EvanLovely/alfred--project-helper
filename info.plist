@@ -687,6 +687,7 @@ mv ~/Dropbox/projects/{query}/notes.md ~/Dropbox/projects/{query}/{query}\ notes
 rm -rf ~/active
 mkdir ~/active
 ln -s ~/Dropbox/projects/{query} ~/active/files
+open ~/Dropbox/projects/{query}
 /opt/local/bin/terminal-notifier -title "Project Helper" -message "{query} Project Made."</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -799,10 +800,10 @@ ln -s ~/Dropbox/projects/{query} ~/active/files
 				<key>script</key>
 				<string>/opt/local/bin/terminal-notifier -message "Shutting down…" -title "Project Helper"
 sh ~/projects/scripts/shutdown.sh
-sh ~/projects/active/scripts/shutdown.sh
-rm -rf ~/projects/active &amp;&amp;
-ln -s "{query}" ~/projects/active
-sh ~/projects/active/scripts/open-at-start.sh
+sh ~/active/scripts/shutdown.sh
+rm -rf ~/active &amp;&amp;
+ln -s "{query}" ~/active
+sh ~/active/scripts/open-at-start.sh
 /opt/local/bin/terminal-notifier -message "Please run (,p start) in Alfred" -title "Active Project Switched"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -840,8 +841,8 @@ sh ~/projects/active/scripts/open-at-start.sh
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>rm -rf ~/projects/active/docs
-ln -s "{query}" ~/projects/active/docs</string>
+				<string>rm -rf ~/active/docs
+ln -s "{query}" ~/active/docs</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -897,8 +898,8 @@ echo "Development Browser Set"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>rm -rf ~/projects/active/site-root
-ln -s "{query}" ~/projects/active/site-root</string>
+				<string>rm -rf ~/active/site-root
+ln -s "{query}" ~/active/site-root</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -953,8 +954,8 @@ ln -s "{query}" ~/projects/active/site-root</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>rm -rf ~/projects/active/links
-ln -s "{query}" ~/projects/active/links
+				<string>rm -rf ~/active/links
+ln -s "{query}" ~/active/links
 echo "Links Directory set to {query}"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -972,8 +973,8 @@ echo "Links Directory set to {query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>rm -rf ~/projects/active/assets
-ln -s "{query}" ~/projects/active/assets
+				<string>rm -rf ~/active/assets
+ln -s "{query}" ~/active/assets
 echo "Assets Directory set to {query}"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -1007,6 +1008,25 @@ echo "Assets Directory set to {query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>rm -rf ~/active/scripts
+ln -s "{query}" ~/active/scripts
+echo "Scripts Directory set to {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>768087C3-5E29-44B7-90E3-73A433618BF5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>acceptsmulti</key>
 				<false/>
 				<key>filetypes</key>
@@ -1020,25 +1040,6 @@ echo "Assets Directory set to {query}"</string>
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
 			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>rm -rf ~/projects/active/scripts
-ln -s "{query}" ~/projects/active/scripts
-echo "Scripts Directory set to {query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>768087C3-5E29-44B7-90E3-73A433618BF5</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1073,8 +1074,8 @@ echo "Scripts Directory set to {query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>rm -rf ~/projects/active/theme
-ln -s "{query}" ~/projects/active/theme
+				<string>rm -rf ~/active/theme
+ln -s "{query}" ~/active/theme
 echo "Theme Directory set to {query}"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -1111,8 +1112,8 @@ echo "Theme Directory set to {query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>rm -rf ~/projects/active/files
-ln -s "{query}" ~/projects/active/files
+				<string>rm -rf ~/active/files
+ln -s "{query}" ~/active/files
 echo "Files Directory set to {query}"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -1150,8 +1151,8 @@ echo "Files Directory set to {query}"</string>
 				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
-rdef ~/projects/active/settings.yml notes
-echo "notes: {query}" &gt;&gt; ~/projects/active/settings.yml
+rdef ~/active/files/settings.yml notes
+echo "notes: {query}" &gt;&gt; ~/active/files/settings.yml
 echo "Notes File set to {query}"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -1208,7 +1209,7 @@ echo "Notes File set to {query}"</string>
 			<key>config</key>
 			<dict>
 				<key>path</key>
-				<string>~/projects/active</string>
+				<string>~/active</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.browseinalfred</string>
@@ -1294,7 +1295,7 @@ echo "Notes File set to {query}"</string>
 				<string>,p links</string>
 				<key>scopes</key>
 				<array>
-					<string>~/projects/active/links</string>
+					<string>~/active/links</string>
 				</array>
 				<key>subtext</key>
 				<string>Show Links for Active Project</string>
@@ -1364,7 +1365,7 @@ echo "Notes File set to {query}"</string>
 				<string>,p assets</string>
 				<key>scopes</key>
 				<array>
-					<string>~/projects/active/assets</string>
+					<string>~/active/assets</string>
 				</array>
 				<key>subtext</key>
 				<string>Find Assets in Active Project (Comps, Wireframes, etc)</string>
@@ -1458,7 +1459,7 @@ echo "Notes File set to {query}"</string>
 				<string>,p sass</string>
 				<key>scopes</key>
 				<array>
-					<string>~/projects/active/theme</string>
+					<string>~/active/theme</string>
 				</array>
 				<key>subtext</key>
 				<string>Show SASS files in Active Project's Theme</string>
@@ -1552,7 +1553,7 @@ echo "Notes File set to {query}"</string>
 				<string>,p tpl</string>
 				<key>scopes</key>
 				<array>
-					<string>~/projects/active/theme</string>
+					<string>~/active/theme</string>
 				</array>
 				<key>subtext</key>
 				<string>Show .tpl.php Files in Theme Directory</string>
@@ -1624,7 +1625,7 @@ echo "Notes File set to {query}"</string>
 				<string>,p docs</string>
 				<key>scopes</key>
 				<array>
-					<string>~/projects/active/docs</string>
+					<string>~/active/docs</string>
 				</array>
 				<key>subtext</key>
 				<string>Search Docs</string>
@@ -1670,7 +1671,7 @@ echo "Notes File set to {query}"</string>
 				<integer>127</integer>
 				<key>script</key>
 				<string>PROJECT="`ls -l ~/projects/ | grep active | sed 's,^.*projects/,,'`"
-/opt/local/bin/terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to view." -execute "open ~/projects/active"</string>
+/opt/local/bin/terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to view." -execute "open ~/active"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1687,7 +1688,7 @@ echo "Notes File set to {query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cd ~/projects/active/site-root &amp;&amp;
+				<string>cd ~/active/site-root &amp;&amp;
 git pull &amp;&amp;
 git push &amp;&amp;
 /opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Push Done (after pulling)"</string>
@@ -1749,7 +1750,7 @@ git push &amp;&amp;
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cd ~/projects/active/site-root &amp;&amp;
+				<string>cd ~/active/site-root &amp;&amp;
 git pull &amp;&amp;
 /opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Pull Done"</string>
 				<key>type</key>
@@ -1768,7 +1769,7 @@ git pull &amp;&amp;
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cd ~/projects/active/theme
+				<string>cd ~/active/theme
 /opt/local/bin/drush cc all &amp;&amp;
 /opt/local/bin/terminal-notifier -message "Drupal Cache Cleared!" -title "Project Helper"</string>
 				<key>type</key>
@@ -1808,7 +1809,7 @@ git pull &amp;&amp;
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "ssh_staging: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
+				<string>echo "ssh_staging: {query}" &gt;&gt; ~/active/files/settings.yml</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1846,7 +1847,7 @@ git pull &amp;&amp;
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "ssh_prod: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
+				<string>echo "ssh_prod: {query}" &gt;&gt; ~/active/files/settings.yml</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1863,8 +1864,8 @@ git pull &amp;&amp;
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>SSH="$(cat ~/projects/active/settings.yml | grep ^ssh_staging: | sed "s/ssh_staging: //")"
-terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/projects/active/settings.yml"
+				<string>SSH="$(cat ~/active/files/settings.yml | grep ^ssh_staging: | sed "s/ssh_staging: //")"
+terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/active/files/settings.yml"
 $SSH</string>
 			</dict>
 			<key>type</key>
@@ -1901,8 +1902,8 @@ $SSH</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>SSH="$(cat ~/projects/active/settings.yml | grep ^ssh_prod: | sed "s/ssh_prod: //")"
-terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/projects/active/settings.yml"
+				<string>SSH="$(cat ~/active/files/settings.yml | grep ^ssh_prod: | sed "s/ssh_prod: //")"
+terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/active/files/settings.yml"
 $SSH</string>
 			</dict>
 			<key>type</key>
@@ -1918,7 +1919,7 @@ $SSH</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "rsync: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
+				<string>echo "rsync: {query}" &gt;&gt; ~/active/files/settings.yml</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1975,9 +1976,9 @@ $SSH</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cd ~/projects/active/site-root
-RSYNC="$(cat ~/projects/active/settings.yml | grep ^rsync_staging: | sed "s/rsync_staging: //")"
-terminal-notifier -title "Project Helper" -subtitle "$RSYNC" -message "Click to edit" -execute "open ~/projects/active/settings.yml"
+				<string>cd ~/active/site-root
+RSYNC="$(cat ~/active/files/settings.yml | grep ^rsync_staging: | sed "s/rsync_staging: //")"
+terminal-notifier -title "Project Helper" -subtitle "$RSYNC" -message "Click to edit" -execute "open ~/active/files/settings.yml"
 $RSYNC
 /opt/local/bin/terminal-notifier -message "Done" -title "Project Helper" -subtitle "Drush Files Rsync Done"
 afplay /System/Library/Sounds/Submarine.aiff</string>
@@ -1997,7 +1998,7 @@ afplay /System/Library/Sounds/Submarine.aiff</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/projects/active/site-root &amp;&amp;
+				<string>cd ~/active/site-root &amp;&amp;
 sh "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -2061,7 +2062,7 @@ sh "{query}"</string>
 				<string>,p scripts</string>
 				<key>scopes</key>
 				<array>
-					<string>~/projects/active/scripts</string>
+					<string>~/active/scripts</string>
 					<string>~/projects/scripts</string>
 				</array>
 				<key>subtext</key>
@@ -2088,7 +2089,7 @@ sh "{query}"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/projects/active/site-root &amp;&amp;
+				<string>cd ~/active/site-root &amp;&amp;
 sh "{query}"</string>
 			</dict>
 			<key>type</key>
@@ -2104,7 +2105,7 @@ sh "{query}"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "url_dev: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
+				<string>echo "url_dev: {query}" &gt;&gt; ~/active/files/settings.yml</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2121,7 +2122,7 @@ sh "{query}"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "url_staging: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
+				<string>echo "url_staging: {query}" &gt;&gt; ~/active/files/settings.yml</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2184,7 +2185,7 @@ sh "{query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>echo "url_production: {query}" &gt;&gt; ~/projects/active/settings.yml</string>
+				<string>echo "url_production: {query}" &gt;&gt; ~/active/files/settings.yml</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2222,8 +2223,8 @@ sh "{query}"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "open \"{query}\"" &gt;&gt; ~/projects/active/scripts/open-at-start.sh
-terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/projects/active/scripts/open-at-start.sh"</string>
+				<string>echo "open \"{query}\"" &gt;&gt; ~/active/scripts/open-at-start.sh
+terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/active/scripts/open-at-start.sh"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2257,8 +2258,8 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/projects/active/theme
-sh ~/projects/active/scripts/start-in-theme.sh
+				<string>cd ~/active/theme
+sh ~/active/scripts/start-in-theme.sh
 terminal-notifier -title "Project Helper" -subtitle "Theme Scripts Done" -message "Click to Edit" -execute "open -t ~/projects/scripts/start-in-theme.sh"</string>
 			</dict>
 			<key>type</key>
@@ -2295,9 +2296,9 @@ terminal-notifier -title "Project Helper" -subtitle "Theme Scripts Done" -messag
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/projects/active/site-root
-sh ~/projects/active/scripts/start-in-site-root.sh
-terminal-notifier -title "Project Helper" -subtitle "Site Root Scripts Done" -message "Click to Edit" -execute "open -t ~/projects/active/scripts/start-in-site-root.sh"</string>
+				<string>cd ~/active/site-root
+sh ~/active/scripts/start-in-site-root.sh
+terminal-notifier -title "Project Helper" -subtitle "Site Root Scripts Done" -message "Click to Edit" -execute "open -t ~/active/scripts/start-in-site-root.sh"</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.terminalcommand</string>
@@ -2334,8 +2335,8 @@ terminal-notifier -title "Project Helper" -subtitle "Site Root Scripts Done" -me
 				<integer>127</integer>
 				<key>script</key>
 				<string>source ~/.bash_profile
-sh ~/projects/active/scripts/open-at-start.sh
-terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/projects/active/scripts/open-at-start.sh"</string>
+sh ~/active/scripts/open-at-start.sh
+terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/active/scripts/open-at-start.sh"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2371,7 +2372,7 @@ terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Cli
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>open "$(cat ~/projects/active/settings.yml | grep ^notes: | sed "s/notes: //")"</string>
+				<string>open "$(cat ~/active/files/settings.yml | grep ^notes: | sed "s/notes: //")"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2435,9 +2436,9 @@ terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Cli
 				<integer>0</integer>
 				<key>script</key>
 				<string>QUESTION=$(echo "{query}" | sed "s/ /\.\*/")
-# NOTES=$(cat ~/projects/active/settings.yml | grep ^notes: | sed "s/notes: //")
+# NOTES=$(cat ~/active/files/settings.yml | grep ^notes: | sed "s/notes: //")
 # ANSWER=$(cat "$NOTES" | grep "\w*:\s" | grep -i "$QUESTION")
-ANSWER=`cat ~/projects/active/settings.yml | grep "\w*:\s" | grep -i "$QUESTION"`
+ANSWER=`cat ~/active/files/settings.yml | grep "\w*:\s" | grep -i "$QUESTION"`
 echo "$ANSWER" | sed "s/.*: //" | tr -d '\n' | pbcopy
 if [$ANSWER = ""]
 then
@@ -2463,7 +2464,7 @@ fi
 				<integer>127</integer>
 				<key>script</key>
 				<string># @todo close all SourceTree windows first
-open ~/projects/active/site-root -a SourceTree</string>
+open ~/active/site-root -a SourceTree</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2547,7 +2548,7 @@ open ~/projects/active/site-root -a SourceTree</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/projects/active/site-root
+				<string>cd ~/active/site-root
 /opt/local/bin/drush upwd Administrator --password="{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
