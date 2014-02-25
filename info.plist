@@ -682,13 +682,17 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cp -r templates/project-files ~/Dropbox/projects/{query}
-mv ~/Dropbox/projects/{query}/notes.md ~/Dropbox/projects/{query}/{query}\ notes.md
+				<string>source bash_functions
+cp -r templates/project-files ~/Dropbox/projects/{query}\ files
+mv ~/Dropbox/projects/{query}\ files/notes.md ~/Dropbox/projects/{query}\ files/{query}\ notes.md
+tags -add p-{query} ~/Dropbox/projects/{query}\ files/{query}\ notes.md
+tags -add p-{query} ~/Dropbox/projects/{query}\ files
+tags -add project-files ~/Dropbox/projects/{query}\ files
 rm -rf ~/active
 mkdir ~/active
-ln -s ~/Dropbox/projects/{query} ~/active/files
-open ~/Dropbox/projects/{query}
-/opt/local/bin/terminal-notifier -title "Project Helper" -message "{query} Project Made."</string>
+ln -s ~/Dropbox/projects/{query}\ files ~/active/files
+open ~/Dropbox/projects/{query}\ files
+/opt/local/bin/terminal-notifier -title "Project Helper" -message "{query} Project Made. Site Root Next."</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -755,11 +759,23 @@ open ~/Dropbox/projects/{query}
 					</dict>
 					<dict>
 						<key>field</key>
-						<string>kMDItemFinderComment</string>
+						<string>kMDItemUserTags</string>
 						<key>not</key>
 						<false/>
 						<key>split</key>
 						<true/>
+						<key>value</key>
+						<string>project-files</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemUserTags</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<false/>
 						<key>value</key>
 						<string>{query}</string>
 						<key>words</key>
@@ -772,7 +788,7 @@ open ~/Dropbox/projects/{query}
 				<string>,ps</string>
 				<key>scopes</key>
 				<array>
-					<string>~/projects</string>
+					<string>~/Dropbox/projects</string>
 				</array>
 				<key>subtext</key>
 				<string>Select a project to switch focus to, type * to see all.</string>
@@ -799,12 +815,12 @@ open ~/Dropbox/projects/{query}
 				<integer>0</integer>
 				<key>script</key>
 				<string>/opt/local/bin/terminal-notifier -message "Shutting down…" -title "Project Helper"
-sh ~/projects/scripts/shutdown.sh
 sh ~/active/scripts/shutdown.sh
-rm -rf ~/active &amp;&amp;
+rm -rf ~/active
 ln -s "{query}" ~/active
 sh ~/active/scripts/open-at-start.sh
-/opt/local/bin/terminal-notifier -message "Please run (,p start) in Alfred" -title "Active Project Switched"</string>
+/opt/local/bin/terminal-notifier -message "Please run (,p start) in Alfred" -title "Active Project Switched"
+</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1008,25 +1024,6 @@ echo "Assets Directory set to {query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>rm -rf ~/active/scripts
-ln -s "{query}" ~/active/scripts
-echo "Scripts Directory set to {query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>768087C3-5E29-44B7-90E3-73A433618BF5</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>acceptsmulti</key>
 				<false/>
 				<key>filetypes</key>
@@ -1040,6 +1037,25 @@ echo "Scripts Directory set to {query}"</string>
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
 			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>rm -rf ~/active/scripts
+ln -s "{query}" ~/active/scripts
+echo "Scripts Directory set to {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>768087C3-5E29-44B7-90E3-73A433618BF5</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
