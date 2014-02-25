@@ -1030,25 +1030,6 @@ echo "Assets Directory set to {query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>rm -rf ~/active/files/scripts
-ln -s "{query}" ~/active/files/scripts
-echo "Scripts Directory set to {query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>768087C3-5E29-44B7-90E3-73A433618BF5</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>acceptsmulti</key>
 				<false/>
 				<key>filetypes</key>
@@ -1062,6 +1043,25 @@ echo "Scripts Directory set to {query}"</string>
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
 			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>rm -rf ~/active/files/scripts
+ln -s "{query}" ~/active/files/scripts
+echo "Scripts Directory set to {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>768087C3-5E29-44B7-90E3-73A433618BF5</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1388,7 +1388,7 @@ echo "Notes File set to {query}"</string>
 				<string>,p assets</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/assets</string>
+					<string>~/active/files/assets</string>
 				</array>
 				<key>subtext</key>
 				<string>Find Assets in Active Project (Comps, Wireframes, etc)</string>
