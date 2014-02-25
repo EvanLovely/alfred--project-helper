@@ -682,15 +682,11 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>mkdir -p ~/projects/{query}
-cp -r templates/project-files ~/Dropbox/projects/
-mv ~/Dropbox/projects/project-files ~/Dropbox/projects/{query}
-cp templates/settings.yml ~/projects/{query}
-# ln -s ~/Dropbox/projects/{query} ~/projects/active/files
-# ln -s ~/Dropbox/projects/{query}/assets ~/projects/active/assets
-echo "Just a placeholder to help identify this in folder views" &gt; ~/projects/{query}/{query}.txt
-rm -rf ~/projects/active
-ln -s ~/projects/{query} ~/projects/active
+				<string>cp -r templates/project-files ~/Dropbox/projects/{query}
+mv ~/Dropbox/projects/{query}/notes.md ~/Dropbox/projects/{query}/{query}\ notes.md
+rm -rf ~/active
+mkdir ~/active
+ln -s ~/Dropbox/projects/{query} ~/active/files
 /opt/local/bin/terminal-notifier -title "Project Helper" -message "{query} Project Made."</string>
 				<key>type</key>
 				<integer>0</integer>
