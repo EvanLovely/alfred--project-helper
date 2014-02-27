@@ -214,17 +214,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>4BE50937-5D0C-4EB2-9566-8C139D9D6377</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>21F4ADCB-89D9-4F20-BBC4-38096152CCE0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>54F101B9-E517-4EAB-838A-F848D5EC1B89</key>
 		<array>
 			<dict>
@@ -551,6 +540,14 @@
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>21F4ADCB-89D9-4F20-BBC4-38096152CCE0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
 		</array>
 		<key>DD98A496-0BDF-4D7B-8F6B-95D646E2726C</key>
 		<array>
@@ -820,11 +817,10 @@ sh ~/active/files/scripts/shutdown.sh
 rm -rf ~/active
 mkdir ~/active
 ln -s "{query}" ~/active/files
-ln -s `getsetting site_root` ~/active/site-root
-ln -s `getsetting theme` ~/active/theme
-sh ~/active/files/scripts/open-at-start.sh
+ln -s "`getsetting site_root`" ~/active/site-root
+ln -s "`getsetting theme`" ~/active/theme
 /opt/local/bin/terminal-notifier -message "Please run (,p start) in Alfred" -title "Active Project Switched"
-</string>
+/usr/bin/osascript -e 'tell application "Alfred 2" to search ",p start"'</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1097,7 +1093,7 @@ echo "Scripts Directory set to {query}"</string>
 				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
-addsetting theme "{query}"
+replacesetting theme "{query}"
 rm -rf ~/active/theme
 ln -s "{query}" ~/active/theme</string>
 				<key>type</key>
@@ -1693,7 +1689,7 @@ echo "Notes File set to {query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>PROJECT="`ls -l ~/projects/ | grep active | sed 's,^.*projects/,,'`"
+				<string>PROJECT="`ls -l ~/active | grep files | sed 's,^.*projects/,,' | sed 's,files,,'`"
 /opt/local/bin/terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to view." -execute "open ~/active"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -2333,27 +2329,6 @@ terminal-notifier -title "Project Helper" -subtitle "Site Root Scripts Done" -me
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p open</string>
-				<key>subtext</key>
-				<string>Open Apps, Sites, 'n Stuff</string>
-				<key>text</key>
-				<string>Open</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>4BE50937-5D0C-4EB2-9566-8C139D9D6377</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
@@ -2756,11 +2731,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3030</real>
-		</dict>
-		<key>4BE50937-5D0C-4EB2-9566-8C139D9D6377</key>
-		<dict>
-			<key>ypos</key>
-			<real>4680</real>
 		</dict>
 		<key>4E5C1BF6-BEB4-4E42-A727-AF20EA6795A1</key>
 		<dict>
