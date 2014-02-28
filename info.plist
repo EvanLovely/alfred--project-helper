@@ -979,7 +979,7 @@ ln -s "{query}" ~/active/site-root</string>
 					<string>public.folder</string>
 				</array>
 				<key>name</key>
-				<string>Set Project Site Root</string>
+				<string>Set Site Root for Project</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.action</string>
@@ -998,7 +998,7 @@ ln -s "{query}" ~/active/site-root</string>
 					<string>public.folder</string>
 				</array>
 				<key>name</key>
-				<string>Set Project Links Folder</string>
+				<string>Set Links Folder for Project</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.action</string>
@@ -1055,7 +1055,7 @@ echo "Assets Directory set to {query}"</string>
 					<string>public.folder</string>
 				</array>
 				<key>name</key>
-				<string>Set Project Assets Folder</string>
+				<string>Set Assets Folder for Project</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.action</string>
@@ -1074,7 +1074,7 @@ echo "Assets Directory set to {query}"</string>
 					<string>public.folder</string>
 				</array>
 				<key>name</key>
-				<string>Set Project Scripts Folder</string>
+				<string>Set Scripts Folder for Project</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.action</string>
@@ -1157,7 +1157,7 @@ ln -s "{query}" ~/active/theme</string>
 					<string>public.folder</string>
 				</array>
 				<key>name</key>
-				<string>Set Project Theme Folder</string>
+				<string>Set Theme Folder for Project</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.action</string>
@@ -1195,7 +1195,7 @@ echo "Files Directory set to {query}"</string>
 					<string>public.folder</string>
 				</array>
 				<key>name</key>
-				<string>Set Project Files Directory</string>
+				<string>Set Files Directory for Project</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.action</string>
@@ -1235,7 +1235,7 @@ echo "Notes File set to {query}"</string>
 					<string>net.multimarkdown.text</string>
 				</array>
 				<key>name</key>
-				<string>Set Project Notes</string>
+				<string>Set Notes for Project</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.action</string>
