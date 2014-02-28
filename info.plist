@@ -500,6 +500,7 @@
 				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
+sh ~/active/files/scripts/shutdown.sh
 P=`echo "{query}" | sed "s/ /-/g"`
 cp -r templates/project-files ~/Dropbox/projects/$P-files
 mv ~/Dropbox/projects/$P-files/notes.md ~/Dropbox/projects/$P-files/$P-notes.md
@@ -520,9 +521,12 @@ tell application "System Events"
 end tell'`
 if [ "$P_SITE_ROOT" ]
 then
-	addsetting site_root $P_SITE_ROOT
+	addsetting site_root "$P_SITE_ROOT"
 fi
 
+# Get Site Root Scripts
+osascript -e 'set response to the text returned of (display dialog "What scripts do you want to run in this folder when the project starts? (i.e. git pull)" with title "Site Root Scripts" default answer return &amp; return &amp; return &amp; return)
+response' &gt;&gt; ~/active/files/scripts/start-in-site-root.sh
 
 # Get Theme Root
 P_THEME=`osascript -e 'set source_folder to choose folder with prompt "Please select the Theme directory."
@@ -532,8 +536,16 @@ tell application "System Events"
 end tell'`
 if [ "$P_THEME" ]
 then
-	addsetting theme $P_THEME
+	addsetting theme "$P_THEME"
 fi
+
+# Get Theme Scripts
+osascript -e 'set response to the text returned of (display dialog "What scripts do you want to run in this folder when the project starts? (i.e. compass watch)" with title "Theme Directory Scripts" default answer return &amp; return &amp; return &amp; return)
+response' &gt;&gt; ~/active/files/scripts/start-in-theme.sh
+
+# Set Shutdown Scripts
+osascript -e 'set response to the text returned of (display dialog "What scripts do you want to run when you switch to another project? (i.e. killall compass)" with title "Shutdown Scripts" default answer return &amp; return &amp; return &amp; return)
+response' &gt;&gt; ~/active/files/scripts/shutdown.sh
 
 
 # Get Google Docs directory
@@ -544,19 +556,20 @@ tell application "System Events"
 end tell'`
 if [ "$P_GDOCS" ]
 then
-	addsetting gdocs $P_GDOCS
+	addsetting gdocs "$P_GDOCS"
 fi
 
-# Get Bash App
-P_BASH=`osascript -e 'set source_folder to choose file with prompt "Please select the Application you want Bash Scripts to open in (Terminal/iTerm)." default location "/Applications"
 
-tell application "System Events"
-  set item_list to POSIX path of source_folder
-end tell'`
-if [ "$P_BASH" ]
-then
-	addsetting bash_app $P_BASH
-fi
+# # Get Bash App
+# P_BASH=`osascript -e 'set source_folder to choose file with prompt "Please select the Application you want Bash Scripts to open in (Terminal/iTerm)." default location "/Applications"
+
+# tell application "System Events"
+#   set item_list to POSIX path of source_folder
+# end tell'`
+# if [ "$P_BASH" ]
+# then
+#   addsetting bash_app "$P_BASH"
+# fi
 
 # Get Dev Browser
 P_DEV_BROWSER=`osascript -e 'set source_folder to choose file with prompt "Please select the Browser you want to develop in." default location "/Applications"
@@ -566,7 +579,7 @@ tell application "System Events"
 end tell'`
 if [ "$P_DEV_BROWSER" ]
 then
-	addsetting dev_browser $P_BASH
+	addsetting dev_browser "$P_DEV_BROWSER"
 fi
 
 # Get Dev URL
@@ -574,10 +587,10 @@ P_DEV_URL=`osascript -e 'set response to the text returned of (display dialog "W
 response'`
 if [ "$P_DEV_URL" ]
 then
-	addsetting dev_url $P_DEV_URL
+	addsetting dev_url "$P_DEV_URL"
 fi
 
-sh setup-folders.sh 
+sh start.sh 
 open ~/Dropbox/projects/$P-files
 /opt/local/bin/terminal-notifier -title "Project Helper" -message "$P Project Made. Site Root Next."</string>
 				<key>type</key>
@@ -707,9 +720,8 @@ sh ~/active/files/scripts/shutdown.sh
 rm -rf ~/active
 mkdir ~/active
 ln -s "{query}" ~/active/files
-sh setup-folders.sh "{query}"
-/opt/local/bin/terminal-notifier -message "Please run (,p start) in Alfred" -title "Active Project Switched"
-/usr/bin/osascript -e 'tell application "Alfred 2" to search ",p start"'</string>
+sh start.sh
+/opt/local/bin/terminal-notifier -message "Active Project Switched"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
