@@ -677,19 +677,59 @@
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
-cp -r templates/project-files ~/Dropbox/projects/{query}\ files
-mv ~/Dropbox/projects/{query}\ files/notes.md ~/Dropbox/projects/{query}\ files/{query}\ notes.md
-tags -add p-{query} ~/Dropbox/projects/{query}\ files/{query}\ notes.md
-tags -add p-{query} ~/Dropbox/projects/{query}\ files
-tags -add project-files ~/Dropbox/projects/{query}\ files
+P=`echo "{query}" | sed "s/ /-/g"`
+cp -r templates/project-files ~/Dropbox/projects/$P-files
+mv ~/Dropbox/projects/$P-files/notes.md ~/Dropbox/projects/$P-files/$P-notes.md
+tags -add p-$P ~/Dropbox/projects/$P-files/$P-notes.md
+tags -add p-$P ~/Dropbox/projects/$P-files
+tags -add project-files ~/Dropbox/projects/$P-files
 rm -rf ~/active
 mkdir ~/active
-ln -s ~/Dropbox/projects/{query}\ files ~/active/files
-open ~/Dropbox/projects/{query}\ files
-/opt/local/bin/terminal-notifier -title "Project Helper" -message "{query} Project Made. Site Root Next."</string>
+
+# Link the main files directory so we can access the settings.yml file inside
+ln -s ~/Dropbox/projects/$P-files ~/active/files
+
+# Get Site Root
+P_SITE_ROOT=`osascript -e 'set source_folder to choose folder with prompt "Please select the Site Root directory."
+
+tell application "System Events"
+  set item_list to POSIX path of source_folder
+end tell'`
+if [ "$P_SITE_ROOT" ]
+then
+	addsetting site_root $P_SITE_ROOT
+fi
+
+
+# Get Theme Root
+P_THEME=`osascript -e 'set source_folder to choose folder with prompt "Please select the Theme directory."
+
+tell application "System Events"
+  set item_list to POSIX path of source_folder
+end tell'`
+if [ "$P_THEME" ]
+then
+	addsetting theme $P_THEME
+fi
+
+
+# Get Google Docs directory
+P_GDOCS=`osascript -e 'set source_folder to choose folder with prompt "Please select the Google Docs directory."
+
+tell application "System Events"
+  set item_list to POSIX path of source_folder
+end tell'`
+if [ "$P_GDOCS" ]
+then
+	addsetting gdocs $P_GDOCS
+fi
+
+sh setup-folders.sh 
+open ~/Dropbox/projects/$P-files
+/opt/local/bin/terminal-notifier -title "Project Helper" -message "$P Project Made. Site Root Next."</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -817,8 +857,7 @@ sh ~/active/files/scripts/shutdown.sh
 rm -rf ~/active
 mkdir ~/active
 ln -s "{query}" ~/active/files
-ln -s "`getsetting site_root`" ~/active/site-root
-ln -s "`getsetting theme`" ~/active/theme
+sh setup-folders.sh "{query}"
 /opt/local/bin/terminal-notifier -message "Please run (,p start) in Alfred" -title "Active Project Switched"
 /usr/bin/osascript -e 'tell application "Alfred 2" to search ",p start"'</string>
 				<key>type</key>
@@ -857,8 +896,9 @@ ln -s "`getsetting theme`" ~/active/theme
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>rm -rf ~/active/docs
-ln -s "{query}" ~/active/docs</string>
+				<string>source bash_functions
+replacesetting gdocs "{query}" 
+</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
