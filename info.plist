@@ -17,17 +17,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>0FE344BF-FC25-410C-BCEF-D6F058B3B49F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A0940900-A150-42A4-A078-CAA4FD2887DA</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>1389402B-89C2-4AC4-8D1C-2659A10820D9</key>
 		<array>
 			<dict>
@@ -50,17 +39,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>19CC55F5-651D-4A1E-A1F3-5EDE535BA460</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>BEB157AD-443A-4863-87EE-BF5711627340</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>1E772088-EAB6-4417-A2C5-14300A4A039E</key>
 		<array>
 			<dict>
@@ -77,25 +55,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>0A533F4D-23F4-496A-8964-069362684505</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>1FB6A77C-DBBD-4349-8D47-00CF28828A7F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E46AEBC0-51EE-4740-8BD2-333FAE1E93A7</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>4E5C1BF6-BEB4-4E42-A727-AF20EA6795A1</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -146,17 +105,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>30660F7A-7649-4BAC-9250-7914F67C63E4</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A0940900-A150-42A4-A078-CAA4FD2887DA</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>332988CC-BBF4-4D27-A4CE-D2290ECD8341</key>
 		<array>
 			<dict>
@@ -173,17 +121,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>3C371E38-966D-48AB-A350-B9F0A79C6ABC</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E5C20E8F-24B4-4E07-949C-FE1082BCF2BB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -233,33 +170,6 @@
 				<string>Set Production SSH</string>
 			</dict>
 		</array>
-		<key>58C9C91C-054B-49D4-BFED-2C87E5163A6F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>30660F7A-7649-4BAC-9250-7914F67C63E4</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>B71E3EF1-A5EC-4D4B-BC28-FBA5AE5D93F5</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>Set Staging URL</string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>0FE344BF-FC25-410C-BCEF-D6F058B3B49F</string>
-				<key>modifiers</key>
-				<integer>524288</integer>
-				<key>modifiersubtext</key>
-				<string>Set Production URL</string>
-			</dict>
-		</array>
 		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
 		<array>
 			<dict>
@@ -304,8 +214,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>638A8F29-29B1-4023-8807-19A7C79360FA</key>
-		<array/>
 		<key>660DD24D-570B-42B2-83B3-44EB3E477149</key>
 		<array>
 			<dict>
@@ -341,17 +249,6 @@
 		</array>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<array/>
-		<key>7D564432-AED6-4563-9276-510B6943999A</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>491E748E-DBF1-45DA-8522-F87DC884D100</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>92CA46FE-4B37-4C2D-8F0C-94B51D5CDF61</key>
 		<array>
 			<dict>
@@ -363,55 +260,11 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>9CDB715B-F4C8-413F-B114-0563DCC75747</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>19216972-0BD0-4DCE-9B7E-6D9B82D8962D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>9F2B5576-F33F-4EA7-BF3F-5D90928B1B1B</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>9CDB715B-F4C8-413F-B114-0563DCC75747</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>5F9FBA59-C2CC-4D8B-AC13-B8738B0C37E4</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>B71E3EF1-A5EC-4D4B-BC28-FBA5AE5D93F5</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A0940900-A150-42A4-A078-CAA4FD2887DA</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>BC6CBA90-1AE1-46E1-A513-814392563217</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>145B1B59-27E3-4B25-9136-773DF58C0137</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -492,17 +345,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>D8CB5F2D-E481-4DA1-956B-BF293905E9A7</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>3C371E38-966D-48AB-A350-B9F0A79C6ABC</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</key>
 		<array>
 			<dict>
@@ -554,28 +396,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>7BDFD687-1656-4DB8-935D-3096F42E266F</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>DF0434CC-8A95-4942-A98B-2E0E4276B53E</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>1FB6A77C-DBBD-4349-8D47-00CF28828A7F</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>E375BA39-9941-46E0-BEA5-C37749F4C65A</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>638A8F29-29B1-4023-8807-19A7C79360FA</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -907,45 +727,6 @@ ln -s "{query}" ~/active/docs</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>3E5A413E-3B68-4D3E-91BD-1789A40CB85D</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>source bash_functions
-rdef ~/projects/settings.yml browser
-echo "browser: {query}" &gt;&gt; ~/projects/settings.yml
-echo "Development Browser Set"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>3C371E38-966D-48AB-A350-B9F0A79C6ABC</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>com.apple.application-bundle</string>
-				</array>
-				<key>name</key>
-				<string>Set Dev Browser</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>D8CB5F2D-E481-4DA1-956B-BF293905E9A7</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1979,85 +1760,6 @@ $SSH</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "rsync: {query}" &gt;&gt; ~/active/files/settings.yml</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>491E748E-DBF1-45DA-8522-F87DC884D100</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>,p set rsync</string>
-				<key>subtext</key>
-				<string>Easy files transfer</string>
-				<key>text</key>
-				<string>Set rsync</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>7D564432-AED6-4563-9276-510B6943999A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p rsync</string>
-				<key>text</key>
-				<string>Rsync Files</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>19CC55F5-651D-4A1E-A1F3-5EDE535BA460</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>cd ~/active/site-root
-RSYNC="$(cat ~/active/files/settings.yml | grep ^rsync_staging: | sed "s/rsync_staging: //")"
-terminal-notifier -title "Project Helper" -subtitle "$RSYNC" -message "Click to edit" -execute "open ~/active/files/settings.yml"
-$RSYNC
-/opt/local/bin/terminal-notifier -message "Done" -title "Project Helper" -subtitle "Drush Files Rsync Done"
-afplay /System/Library/Sounds/Submarine.aiff</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>BEB157AD-443A-4863-87EE-BF5711627340</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
 				<string>cd ~/active/site-root &amp;&amp;
 sh "{query}"</string>
 				<key>type</key>
@@ -2156,103 +1858,6 @@ sh "{query}"</string>
 			<string>alfred.workflow.action.terminalcommand</string>
 			<key>uid</key>
 			<string>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>echo "url_dev: {query}" &gt;&gt; ~/active/files/settings.yml</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>30660F7A-7649-4BAC-9250-7914F67C63E4</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>echo "url_staging: {query}" &gt;&gt; ~/active/files/settings.yml</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>B71E3EF1-A5EC-4D4B-BC28-FBA5AE5D93F5</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>URL Set</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>A0940900-A150-42A4-A078-CAA4FD2887DA</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>,pb set url</string>
-				<key>subtext</key>
-				<string>Set dev URL, hold CMD for staging, option for production</string>
-				<key>text</key>
-				<string>Set URL</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>58C9C91C-054B-49D4-BFED-2C87E5163A6F</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>echo "url_production: {query}" &gt;&gt; ~/active/files/settings.yml</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>0FE344BF-FC25-410C-BCEF-D6F058B3B49F</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2386,234 +1991,6 @@ terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Cli
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p notes</string>
-				<key>text</key>
-				<string>Notes: Open</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>E375BA39-9941-46E0-BEA5-C37749F4C65A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>open "$(cat ~/active/files/settings.yml | grep ^notes: | sed "s/notes: //")"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>638A8F29-29B1-4023-8807-19A7C79360FA</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>,p fd</string>
-				<key>subtext</key>
-				<string>Search settings file for 'Question: Answer' by passing in Question. Seperate words with .*</string>
-				<key>text</key>
-				<string>Notes: Find Definition</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>9F2B5576-F33F-4EA7-BF3F-5D90928B1B1B</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Project Helper</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>19216972-0BD0-4DCE-9B7E-6D9B82D8962D</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>QUESTION=$(echo "{query}" | sed "s/ /\.\*/")
-# NOTES=$(cat ~/active/files/settings.yml | grep ^notes: | sed "s/notes: //")
-# ANSWER=$(cat "$NOTES" | grep "\w*:\s" | grep -i "$QUESTION")
-ANSWER=`cat ~/active/files/settings.yml | grep "\w*:\s" | grep -i "$QUESTION"`
-echo "$ANSWER" | sed "s/.*: //" | tr -d '\n' | pbcopy
-if [$ANSWER = ""]
-then
-  echo "Answer not found"
-else
-  echo "Answer in clipboard"
-fi
-</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>9CDB715B-F4C8-413F-B114-0563DCC75747</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string># @todo close all SourceTree windows first
-open ~/active/site-root -a SourceTree</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>145B1B59-27E3-4B25-9136-773DF58C0137</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p sourcetree</string>
-				<key>subtext</key>
-				<string>Open Git Repo in SourceTree</string>
-				<key>text</key>
-				<string>SourceTree View</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>BC6CBA90-1AE1-46E1-A513-814392563217</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>Drupal Admin password set to "{query}" and copied.</string>
-				<key>title</key>
-				<string>Project Helper</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>E46AEBC0-51EE-4740-8BD2-333FAE1E93A7</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>,pb pw reset</string>
-				<key>subtext</key>
-				<string>Reset Drupal password by passing in a new password.</string>
-				<key>text</key>
-				<string>PW Reset</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>DF0434CC-8A95-4942-A98B-2E0E4276B53E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>cd ~/active/site-root
-/opt/local/bin/drush upwd Administrator --password="{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>1FB6A77C-DBBD-4349-8D47-00CF28828A7F</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>4E5C1BF6-BEB4-4E42-A727-AF20EA6795A1</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -2648,40 +2025,20 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2330</real>
 		</dict>
-		<key>0FE344BF-FC25-410C-BCEF-D6F058B3B49F</key>
-		<dict>
-			<key>ypos</key>
-			<real>3880</real>
-		</dict>
 		<key>1389402B-89C2-4AC4-8D1C-2659A10820D9</key>
 		<dict>
 			<key>ypos</key>
 			<real>1220</real>
-		</dict>
-		<key>145B1B59-27E3-4B25-9136-773DF58C0137</key>
-		<dict>
-			<key>ypos</key>
-			<real>5700</real>
 		</dict>
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<dict>
 			<key>ypos</key>
 			<real>4320</real>
 		</dict>
-		<key>19216972-0BD0-4DCE-9B7E-6D9B82D8962D</key>
-		<dict>
-			<key>ypos</key>
-			<real>5510</real>
-		</dict>
 		<key>198E6930-07E8-4A45-AC5A-F0349467AE4C</key>
 		<dict>
 			<key>ypos</key>
 			<real>2210</real>
-		</dict>
-		<key>19CC55F5-651D-4A1E-A1F3-5EDE535BA460</key>
-		<dict>
-			<key>ypos</key>
-			<real>3130</real>
 		</dict>
 		<key>1E772088-EAB6-4417-A2C5-14300A4A039E</key>
 		<dict>
@@ -2697,11 +2054,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
-		</dict>
-		<key>1FB6A77C-DBBD-4349-8D47-00CF28828A7F</key>
-		<dict>
-			<key>ypos</key>
-			<real>6220</real>
 		</dict>
 		<key>204D01B1-B8F6-4D69-8CAE-3BF94B287705</key>
 		<dict>
@@ -2733,11 +2085,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>1120</real>
 		</dict>
-		<key>30660F7A-7649-4BAC-9250-7914F67C63E4</key>
-		<dict>
-			<key>ypos</key>
-			<real>3660</real>
-		</dict>
 		<key>332988CC-BBF4-4D27-A4CE-D2290ECD8341</key>
 		<dict>
 			<key>ypos</key>
@@ -2747,11 +2094,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>1720</real>
-		</dict>
-		<key>3C371E38-966D-48AB-A350-B9F0A79C6ABC</key>
-		<dict>
-			<key>ypos</key>
-			<real>470</real>
 		</dict>
 		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
 		<dict>
@@ -2768,25 +2110,10 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2080</real>
 		</dict>
-		<key>491E748E-DBF1-45DA-8522-F87DC884D100</key>
-		<dict>
-			<key>ypos</key>
-			<real>3030</real>
-		</dict>
-		<key>4E5C1BF6-BEB4-4E42-A727-AF20EA6795A1</key>
-		<dict>
-			<key>ypos</key>
-			<real>6280</real>
-		</dict>
 		<key>54F101B9-E517-4EAB-838A-F848D5EC1B89</key>
 		<dict>
 			<key>ypos</key>
 			<real>2600</real>
-		</dict>
-		<key>58C9C91C-054B-49D4-BFED-2C87E5163A6F</key>
-		<dict>
-			<key>ypos</key>
-			<real>3770</real>
 		</dict>
 		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
 		<dict>
@@ -2813,11 +2140,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2650</real>
 		</dict>
-		<key>638A8F29-29B1-4023-8807-19A7C79360FA</key>
-		<dict>
-			<key>ypos</key>
-			<real>5390</real>
-		</dict>
 		<key>660DD24D-570B-42B2-83B3-44EB3E477149</key>
 		<dict>
 			<key>ypos</key>
@@ -2838,11 +2160,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>230</real>
 		</dict>
-		<key>7D564432-AED6-4563-9276-510B6943999A</key>
-		<dict>
-			<key>ypos</key>
-			<real>3030</real>
-		</dict>
 		<key>8419ACD0-4077-4763-99FF-65EB19584569</key>
 		<dict>
 			<key>ypos</key>
@@ -2852,21 +2169,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>1620</real>
-		</dict>
-		<key>9CDB715B-F4C8-413F-B114-0563DCC75747</key>
-		<dict>
-			<key>ypos</key>
-			<real>5510</real>
-		</dict>
-		<key>9F2B5576-F33F-4EA7-BF3F-5D90928B1B1B</key>
-		<dict>
-			<key>ypos</key>
-			<real>5510</real>
-		</dict>
-		<key>A0940900-A150-42A4-A078-CAA4FD2887DA</key>
-		<dict>
-			<key>ypos</key>
-			<real>3770</real>
 		</dict>
 		<key>A440DEC7-CFB5-4835-8F5F-304F75D7380E</key>
 		<dict>
@@ -2888,25 +2190,10 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>1020</real>
 		</dict>
-		<key>B71E3EF1-A5EC-4D4B-BC28-FBA5AE5D93F5</key>
-		<dict>
-			<key>ypos</key>
-			<real>3770</real>
-		</dict>
-		<key>BC6CBA90-1AE1-46E1-A513-814392563217</key>
-		<dict>
-			<key>ypos</key>
-			<real>5700</real>
-		</dict>
 		<key>BD7CC7DF-5025-4CA6-B1D0-3BE09215D9F6</key>
 		<dict>
 			<key>ypos</key>
 			<real>1950</real>
-		</dict>
-		<key>BEB157AD-443A-4863-87EE-BF5711627340</key>
-		<dict>
-			<key>ypos</key>
-			<real>3130</real>
 		</dict>
 		<key>C0E10F81-8007-4B7F-8EDD-C6113F063CD4</key>
 		<dict>
@@ -2938,11 +2225,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>3490</real>
 		</dict>
-		<key>D8CB5F2D-E481-4DA1-956B-BF293905E9A7</key>
-		<dict>
-			<key>ypos</key>
-			<real>470</real>
-		</dict>
 		<key>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</key>
 		<dict>
 			<key>ypos</key>
@@ -2962,21 +2244,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>230</real>
-		</dict>
-		<key>DF0434CC-8A95-4942-A98B-2E0E4276B53E</key>
-		<dict>
-			<key>ypos</key>
-			<real>6220</real>
-		</dict>
-		<key>E375BA39-9941-46E0-BEA5-C37749F4C65A</key>
-		<dict>
-			<key>ypos</key>
-			<real>5390</real>
-		</dict>
-		<key>E46AEBC0-51EE-4740-8BD2-333FAE1E93A7</key>
-		<dict>
-			<key>ypos</key>
-			<real>6170</real>
 		</dict>
 		<key>E5C20E8F-24B4-4E07-949C-FE1082BCF2BB</key>
 		<dict>
