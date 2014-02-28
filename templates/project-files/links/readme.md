@@ -1,0 +1,1 @@
+Add links in the form of `.webloc` files here for frequently accessed sites for the project. Simply drag the favicon from the site and drop it in the folder. Afterwards running `,p links` and then typing will filter the list of sites in here, then open in your default browser after.

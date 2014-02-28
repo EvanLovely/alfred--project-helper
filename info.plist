@@ -848,25 +848,6 @@ echo "Assets Directory set to {query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-				</array>
-				<key>name</key>
-				<string>Set Scripts Folder for Project</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
@@ -880,6 +861,25 @@ echo "Scripts Directory set to {query}"</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>768087C3-5E29-44B7-90E3-73A433618BF5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Scripts Folder for Project</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1129,6 +1129,18 @@ echo "Notes File set to {query}"</string>
 						<key>words</key>
 						<true/>
 					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemWhereFroms</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<false/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
 				</array>
 				<key>includesystem</key>
 				<false/>
@@ -1136,7 +1148,7 @@ echo "Notes File set to {query}"</string>
 				<string>,p links</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/links</string>
+					<string>~/active/files/links</string>
 				</array>
 				<key>subtext</key>
 				<string>Show Links for Active Project</string>
