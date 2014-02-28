@@ -898,7 +898,8 @@ sh setup-folders.sh "{query}"
 				<key>script</key>
 				<string>source bash_functions
 replacesetting gdocs "{query}" 
-</string>
+rm -rf ~/active/docs
+ln -s "{query}" ~/active/docs</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>

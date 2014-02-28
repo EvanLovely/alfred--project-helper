@@ -31,7 +31,7 @@ addsetting() {
 
 replacesetting() {
   rdef ~/active/files/settings.yml $1
-  addsetting $1 $2
+  addsetting "$1" "$2"
 }
 
 removesetting() {
