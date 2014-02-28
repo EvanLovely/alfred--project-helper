@@ -1211,6 +1211,30 @@ echo "Notes File set to {query}"</string>
 						<key>words</key>
 						<true/>
 					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemTitle</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<false/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemUserTags</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<false/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
 				</array>
 				<key>includesystem</key>
 				<false/>
@@ -1283,11 +1307,11 @@ echo "Notes File set to {query}"</string>
 					</dict>
 					<dict>
 						<key>field</key>
-						<string>kMDItemOMUserTags</string>
+						<string>kMDItemUserTags</string>
 						<key>not</key>
 						<false/>
 						<key>split</key>
-						<true/>
+						<false/>
 						<key>value</key>
 						<string>{query}</string>
 						<key>words</key>
@@ -1295,11 +1319,11 @@ echo "Notes File set to {query}"</string>
 					</dict>
 					<dict>
 						<key>field</key>
-						<string>kMDItemWhereFroms</string>
+						<string>kMDItemTitle</string>
 						<key>not</key>
 						<false/>
 						<key>split</key>
-						<true/>
+						<false/>
 						<key>value</key>
 						<string>{query}</string>
 						<key>words</key>
@@ -1309,17 +1333,18 @@ echo "Notes File set to {query}"</string>
 				<key>includesystem</key>
 				<false/>
 				<key>keyword</key>
-				<string>,p sass</string>
+				<string>,p css</string>
 				<key>scopes</key>
 				<array>
 					<string>~/active/theme</string>
 				</array>
 				<key>subtext</key>
-				<string>Show SASS files in Active Project's Theme</string>
+				<string>Show SASS/LESS files in Active Project's Theme</string>
 				<key>title</key>
-				<string>SASS</string>
+				<string>CSS in Theme</string>
 				<key>types</key>
 				<array>
+					<string>org.lesscss</string>
 					<string>org.sass-lang</string>
 				</array>
 				<key>withspace</key>
@@ -1411,7 +1436,7 @@ echo "Notes File set to {query}"</string>
 				<key>subtext</key>
 				<string>Show .tpl.php Files in Theme Directory</string>
 				<key>title</key>
-				<string>TPL</string>
+				<string>TPL Files in Theme</string>
 				<key>types</key>
 				<array>
 					<string>public.php-script</string>
@@ -1466,6 +1491,18 @@ echo "Notes File set to {query}"</string>
 						<false/>
 						<key>split</key>
 						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemUserTags</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<false/>
 						<key>value</key>
 						<string>{query}</string>
 						<key>words</key>
