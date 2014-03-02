@@ -260,6 +260,17 @@
 		</array>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<array/>
+		<key>88CF1D42-4757-4ADE-8C30-A161D62B68F3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>92CA46FE-4B37-4C2D-8F0C-94B51D5CDF61</key>
 		<array>
 			<dict>
@@ -373,33 +384,6 @@
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>SSH into Production</string>
-			</dict>
-		</array>
-		<key>DC3D2F9E-309B-49AA-92C7-580CC8FE6A87</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>8419ACD0-4077-4763-99FF-65EB19584569</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>06A688B4-4B08-4625-A674-2FC44C0AF479</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>21F4ADCB-89D9-4F20-BBC4-38096152CCE0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
 			</dict>
 		</array>
 		<key>DD359FF6-74C4-40A3-B814-E2A566EF848D</key>
@@ -1123,16 +1107,6 @@ sh start.sh
 		</dict>
 		<dict>
 			<key>config</key>
-			<dict/>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
 			<dict>
 				<key>anchorfields</key>
 				<true/>
@@ -1210,6 +1184,16 @@ sh start.sh
 			<string>alfred.workflow.input.filefilter</string>
 			<key>uid</key>
 			<string>332988CC-BBF4-4D27-A4CE-D2290ECD8341</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1804,6 +1788,46 @@ git pull &amp;&amp;
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p commit</string>
+				<key>subtext</key>
+				<string>Adds all files. Pass in your commit message.</string>
+				<key>text</key>
+				<string>Add &amp; Commit Current Files</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>88CF1D42-4757-4ADE-8C30-A161D62B68F3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>cd ~/active/site-root
+git add . --all
+git commit -m "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
@@ -2287,80 +2311,6 @@ ln -s "{query}" ~/active/docs</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>cd ~/active/theme
-sh ~/active/files/scripts/start-in-theme.sh
-terminal-notifier -title "Project Helper" -subtitle "Theme Scripts Done" -message "Click to Edit" -execute "open -t ~/projects/scripts/start-in-theme.sh"</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
-			<key>uid</key>
-			<string>8419ACD0-4077-4763-99FF-65EB19584569</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p start</string>
-				<key>subtext</key>
-				<string>Run the Start in Site Root &amp; Theme Scripts</string>
-				<key>text</key>
-				<string>Start</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>DC3D2F9E-309B-49AA-92C7-580CC8FE6A87</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>cd ~/active/site-root
-sh ~/active/files/scripts/start-in-site-root.sh
-terminal-notifier -title "Project Helper" -subtitle "Site Root Scripts Done" -message "Click to Edit" -execute "open -t ~/active/files/scripts/start-in-site-root.sh"</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
-			<key>uid</key>
-			<string>06A688B4-4B08-4625-A674-2FC44C0AF479</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>source ~/.bash_profile
-sh ~/active/files/scripts/open-at-start.sh
-terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/active/files/scripts/open-at-start.sh"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>21F4ADCB-89D9-4F20-BBC4-38096152CCE0</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -2374,11 +2324,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>110</real>
-		</dict>
-		<key>06A688B4-4B08-4625-A674-2FC44C0AF479</key>
-		<dict>
-			<key>ypos</key>
-			<real>4570</real>
 		</dict>
 		<key>0A533F4D-23F4-496A-8964-069362684505</key>
 		<dict>
@@ -2429,11 +2374,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3560</real>
-		</dict>
-		<key>21F4ADCB-89D9-4F20-BBC4-38096152CCE0</key>
-		<dict>
-			<key>ypos</key>
-			<real>4680</real>
 		</dict>
 		<key>264BCFE5-5582-42A5-801C-A69D6644A7C1</key>
 		<dict>
@@ -2535,10 +2475,10 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>210</real>
 		</dict>
-		<key>8419ACD0-4077-4763-99FF-65EB19584569</key>
+		<key>88CF1D42-4757-4ADE-8C30-A161D62B68F3</key>
 		<dict>
 			<key>ypos</key>
-			<real>4460</real>
+			<real>2060</real>
 		</dict>
 		<key>92CA46FE-4B37-4C2D-8F0C-94B51D5CDF61</key>
 		<dict>
@@ -2548,12 +2488,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>A440DEC7-CFB5-4835-8F5F-304F75D7380E</key>
 		<dict>
 			<key>ypos</key>
-			<real>830</real>
+			<real>950</real>
 		</dict>
 		<key>B0A5B1A6-C1D8-4641-B2BA-C684D12D61A0</key>
 		<dict>
 			<key>ypos</key>
-			<real>2090</real>
+			<real>2320</real>
 		</dict>
 		<key>B254C2C8-904D-49D8-81CB-3C454E91A9E0</key>
 		<dict>
@@ -2590,10 +2530,15 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>1450</real>
 		</dict>
+		<key>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</key>
+		<dict>
+			<key>ypos</key>
+			<real>2060</real>
+		</dict>
 		<key>D291A93E-DCCF-4FB7-BCF2-65823832034C</key>
 		<dict>
 			<key>ypos</key>
-			<real>2090</real>
+			<real>2320</real>
 		</dict>
 		<key>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</key>
 		<dict>
@@ -2604,11 +2549,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>1680</real>
-		</dict>
-		<key>DC3D2F9E-309B-49AA-92C7-580CC8FE6A87</key>
-		<dict>
-			<key>ypos</key>
-			<real>4510</real>
 		</dict>
 		<key>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</key>
 		<dict>
