@@ -1669,6 +1669,61 @@ sh "{query}"</string>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>SSH="$(cat ~/active/files/settings.yml | grep ^ssh_staging: | sed "s/ssh_staging: //")"
+terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/active/files/settings.yml"
+$SSH</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>B254C2C8-904D-49D8-81CB-3C454E91A9E0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p ssh</string>
+				<key>subtext</key>
+				<string>SSH into Staging. Hold CMD for Production.</string>
+				<key>text</key>
+				<string>SSH</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>SSH="$(cat ~/active/files/settings.yml | grep ^ssh_prod: | sed "s/ssh_prod: //")"
+terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/active/files/settings.yml"
+$SSH</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>2BACE0E9-E883-43D7-A060-C8FA41872D77</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
 				<string>cd ~/active/site-root &amp;&amp;
@@ -1789,6 +1844,62 @@ git pull &amp;&amp;
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p set open</string>
+				<key>subtext</key>
+				<string>Open files, folders, and URLs that have been set.</string>
+				<key>text</key>
+				<string>Set stuff to open at start</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>echo "open \"{query}\"" &gt;&gt; ~/active/files/scripts/open-at-start.sh
+terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/active/files/scripts/open-at-start.sh"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0CC40071-F05B-4DD6-9F85-DBA41A8A2384</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Set to open with Project</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>6FB551F4-2AC6-491B-A2E4-567583FD533C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -1838,61 +1949,6 @@ git pull &amp;&amp;
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>61DD632E-0BF4-4753-AF16-BB51A044D3C1</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>SSH="$(cat ~/active/files/settings.yml | grep ^ssh_staging: | sed "s/ssh_staging: //")"
-terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/active/files/settings.yml"
-$SSH</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
-			<key>uid</key>
-			<string>B254C2C8-904D-49D8-81CB-3C454E91A9E0</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p ssh</string>
-				<key>subtext</key>
-				<string>SSH into Staging. Hold CMD for Production.</string>
-				<key>text</key>
-				<string>SSH</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>SSH="$(cat ~/active/files/settings.yml | grep ^ssh_prod: | sed "s/ssh_prod: //")"
-terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/active/files/settings.yml"
-$SSH</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
-			<key>uid</key>
-			<string>2BACE0E9-E883-43D7-A060-C8FA41872D77</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2234,62 +2290,6 @@ ln -s "{query}" ~/active/docs</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>,p set open</string>
-				<key>subtext</key>
-				<string>Open files, folders, and URLs that have been set.</string>
-				<key>text</key>
-				<string>Set stuff to open at start</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>echo "open \"{query}\"" &gt;&gt; ~/active/files/scripts/open-at-start.sh
-terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/active/files/scripts/open-at-start.sh"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>0CC40071-F05B-4DD6-9F85-DBA41A8A2384</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array/>
-				<key>name</key>
-				<string>Set to open with Project</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>6FB551F4-2AC6-491B-A2E4-567583FD533C</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -2388,12 +2388,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>0CC40071-F05B-4DD6-9F85-DBA41A8A2384</key>
 		<dict>
 			<key>ypos</key>
-			<real>4320</real>
+			<real>2550</real>
 		</dict>
 		<key>0ECAD813-8E11-4FA9-BB00-C776D79E91FE</key>
 		<dict>
 			<key>ypos</key>
-			<real>2330</real>
+			<real>1960</real>
 		</dict>
 		<key>1389402B-89C2-4AC4-8D1C-2659A10820D9</key>
 		<dict>
@@ -2403,12 +2403,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<dict>
 			<key>ypos</key>
-			<real>4320</real>
+			<real>2550</real>
 		</dict>
 		<key>198E6930-07E8-4A45-AC5A-F0349467AE4C</key>
 		<dict>
 			<key>ypos</key>
-			<real>2210</real>
+			<real>1860</real>
 		</dict>
 		<key>1E772088-EAB6-4417-A2C5-14300A4A039E</key>
 		<dict>
@@ -2418,7 +2418,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>1EFFF3DB-9730-4315-B50C-A9A66EC509BF</key>
 		<dict>
 			<key>ypos</key>
-			<real>2550</real>
+			<real>2740</real>
 		</dict>
 		<key>1F5C5BAC-8650-4E74-9539-F0F154BE4E65</key>
 		<dict>
@@ -2438,7 +2438,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>264BCFE5-5582-42A5-801C-A69D6644A7C1</key>
 		<dict>
 			<key>ypos</key>
-			<real>2330</real>
+			<real>1960</real>
 		</dict>
 		<key>279C4C88-EE1B-4977-AFD5-EC907831075C</key>
 		<dict>
@@ -2448,7 +2448,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>2BACE0E9-E883-43D7-A060-C8FA41872D77</key>
 		<dict>
 			<key>ypos</key>
-			<real>2860</real>
+			<real>1740</real>
 		</dict>
 		<key>2C1E3F61-4F37-4364-AF65-05E4181C562F</key>
 		<dict>
@@ -2488,7 +2488,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>54F101B9-E517-4EAB-838A-F848D5EC1B89</key>
 		<dict>
 			<key>ypos</key>
-			<real>2600</real>
+			<real>2790</real>
 		</dict>
 		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
 		<dict>
@@ -2513,7 +2513,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>61DD632E-0BF4-4753-AF16-BB51A044D3C1</key>
 		<dict>
 			<key>ypos</key>
-			<real>2650</real>
+			<real>2850</real>
 		</dict>
 		<key>660DD24D-570B-42B2-83B3-44EB3E477149</key>
 		<dict>
@@ -2523,7 +2523,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>6FB551F4-2AC6-491B-A2E4-567583FD533C</key>
 		<dict>
 			<key>ypos</key>
-			<real>4420</real>
+			<real>2610</real>
 		</dict>
 		<key>768087C3-5E29-44B7-90E3-73A433618BF5</key>
 		<dict>
@@ -2553,12 +2553,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>B0A5B1A6-C1D8-4641-B2BA-C684D12D61A0</key>
 		<dict>
 			<key>ypos</key>
-			<real>2450</real>
+			<real>2090</real>
 		</dict>
 		<key>B254C2C8-904D-49D8-81CB-3C454E91A9E0</key>
 		<dict>
 			<key>ypos</key>
-			<real>2750</real>
+			<real>1620</real>
 		</dict>
 		<key>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</key>
 		<dict>
@@ -2573,7 +2573,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>C0E10F81-8007-4B7F-8EDD-C6113F063CD4</key>
 		<dict>
 			<key>ypos</key>
-			<real>2210</real>
+			<real>1860</real>
 		</dict>
 		<key>C4229CD0-DE92-4CAC-885F-9EEB115FD830</key>
 		<dict>
@@ -2593,7 +2593,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>D291A93E-DCCF-4FB7-BCF2-65823832034C</key>
 		<dict>
 			<key>ypos</key>
-			<real>2450</real>
+			<real>2090</real>
 		</dict>
 		<key>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</key>
 		<dict>
@@ -2603,7 +2603,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</key>
 		<dict>
 			<key>ypos</key>
-			<real>2810</real>
+			<real>1680</real>
 		</dict>
 		<key>DC3D2F9E-309B-49AA-92C7-580CC8FE6A87</key>
 		<dict>
