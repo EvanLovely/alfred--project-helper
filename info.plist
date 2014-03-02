@@ -105,6 +105,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>2EA942C4-FA76-4991-A35F-CBB59D380541</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>332988CC-BBF4-4D27-A4CE-D2290ECD8341</key>
 		<array>
 			<dict>
@@ -1375,6 +1386,88 @@ sh start.sh
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemUserTags</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<false/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>,p site</string>
+				<key>scopes</key>
+				<array>
+					<string>~/active/site-root</string>
+				</array>
+				<key>subtext</key>
+				<string>For any file</string>
+				<key>title</key>
+				<string>Search Site Root</string>
+				<key>types</key>
+				<array/>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>2EA942C4-FA76-4991-A35F-CBB59D380541</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -2268,6 +2361,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3160</real>
+		</dict>
+		<key>2EA942C4-FA76-4991-A35F-CBB59D380541</key>
+		<dict>
+			<key>ypos</key>
+			<real>1230</real>
 		</dict>
 		<key>332988CC-BBF4-4D27-A4CE-D2290ECD8341</key>
 		<dict>
