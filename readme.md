@@ -1,5 +1,8 @@
 # Alfred Project Helper
 
+This [Alfred](http://alfredapp.com) Workflow is created by [me](http://evanlovely.com), a Front End [Drupal](http://drupal.org) Developer who juggles multiple projects and created a utility around making that easier. It's for Web Developers in general. You can easily access your current project's Site Root, Theme Folder, and Files (like comps, wireframes, and notes). Then when it's time to switch to another project, it's easy.
+
+
 ## Requirements
 
 - [Alfred Powerpack](http://www.alfredapp.com/)
@@ -13,7 +16,7 @@
 2. Invoke Alfred, type `,pn {name of new project}` to create a new project. 
 3. Answer the questions about your project like site root, theme folder, files directory, and more.
 
-You can now access these folders you setup in `~/active` (We can change this later). For now, you'll see that you can get to your projects Site Root here: `~/active/site-root`, to your Theme directory here: `~/active/theme`, and to your files here: `~/active/files` (The files directory just mentioned has actually been created at `~/Dropbox/projects/{project name} files/` and then symbolically linked to `~/active/files`.). This folder will open in finder and you should fill it up with your projects files.
+You can now access these folders you setup in `~/active` (We can change this later). For now, you'll see that you can get to your projects Site Root here: `~/active/site-root`, to your Theme directory here: `~/active/theme`, and to your files here: `~/active/files` (The files directory just mentioned has actually been created at `~/Dropbox/projects/{project name} files/` and then symbolically linked to `~/active/files`.). This folder will open in finder and you should fill it up with your projects files. The rest of the folders' paths have been stored in `~/active/files/settings.yml` and then sym linked into `~/active`.
 
 ## Commands to start with
 
@@ -44,19 +47,36 @@ You can now access these folders you setup in `~/active` (We can change this lat
 
 Once you've made a few projects using `,pn`, you can switch between them by using `,ps {project name}`. What happens next is this:
 
-- 
+- The `~/active` directory is erased - it was all symbolic links anyway.
+- An empty `~/active` folder is created and the new project selected gets symbolic links created from the sources you've setup: `~/active/files`, `~/active/site-root`, `~/active/theme` and `~/active/docs` (Google Docs).
+- Site Root Scripts Run - At the setup, you told what scripts to run in the site root and they run now. Useful for things like `git pull`. You can edit this at `~/active/files/scripts/start-in-site-root.sh`.
+- Theme Scripts Run - Again, you added this in the setup. Useful for commands like `compass watch`. You can edit this at `~/active/files/scripts/start-in-theme.sh`
+- Open Scripts Run - This just opens stuff you want open when you start a project. Files, folders, or URLs can be added. I typically have this open: 
+    - Sublime Text project files
+    - Markdown Notes File
+    - OmniFocus Project URL
+    - Project Management site (like Basecamp)
 
 This way, no matter what project you are working on, you can use the same commands to access the same type of files and perform common taks, but just for a different project. Muscle memory will improve productivity. 
 
 
+---
+
 # Advanced Useage
+
+## Using `~/active` in your scripts and in Terminal
+
+One thing that is **super useful** is now, even without Alfred, your current project's Site Root is at `~/active/site-root` which makes it very easy to get to. I love having `~/active/theme` available - *so* much shorter. Not only shorter, but reusable and reliable. 
+
 
 ## Custom Scripts
 
 In your project folder, there is a scripts folder, if you add more scripts then you can run them via `,p scripts {query}` (which will run in the site root.)
 
 
-## Help with development of this project via Git
+# Help with development of this project via Git
+
+If you want to help with this project, either add an Issue or Fork this project, and make a few changes. Thanks!
 
 1. Open Alfred Prefs, go to Workflow, make a new Blank Workflow. Name it anything.
 2. Click the plus in the upper right > Actions > Run Script
