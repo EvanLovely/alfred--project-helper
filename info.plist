@@ -1710,9 +1710,9 @@ $SSH</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cd ~/active/site-root &amp;&amp;
-git pull &amp;&amp;
-git push &amp;&amp;
+				<string>cd ~/active/site-root
+git pull
+git push
 /opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Push Done (after pulling)"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -1772,8 +1772,8 @@ git push &amp;&amp;
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cd ~/active/site-root &amp;&amp;
-git pull &amp;&amp;
+				<string>cd ~/active/site-root
+git pull
 /opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Pull Done"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -1814,7 +1814,8 @@ git pull &amp;&amp;
 				<key>script</key>
 				<string>cd ~/active/site-root
 git add . --all
-git commit -m "{query}"</string>
+git commit -m "{query}"
+/opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Commit Added"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
