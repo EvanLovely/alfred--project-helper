@@ -1711,9 +1711,8 @@ $SSH</string>
 				<integer>127</integer>
 				<key>script</key>
 				<string>cd ~/active/site-root
-git pull
 git push
-/opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Push Done (after pulling)"</string>
+/opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Push Done"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
