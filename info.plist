@@ -607,6 +607,22 @@ then
 	addsetting dev_url "$P_DEV_URL"
 fi
 
+# Get Staging SSH
+P_SSH_STAGING=`osascript -e 'set response to the text returned of (display dialog "What is your ssh command for getting into the Staging Server?" with title "Staging SSH" default answer "ssh user@server.com")
+response'`
+if [ "$P_SSH_STAGING" ]
+then
+	addsetting ssh_staging "$P_SSH_STAGING"
+fi
+
+# Get Production SSH
+P_SSH_PROD=`osascript -e 'set response to the text returned of (display dialog "What is your ssh command for getting into the Production Server?" with title "Production SSH" default answer "ssh user@server.com")
+response'`
+if [ "$P_SSH_PROD" ]
+then
+	addsetting ssh_prod "$P_SSH_PROD"
+fi
+
 sh start.sh 
 open ~/Dropbox/projects/$P-files
 /opt/local/bin/terminal-notifier -title "Project Helper" -message "$P Project Made. Site Root Next."</string>
@@ -1946,7 +1962,7 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<key>keyword</key>
 				<string>,p set ssh</string>
 				<key>subtext</key>
-				<string>Pass in what command you want to start a new Terminal window in (include `ssh`)</string>
+				<string>Pass in what command you want to start a new Terminal window in (include `ssh`). Hold CMD for Production.</string>
 				<key>text</key>
 				<string>Set SSH</string>
 				<key>withspace</key>
