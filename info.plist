@@ -472,6 +472,8 @@
 				<string>source bash_functions
 sh ~/active/files/scripts/shutdown.sh
 P=`echo "{query}" | sed "s/ /-/g"`
+mkdir ~/Dropbox 
+mkdir ~/Dropbox/projects
 cp -r templates/project-files ~/Dropbox/projects/$P-files
 mv ~/Dropbox/projects/$P-files/notes.md ~/Dropbox/projects/$P-files/$P-notes.md
 tags -add p-$P ~/Dropbox/projects/$P-files/$P-notes.md
