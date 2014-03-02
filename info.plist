@@ -50,17 +50,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>1F5C5BAC-8650-4E74-9539-F0F154BE4E65</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>0A533F4D-23F4-496A-8964-069362684505</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>204D01B1-B8F6-4D69-8CAE-3BF94B287705</key>
 		<array>
 			<dict>
@@ -474,42 +463,6 @@
 	<string>Project Helper</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,psettings</string>
-				<key>subtext</key>
-				<string>Set them in Alfred Preferences at Top</string>
-				<key>text</key>
-				<string>Apply Project Settings</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>1F5C5BAC-8650-4E74-9539-F0F154BE4E65</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>0A533F4D-23F4-496A-8964-069362684505</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -1803,6 +1756,26 @@ git pull
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>cd ~/active/site-root
+git add . --all
+git commit -m "{query}"
+/opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Commit Added"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
@@ -1818,26 +1791,6 @@ git pull
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>88CF1D42-4757-4ADE-8C30-A161D62B68F3</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>cd ~/active/site-root
-git add . --all
-git commit -m "{query}"
-/opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Commit Added"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2174,25 +2127,6 @@ echo "Assets Directory set to {query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-				</array>
-				<key>name</key>
-				<string>Set Scripts Folder for Project</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
@@ -2219,12 +2153,12 @@ echo "Scripts Directory set to {query}"</string>
 					<string>public.folder</string>
 				</array>
 				<key>name</key>
-				<string>Set Links Folder for Project</string>
+				<string>Set Scripts Folder for Project</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
-			<string>5FA64466-7453-4ADB-8208-3288DAFC9F00</string>
+			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2244,6 +2178,25 @@ echo "Links Directory set to {query}"</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>EEE42D25-C472-441A-A97B-7A43F081A9F8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Links Folder for Project</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>5FA64466-7453-4ADB-8208-3288DAFC9F00</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2339,11 +2292,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>00E3B1DC-4476-45B4-A2B5-D402D1D1A17A</key>
 		<dict>
 			<key>ypos</key>
-			<real>110</real>
-		</dict>
-		<key>0A533F4D-23F4-496A-8964-069362684505</key>
-		<dict>
-			<key>ypos</key>
 			<real>10</real>
 		</dict>
 		<key>0CC40071-F05B-4DD6-9F85-DBA41A8A2384</key>
@@ -2380,11 +2328,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>2740</real>
-		</dict>
-		<key>1F5C5BAC-8650-4E74-9539-F0F154BE4E65</key>
-		<dict>
-			<key>ypos</key>
-			<real>10</real>
 		</dict>
 		<key>204D01B1-B8F6-4D69-8CAE-3BF94B287705</key>
 		<dict>
@@ -2429,7 +2372,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
 		<dict>
 			<key>ypos</key>
-			<real>310</real>
+			<real>230</real>
 		</dict>
 		<key>3E5A413E-3B68-4D3E-91BD-1789A40CB85D</key>
 		<dict>
@@ -2439,7 +2382,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>44D5B0B5-FC29-4217-8655-6EAC07BE2712</key>
 		<dict>
 			<key>ypos</key>
-			<real>310</real>
+			<real>230</real>
 		</dict>
 		<key>54F101B9-E517-4EAB-838A-F848D5EC1B89</key>
 		<dict>
@@ -2449,7 +2392,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
 		<dict>
 			<key>ypos</key>
-			<real>500</real>
+			<real>470</real>
 		</dict>
 		<key>598A781A-BE08-4063-B23E-5B8426BC63E1</key>
 		<dict>
@@ -2489,7 +2432,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<dict>
 			<key>ypos</key>
-			<real>210</real>
+			<real>110</real>
 		</dict>
 		<key>88CF1D42-4757-4ADE-8C30-A161D62B68F3</key>
 		<dict>
@@ -2569,7 +2512,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</key>
 		<dict>
 			<key>ypos</key>
-			<real>440</real>
+			<real>400</real>
 		</dict>
 		<key>DD359FF6-74C4-40A3-B814-E2A566EF848D</key>
 		<dict>
@@ -2579,7 +2522,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>DD98A496-0BDF-4D7B-8F6B-95D646E2726C</key>
 		<dict>
 			<key>ypos</key>
-			<real>210</real>
+			<real>110</real>
 		</dict>
 		<key>DE2BA2CD-D3C5-4EFF-9B7B-96AEFF8F2C45</key>
 		<dict>
@@ -2614,12 +2557,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>FC9F0D22-2740-43D0-A373-ED7F8B97BD9A</key>
 		<dict>
 			<key>ypos</key>
-			<real>110</real>
+			<real>10</real>
 		</dict>
 		<key>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</key>
 		<dict>
 			<key>ypos</key>
-			<real>440</real>
+			<real>400</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
