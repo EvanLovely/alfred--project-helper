@@ -12,7 +12,7 @@ This [Alfred](http://alfredapp.com) Workflow is created by [me](http://evanlovel
 
 ## Inital Config
 
-1. Install [Workflow](https://github.com/EvanLovely/alfred--project-helper/blob/master/Project%20Helper.alfredworkflow)
+1. Install [Workflow](https://github.com/EvanLovely/alfred--project-helper/blob/master/Project%20Helper.alfredworkflow?raw=true)
 2. Invoke Alfred, type `,pn {name of new project}` to create a new project. 
 3. Answer the questions about your project like site root, theme folder, files directory, and more.
 
