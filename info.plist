@@ -424,6 +424,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>DE2BA2CD-D3C5-4EFF-9B7B-96AEFF8F2C45</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>EC1CA97C-97D3-46C0-8DEE-2DE5A1EDD093</key>
 		<array>
 			<dict>
@@ -1468,6 +1479,88 @@ sh start.sh
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemUserTags</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<false/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>,p theme</string>
+				<key>scopes</key>
+				<array>
+					<string>~/active/theme</string>
+				</array>
+				<key>subtext</key>
+				<string>For any file</string>
+				<key>title</key>
+				<string>Search theme</string>
+				<key>types</key>
+				<array/>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>DE2BA2CD-D3C5-4EFF-9B7B-96AEFF8F2C45</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -2495,7 +2588,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>CAD65936-403B-4947-B81D-8A938ACE03C7</key>
 		<dict>
 			<key>ypos</key>
-			<real>1440</real>
+			<real>1450</real>
 		</dict>
 		<key>D291A93E-DCCF-4FB7-BCF2-65823832034C</key>
 		<dict>
@@ -2505,7 +2598,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</key>
 		<dict>
 			<key>ypos</key>
-			<real>1380</real>
+			<real>1400</real>
 		</dict>
 		<key>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</key>
 		<dict>
@@ -2532,6 +2625,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>210</real>
 		</dict>
+		<key>DE2BA2CD-D3C5-4EFF-9B7B-96AEFF8F2C45</key>
+		<dict>
+			<key>ypos</key>
+			<real>1340</real>
+		</dict>
 		<key>E5C20E8F-24B4-4E07-949C-FE1082BCF2BB</key>
 		<dict>
 			<key>ypos</key>
@@ -2540,7 +2638,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</key>
 		<dict>
 			<key>ypos</key>
-			<real>1510</real>
+			<real>1500</real>
 		</dict>
 		<key>EC1CA97C-97D3-46C0-8DEE-2DE5A1EDD093</key>
 		<dict>
