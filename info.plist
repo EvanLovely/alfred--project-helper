@@ -391,6 +391,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>DD359FF6-74C4-40A3-B814-E2A566EF848D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>DD98A496-0BDF-4D7B-8F6B-95D646E2726C</key>
 		<array>
 			<dict>
@@ -774,6 +785,40 @@ sh start.sh
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p go</string>
+				<key>subtext</key>
+				<string>View Project Folder Shortcuts</string>
+				<key>text</key>
+				<string>Go</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string>~/active</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.browseinalfred</string>
+			<key>uid</key>
+			<string>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -799,34 +844,82 @@ sh start.sh
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>path</key>
-				<string>~/active</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.browseinalfred</string>
-			<key>uid</key>
-			<string>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p go</string>
-				<key>subtext</key>
-				<string>View Project Folder Shortcuts</string>
-				<key>text</key>
-				<string>Go</string>
-				<key>withspace</key>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemUserTags</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<false/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
 				<false/>
+				<key>keyword</key>
+				<string>,p files</string>
+				<key>scopes</key>
+				<array>
+					<string>~/active/files</string>
+				</array>
+				<key>subtext</key>
+				<string>Find anything in the "files" directory</string>
+				<key>title</key>
+				<string>Files for Project</string>
+				<key>types</key>
+				<array/>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.input.filefilter</string>
 			<key>uid</key>
-			<string>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</string>
+			<string>DD359FF6-74C4-40A3-B814-E2A566EF848D</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1008,6 +1101,16 @@ sh start.sh
 		</dict>
 		<dict>
 			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
 			<dict>
 				<key>anchorfields</key>
 				<true/>
@@ -1085,16 +1188,6 @@ sh start.sh
 			<string>alfred.workflow.input.filefilter</string>
 			<key>uid</key>
 			<string>332988CC-BBF4-4D27-A4CE-D2290ECD8341</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict/>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2209,7 +2302,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
 		<dict>
 			<key>ypos</key>
-			<real>410</real>
+			<real>500</real>
 		</dict>
 		<key>598A781A-BE08-4063-B23E-5B8426BC63E1</key>
 		<dict>
@@ -2264,7 +2357,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>A440DEC7-CFB5-4835-8F5F-304F75D7380E</key>
 		<dict>
 			<key>ypos</key>
-			<real>960</real>
+			<real>830</real>
 		</dict>
 		<key>B0A5B1A6-C1D8-4641-B2BA-C684D12D61A0</key>
 		<dict>
@@ -2329,7 +2422,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</key>
 		<dict>
 			<key>ypos</key>
-			<real>450</real>
+			<real>440</real>
+		</dict>
+		<key>DD359FF6-74C4-40A3-B814-E2A566EF848D</key>
+		<dict>
+			<key>ypos</key>
+			<real>570</real>
 		</dict>
 		<key>DD98A496-0BDF-4D7B-8F6B-95D646E2726C</key>
 		<dict>
@@ -2369,7 +2467,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</key>
 		<dict>
 			<key>ypos</key>
-			<real>470</real>
+			<real>440</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
