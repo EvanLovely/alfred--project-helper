@@ -13,7 +13,7 @@
 2. Invoke Alfred, type `,pn {name of new project}` to create a new project. 
 3. Answer the questions about your project like site root, theme folder, files directory, and more.
 
-You can now access these folders you setup in `~/active` (We can change this later). For now, you'll see that you can get to your projects Site Root here: `~/active/site-root`, to your Theme directory here: `~/active/theme`, and to your files here: `~/active/files` [^hardcodedfilesdirectory]. This folder will open in finder and you should fill it up with your projects files.
+You can now access these folders you setup in `~/active` (We can change this later). For now, you'll see that you can get to your projects Site Root here: `~/active/site-root`, to your Theme directory here: `~/active/theme`, and to your files here: `~/active/files` (The files directory just mentioned has actually been created at `~/Dropbox/projects/{project name} files/` and then symbolically linked to `~/active/files`.). This folder will open in finder and you should fill it up with your projects files.
 
 ## Commands to start with
 
@@ -69,4 +69,3 @@ In your project folder, there is a scripts folder, if you add more scripts then 
 9. Also, the entire Alfred Workflow configuration is stored in `info.plist` - search and replace on this file works excellently. 
 10. Send in Pull Requests
 
-[^hardcodedfilesdirectory]: The files directory just mentioned has actually been created at `~/Dropbox/projects/{project name} files/` and then symbolically linked to `~/active/files`. I'd like to make a setting to change the "home" of all the projects, but for now it's hardcoded in.
