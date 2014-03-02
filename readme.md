@@ -13,7 +13,7 @@
 2. Invoke Alfred, type `,pn {name of new project}` to create a new project. 
 3. Answer the questions about your project like site root, theme folder, files directory, and more.
 
-You can now access these folders you setup in `~/active` (We can change this later). For now, you'll see that you can get to your projects Site Root here: `~/active/site-root`, to your Theme directory here: `~/active/theme`, and to your files here: `~/active/files`[^hardcodedfilesdirectory]. This folder will open in finder and you should fill it up with your projects files.
+You can now access these folders you setup in `~/active` (We can change this later). For now, you'll see that you can get to your projects Site Root here: `~/active/site-root`, to your Theme directory here: `~/active/theme`, and to your files here: `~/active/files` [^hardcodedfilesdirectory]. This folder will open in finder and you should fill it up with your projects files.
 
 ## Commands to start with
 
