@@ -1,1 +1,3 @@
+New Project Setup (`,pn`):
 - Fix new notes being tagged with "blue" and not the project tag and "notes"
+- Setup `ssh` (production & staging)
