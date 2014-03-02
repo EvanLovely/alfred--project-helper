@@ -319,19 +319,19 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>Run in Background (no Terminal Window)</string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Run in Background (no Terminal Window)</string>
 			</dict>
 		</array>
 		<key>D291A93E-DCCF-4FB7-BCF2-65823832034C</key>
@@ -735,369 +735,39 @@ sh start.sh
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-					<string>public.symlink</string>
-				</array>
-				<key>name</key>
-				<string>Set Docs</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>1E772088-EAB6-4417-A2C5-14300A4A039E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>source bash_functions
-replacesetting gdocs "{query}" 
-rm -rf ~/active/docs
-ln -s "{query}" ~/active/docs</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>3E5A413E-3B68-4D3E-91BD-1789A40CB85D</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>source bash_functions
-addsetting site_root "{query}"
-rm -rf ~/active/site-root
-ln -s "{query}" ~/active/site-root</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>279C4C88-EE1B-4977-AFD5-EC907831075C</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-				</array>
-				<key>name</key>
-				<string>Set Site Root for Project</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>598A781A-BE08-4063-B23E-5B8426BC63E1</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-				</array>
-				<key>name</key>
-				<string>Set Links Folder for Project</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>5FA64466-7453-4ADB-8208-3288DAFC9F00</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>rm -rf ~/active/links
-ln -s "{query}" ~/active/links
-echo "Links Directory set to {query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>EEE42D25-C472-441A-A97B-7A43F081A9F8</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>rm -rf ~/active/assets
-ln -s "{query}" ~/active/assets
-echo "Assets Directory set to {query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>EEA16608-8F1C-49D2-AEA3-E647FF0DBBDB</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-				</array>
-				<key>name</key>
-				<string>Set Assets Folder for Project</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>660DD24D-570B-42B2-83B3-44EB3E477149</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-				</array>
-				<key>name</key>
-				<string>Set Scripts Folder for Project</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>rm -rf ~/active/files/scripts
-ln -s "{query}" ~/active/files/scripts
-echo "Scripts Directory set to {query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>768087C3-5E29-44B7-90E3-73A433618BF5</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Project Helper</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>E5C20E8F-24B4-4E07-949C-FE1082BCF2BB</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>source bash_functions
-replacesetting theme "{query}"
-rm -rf ~/active/theme
-ln -s "{query}" ~/active/theme</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>5F9FBA59-C2CC-4D8B-AC13-B8738B0C37E4</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-				</array>
-				<key>name</key>
-				<string>Set Theme Folder for Project</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>rm -rf ~/active/files
-ln -s "{query}" ~/active/files
-echo "Files Directory set to {query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>2C1E3F61-4F37-4364-AF65-05E4181C562F</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-				</array>
-				<key>name</key>
-				<string>Set Files Directory for Project</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>EC1CA97C-97D3-46C0-8DEE-2DE5A1EDD093</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>source bash_functions
-rdef ~/active/files/settings.yml notes
-echo "notes: {query}" &gt;&gt; ~/active/files/settings.yml
-echo "Notes File set to {query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>1389402B-89C2-4AC4-8D1C-2659A10820D9</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>io.calca.markdown</string>
-					<string>net.multimarkdown.text</string>
-				</array>
-				<key>name</key>
-				<string>Set Notes for Project</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>204D01B1-B8F6-4D69-8CAE-3BF94B287705</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>,p go</string>
+				<string>,p?</string>
 				<key>subtext</key>
-				<string>View Project Folder Shortcuts</string>
+				<string>For the Project Helper</string>
 				<key>text</key>
-				<string>Go</string>
+				<string>What Project am I on?</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</string>
+			<string>44D5B0B5-FC29-4217-8655-6EAC07BE2712</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>path</key>
-				<string>~/active</string>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>PROJECT="`ls -l ~/active | grep files | sed 's,^.*projects/,,' | sed 's,files,,'`"
+/opt/local/bin/terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to view." -execute "open ~/active"</string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.browseinalfred</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</string>
+			<string>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1129,82 +799,34 @@ echo "Notes File set to {query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>anchorfields</key>
-				<true/>
-				<key>daterange</key>
-				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemAlternateNames</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemFinderComment</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemWhereFroms</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<false/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
-				<false/>
+				<key>path</key>
+				<string>~/active</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.browseinalfred</string>
+			<key>uid</key>
+			<string>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
 				<key>keyword</key>
-				<string>,p links</string>
-				<key>scopes</key>
-				<array>
-					<string>~/active/files/links</string>
-				</array>
+				<string>,p go</string>
 				<key>subtext</key>
-				<string>Show Links for Active Project</string>
-				<key>title</key>
-				<string>Links</string>
-				<key>types</key>
-				<array/>
+				<string>View Project Folder Shortcuts</string>
+				<key>text</key>
+				<string>Go</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>332988CC-BBF4-4D27-A4CE-D2290ECD8341</string>
+			<string>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1359,6 +981,180 @@ echo "Notes File set to {query}"</string>
 						<key>words</key>
 						<true/>
 					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>,p docs</string>
+				<key>scopes</key>
+				<array>
+					<string>~/active/docs</string>
+				</array>
+				<key>subtext</key>
+				<string>Search Docs</string>
+				<key>title</key>
+				<string>Docs</string>
+				<key>types</key>
+				<array/>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>BD7CC7DF-5025-4CA6-B1D0-3BE09215D9F6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemWhereFroms</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<false/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>,p links</string>
+				<key>scopes</key>
+				<array>
+					<string>~/active/files/links</string>
+				</array>
+				<key>subtext</key>
+				<string>Show Links for Active Project</string>
+				<key>title</key>
+				<string>Links</string>
+				<key>types</key>
+				<array/>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>332988CC-BBF4-4D27-A4CE-D2290ECD8341</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemUserTags</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<false/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
 					<dict>
 						<key>field</key>
 						<string>kMDItemTitle</string>
@@ -1396,16 +1192,6 @@ echo "Notes File set to {query}"</string>
 			<string>alfred.workflow.input.filefilter</string>
 			<key>uid</key>
 			<string>36BB0BEC-4605-472E-9818-02E08FD04C07</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict/>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1496,6 +1282,22 @@ echo "Notes File set to {query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>cd ~/active/site-root &amp;&amp;
+sh "{query}"</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>anchorfields</key>
 				<true/>
 				<key>daterange</key>
@@ -1538,61 +1340,31 @@ echo "Notes File set to {query}"</string>
 						<key>words</key>
 						<true/>
 					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemUserTags</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<false/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
 				</array>
 				<key>includesystem</key>
 				<false/>
 				<key>keyword</key>
-				<string>,p docs</string>
+				<string>,p scripts</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/docs</string>
+					<string>~/active/files/scripts</string>
+					<string>~/projects/scripts</string>
 				</array>
 				<key>subtext</key>
-				<string>Search Docs</string>
+				<string>Launch Custom Shell Scripts for Active Project in Site Root. Hold CMD for Backgrounding.</string>
 				<key>title</key>
-				<string>Docs</string>
+				<string>Scripts</string>
 				<key>types</key>
-				<array/>
+				<array>
+					<string>public.shell-script</string>
+				</array>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.filefilter</string>
 			<key>uid</key>
-			<string>BD7CC7DF-5025-4CA6-B1D0-3BE09215D9F6</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p?</string>
-				<key>subtext</key>
-				<string>For the Project Helper</string>
-				<key>text</key>
-				<string>What Project am I on?</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>44D5B0B5-FC29-4217-8655-6EAC07BE2712</string>
+			<string>CAD65936-403B-4947-B81D-8A938ACE03C7</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1600,17 +1372,17 @@ echo "Notes File set to {query}"</string>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>0</integer>
 				<key>script</key>
-				<string>PROJECT="`ls -l ~/active | grep files | sed 's,^.*projects/,,' | sed 's,files,,'`"
-/opt/local/bin/terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to view." -execute "open ~/active"</string>
+				<string>cd ~/active/site-root &amp;&amp;
+sh "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</string>
+			<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1851,88 +1623,36 @@ $SSH</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/active/site-root &amp;&amp;
-sh "{query}"</string>
+				<string>source bash_functions
+addsetting site_root "{query}"
+rm -rf ~/active/site-root
+ln -s "{query}" ~/active/site-root</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
+			<string>279C4C88-EE1B-4977-AFD5-EC907831075C</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>anchorfields</key>
-				<true/>
-				<key>daterange</key>
-				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemAlternateNames</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemFinderComment</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
+				<key>acceptsmulti</key>
 				<false/>
-				<key>keyword</key>
-				<string>,p scripts</string>
-				<key>scopes</key>
+				<key>filetypes</key>
 				<array>
-					<string>~/active/files/scripts</string>
-					<string>~/projects/scripts</string>
+					<string>public.folder</string>
 				</array>
-				<key>subtext</key>
-				<string>Launch Custom Shell Scripts for Active Project in Site Root. Hold CMD for Backgrounding.</string>
-				<key>title</key>
-				<string>Scripts</string>
-				<key>types</key>
-				<array>
-					<string>public.shell-script</string>
-				</array>
-				<key>withspace</key>
-				<true/>
+				<key>name</key>
+				<string>Set Site Root for Project</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
+			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
-			<string>CAD65936-403B-4947-B81D-8A938ACE03C7</string>
+			<string>598A781A-BE08-4063-B23E-5B8426BC63E1</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1942,13 +1662,293 @@ sh "{query}"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/active/site-root &amp;&amp;
-sh "{query}"</string>
+				<string>source bash_functions
+replacesetting theme "{query}"
+rm -rf ~/active/theme
+ln -s "{query}" ~/active/theme</string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</string>
+			<string>5F9FBA59-C2CC-4D8B-AC13-B8738B0C37E4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Theme Folder for Project</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>rm -rf ~/active/files
+ln -s "{query}" ~/active/files
+echo "Files Directory set to {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2C1E3F61-4F37-4364-AF65-05E4181C562F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Files Directory for Project</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>EC1CA97C-97D3-46C0-8DEE-2DE5A1EDD093</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>rm -rf ~/active/assets
+ln -s "{query}" ~/active/assets
+echo "Assets Directory set to {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>EEA16608-8F1C-49D2-AEA3-E647FF0DBBDB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Assets Folder for Project</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>660DD24D-570B-42B2-83B3-44EB3E477149</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Project Helper</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E5C20E8F-24B4-4E07-949C-FE1082BCF2BB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Scripts Folder for Project</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>rm -rf ~/active/files/scripts
+ln -s "{query}" ~/active/files/scripts
+echo "Scripts Directory set to {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>768087C3-5E29-44B7-90E3-73A433618BF5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Links Folder for Project</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>5FA64466-7453-4ADB-8208-3288DAFC9F00</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>rm -rf ~/active/links
+ln -s "{query}" ~/active/links
+echo "Links Directory set to {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>EEE42D25-C472-441A-A97B-7A43F081A9F8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>source bash_functions
+rdef ~/active/files/settings.yml notes
+echo "notes: {query}" &gt;&gt; ~/active/files/settings.yml
+echo "Notes File set to {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1389402B-89C2-4AC4-8D1C-2659A10820D9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>io.calca.markdown</string>
+					<string>net.multimarkdown.text</string>
+				</array>
+				<key>name</key>
+				<string>Set Notes for Project</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>204D01B1-B8F6-4D69-8CAE-3BF94B287705</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+					<string>public.symlink</string>
+				</array>
+				<key>name</key>
+				<string>Set Docs</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>1E772088-EAB6-4417-A2C5-14300A4A039E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>source bash_functions
+replacesetting gdocs "{query}" 
+rm -rf ~/active/docs
+ln -s "{query}" ~/active/docs</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3E5A413E-3B68-4D3E-91BD-1789A40CB85D</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2094,7 +2094,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>00E3B1DC-4476-45B4-A2B5-D402D1D1A17A</key>
 		<dict>
 			<key>ypos</key>
-			<real>120</real>
+			<real>110</real>
 		</dict>
 		<key>06A688B4-4B08-4625-A674-2FC44C0AF479</key>
 		<dict>
@@ -2119,7 +2119,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>1389402B-89C2-4AC4-8D1C-2659A10820D9</key>
 		<dict>
 			<key>ypos</key>
-			<real>1220</real>
+			<real>3560</real>
 		</dict>
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<dict>
@@ -2134,7 +2134,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>1E772088-EAB6-4417-A2C5-14300A4A039E</key>
 		<dict>
 			<key>ypos</key>
-			<real>360</real>
+			<real>3660</real>
 		</dict>
 		<key>1EFFF3DB-9730-4315-B50C-A9A66EC509BF</key>
 		<dict>
@@ -2149,7 +2149,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>204D01B1-B8F6-4D69-8CAE-3BF94B287705</key>
 		<dict>
 			<key>ypos</key>
-			<real>1220</real>
+			<real>3560</real>
 		</dict>
 		<key>21F4ADCB-89D9-4F20-BBC4-38096152CCE0</key>
 		<dict>
@@ -2164,7 +2164,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>279C4C88-EE1B-4977-AFD5-EC907831075C</key>
 		<dict>
 			<key>ypos</key>
-			<real>580</real>
+			<real>2960</real>
 		</dict>
 		<key>2BACE0E9-E883-43D7-A060-C8FA41872D77</key>
 		<dict>
@@ -2174,32 +2174,32 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>2C1E3F61-4F37-4364-AF65-05E4181C562F</key>
 		<dict>
 			<key>ypos</key>
-			<real>1120</real>
+			<real>3160</real>
 		</dict>
 		<key>332988CC-BBF4-4D27-A4CE-D2290ECD8341</key>
 		<dict>
 			<key>ypos</key>
-			<real>1500</real>
+			<real>900</real>
 		</dict>
 		<key>36BB0BEC-4605-472E-9818-02E08FD04C07</key>
 		<dict>
 			<key>ypos</key>
-			<real>1720</real>
+			<real>1010</real>
 		</dict>
 		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
 		<dict>
 			<key>ypos</key>
-			<real>2080</real>
+			<real>310</real>
 		</dict>
 		<key>3E5A413E-3B68-4D3E-91BD-1789A40CB85D</key>
 		<dict>
 			<key>ypos</key>
-			<real>360</real>
+			<real>3660</real>
 		</dict>
 		<key>44D5B0B5-FC29-4217-8655-6EAC07BE2712</key>
 		<dict>
 			<key>ypos</key>
-			<real>2080</real>
+			<real>310</real>
 		</dict>
 		<key>54F101B9-E517-4EAB-838A-F848D5EC1B89</key>
 		<dict>
@@ -2209,22 +2209,22 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
 		<dict>
 			<key>ypos</key>
-			<real>1380</real>
+			<real>410</real>
 		</dict>
 		<key>598A781A-BE08-4063-B23E-5B8426BC63E1</key>
 		<dict>
 			<key>ypos</key>
-			<real>580</real>
+			<real>2960</real>
 		</dict>
 		<key>5F9FBA59-C2CC-4D8B-AC13-B8738B0C37E4</key>
 		<dict>
 			<key>ypos</key>
-			<real>1020</real>
+			<real>3060</real>
 		</dict>
 		<key>5FA64466-7453-4ADB-8208-3288DAFC9F00</key>
 		<dict>
 			<key>ypos</key>
-			<real>690</real>
+			<real>3460</real>
 		</dict>
 		<key>61DD632E-0BF4-4753-AF16-BB51A044D3C1</key>
 		<dict>
@@ -2234,7 +2234,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>660DD24D-570B-42B2-83B3-44EB3E477149</key>
 		<dict>
 			<key>ypos</key>
-			<real>800</real>
+			<real>3260</real>
 		</dict>
 		<key>6FB551F4-2AC6-491B-A2E4-567583FD533C</key>
 		<dict>
@@ -2244,12 +2244,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>768087C3-5E29-44B7-90E3-73A433618BF5</key>
 		<dict>
 			<key>ypos</key>
-			<real>910</real>
+			<real>3360</real>
 		</dict>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<dict>
 			<key>ypos</key>
-			<real>230</real>
+			<real>210</real>
 		</dict>
 		<key>8419ACD0-4077-4763-99FF-65EB19584569</key>
 		<dict>
@@ -2259,12 +2259,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>92CA46FE-4B37-4C2D-8F0C-94B51D5CDF61</key>
 		<dict>
 			<key>ypos</key>
-			<real>1620</real>
+			<real>680</real>
 		</dict>
 		<key>A440DEC7-CFB5-4835-8F5F-304F75D7380E</key>
 		<dict>
 			<key>ypos</key>
-			<real>1780</real>
+			<real>960</real>
 		</dict>
 		<key>B0A5B1A6-C1D8-4641-B2BA-C684D12D61A0</key>
 		<dict>
@@ -2279,12 +2279,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</key>
 		<dict>
 			<key>ypos</key>
-			<real>1020</real>
+			<real>3060</real>
 		</dict>
 		<key>BD7CC7DF-5025-4CA6-B1D0-3BE09215D9F6</key>
 		<dict>
 			<key>ypos</key>
-			<real>1950</real>
+			<real>790</real>
 		</dict>
 		<key>C0E10F81-8007-4B7F-8EDD-C6113F063CD4</key>
 		<dict>
@@ -2294,17 +2294,17 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>C4229CD0-DE92-4CAC-885F-9EEB115FD830</key>
 		<dict>
 			<key>ypos</key>
-			<real>1830</real>
+			<real>1120</real>
 		</dict>
 		<key>C9FE5308-0AB1-4498-9A61-A9F79A85E7C4</key>
 		<dict>
 			<key>ypos</key>
-			<real>910</real>
+			<real>3360</real>
 		</dict>
 		<key>CAD65936-403B-4947-B81D-8A938ACE03C7</key>
 		<dict>
 			<key>ypos</key>
-			<real>3430</real>
+			<real>1440</real>
 		</dict>
 		<key>D291A93E-DCCF-4FB7-BCF2-65823832034C</key>
 		<dict>
@@ -2314,7 +2314,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</key>
 		<dict>
 			<key>ypos</key>
-			<real>3490</real>
+			<real>1380</real>
 		</dict>
 		<key>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</key>
 		<dict>
@@ -2329,47 +2329,47 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</key>
 		<dict>
 			<key>ypos</key>
-			<real>1320</real>
+			<real>450</real>
 		</dict>
 		<key>DD98A496-0BDF-4D7B-8F6B-95D646E2726C</key>
 		<dict>
 			<key>ypos</key>
-			<real>230</real>
+			<real>210</real>
 		</dict>
 		<key>E5C20E8F-24B4-4E07-949C-FE1082BCF2BB</key>
 		<dict>
 			<key>ypos</key>
-			<real>940</real>
+			<real>3310</real>
 		</dict>
 		<key>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</key>
 		<dict>
 			<key>ypos</key>
-			<real>3380</real>
+			<real>1510</real>
 		</dict>
 		<key>EC1CA97C-97D3-46C0-8DEE-2DE5A1EDD093</key>
 		<dict>
 			<key>ypos</key>
-			<real>1120</real>
+			<real>3160</real>
 		</dict>
 		<key>EEA16608-8F1C-49D2-AEA3-E647FF0DBBDB</key>
 		<dict>
 			<key>ypos</key>
-			<real>800</real>
+			<real>3260</real>
 		</dict>
 		<key>EEE42D25-C472-441A-A97B-7A43F081A9F8</key>
 		<dict>
 			<key>ypos</key>
-			<real>690</real>
+			<real>3460</real>
 		</dict>
 		<key>FC9F0D22-2740-43D0-A373-ED7F8B97BD9A</key>
 		<dict>
 			<key>ypos</key>
-			<real>120</real>
+			<real>110</real>
 		</dict>
 		<key>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</key>
 		<dict>
 			<key>ypos</key>
-			<real>1320</real>
+			<real>470</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
