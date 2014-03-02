@@ -5,9 +5,9 @@ This [Alfred](http://alfredapp.com) Workflow is created by [me](http://evanlovel
 
 ## Requirements
 
-- [Alfred Powerpack](http://www.alfredapp.com/)
-- [Terminal Notifier](https://github.com/alloy/terminal-notifier) (not necessary, but *super* useful). Run `gem install terminal-notifier` to install
-- Websites that need to be built easier
+- [Alfred Powerpack](http://www.alfredapp.com/).
+- [Terminal Notifier](https://github.com/alloy/terminal-notifier) (not necessary, but *super* useful). Run `gem install terminal-notifier` to install.
+- Websites that need to be built easier.
 
 
 ## Inital Config
@@ -16,20 +16,20 @@ This [Alfred](http://alfredapp.com) Workflow is created by [me](http://evanlovel
 2. Invoke Alfred, type `,pn {name of new project}` to create a new project. 
 3. Answer the questions about your project like site root, theme folder, files directory, and more.
 
-You can now access these folders you setup in `~/active` (We can change this later). For now, you'll see that you can get to your projects Site Root here: `~/active/site-root`, to your Theme directory here: `~/active/theme`, and to your files here: `~/active/files` (The files directory just mentioned has actually been created at `~/Dropbox/projects/{project name} files/` and then symbolically linked to `~/active/files`.). This folder will open in finder and you should fill it up with your projects files. The rest of the folders' paths have been stored in `~/active/files/settings.yml` and then sym linked into `~/active`.
+You can now access these folders you setup in `~/active`. You'll see that you can get to your project's Site Root here: `~/active/site-root`, to your Theme directory here: `~/active/theme`, and to your files here: `~/active/files` (The files directory just mentioned has actually been created at `~/Dropbox/projects/{project name} files/` and then symbolically linked to `~/active/files`.). This folder will open in finder and you should fill it up with your projects files. The rest of the folders' paths have been stored in `~/active/files/settings.yml` and then sym linked into `~/active`.
 
 ## Commands to start with
 
-- `,p go` - Shows you shortcuts to each folder you just setup.
 - `,p files {query}` - Search the files folder for any file that matches `{query}`
 - `,p theme {query}` - Search the theme folder for any file that matches `{query}`
 - `,p cc` - Runs `drush cc all` inside the Site Root
-- `,p pull` - Run `git pull` in Site Root
+- `,p push` - Run `git push` in Site Root (there's also `pull`)
 - `,p css {query}` - Search for any SASS/LESS files in your theme directory
 - `,p tpl {query}` - Search for any `.tpl.php` files in your theme directory
 
 ## More Commands
 
+- `,p go` - Shows you shortcuts to each main folder for your project.
 - `,p ssh` - Opens Terminal/iTerm and logs into your staging server via `ssh`. Hold Cmd to log into your production server.
 - `,p commit {query}` - Tell `git` to add all files and commit using a message of `{query}`
 - `,p docs {query}` - Search inside the Google Docs folder
@@ -51,16 +51,17 @@ Once you've made a few projects using `,pn`, you can switch between them by usin
 - An empty `~/active` folder is created and the new project selected gets symbolic links created from the sources you've setup: `~/active/files`, `~/active/site-root`, `~/active/theme` and `~/active/docs` (Google Docs).
 - Site Root Scripts Run - At the setup, you told what scripts to run in the site root and they run now. Useful for things like `git pull`. You can edit this at `~/active/files/scripts/start-in-site-root.sh`.
 - Theme Scripts Run - Again, you added this in the setup. Useful for commands like `compass watch`. You can edit this at `~/active/files/scripts/start-in-theme.sh`
-- Open Scripts Run - This just opens stuff you want open when you start a project. Files, folders, or URLs can be added. I typically have this open: 
+- Open Scripts Run - This just opens stuff you want open when you start a project. Files, folders, or URLs can be added. You can edit this at `~/active/files/scripts/open-at-start.sh`. I typically have this open: 
     - Sublime Text project files
     - Markdown Notes File
     - OmniFocus Project URL
     - Project Management site (like Basecamp)
 
-This way, no matter what project you are working on, you can use the same commands to access the same type of files and perform common taks, but just for a different project. Muscle memory will improve productivity. 
+Now, all commands mentioned above, like `,p assets`, search the newly selected projects asset folder. This way, no matter what project you are working on, you can use the same commands to access the same type of files and perform common taks, but just for a different project. Muscle memory will improve productivity. It helps so much.
 
 
----
+---------------
+
 
 # Advanced Useage
 
@@ -72,6 +73,16 @@ One thing that is **super useful** is now, even without Alfred, your current pro
 ## Custom Scripts
 
 In your project folder, there is a scripts folder, if you add more scripts then you can run them via `,p scripts {query}` (which will run in the site root.)
+
+
+## Using the Links folder
+
+When you type `,p links {query}` it will search the `~/active/files/links` folder for any `.webloc`s (basically just links) and open them. To add them, drag the favicon from a browser and drop it on the Finder on this folder. This is simple, but super useful. Some ideas:
+
+- Project Site (i.e. Basecamp) Issue Queue
+- Project Wiki
+- Local development site's commonly edited pages
+- Time Tracking site
 
 
 # Help with development of this project via Git
