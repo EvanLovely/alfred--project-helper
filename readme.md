@@ -60,6 +60,10 @@ Once you've made a few projects using `,pn`, you can switch between them by usin
 
 Now, all commands mentioned above, like `,p assets`, search the newly selected projects asset folder. This way, no matter what project you are working on, you can use the same commands to access the same type of files and perform common taks, but just for a different project. Muscle memory will improve productivity. It helps so much.
 
+# Giving Feedback
+
+Please feel free to [create an issue](https://github.com/EvanLovely/alfred--project-helper/issues/new) for problems you come across – I'd really like to get this solid, useable, and beneficial to others.
+
 
 ---------------
 
