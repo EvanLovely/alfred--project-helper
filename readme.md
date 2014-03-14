@@ -1,6 +1,6 @@
 # Alfred Project Helper
 
-This [Alfred](http://alfredapp.com) Workflow is created by [me](http://evanlovely.com), a Front End [Drupal](http://drupal.org) Developer who juggles multiple projects and created a utility around making that easier. It's for Web Developers in general. You can easily access your current project's Site Root, Theme Folder, and Files (like comps, wireframes, and notes). Then when it's time to switch to another project, it's easy.
+This [Alfred](http://alfredapp.com) Workflow is created by [me](http://evanlovely.com), a Front End [Drupal](http://drupal.org) Developer who juggles multiple projects and created a utility around making that easier. It's for Web Developers in general. You can easily access your current project's Site Root, Theme Folder, and Files (like comps, wireframes, and notes). Then when it's time to switch to another project, it's easy and all the commands work on the new project.
 
 
 ## Requirements
@@ -30,6 +30,7 @@ You can now access these folders you setup in `~/active`. You'll see that you ca
 ## More Commands
 
 - `,p go` - Shows you shortcuts to each main folder for your project.
+- `,p assets {query}` - Searches the `~/active/files/assets` folder for any file. Useful for comps, site maps, and wireframes.
 - `,p ssh` - Opens Terminal/iTerm and logs into your staging server via `ssh`. Hold Cmd to log into your production server.
 - `,p commit {query}` - Tell `git` to add all files and commit using a message of `{query}`
 - `,p docs {query}` - Search inside the Google Docs folder
