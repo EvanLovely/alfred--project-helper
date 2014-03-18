@@ -407,17 +407,17 @@
 sh ~/active/files/scripts/shutdown.sh
 P=`echo "{query}" | sed "s/ /-/g"`
 mkdir ~/Dropbox 
-mkdir ~/Dropbox/projects
-cp -r templates/project-files ~/Dropbox/projects/$P-files
-mv ~/Dropbox/projects/$P-files/notes.md ~/Dropbox/projects/$P-files/$P-notes.md
-tags -add p-$P ~/Dropbox/projects/$P-files/$P-notes.md
-tags -add p-$P ~/Dropbox/projects/$P-files
-tags -add project-files ~/Dropbox/projects/$P-files
+mkdir ~/all-projects
+cp -r templates/project-files ~/all-projects/$P-files
+mv ~/all-projects/$P-files/notes.md ~/all-projects/$P-files/$P-notes.md
+tags -add p-$P ~/all-projects/$P-files/$P-notes.md
+tags -add p-$P ~/all-projects/$P-files
+tags -add project-files ~/all-projects/$P-files
 rm -rf ~/active
 mkdir ~/active
 
 # Link the main files directory so we can access the settings.yml file inside
-ln -s ~/Dropbox/projects/$P-files ~/active/files
+ln -s ~/all-projects/$P-files ~/active/files
 
 # Get Site Root
 P_SITE_ROOT=`osascript -e 'set source_folder to choose folder with prompt "Please select the Site Root directory."
@@ -513,7 +513,7 @@ then
 fi
 
 sh start.sh 
-open ~/Dropbox/projects/$P-files
+open ~/all-projects/$P-files
 /opt/local/bin/terminal-notifier -title "Project Helper" -message "$P Project Made. Site Root Next."</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -634,7 +634,7 @@ sh start.sh
 				<string>,ps</string>
 				<key>scopes</key>
 				<array>
-					<string>~/Dropbox/projects</string>
+					<string>~/all-projects</string>
 				</array>
 				<key>subtext</key>
 				<string>Select a project to switch focus to, type * to see all.</string>

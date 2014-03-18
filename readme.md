@@ -9,6 +9,12 @@ This [Alfred](http://alfredapp.com) Workflow is created by [me](http://evanlovel
 - [Terminal Notifier](https://github.com/alloy/terminal-notifier) (not necessary, but *super* useful). Run `gem install terminal-notifier` to install.
 - Websites that need to be built easier.
 
+## Optionally Set Where All Projects Live
+
+The default setup creates a folder at `~/all-projects` to keep all the projects. If you want to keep them elsewhere, like in Dropbox or Google Drive, then sym link that directory in here. For example, this is what I did:
+
+    ln -s ~/Dropbox/projects ~/all-projects
+
 
 ## Inital Config
 
@@ -16,7 +22,7 @@ This [Alfred](http://alfredapp.com) Workflow is created by [me](http://evanlovel
 2. Invoke Alfred, type `,pn {name of new project}` to create a new project. 
 3. Answer the questions about your project like site root, theme folder, files directory, and more.
 
-You can now access these folders you setup in `~/active`. You'll see that you can get to your project's Site Root here: `~/active/site-root`, to your Theme directory here: `~/active/theme`, and to your files here: `~/active/files` (The files directory just mentioned has actually been created at `~/Dropbox/projects/{project name} files/` and then symbolically linked to `~/active/files`.). This folder will open in finder and you should fill it up with your projects files. The rest of the folders' paths have been stored in `~/active/files/settings.yml` and then sym linked into `~/active`.
+You can now access these folders you setup in `~/active`. You'll see that you can get to your project's Site Root here: `~/active/site-root`, to your Theme directory here: `~/active/theme`, and to your files here: `~/active/files` (The files directory just mentioned has actually been created at `~/all-projects/{project name} files/` and then symbolically linked to `~/active/files`.). This folder will open in finder and you should fill it up with your projects files. The rest of the folders' paths have been stored in `~/active/files/settings.yml` and then sym linked into `~/active`.
 
 ## Commands to start with
 
