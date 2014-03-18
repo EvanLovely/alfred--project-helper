@@ -404,7 +404,7 @@
 				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
-sh ~/active/files/scripts/shutdown.sh
+sh ~/active-project/files/scripts/shutdown.sh
 P=`echo "{query}" | sed "s/ /-/g"`
 mkdir ~/Dropbox 
 mkdir ~/all-projects
@@ -413,11 +413,11 @@ mv ~/all-projects/$P-files/notes.md ~/all-projects/$P-files/$P-notes.md
 tags -add p-$P ~/all-projects/$P-files/$P-notes.md
 tags -add p-$P ~/all-projects/$P-files
 tags -add project-files ~/all-projects/$P-files
-rm -rf ~/active
-mkdir ~/active
+rm -rf ~/active-project
+mkdir ~/active-project
 
 # Link the main files directory so we can access the settings.yml file inside
-ln -s ~/all-projects/$P-files ~/active/files
+ln -s ~/all-projects/$P-files ~/active-project/files
 
 # Get Site Root
 P_SITE_ROOT=`osascript -e 'set source_folder to choose folder with prompt "Please select the Site Root directory."
@@ -432,7 +432,7 @@ fi
 
 # Get Site Root Scripts
 osascript -e 'set response to the text returned of (display dialog "What scripts do you want to run in this folder when the project starts? (i.e. git pull)" with title "Site Root Scripts" default answer return &amp; return &amp; return &amp; return)
-response' &gt;&gt; ~/active/files/scripts/start-in-site-root.sh
+response' &gt;&gt; ~/active-project/files/scripts/start-in-site-root.sh
 
 # Get Theme Root
 P_THEME=`osascript -e 'set source_folder to choose folder with prompt "Please select the Theme directory."
@@ -447,11 +447,11 @@ fi
 
 # Get Theme Scripts
 osascript -e 'set response to the text returned of (display dialog "What scripts do you want to run in this folder when the project starts? (i.e. compass watch)" with title "Theme Directory Scripts" default answer return &amp; return &amp; return &amp; return)
-response' &gt;&gt; ~/active/files/scripts/start-in-theme.sh
+response' &gt;&gt; ~/active-project/files/scripts/start-in-theme.sh
 
 # Set Shutdown Scripts
 osascript -e 'set response to the text returned of (display dialog "What scripts do you want to run when you switch to another project? (i.e. killall compass)" with title "Shutdown Scripts" default answer return &amp; return &amp; return &amp; return)
-response' &gt;&gt; ~/active/files/scripts/shutdown.sh
+response' &gt;&gt; ~/active-project/files/scripts/shutdown.sh
 
 
 # Get Google Docs directory
@@ -554,10 +554,10 @@ open ~/all-projects/$P-files
 				<key>script</key>
 				<string>source bash_functions
 /opt/local/bin/terminal-notifier -message "Shutting down…" -title "Project Helper"
-sh ~/active/files/scripts/shutdown.sh
-rm -rf ~/active
-mkdir ~/active
-ln -s "{query}" ~/active/files
+sh ~/active-project/files/scripts/shutdown.sh
+rm -rf ~/active-project
+mkdir ~/active-project
+ln -s "{query}" ~/active-project/files
 sh start.sh
 /opt/local/bin/terminal-notifier -message "Active Project Switched"</string>
 				<key>type</key>
@@ -660,8 +660,8 @@ sh start.sh
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>PROJECT="`ls -l ~/active | grep files | sed 's,^.*projects/,,' | sed 's,files,,'`"
-/opt/local/bin/terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to view." -execute "open ~/active"</string>
+				<string>PROJECT="`ls -l ~/active-project | grep files | sed 's,^.*projects/,,' | sed 's,files,,'`"
+/opt/local/bin/terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to view." -execute "open ~/active-project"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -697,7 +697,7 @@ sh start.sh
 			<key>config</key>
 			<dict>
 				<key>path</key>
-				<string>~/active</string>
+				<string>~/active-project</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.browseinalfred</string>
@@ -816,7 +816,7 @@ sh start.sh
 				<string>,p files</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/files</string>
+					<string>~/active-project/files</string>
 				</array>
 				<key>subtext</key>
 				<string>Find anything in the "files" directory</string>
@@ -910,7 +910,7 @@ sh start.sh
 				<string>,p assets</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/files/assets</string>
+					<string>~/active-project/files/assets</string>
 				</array>
 				<key>subtext</key>
 				<string>Find Assets in Active Project (Comps, Wireframes, etc)</string>
@@ -992,7 +992,7 @@ sh start.sh
 				<string>,p docs</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/docs</string>
+					<string>~/active-project/docs</string>
 				</array>
 				<key>subtext</key>
 				<string>Search Docs</string>
@@ -1074,7 +1074,7 @@ sh start.sh
 				<string>,p links</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/files/links</string>
+					<string>~/active-project/files/links</string>
 				</array>
 				<key>subtext</key>
 				<string>Show Links for Active Project</string>
@@ -1178,7 +1178,7 @@ sh start.sh
 				<string>,p css</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/theme</string>
+					<string>~/active-project/theme</string>
 				</array>
 				<key>subtext</key>
 				<string>Show SASS/LESS files in Active Project's Theme</string>
@@ -1263,7 +1263,7 @@ sh start.sh
 				<string>,p tpl</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/theme</string>
+					<string>~/active-project/theme</string>
 				</array>
 				<key>subtext</key>
 				<string>Show .tpl.php Files in Theme Directory</string>
@@ -1347,7 +1347,7 @@ sh start.sh
 				<string>,p site</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/site-root</string>
+					<string>~/active-project/site-root</string>
 				</array>
 				<key>subtext</key>
 				<string>For any file</string>
@@ -1429,7 +1429,7 @@ sh start.sh
 				<string>,p theme</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/theme</string>
+					<string>~/active-project/theme</string>
 				</array>
 				<key>subtext</key>
 				<string>For any file</string>
@@ -1453,7 +1453,7 @@ sh start.sh
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/active/site-root &amp;&amp;
+				<string>cd ~/active-project/site-root &amp;&amp;
 sh "{query}"</string>
 			</dict>
 			<key>type</key>
@@ -1515,7 +1515,7 @@ sh "{query}"</string>
 				<string>,p scripts</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/files/scripts</string>
+					<string>~/active-project/files/scripts</string>
 					<string>~/projects/scripts</string>
 				</array>
 				<key>subtext</key>
@@ -1542,7 +1542,7 @@ sh "{query}"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/active/site-root &amp;&amp;
+				<string>cd ~/active-project/site-root &amp;&amp;
 sh "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -1648,7 +1648,7 @@ echo `cat {query}`</string>
 				<string>,p info</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active/files/info</string>
+					<string>~/active-project/files/info</string>
 				</array>
 				<key>subtext</key>
 				<string>Copies it as well.</string>
@@ -1697,8 +1697,8 @@ echo `cat {query}`</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>SSH="$(cat ~/active/files/settings.yml | grep ^ssh_staging: | sed "s/ssh_staging: //")"
-terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/active/files/settings.yml"
+				<string>SSH="$(cat ~/active-project/files/settings.yml | grep ^ssh_staging: | sed "s/ssh_staging: //")"
+terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/active-project/files/settings.yml"
 $SSH</string>
 			</dict>
 			<key>type</key>
@@ -1735,8 +1735,8 @@ $SSH</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>SSH="$(cat ~/active/files/settings.yml | grep ^ssh_prod: | sed "s/ssh_prod: //")"
-terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/active/files/settings.yml"
+				<string>SSH="$(cat ~/active-project/files/settings.yml | grep ^ssh_prod: | sed "s/ssh_prod: //")"
+terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/active-project/files/settings.yml"
 $SSH</string>
 			</dict>
 			<key>type</key>
@@ -1773,7 +1773,7 @@ $SSH</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cd ~/active/site-root
+				<string>cd ~/active-project/site-root
 git push
 /opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Push Done"</string>
 				<key>type</key>
@@ -1792,7 +1792,7 @@ git push
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cd ~/active/site-root
+				<string>cd ~/active-project/site-root
 git pull
 /opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Pull Done"</string>
 				<key>type</key>
@@ -1853,7 +1853,7 @@ git pull
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/active/site-root
+				<string>cd ~/active-project/site-root
 git add . --all
 git commit -m "{query}"
 /opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Commit Added"</string>
@@ -1873,7 +1873,7 @@ git commit -m "{query}"
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cd ~/active/theme
+				<string>cd ~/active-project/theme
 /opt/local/bin/drush cc all &amp;&amp;
 /opt/local/bin/terminal-notifier -message "Drupal Cache Cleared!" -title "Project Helper"</string>
 				<key>type</key>
@@ -1913,8 +1913,8 @@ git commit -m "{query}"
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "open \"{query}\"" &gt;&gt; ~/active/files/scripts/open-at-start.sh
-terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/active/files/scripts/open-at-start.sh"</string>
+				<string>echo "open \"{query}\"" &gt;&gt; ~/active-project/files/scripts/open-at-start.sh
+terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/active-project/files/scripts/open-at-start.sh"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1969,7 +1969,7 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "ssh_staging: {query}" &gt;&gt; ~/active/files/settings.yml</string>
+				<string>echo "ssh_staging: {query}" &gt;&gt; ~/active-project/files/settings.yml</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2007,7 +2007,7 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "ssh_prod: {query}" &gt;&gt; ~/active/files/settings.yml</string>
+				<string>echo "ssh_prod: {query}" &gt;&gt; ~/active-project/files/settings.yml</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2024,9 +2024,9 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>mkdir ~/active/files/info
+				<string>mkdir ~/active-project/files/info
 osascript -e 'set response to the text returned of (display dialog "What is the Answer/Value?" with title "New Info Value" default answer "This Gets Copied")
-response' &gt; ~/active/files/info/{query}.txt</string>
+response' &gt; ~/active-project/files/info/{query}.txt</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2091,8 +2091,8 @@ response' &gt; ~/active/files/info/{query}.txt</string>
 				<key>script</key>
 				<string>source bash_functions
 replacesetting site_root "{query}"
-rm -rf ~/active/site-root
-ln -s "{query}" ~/active/site-root</string>
+rm -rf ~/active-project/site-root
+ln -s "{query}" ~/active-project/site-root</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2130,8 +2130,8 @@ ln -s "{query}" ~/active/site-root</string>
 				<key>script</key>
 				<string>source bash_functions
 replacesetting theme "{query}"
-rm -rf ~/active/theme
-ln -s "{query}" ~/active/theme</string>
+rm -rf ~/active-project/theme
+ln -s "{query}" ~/active-project/theme</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2194,8 +2194,8 @@ ln -s "{query}" ~/active/theme</string>
 				<key>script</key>
 				<string>source bash_functions
 replacesetting gdocs "{query}" 
-rm -rf ~/active/docs
-ln -s "{query}" ~/active/docs</string>
+rm -rf ~/active-project/docs
+ln -s "{query}" ~/active-project/docs</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>

@@ -22,7 +22,7 @@ The default setup creates a folder at `~/all-projects` to keep all the projects.
 2. Invoke Alfred, type `,pn {name of new project}` to create a new project. 
 3. Answer the questions about your project like site root, theme folder, files directory, and more.
 
-You can now access these folders you setup in `~/active`. You'll see that you can get to your project's Site Root here: `~/active/site-root`, to your Theme directory here: `~/active/theme`, and to your files here: `~/active/files` (The files directory just mentioned has actually been created at `~/all-projects/{project name} files/` and then symbolically linked to `~/active/files`.). This folder will open in finder and you should fill it up with your projects files. The rest of the folders' paths have been stored in `~/active/files/settings.yml` and then sym linked into `~/active`.
+You can now access these folders you setup in `~/active-project`. You'll see that you can get to your project's Site Root here: `~/active-project/site-root`, to your Theme directory here: `~/active-project/theme`, and to your files here: `~/active-project/files` (The files directory just mentioned has actually been created at `~/all-projects/{project name} files/` and then symbolically linked to `~/active-project/files`.). This folder will open in finder and you should fill it up with your projects files. The rest of the folders' paths have been stored in `~/active-project/files/settings.yml` and then sym linked into `~/active-project`.
 
 ## Commands to start with
 
@@ -36,16 +36,16 @@ You can now access these folders you setup in `~/active`. You'll see that you ca
 ## More Commands
 
 - `,p go` - Shows you shortcuts to each main folder for your project.
-- `,p assets {query}` - Searches the `~/active/files/assets` folder for any file. Useful for comps, site maps, and wireframes.
+- `,p assets {query}` - Searches the `~/active-project/files/assets` folder for any file. Useful for comps, site maps, and wireframes.
 - `,p ssh` - Opens Terminal/iTerm and logs into your staging server via `ssh`. Hold Cmd to log into your production server.
 - `,p commit {query}` - Tell `git` to add all files and commit using a message of `{query}`
 - `,p docs {query}` - Search inside the Google Docs folder
 - `,p link {query}` - Search inside the links folder for `.webloc`s and opens them. Great for adding custom bookmark support for a project. Just drag favicons to the folder to add a `.webloc`.
-- `,p info {query}` - Searches the `~/active/files/info` directory for text files and copies the contents. Can add to this by typing `,p set new info` and passing in the Question/Value after which you get asked the Answer/Value. Helpful for copying small chunks of text related to the project.
+- `,p info {query}` - Searches the `~/active-project/files/info` directory for text files and copies the contents. Can add to this by typing `,p set new info` and passing in the Question/Value after which you get asked the Answer/Value. Helpful for copying small chunks of text related to the project.
 
 ## Changing Project Settings
 
-**All Settings are stored in `~/active/files/settings.yml`. The Alfred Actions below simply modify that file. Go ahead and edit there if you want.**
+**All Settings are stored in `~/active-project/files/settings.yml`. The Alfred Actions below simply modify that file. Go ahead and edit there if you want.**
 
 - `,p set ssh {query}` - Set a new SSH command for getting into the staging server. Hold Cmd for Production Server.
 - Navigate to any folder or file in Alfred, then hit the right arrow key (could be different depeneding on your settings) for it's contextual menu. Then type "set" - you will see a series of options for setting preferences like which is the Site Root, Theme, Files Directory, Assets Directory (Shared Dropbox Folder perhaps?), or add new files to open at the beginning of your project. 
@@ -55,11 +55,11 @@ You can now access these folders you setup in `~/active`. You'll see that you ca
 
 Once you've made a few projects using `,pn`, you can switch between them by using `,ps {project name}`. What happens next is this:
 
-- The `~/active` directory is erased - it was all symbolic links anyway.
-- An empty `~/active` folder is created and the new project selected gets symbolic links created from the sources you've setup: `~/active/files`, `~/active/site-root`, `~/active/theme` and `~/active/docs` (Google Docs).
-- Site Root Scripts Run - At the setup, you told what scripts to run in the site root and they run now. Useful for things like `git pull`. You can edit this at `~/active/files/scripts/start-in-site-root.sh`.
-- Theme Scripts Run - Again, you added this in the setup. Useful for commands like `compass watch`. You can edit this at `~/active/files/scripts/start-in-theme.sh`
-- Open Scripts Run - This just opens stuff you want open when you start a project. Files, folders, or URLs can be added. You can edit this at `~/active/files/scripts/open-at-start.sh`. I typically have this open: 
+- The `~/active-project` directory is erased - it was all symbolic links anyway.
+- An empty `~/active-project` folder is created and the new project selected gets symbolic links created from the sources you've setup: `~/active-project/files`, `~/active-project/site-root`, `~/active-project/theme` and `~/active-project/docs` (Google Docs).
+- Site Root Scripts Run - At the setup, you told what scripts to run in the site root and they run now. Useful for things like `git pull`. You can edit this at `~/active-project/files/scripts/start-in-site-root.sh`.
+- Theme Scripts Run - Again, you added this in the setup. Useful for commands like `compass watch`. You can edit this at `~/active-project/files/scripts/start-in-theme.sh`
+- Open Scripts Run - This just opens stuff you want open when you start a project. Files, folders, or URLs can be added. You can edit this at `~/active-project/files/scripts/open-at-start.sh`. I typically have this open: 
     - Sublime Text project files
     - Markdown Notes File
     - OmniFocus Project URL
@@ -77,9 +77,9 @@ Please feel free to [create an issue](https://github.com/EvanLovely/alfred--proj
 
 # Advanced Useage
 
-## Using `~/active` in your scripts and in Terminal
+## Using `~/active-project` in your scripts and in Terminal
 
-One thing that is **super useful** is now, even without Alfred, your current project's Site Root is at `~/active/site-root` which makes it very easy to get to. I love having `~/active/theme` available - *so* much shorter. Not only shorter, but reusable and reliable. 
+One thing that is **super useful** is now, even without Alfred, your current project's Site Root is at `~/active-project/site-root` which makes it very easy to get to. I love having `~/active-project/theme` available - *so* much shorter. Not only shorter, but reusable and reliable. 
 
 
 ## Custom Scripts
@@ -89,7 +89,7 @@ In your project folder, there is a scripts folder, if you add more scripts then 
 
 ## Using the Links folder
 
-When you type `,p links {query}` it will search the `~/active/files/links` folder for any `.webloc`s (basically just links) and open them. To add them, drag the favicon from a browser and drop it on the Finder on this folder. This is simple, but super useful. Some ideas:
+When you type `,p links {query}` it will search the `~/active-project/files/links` folder for any `.webloc`s (basically just links) and open them. To add them, drag the favicon from a browser and drop it on the Finder on this folder. This is simple, but super useful. Some ideas:
 
 - Project Site (i.e. Basecamp) Issue Queue
 - Project Wiki

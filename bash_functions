@@ -22,20 +22,20 @@ rdef() {
 }
 
 getsetting() {
-  fdefonly ~/active/files/settings.yml $1
+  fdefonly ~/active-project/files/settings.yml $1
 }
 
 addsetting() {
-  echo "$1: $2" >> ~/active/files/settings.yml
+  echo "$1: $2" >> ~/active-project/files/settings.yml
 }
 
 replacesetting() {
-  rdef ~/active/files/settings.yml $1
+  rdef ~/active-project/files/settings.yml $1
   addsetting "$1" "$2"
 }
 
 removesetting() {
-  rdef ~/active/files/settings.yml $1
+  rdef ~/active-project/files/settings.yml $1
 }
 
 # Adds/List Mavericks Tags via Native Utilities. Source: http://apple.stackexchange.com/a/119370
