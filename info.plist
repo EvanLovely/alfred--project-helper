@@ -205,22 +205,22 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>8630173B-D8CB-4E98-AFAC-D868673CAB88</key>
+		<key>88CF1D42-4757-4ADE-8C30-A161D62B68F3</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>7DDAECA4-BD3A-44C0-8C47-1BF935D317AC</string>
+				<string>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
-		<key>88CF1D42-4757-4ADE-8C30-A161D62B68F3</key>
+		<key>8C46245E-C3B5-4503-8040-23EF768C2065</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</string>
+				<string>7DDAECA4-BD3A-44C0-8C47-1BF935D317AC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1606,94 +1606,29 @@ sh {query}</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>anchorfields</key>
-				<true/>
-				<key>daterange</key>
-				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemAlternateNames</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemFinderComment</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemUserTags</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<false/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemTextContent</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<false/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
-				<false/>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>127</integer>
 				<key>keyword</key>
 				<string>,p info</string>
-				<key>scopes</key>
-				<array>
-					<string>~/active-project/files/info</string>
-				</array>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>sh find-info.sh {query}</string>
 				<key>subtext</key>
 				<string>Copies it as well.</string>
 				<key>title</key>
 				<string>Search for Info about this project</string>
-				<key>types</key>
-				<array/>
+				<key>type</key>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>8630173B-D8CB-4E98-AFAC-D868673CAB88</string>
+			<string>8C46245E-C3B5-4503-8040-23EF768C2065</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2414,15 +2349,15 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>1720</real>
 		</dict>
-		<key>8630173B-D8CB-4E98-AFAC-D868673CAB88</key>
-		<dict>
-			<key>ypos</key>
-			<real>1720</real>
-		</dict>
 		<key>88CF1D42-4757-4ADE-8C30-A161D62B68F3</key>
 		<dict>
 			<key>ypos</key>
 			<real>2220</real>
+		</dict>
+		<key>8C46245E-C3B5-4503-8040-23EF768C2065</key>
+		<dict>
+			<key>ypos</key>
+			<real>1720</real>
 		</dict>
 		<key>92CA46FE-4B37-4C2D-8F0C-94B51D5CDF61</key>
 		<dict>
