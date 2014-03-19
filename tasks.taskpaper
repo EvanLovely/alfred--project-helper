@@ -1,0 +1,6 @@
+New Project Setup (`,pn`):
+- Fix new notes being tagged with "blue" and not the project tag and "notes"
+- Setup `ssh` (production & staging) @done
+
+Misc:
+- Have the `git` commands give feedback via Notification (i.e. how many commits were pulled down, errors, etc) 
