@@ -2055,8 +2055,9 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<integer>127</integer>
 				<key>script</key>
 				<string>mkdir ~/active-project/files/info
-osascript -e 'set response to the text returned of (display dialog "What is the Answer/Value?" with title "New Info Value" default answer "This Gets Copied")
-response' &gt; ~/active-project/files/info/{query}.txt</string>
+RESPONSE=`osascript -e 'set response to the text returned of (display dialog "What is the Answer/Value?" with title "New Info Value" default answer "This Gets Copied")
+response'`
+echo -n "$RESPONSE" &gt; ~/active-project/files/info/{query}.txt</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
