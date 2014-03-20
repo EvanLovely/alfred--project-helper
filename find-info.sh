@@ -13,10 +13,11 @@ FILES=${TO_SEARCH// /_}
 for i in $FILES; do
     path="${i//_/ }"
     file=`echo $path | sed "s/.*\///" | sed "s/\.txt//"`
+    contents=`cat "$path"`
     OUTPUTSTRING="$OUTPUTSTRING
     <item arg='$path' type='file'>
       <title>$file</title>
-      <subtitle>Copy: `cat "$path"`</subtitle>
+      <subtitle>Copy: <![CDATA[$contents]]></subtitle>
       </item>"
 #     foldername=${i##*/};
 #     file="$i";
