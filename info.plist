@@ -282,6 +282,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>C1F4A37E-38FD-48D1-B62C-2BAEC1B3CE0A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8C46245E-C3B5-4503-8040-23EF768C2065</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>C4229CD0-DE92-4CAC-885F-9EEB115FD830</key>
 		<array>
 			<dict>
@@ -1635,6 +1646,31 @@ sh {query}</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>9</integer>
+				<key>hotmod</key>
+				<integer>262144</integer>
+				<key>hotstring</key>
+				<string>V</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>C1F4A37E-38FD-48D1-B62C-2BAEC1B3CE0A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -2399,6 +2435,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>2020</real>
+		</dict>
+		<key>C1F4A37E-38FD-48D1-B62C-2BAEC1B3CE0A</key>
+		<dict>
+			<key>ypos</key>
+			<real>1720</real>
 		</dict>
 		<key>C4229CD0-DE92-4CAC-885F-9EEB115FD830</key>
 		<dict>
