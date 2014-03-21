@@ -170,6 +170,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>5DDDD8C2-BC7B-4C76-807E-A7887EAF5D2B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DCF5E1CC-5D26-4DD8-8B8C-E352DB8B8010</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>5F9FBA59-C2CC-4D8B-AC13-B8738B0C37E4</key>
 		<array>
 			<dict>
@@ -302,6 +313,25 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+			</dict>
+		</array>
+		<key>CACA88BD-A265-4950-B197-982A8BF64808</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5DDDD8C2-BC7B-4C76-807E-A7887EAF5D2B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>CA329F9E-F386-482C-B136-268C02D9EA41</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open Info Notes</string>
 			</dict>
 		</array>
 		<key>CAD65936-403B-4947-B81D-8A938ACE03C7</key>
@@ -2247,6 +2277,99 @@ ln -s "{query}" ~/active-project/docs</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>query="{query}"
+path=${query//photo.jpg/}
+cat "$path/email.txt" | pbcopy
+cat "$path/email.txt"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5DDDD8C2-BC7B-4C76-807E-A7887EAF5D2B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p people</string>
+				<key>runningsubtext</key>
+				<string>searching...</string>
+				<key>script</key>
+				<string>sh find-people.sh {query}</string>
+				<key>subtext</key>
+				<string>Search the "files/people" directory for people</string>
+				<key>title</key>
+				<string>Find Project People</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CACA88BD-A265-4950-B197-982A8BF64808</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Email Copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>DCF5E1CC-5D26-4DD8-8B8C-E352DB8B8010</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>query="{query}"
+path=${query//photo.jpg/}
+open "$path/info.txt"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CA329F9E-F386-482C-B136-268C02D9EA41</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -2361,6 +2484,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>3060</real>
 		</dict>
+		<key>5DDDD8C2-BC7B-4C76-807E-A7887EAF5D2B</key>
+		<dict>
+			<key>ypos</key>
+			<real>3580</real>
+		</dict>
 		<key>5F9FBA59-C2CC-4D8B-AC13-B8738B0C37E4</key>
 		<dict>
 			<key>ypos</key>
@@ -2456,6 +2584,16 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2910</real>
 		</dict>
+		<key>CA329F9E-F386-482C-B136-268C02D9EA41</key>
+		<dict>
+			<key>ypos</key>
+			<real>3700</real>
+		</dict>
+		<key>CACA88BD-A265-4950-B197-982A8BF64808</key>
+		<dict>
+			<key>ypos</key>
+			<real>3580</real>
+		</dict>
 		<key>CAD65936-403B-4947-B81D-8A938ACE03C7</key>
 		<dict>
 			<key>ypos</key>
@@ -2480,6 +2618,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>1870</real>
+		</dict>
+		<key>DCF5E1CC-5D26-4DD8-8B8C-E352DB8B8010</key>
+		<dict>
+			<key>ypos</key>
+			<real>3580</real>
 		</dict>
 		<key>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</key>
 		<dict>
