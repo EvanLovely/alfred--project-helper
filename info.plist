@@ -315,6 +315,8 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>CA329F9E-F386-482C-B136-268C02D9EA41</key>
+		<array/>
 		<key>CACA88BD-A265-4950-B197-982A8BF64808</key>
 		<array>
 			<dict>
@@ -331,7 +333,7 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Open Info Notes</string>
+				<string>Edit this Person's Info</string>
 			</dict>
 		</array>
 		<key>CAD65936-403B-4947-B81D-8A938ACE03C7</key>
@@ -426,6 +428,28 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E15480BB-0719-43BA-B26A-B6FE522F46D9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FA59170B-8313-4763-8511-AA2B53509BFB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EF55BB57-193F-4AA0-B894-3D53DD05C8C3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E15480BB-0719-43BA-B26A-B6FE522F46D9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2285,8 +2309,8 @@ ln -s "{query}" ~/active-project/docs</string>
 				<key>script</key>
 				<string>query="{query}"
 path=${query//photo.jpg/}
-cat "$path/email.txt" | pbcopy
-cat "$path/email.txt"</string>
+cat "$path/email.txt" | tr -d '\n' | pbcopy
+cat "$path/email.txt" | tr -d '\n'</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2359,7 +2383,7 @@ cat "$path/email.txt"</string>
 				<key>script</key>
 				<string>query="{query}"
 path=${query//photo.jpg/}
-open "$path/info.txt"</string>
+open "`echo -n $path`"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2367,6 +2391,69 @@ open "$path/info.txt"</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>CA329F9E-F386-482C-B136-268C02D9EA41</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>sh add-person.sh</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E15480BB-0719-43BA-B26A-B6FE522F46D9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p add person</string>
+				<key>subtext</key>
+				<string>Can later be found by running `,p people`</string>
+				<key>text</key>
+				<string>Add Project Person</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>EF55BB57-193F-4AA0-B894-3D53DD05C8C3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Search people by typing ",p people"</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>FA59170B-8313-4763-8511-AA2B53509BFB</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2644,6 +2731,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>1340</real>
 		</dict>
+		<key>E15480BB-0719-43BA-B26A-B6FE522F46D9</key>
+		<dict>
+			<key>ypos</key>
+			<real>3820</real>
+		</dict>
 		<key>E5C20E8F-24B4-4E07-949C-FE1082BCF2BB</key>
 		<dict>
 			<key>ypos</key>
@@ -2658,6 +2750,16 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>1720</real>
+		</dict>
+		<key>EF55BB57-193F-4AA0-B894-3D53DD05C8C3</key>
+		<dict>
+			<key>ypos</key>
+			<real>3820</real>
+		</dict>
+		<key>FA59170B-8313-4763-8511-AA2B53509BFB</key>
+		<dict>
+			<key>ypos</key>
+			<real>3820</real>
 		</dict>
 		<key>FC9F0D22-2740-43D0-A373-ED7F8B97BD9A</key>
 		<dict>
