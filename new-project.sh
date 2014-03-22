@@ -1,18 +1,24 @@
 source bash_functions
+
+# Shutdown current project
 sh ~/active-project/files/scripts/shutdown.sh
-P=`echo "$1" | sed "s/ /-/g"`
-mkdir ~/Dropbox 
-mkdir ~/all-projects
-cp -r templates/project-files ~/all-projects/$P-files
-mv ~/all-projects/$P-files/notes.md ~/all-projects/$P-files/$P-notes.md
-tags -add p-$P ~/all-projects/$P-files/$P-notes.md
-tags -add p-$P ~/all-projects/$P-files
-tags -add project-files ~/all-projects/$P-files
 rm -rf ~/active-project
 mkdir ~/active-project
 
-# Link the main files directory so we can access the settings.yml file inside
-ln -s ~/all-projects/$P-files ~/active-project/files
+# Get the project name passed in and replace spaces with dashes
+P=`echo "${1// /-}"`
+
+# Just in case it's not already made
+mkdir ~/all-projects
+
+# Grab the project files template, move it in, and name it after the project
+cp -r templates/project-files ~/all-projects/$P
+# Rename the notes after the project
+mv ~/all-projects/$P/notes.md ~/all-projects/$P/$P-notes.md
+
+
+# Sym Link the main files directory so we can access the settings.yml file inside
+ln -s ~/all-projects/$P ~/active-project/files
 
 # Get Site Root
 P_SITE_ROOT=`osascript -e 'set source_folder to choose folder with prompt "Please select the Site Root directory."
@@ -107,6 +113,6 @@ then
   addsetting ssh_prod "$P_SSH_PROD"
 fi
 
-sh start.sh 
-open ~/all-projects/$P-files
+sh start-project.sh
+open ~/all-projects/$P
 terminal-notifier -title "Project Helper" -message "$P Project Made."

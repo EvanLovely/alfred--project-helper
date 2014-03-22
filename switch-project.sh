@@ -4,5 +4,5 @@ sh ~/active-project/files/scripts/shutdown.sh
 rm -rf ~/active-project
 mkdir ~/active-project
 ln -s "$1" ~/active-project/files
-sh start.sh
+sh start-project.sh
 terminal-notifier -message "Active Project Switched"
