@@ -2018,15 +2018,15 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>keyword</key>
-				<string>,p set new snippets</string>
+				<string>,p add snippet</string>
 				<key>subtext</key>
-				<string>Pass in the Question/Title and next you'll provide the Answer/Value</string>
+				<string>These can be easily copied later with `,p snippets`</string>
 				<key>text</key>
-				<string>Set new snippets</string>
+				<string>Add New Snippet</string>
 				<key>withspace</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
@@ -2066,10 +2066,7 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>mkdir ~/active-project/files/snippets
-RESPONSE=`osascript -e 'set response to the text returned of (display dialog "What is the Answer/Value?" with title "New snippets Value" default answer "This Gets Copied")
-response'`
-echo -n "$RESPONSE" &gt; ~/active-project/files/snippets/{query}.txt</string>
+				<string>sh add-snippet.sh</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
