@@ -312,6 +312,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>C10F5290-9DE7-42BD-811D-F3B743911AD5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7BDFD687-1656-4DB8-935D-3096F42E266F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>C1F4A37E-38FD-48D1-B62C-2BAEC1B3CE0A</key>
 		<array>
 			<dict>
@@ -431,17 +442,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>DD98A496-0BDF-4D7B-8F6B-95D646E2726C</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>7BDFD687-1656-4DB8-935D-3096F42E266F</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>DE2BA2CD-D3C5-4EFF-9B7B-96AEFF8F2C45</key>
 		<array>
 			<dict>
@@ -538,90 +538,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>anchorfields</key>
-				<true/>
-				<key>daterange</key>
-				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemAlternateNames</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemUserTags</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>project-files</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemUserTags</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<false/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
-				<false/>
-				<key>keyword</key>
-				<string>,ps</string>
-				<key>scopes</key>
-				<array>
-					<string>~/all-projects</string>
-				</array>
-				<key>subtext</key>
-				<string>Select a project to switch focus to, type * to see all.</string>
-				<key>title</key>
-				<string>Project Switcher</string>
-				<key>types</key>
-				<array>
-					<string>public.folder</string>
-				</array>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
-			<key>uid</key>
-			<string>DD98A496-0BDF-4D7B-8F6B-95D646E2726C</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -633,6 +549,35 @@
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>7BDFD687-1656-4DB8-935D-3096F42E266F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,ps</string>
+				<key>runningsubtext</key>
+				<string>searching...</string>
+				<key>script</key>
+				<string>sh find-project.sh "{query}"</string>
+				<key>subtext</key>
+				<string>Change the active project.</string>
+				<key>title</key>
+				<string>Project Switcher</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C10F5290-9DE7-42BD-811D-F3B743911AD5</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2581,6 +2526,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2020</real>
 		</dict>
+		<key>C10F5290-9DE7-42BD-811D-F3B743911AD5</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
 		<key>C1F4A37E-38FD-48D1-B62C-2BAEC1B3CE0A</key>
 		<dict>
 			<key>ypos</key>
@@ -2650,11 +2600,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>570</real>
-		</dict>
-		<key>DD98A496-0BDF-4D7B-8F6B-95D646E2726C</key>
-		<dict>
-			<key>ypos</key>
-			<real>110</real>
 		</dict>
 		<key>DE2BA2CD-D3C5-4EFF-9B7B-96AEFF8F2C45</key>
 		<dict>
