@@ -41,6 +41,7 @@ for i in $FILES; do
     <item arg='$path' type='file'>
       <title>$file</title>
       <subtitle>Copy: <![CDATA[$contents]]></subtitle>
+      <icon type='fileicon'>$path</icon>
       </item>"
 #     foldername=${i##*/};
 #     file="$i";
