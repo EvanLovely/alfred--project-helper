@@ -32,7 +32,7 @@ for i in $FILES; do
     path="${i//$seperator/ }"
 
     # Extract filename from path. 1st sed: remove everything up to last `/`. 2nd sed: remove `.txt` @todo yank all file extensions, not just just `.txt`
-    file=`echo $path | sed "s/.*\///" | sed "s/\.txt//"`
+    file=`echo ${path/$dir\//} | sed "s/\.txt//"`
 
     # Contents of the file, with any new lines removed
     contents=`cat "$path" | tr -d '\n'`
