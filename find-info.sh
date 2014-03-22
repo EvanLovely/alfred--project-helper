@@ -1,19 +1,42 @@
 #!/bin/bash
 
+dir=~/active-project/files/info
 OUTPUTSTRING="<items>
 "
 if [ "$1" ] 
   then
-  TO_SEARCH=$(find ~/active-project/files/info -not -iname .DS_Store -type f -iname *$1*)
+  # Filter List
+
+  # Find all files that match, except `.DS_Store`, and add them to a new text file
+  args="${1// /*}" # swap spaces for *
+  find $dir -type f -iname "*$args*" | grep -iv "DS_Store" > /tmp/find-info.txt
+
+  # Find all files that contain the match and add them to that same text file
+  grep -rli "$1" $dir | grep -iv "DS_Store" >> /tmp/find-info.txt
+
+  # Export that list to this variable while ensuring there are no duplicates
+  TO_SEARCH="`sort -u /tmp/find-info.txt`"
+
   else
-  TO_SEARCH=$(find ~/active-project/files/info -not -iname .DS_Store -type f)
+  # List All
+  TO_SEARCH=$(find $dir -not -iname .DS_Store -type f)
 fi
-FILES=${TO_SEARCH// /_}
+
+# Replacing any spaces with _ b/c the below `for` loop is cycling on spaces
+seperator="_"
+FILES=${TO_SEARCH// /$seperator}
 
 for i in $FILES; do
-    path="${i//_/ }"
+ 
+    # Let's get our spaces we took away back by swapping it for the seperator
+    path="${i//$seperator/ }"
+
+    # Extract filename from path. 1st sed: remove everything up to last `/`. 2nd sed: remove `.txt` @todo yank all file extensions, not just just `.txt`
     file=`echo $path | sed "s/.*\///" | sed "s/\.txt//"`
-    contents=`cat "$path"`
+
+    # Contents of the file, with any new lines removed
+    contents=`cat "$path" | tr -d '\n'`
+
     OUTPUTSTRING="$OUTPUTSTRING
     <item arg='$path' type='file'>
       <title>$file</title>

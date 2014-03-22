@@ -192,6 +192,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>640B18E7-4CF0-467E-885C-88C49D1CC0E8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ECE1374D-0FE1-49BA-866F-619697E46F70</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>6FB551F4-2AC6-491B-A2E4-567583FD533C</key>
 		<array>
 			<dict>
@@ -236,6 +247,14 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>640B18E7-4CF0-467E-885C-88C49D1CC0E8</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Paste it!</string>
 			</dict>
 		</array>
 		<key>92CA46FE-4B37-4C2D-8F0C-94B51D5CDF61</key>
@@ -1671,103 +1690,6 @@ sh {query}</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>keyword</key>
-				<string>,p info</string>
-				<key>runningsubtext</key>
-				<string>Searching...</string>
-				<key>script</key>
-				<string>sh find-info.sh {query}</string>
-				<key>subtext</key>
-				<string>Copies it as well.</string>
-				<key>title</key>
-				<string>Search for Info about this project</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>8C46245E-C3B5-4503-8040-23EF768C2065</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>hotkey</key>
-				<integer>9</integer>
-				<key>hotmod</key>
-				<integer>262144</integer>
-				<key>hotstring</key>
-				<string>V</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>C1F4A37E-38FD-48D1-B62C-2BAEC1B3CE0A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Info Copied</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>ECE1374D-0FE1-49BA-866F-619697E46F70</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>cat {query} | pbcopy
-echo `cat {query}`</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>7DDAECA4-BD3A-44C0-8C47-1BF935D317AC</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -2162,6 +2084,125 @@ echo -n "$RESPONSE" &gt; ~/active-project/files/info/{query}.txt</string>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>cat {query} | pbcopy
+echo `cat {query}`</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7DDAECA4-BD3A-44C0-8C47-1BF935D317AC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p info</string>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>sh find-info.sh "{query}"</string>
+				<key>subtext</key>
+				<string>Copies it as well.</string>
+				<key>title</key>
+				<string>Search for Info about this project</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8C46245E-C3B5-4503-8040-23EF768C2065</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>9</integer>
+				<key>hotmod</key>
+				<integer>262144</integer>
+				<key>hotstring</key>
+				<string>V</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>C1F4A37E-38FD-48D1-B62C-2BAEC1B3CE0A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Info Copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>ECE1374D-0FE1-49BA-866F-619697E46F70</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>cat {query} | pbcopy
+echo `cat {query}`
+
+osascript -e 'tell application "System Events"
+	keystroke "v" using {command down}
+end tell'</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>640B18E7-4CF0-467E-885C-88C49D1CC0E8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
@@ -2499,7 +2540,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>1E772088-EAB6-4417-A2C5-14300A4A039E</key>
 		<dict>
 			<key>ypos</key>
-			<real>3260</real>
+			<real>3430</real>
 		</dict>
 		<key>1EFFF3DB-9730-4315-B50C-A9A66EC509BF</key>
 		<dict>
@@ -2514,7 +2555,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>279C4C88-EE1B-4977-AFD5-EC907831075C</key>
 		<dict>
 			<key>ypos</key>
-			<real>3060</real>
+			<real>3210</real>
 		</dict>
 		<key>2BACE0E9-E883-43D7-A060-C8FA41872D77</key>
 		<dict>
@@ -2549,7 +2590,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>3E5A413E-3B68-4D3E-91BD-1789A40CB85D</key>
 		<dict>
 			<key>ypos</key>
-			<real>3260</real>
+			<real>3430</real>
 		</dict>
 		<key>44D5B0B5-FC29-4217-8655-6EAC07BE2712</key>
 		<dict>
@@ -2569,7 +2610,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>598A781A-BE08-4063-B23E-5B8426BC63E1</key>
 		<dict>
 			<key>ypos</key>
-			<real>3060</real>
+			<real>3210</real>
 		</dict>
 		<key>5DDDD8C2-BC7B-4C76-807E-A7887EAF5D2B</key>
 		<dict>
@@ -2579,12 +2620,17 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>5F9FBA59-C2CC-4D8B-AC13-B8738B0C37E4</key>
 		<dict>
 			<key>ypos</key>
-			<real>3160</real>
+			<real>3320</real>
 		</dict>
 		<key>61DD632E-0BF4-4753-AF16-BB51A044D3C1</key>
 		<dict>
 			<key>ypos</key>
 			<real>2780</real>
+		</dict>
+		<key>640B18E7-4CF0-467E-885C-88C49D1CC0E8</key>
+		<dict>
+			<key>ypos</key>
+			<real>3110</real>
 		</dict>
 		<key>6FB551F4-2AC6-491B-A2E4-567583FD533C</key>
 		<dict>
@@ -2599,7 +2645,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>7DDAECA4-BD3A-44C0-8C47-1BF935D317AC</key>
 		<dict>
 			<key>ypos</key>
-			<real>1720</real>
+			<real>3010</real>
 		</dict>
 		<key>88CF1D42-4757-4ADE-8C30-A161D62B68F3</key>
 		<dict>
@@ -2609,7 +2655,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>8C46245E-C3B5-4503-8040-23EF768C2065</key>
 		<dict>
 			<key>ypos</key>
-			<real>1720</real>
+			<real>3050</real>
 		</dict>
 		<key>92CA46FE-4B37-4C2D-8F0C-94B51D5CDF61</key>
 		<dict>
@@ -2634,7 +2680,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</key>
 		<dict>
 			<key>ypos</key>
-			<real>3160</real>
+			<real>3320</real>
 		</dict>
 		<key>BD7CC7DF-5025-4CA6-B1D0-3BE09215D9F6</key>
 		<dict>
@@ -2654,7 +2700,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>C1F4A37E-38FD-48D1-B62C-2BAEC1B3CE0A</key>
 		<dict>
 			<key>ypos</key>
-			<real>1720</real>
+			<real>3050</real>
 		</dict>
 		<key>C4229CD0-DE92-4CAC-885F-9EEB115FD830</key>
 		<dict>
@@ -2739,7 +2785,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>E5C20E8F-24B4-4E07-949C-FE1082BCF2BB</key>
 		<dict>
 			<key>ypos</key>
-			<real>3160</real>
+			<real>3320</real>
 		</dict>
 		<key>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</key>
 		<dict>
@@ -2749,7 +2795,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>ECE1374D-0FE1-49BA-866F-619697E46F70</key>
 		<dict>
 			<key>ypos</key>
-			<real>1720</real>
+			<real>3060</real>
 		</dict>
 		<key>EF55BB57-193F-4AA0-B894-3D53DD05C8C3</key>
 		<dict>
