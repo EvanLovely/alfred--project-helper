@@ -109,4 +109,4 @@ fi
 
 sh start.sh 
 open ~/all-projects/$P-files
-/opt/local/bin/terminal-notifier -title "Project Helper" -message "$P Project Made. Site Root Next."
+terminal-notifier -title "Project Helper" -message "$P Project Made."

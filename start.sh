@@ -42,6 +42,6 @@ if [ -a ~/active-project/files/scripts/start-in-site-root.sh ]
 fi
 
 sh ~/active-project/scripts/open-at-start.sh
-/opt/local/bin/terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/active-project/files/scripts/open-at-start.sh"
+terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/active-project/files/scripts/open-at-start.sh"
 
 open `getsetting dev_url` -a "`getsetting dev_browser`"

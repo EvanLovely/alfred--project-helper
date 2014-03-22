@@ -663,8 +663,9 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>PROJECT="`ls -l ~/active-project | grep files | sed 's,^.*projects/,,' | sed 's,files,,'`"
-/opt/local/bin/terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to view." -execute "open ~/active-project"</string>
+				<string>source bash_functions
+PROJECT="`ls -l ~/active-project | grep files | sed 's,^.*projects/,,' | sed 's,files,,'`"
+terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to view." -execute "open ~/active-project"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1630,9 +1631,10 @@ $SSH</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cd ~/active-project/site-root
+				<string>source bash_functions
+cd ~/active-project/site-root
 git push
-/opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Push Done"</string>
+terminal-notifier -title "Project Helper" -message "Git Push Done"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1691,9 +1693,10 @@ git push
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cd ~/active-project/site-root
+				<string>source bash_functions
+cd ~/active-project/site-root
 git pull
-/opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Pull Done"</string>
+terminal-notifier -title "Project Helper" -message "Git Pull Done"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1710,10 +1713,11 @@ git pull
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/active-project/site-root
+				<string>source bash_functions
+cd ~/active-project/site-root
 git add . --all
 git commit -m "{query}"
-/opt/local/bin/terminal-notifier -title "Project Helper" -message "Git Commit Added"</string>
+terminal-notifier -title "Project Helper" -message "Git Commit Added"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1751,9 +1755,10 @@ git commit -m "{query}"
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cd ~/active-project/theme
-/opt/local/bin/drush cc all &amp;&amp;
-/opt/local/bin/terminal-notifier -message "Drupal Cache Cleared!" -title "Project Helper"</string>
+				<string>source bash_functions
+cd ~/active-project/theme
+drush cc all &amp;&amp;
+terminal-notifier -message "Drupal Cache Cleared!" -title "Project Helper"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
