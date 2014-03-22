@@ -23,7 +23,7 @@ if [ "$1" ]
 fi
 
 # Replacing any spaces with _ b/c the below `for` loop is cycling on spaces
-seperator="_"
+seperator="☀"
 FILES=${TO_SEARCH// /$seperator}
 
 for i in $FILES; do
@@ -38,7 +38,7 @@ for i in $FILES; do
     contents=`cat "$path" | tr -d '\n'`
 
     OUTPUTSTRING="$OUTPUTSTRING
-    <item arg='$path' type='file'>
+    <item arg='$path' type='file' uid='$path'>
       <title>$file</title>
       <subtitle>Copy: <![CDATA[$contents]]></subtitle>
       <icon type='fileicon'>$path</icon>

@@ -15,11 +15,15 @@ if [ "$1" ]
   </item>"
 
 fi
-FILES=${TO_SEARCH// /_}
-
+# Replacing any spaces with seperator b/c the below `for` loop is cycling on spaces
+seperator="☀"
+FILES=${TO_SEARCH// /$seperator}
 
 for i in $FILES; do
-    path="${i//_/ }"
+
+    # Let's get our spaces we took away back by swapping it for the seperator
+    path="${i//$seperator/ }"
+
     folder=`echo $path | sed "s/.*\///" | sed "s/\.txt//"`
     contents=`cat "$path/info.txt" | tr -d '\n'`
     OUTPUTSTRING="$OUTPUTSTRING

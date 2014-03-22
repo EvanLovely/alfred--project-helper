@@ -17,7 +17,7 @@ if [ "$1" ]
 fi
 
 # Replacing any spaces with _ b/c the below `for` loop is cycling on spaces
-seperator="_"
+seperator="☀"
 FILES=${TO_SEARCH// /$seperator}
 
 for i in $FILES; do
