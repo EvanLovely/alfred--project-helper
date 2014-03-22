@@ -41,7 +41,7 @@ You can now access these folders you setup in `~/active-project`. You'll see tha
 - `,p commit {query}` - Tell `git` to add all files and commit using a message of `{query}`
 - `,p docs {query}` - Search inside the Google Docs folder
 - `,p link {query}` - Search inside the links folder for `.webloc`s and opens them. Great for adding custom bookmark support for a project. Just drag favicons to the folder to add a `.webloc`.
-- `,p info {query}` - Searches the `~/active-project/files/info` directory for text files and copies the contents. Can add to this by typing `,p set new info` and passing in the Question/Value after which you get asked the Answer/Value. Helpful for copying small chunks of text related to the project.
+- `,p snippets {query}` - Searches the `~/active-project/files/snippets` directory for text files and copies the contents. Can add to this by typing `,p set new snippets` and passing in the Question/Value after which you get asked the Answer/Value. Helpful for copying small chunks of text related to the project.
 
 ## Changing Project Settings
 

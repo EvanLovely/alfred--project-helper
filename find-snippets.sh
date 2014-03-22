@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=~/active-project/files/info
+dir=~/active-project/files/snippets
 OUTPUTSTRING="<items>
 "
 if [ "$1" ] 
@@ -9,13 +9,13 @@ if [ "$1" ]
 
   # Find all files that match, except `.DS_Store`, and add them to a new text file
   args="${1// /*}" # swap spaces for *
-  find $dir -type f -iname "*$args*" | grep -iv "DS_Store" > /tmp/find-info.txt
+  find $dir -type f -iname "*$args*" | grep -iv "DS_Store" > /tmp/find-snippets.txt
 
   # Find all files that contain the match and add them to that same text file
-  grep -rli "$1" $dir | grep -iv "DS_Store" >> /tmp/find-info.txt
+  grep -rli "$1" $dir | grep -iv "DS_Store" >> /tmp/find-snippets.txt
 
   # Export that list to this variable while ensuring there are no duplicates
-  TO_SEARCH="`sort -u /tmp/find-info.txt`"
+  TO_SEARCH="`sort -u /tmp/find-snippets.txt`"
 
   else
   # List All

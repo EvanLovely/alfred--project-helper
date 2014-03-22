@@ -2020,11 +2020,11 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>,p set new info</string>
+				<string>,p set new snippets</string>
 				<key>subtext</key>
 				<string>Pass in the Question/Title and next you'll provide the Answer/Value</string>
 				<key>text</key>
-				<string>Set new info</string>
+				<string>Set new snippets</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -2049,9 +2049,9 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<key>sticky</key>
 				<false/>
 				<key>text</key>
-				<string>Type ",p info" to search and copy it</string>
+				<string>Type ",p snippets" to search and copy it</string>
 				<key>title</key>
-				<string>New Info Added</string>
+				<string>New snippets Added</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -2066,10 +2066,10 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>mkdir ~/active-project/files/info
-RESPONSE=`osascript -e 'set response to the text returned of (display dialog "What is the Answer/Value?" with title "New Info Value" default answer "This Gets Copied")
+				<string>mkdir ~/active-project/files/snippets
+RESPONSE=`osascript -e 'set response to the text returned of (display dialog "What is the Answer/Value?" with title "New snippets Value" default answer "This Gets Copied")
 response'`
-echo -n "$RESPONSE" &gt; ~/active-project/files/info/{query}.txt</string>
+echo -n "$RESPONSE" &gt; ~/active-project/files/snippets/{query}.txt</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2106,15 +2106,15 @@ echo `cat {query}`</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>,p info</string>
+				<string>,p snippets</string>
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>sh find-info.sh "{query}"</string>
+				<string>sh find-snippets.sh "{query}"</string>
 				<key>subtext</key>
 				<string>Copies it as well.</string>
 				<key>title</key>
-				<string>Search for Info about this project</string>
+				<string>Search for snippets about this project</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -2168,7 +2168,7 @@ echo `cat {query}`</string>
 				<key>text</key>
 				<string>{query}</string>
 				<key>title</key>
-				<string>Info Copied</string>
+				<string>snippets Copied</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
