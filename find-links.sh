@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=~/active-project/docs/
+dir=~/active-project/files/links
 OUTPUTSTRING="<items>
 "
 if [ "$1" ] 
@@ -13,10 +13,10 @@ if [ "$1" ]
 
   else
   # List All
-  TO_SEARCH=$(find $dir -type f -not -iname ".DS_Store")
+  TO_SEARCH=$(find $dir -type f -not -iname .DS_Store)
 fi
 
-# Replacing any spaces with seperator b/c the below `for` loop is cycling on spaces
+# Replacing any spaces with _ b/c the below `for` loop is cycling on spaces
 seperator="☀"
 FILES=${TO_SEARCH// /$seperator}
 
@@ -25,11 +25,11 @@ for i in $FILES; do
     # Let's get our spaces we took away back by swapping it for the seperator
     path="${i//$seperator/ }"
 
-    # Extract filename from path. remove everything up to last `/`.`
-    file=`echo ${path/$dir\//}`
+    # Extract filename from path. 1st sed: remove everything up to last `/`. 2nd sed: remove `.txt` @todo yank all file extensions, not just just `.txt`
+    file=`echo ${path/$dir\//} | sed "s/\.txt//"`
 
     OUTPUTSTRING="$OUTPUTSTRING
-    <item arg='$path' type='file' valid='yes' uid='$path'>
+    <item arg='$path' type='file' uid='$path'>
       <title>$file</title>
       <icon type='fileicon'>$path</icon>
       </item>"
