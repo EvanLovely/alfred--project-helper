@@ -1,12 +1,19 @@
 #!/bin/bash
 
+dir=~/active-project/files/people
 OUTPUTSTRING="<items>
 "
 if [ "$1" ] 
   then
-  TO_SEARCH=$(find ~/active-project/files/people -type d -depth 1 -iname *$1*)
+  find $dir -type d -depth 1 -iname *$1* | grep -iv "DS_Store" > /tmp/find-people.txt
+
+  grep -rli "$1" $dir | sed 's/\/email.txt//' | sed 's/\/info.txt//' | grep -iv "DS_Store" >> /tmp/find-people.txt
+
+  # Export that list to this variable while ensuring there are no duplicates
+  TO_SEARCH="`sort -u /tmp/find-people.txt`"
+
   else
-  TO_SEARCH=$(find ~/active-project/files/people -type d -depth 1)
+  TO_SEARCH=$(find $dir -type d -depth 1)
 
   OUTPUTSTRING="$OUTPUTSTRING
   <item>
@@ -15,6 +22,8 @@ if [ "$1" ]
   </item>"
 
 fi
+
+
 # Replacing any spaces with seperator b/c the below `for` loop is cycling on spaces
 seperator="☀"
 FILES=${TO_SEARCH// /$seperator}
