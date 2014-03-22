@@ -625,14 +625,7 @@
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>source bash_functions
-/opt/local/bin/terminal-notifier -message "Shutting down…" -title "Project Helper"
-sh ~/active-project/files/scripts/shutdown.sh
-rm -rf ~/active-project
-mkdir ~/active-project
-ln -s "{query}" ~/active-project/files
-sh start.sh
-/opt/local/bin/terminal-notifier -message "Active Project Switched"</string>
+				<string>sh switch-project.sh "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
