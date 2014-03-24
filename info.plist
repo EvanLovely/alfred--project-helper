@@ -94,6 +94,41 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>36E2AC73-FD53-42AF-8F63-3696DD0BAA72</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C70DE9AC-8E6E-4647-B3DA-F9A6522608EC</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Run in ~ instead of Site Root in a Window</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Run in Background (no Terminal Window)</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>32B4EB64-EFF3-4BB3-8659-FDFE2C714C03</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Run in ~ in background</string>
+			</dict>
+		</array>
 		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
 		<array/>
 		<key>3E5A413E-3B68-4D3E-91BD-1789A40CB85D</key>
@@ -342,41 +377,6 @@
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>Edit this Person's Info</string>
-			</dict>
-		</array>
-		<key>CAD65936-403B-4947-B81D-8A938ACE03C7</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>C70DE9AC-8E6E-4647-B3DA-F9A6522608EC</string>
-				<key>modifiers</key>
-				<integer>524288</integer>
-				<key>modifiersubtext</key>
-				<string>Run in ~ instead of Site Root in a Window</string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>Run in Background (no Terminal Window)</string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>32B4EB64-EFF3-4BB3-8659-FDFE2C714C03</string>
-				<key>modifiers</key>
-				<integer>262144</integer>
-				<key>modifiersubtext</key>
-				<string>Run in ~ in background</string>
 			</dict>
 		</array>
 		<key>D291A93E-DCCF-4FB7-BCF2-65823832034C</key>
@@ -1237,72 +1237,29 @@ sh "{query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>anchorfields</key>
-				<true/>
-				<key>daterange</key>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
 				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemAlternateNames</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemFinderComment</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
-				<false/>
 				<key>keyword</key>
 				<string>,p scripts</string>
-				<key>scopes</key>
-				<array>
-					<string>~/active-project/files/scripts</string>
-				</array>
+				<key>runningsubtext</key>
+				<string>searching...</string>
+				<key>script</key>
+				<string>sh find-scripts.sh "{query}"</string>
 				<key>subtext</key>
 				<string>Launch Custom Shell Scripts from "scripts" folder in Site Root in window. Explore Modifier Keys.</string>
 				<key>title</key>
-				<string>Scripts</string>
-				<key>types</key>
-				<array>
-					<string>public.shell-script</string>
-				</array>
+				<string>Launch Scripts</string>
+				<key>type</key>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>CAD65936-403B-4947-B81D-8A938ACE03C7</string>
+			<string>36E2AC73-FD53-42AF-8F63-3696DD0BAA72</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2233,6 +2190,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>1010</real>
 		</dict>
+		<key>36E2AC73-FD53-42AF-8F63-3696DD0BAA72</key>
+		<dict>
+			<key>ypos</key>
+			<real>1460</real>
+		</dict>
 		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
 		<dict>
 			<key>ypos</key>
@@ -2377,11 +2339,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3580</real>
-		</dict>
-		<key>CAD65936-403B-4947-B81D-8A938ACE03C7</key>
-		<dict>
-			<key>ypos</key>
-			<real>1470</real>
 		</dict>
 		<key>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</key>
 		<dict>
