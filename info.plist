@@ -302,6 +302,14 @@
 				<key>modifiersubtext</key>
 				<string>Paste it!</string>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>22C79BFB-1F34-4FE7-A462-4237E6D8F21A</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Edit Snippet</string>
+			</dict>
 		</array>
 		<key>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</key>
 		<array>
@@ -1647,31 +1655,6 @@ echo `cat {query}`</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>snippets Copied</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>ECE1374D-0FE1-49BA-866F-619697E46F70</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
@@ -1688,6 +1671,41 @@ end tell'</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>640B18E7-4CF0-467E-885C-88C49D1CC0E8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Snippet Copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>ECE1374D-0FE1-49BA-866F-619697E46F70</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>22C79BFB-1F34-4FE7-A462-4237E6D8F21A</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1866,7 +1884,7 @@ cat "$path/email.txt" | tr -d '\n'</string>
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh find-people.sh {query}</string>
+				<string>sh find-people.sh "{query}"</string>
 				<key>subtext</key>
 				<string>Search the "files/people" directory for people</string>
 				<key>title</key>
@@ -2007,12 +2025,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>01A19238-5C58-4EFA-AB33-DF1847129B95</key>
 		<dict>
 			<key>ypos</key>
-			<real>2910</real>
+			<real>2760</real>
 		</dict>
 		<key>0CC40071-F05B-4DD6-9F85-DBA41A8A2384</key>
 		<dict>
 			<key>ypos</key>
-			<real>2550</real>
+			<real>2430</real>
 		</dict>
 		<key>0DB146FF-2149-4328-96E2-BA4646551F14</key>
 		<dict>
@@ -2027,7 +2045,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<dict>
 			<key>ypos</key>
-			<real>2550</real>
+			<real>2430</real>
 		</dict>
 		<key>198E6930-07E8-4A45-AC5A-F0349467AE4C</key>
 		<dict>
@@ -2042,7 +2060,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>1EFFF3DB-9730-4315-B50C-A9A66EC509BF</key>
 		<dict>
 			<key>ypos</key>
-			<real>2680</real>
+			<real>2550</real>
+		</dict>
+		<key>22C79BFB-1F34-4FE7-A462-4237E6D8F21A</key>
+		<dict>
+			<key>ypos</key>
+			<real>3060</real>
 		</dict>
 		<key>264BCFE5-5582-42A5-801C-A69D6644A7C1</key>
 		<dict>
@@ -2092,7 +2115,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>54F101B9-E517-4EAB-838A-F848D5EC1B89</key>
 		<dict>
 			<key>ypos</key>
-			<real>2730</real>
+			<real>2590</real>
 		</dict>
 		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
 		<dict>
@@ -2117,12 +2140,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>61DD632E-0BF4-4753-AF16-BB51A044D3C1</key>
 		<dict>
 			<key>ypos</key>
-			<real>2780</real>
+			<real>2660</real>
 		</dict>
 		<key>640B18E7-4CF0-467E-885C-88C49D1CC0E8</key>
 		<dict>
 			<key>ypos</key>
-			<real>3110</real>
+			<real>2960</real>
 		</dict>
 		<key>6605AEC9-1791-4AC7-B379-2DA029577667</key>
 		<dict>
@@ -2137,7 +2160,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>6FB551F4-2AC6-491B-A2E4-567583FD533C</key>
 		<dict>
 			<key>ypos</key>
-			<real>2610</real>
+			<real>2500</real>
 		</dict>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<dict>
@@ -2147,7 +2170,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>7DDAECA4-BD3A-44C0-8C47-1BF935D317AC</key>
 		<dict>
 			<key>ypos</key>
-			<real>3010</real>
+			<real>2860</real>
 		</dict>
 		<key>88CF1D42-4757-4ADE-8C30-A161D62B68F3</key>
 		<dict>
@@ -2157,7 +2180,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>8C46245E-C3B5-4503-8040-23EF768C2065</key>
 		<dict>
 			<key>ypos</key>
-			<real>3050</real>
+			<real>2960</real>
 		</dict>
 		<key>A440DEC7-CFB5-4835-8F5F-304F75D7380E</key>
 		<dict>
@@ -2182,7 +2205,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>BF19C63E-7FA0-4BB7-867C-CB122D54007A</key>
 		<dict>
 			<key>ypos</key>
-			<real>2910</real>
+			<real>2760</real>
 		</dict>
 		<key>C0E10F81-8007-4B7F-8EDD-C6113F063CD4</key>
 		<dict>
@@ -2197,7 +2220,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>C1F4A37E-38FD-48D1-B62C-2BAEC1B3CE0A</key>
 		<dict>
 			<key>ypos</key>
-			<real>3050</real>
+			<real>2960</real>
 		</dict>
 		<key>C4229CD0-DE92-4CAC-885F-9EEB115FD830</key>
 		<dict>
@@ -2212,7 +2235,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>C921BB8A-805B-4EE1-AE9D-8901E24E96D6</key>
 		<dict>
 			<key>ypos</key>
-			<real>2910</real>
+			<real>2760</real>
 		</dict>
 		<key>CA329F9E-F386-482C-B136-268C02D9EA41</key>
 		<dict>
@@ -2287,7 +2310,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>ECE1374D-0FE1-49BA-866F-619697E46F70</key>
 		<dict>
 			<key>ypos</key>
-			<real>3060</real>
+			<real>2960</real>
 		</dict>
 		<key>EF55BB57-193F-4AA0-B894-3D53DD05C8C3</key>
 		<dict>
