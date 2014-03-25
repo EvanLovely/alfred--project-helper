@@ -29,7 +29,7 @@ for i in $FILES; do
     file=`echo ${path/$dir\//}`
 
     OUTPUTSTRING="$OUTPUTSTRING
-    <item arg='$path' type='file'>
+    <item arg='$path' type='file' uid='$path'>
       <title>$file</title>
       </item>"
 #     foldername=${i##*/};

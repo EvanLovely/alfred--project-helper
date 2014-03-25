@@ -9,11 +9,11 @@ if [ "$1" ]
 
   # Find all files that match, except `.DS_Store`
   args="${1// /*}" # swap spaces for *
-  TO_SEARCH=$(find $dir -type f -iname "*$args*" | grep -iv "DS_Store")
+  TO_SEARCH=$(find "$dir" -type f -iname "*$args*" | grep -iv "DS_Store" | grep -iv "Icon" )
 
   else
   # List All
-  TO_SEARCH=$(find $dir -type f -not -iname ".DS_Store")
+  TO_SEARCH=$(find "$dir" -type f | grep -iv "Icon" | grep -iv "DS_Store")
 fi
 
 # Replacing any spaces with seperator b/c the below `for` loop is cycling on spaces
