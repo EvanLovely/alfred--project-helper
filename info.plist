@@ -39,17 +39,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>152C78DA-DA9B-4132-BCC1-D18119204352</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<array>
 			<dict>
@@ -736,7 +725,7 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>,pd assets</string>
+				<string>,p assets</string>
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
@@ -754,88 +743,6 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>D38A6D98-9D04-4527-83B3-CA50304A3CB2</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>anchorfields</key>
-				<true/>
-				<key>daterange</key>
-				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemAlternateNames</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemFinderComment</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemUserTags</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<false/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
-				<false/>
-				<key>keyword</key>
-				<string>,p assets</string>
-				<key>scopes</key>
-				<array>
-					<string>~/active-project/files/assets</string>
-				</array>
-				<key>subtext</key>
-				<string>Searches ~/active-project/files/assets/</string>
-				<key>title</key>
-				<string>Find Assets</string>
-				<key>types</key>
-				<array/>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
-			<key>uid</key>
-			<string>152C78DA-DA9B-4132-BCC1-D18119204352</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2135,11 +2042,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2120</real>
 		</dict>
-		<key>152C78DA-DA9B-4132-BCC1-D18119204352</key>
-		<dict>
-			<key>ypos</key>
-			<real>700</real>
-		</dict>
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<dict>
 			<key>ypos</key>
@@ -2363,7 +2265,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>D38A6D98-9D04-4527-83B3-CA50304A3CB2</key>
 		<dict>
 			<key>ypos</key>
-			<real>660</real>
+			<real>680</real>
 		</dict>
 		<key>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</key>
 		<dict>
