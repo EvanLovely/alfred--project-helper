@@ -700,7 +700,7 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh find-files.sh "{query}"</string>
+				<string>sh search-for-files.sh ~/active-project/files/ "{query}"</string>
 				<key>subtext</key>
 				<string>A general search (~/active-project/files/) that encompasses assets, people, scripts and more.</string>
 				<key>title</key>
@@ -729,7 +729,7 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh find-assets.sh "{query}"</string>
+				<string>sh search-for-files.sh ~/active-project/files/assets/ "{query}"</string>
 				<key>subtext</key>
 				<string>Find Assets in Active Project (Comps, Wireframes, etc)</string>
 				<key>title</key>
@@ -758,7 +758,7 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh find-docs.sh "{query}"</string>
+				<string>sh search-for-files.sh ~/active-project/docs/ "{query}"</string>
 				<key>subtext</key>
 				<string>Search docs</string>
 				<key>title</key>
