@@ -12,6 +12,7 @@ mkdir "$HOME/active-project/files/snippets"
 
 if [ "$name" ] && [ "$snippet" ]
 then
+  # @todo this creates a newline at the bottom of the file. `echo -n "$snippet"` prepends the resulting file with a literal '-n' - so weird, I don't know why.
   echo "$snippet" > "$HOME/active-project/files/snippets/$name"
 fi
 

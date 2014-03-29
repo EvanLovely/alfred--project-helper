@@ -1587,7 +1587,7 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<integer>127</integer>
 				<key>script</key>
 				<string>cat {query} | pbcopy
-echo `cat {query}`</string>
+cat {query}</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1659,7 +1659,7 @@ echo `cat {query}`</string>
 				<integer>127</integer>
 				<key>script</key>
 				<string>cat {query} | pbcopy
-echo `cat {query}`
+cat {query}
 
 osascript -e 'tell application "System Events"
 	keystroke "v" using {command down}
