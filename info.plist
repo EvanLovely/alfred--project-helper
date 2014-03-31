@@ -1133,7 +1133,7 @@ sh "{query}"</string>
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh find-scripts.sh "{query}"</string>
+				<string>sh search-for-files.sh ~/active-project/files/scripts/ "{query}"</string>
 				<key>subtext</key>
 				<string>Launch Custom Shell Scripts from "scripts" folder in Site Root in window. Explore Modifier Keys.</string>
 				<key>title</key>
@@ -1610,7 +1610,7 @@ cat {query}</string>
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>sh find-snippets.sh "{query}"</string>
+				<string>sh find-snippets.sh ~/active-project/files/snippets/ "{query}"</string>
 				<key>subtext</key>
 				<string>Copies it as well.</string>
 				<key>title</key>
