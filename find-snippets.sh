@@ -7,7 +7,7 @@ echo "<items>"
 if [ "$2" ] 
   then
     # Filter List
-    mdfind -0 -onlyin "$1" "$2" | xargs -0 -I {} \
+    mdfind -0 -onlyin "$1" "$2 NOT kind:folder" | xargs -0 -I {} \
       sh -c 'echo "<item arg=\"$1\" type=\"file\" uid=\"$1\"><title>$(basename "$1")</title><subtitle><![CDATA[$(cat "$1")]]></subtitle><icon type=\"fileicon\">$1</icon></item>"' -- {}
 
   else
