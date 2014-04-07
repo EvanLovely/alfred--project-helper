@@ -17,17 +17,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>01A19238-5C58-4EFA-AB33-DF1847129B95</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>C921BB8A-805B-4EE1-AE9D-8901E24E96D6</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>0DB146FF-2149-4328-96E2-BA4646551F14</key>
 		<array>
 			<dict>
@@ -217,16 +206,7 @@
 			</dict>
 		</array>
 		<key>640B18E7-4CF0-467E-885C-88C49D1CC0E8</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>ECE1374D-0FE1-49BA-866F-619697E46F70</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
+		<array/>
 		<key>6605AEC9-1791-4AC7-B379-2DA029577667</key>
 		<array>
 			<dict>
@@ -254,6 +234,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>0CC40071-F05B-4DD6-9F85-DBA41A8A2384</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>71E32143-C9CA-495E-8B19-AC60B4B56AAE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EF024117-D019-4A92-B0BC-AC1F8A476027</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -322,11 +313,22 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>BDBB3D75-535F-4F8B-B20E-4803DFFD1517</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C921BB8A-805B-4EE1-AE9D-8901E24E96D6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>BF19C63E-7FA0-4BB7-867C-CB122D54007A</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>01A19238-5C58-4EFA-AB33-DF1847129B95</string>
+				<string>BDBB3D75-535F-4F8B-B20E-4803DFFD1517</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -466,6 +468,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>FA59170B-8313-4763-8511-AA2B53509BFB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EF024117-D019-4A92-B0BC-AC1F8A476027</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9DC17E59-6F9D-4A73-8945-9D3A5064E646</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1566,17 +1579,17 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>sh add-snippet.sh</string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+set defaultPOSIXPath to do shell script "echo $HOME/active-project/files/snippets"set defaultPath to POSIX file defaultPOSIXPath as aliastell me	activate	set response to the text returned of (display dialog "What is the snippet?" with title "Add Snippet" default answer return &amp; return &amp; return &amp; return)	set resultFile to (choose file name with prompt "Save As File" default name "My Snippet.txt" default location defaultPath)end tellset referenceNumber to open for access resultFile with write permissionwrite response to referenceNumberclose access referenceNumber
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
-			<string>01A19238-5C58-4EFA-AB33-DF1847129B95</string>
+			<string>BDBB3D75-535F-4F8B-B20E-4803DFFD1517</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2008,6 +2021,67 @@ open "`echo -n $path`"</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Search for links with ,p links</string>
+				<key>title</key>
+				<string>New Link Added</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>9DC17E59-6F9D-4A73-8945-9D3A5064E646</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p add link</string>
+				<key>subtext</key>
+				<string>Can be searched for with ',p links'</string>
+				<key>text</key>
+				<string>Add new link</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>71E32143-C9CA-495E-8B19-AC60B4B56AAE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)set defaultPOSIXPath to do shell script "echo $HOME/active-project/files/links"set defaultPath to POSIX file defaultPOSIXPath as aliastell me	activate	set theURL to the text returned of (display dialog "What is the URL?" with title "Add URL" default answer "http://google.com")	set resultFile to (choose file name with prompt "Save As File" default name "Name of Link" default location defaultPath) as text		set text item delimiters to ":"		set fileName to last text item of resultFile	set filePath to text 1 thru lastpos(resultFile, ":") of resultFile	end telltell application "Finder"	make new internet location file at filePath to theURL with properties {name:fileName}end tellend alfred_scripton lastpos(textstring, thischar)	return (length of textstring) - (offset of thischar in (reverse of text items of textstring as string))end lastpos</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>EF024117-D019-4A92-B0BC-AC1F8A476027</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -2021,11 +2095,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
-		</dict>
-		<key>01A19238-5C58-4EFA-AB33-DF1847129B95</key>
-		<dict>
-			<key>ypos</key>
-			<real>2760</real>
 		</dict>
 		<key>0CC40071-F05B-4DD6-9F85-DBA41A8A2384</key>
 		<dict>
@@ -2162,6 +2231,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2500</real>
 		</dict>
+		<key>71E32143-C9CA-495E-8B19-AC60B4B56AAE</key>
+		<dict>
+			<key>ypos</key>
+			<real>3940</real>
+		</dict>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<dict>
 			<key>ypos</key>
@@ -2182,6 +2256,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2960</real>
 		</dict>
+		<key>9DC17E59-6F9D-4A73-8945-9D3A5064E646</key>
+		<dict>
+			<key>ypos</key>
+			<real>3940</real>
+		</dict>
 		<key>A440DEC7-CFB5-4835-8F5F-304F75D7380E</key>
 		<dict>
 			<key>ypos</key>
@@ -2201,6 +2280,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3270</real>
+		</dict>
+		<key>BDBB3D75-535F-4F8B-B20E-4803DFFD1517</key>
+		<dict>
+			<key>ypos</key>
+			<real>2760</real>
 		</dict>
 		<key>BF19C63E-7FA0-4BB7-867C-CB122D54007A</key>
 		<dict>
@@ -2311,6 +2395,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>2960</real>
+		</dict>
+		<key>EF024117-D019-4A92-B0BC-AC1F8A476027</key>
+		<dict>
+			<key>ypos</key>
+			<real>3940</real>
 		</dict>
 		<key>EF55BB57-193F-4AA0-B894-3D53DD05C8C3</key>
 		<dict>
