@@ -415,6 +415,14 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>97FE2D3C-3C92-49A3-BF35-8EAD05D68932</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open in Dev Browser</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -785,6 +793,24 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>6800BE27-5AE1-41C1-8810-FEEE1696FE0A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>source bash_functions
+open {query} -a "`getsetting dev_browser`"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>97FE2D3C-3C92-49A3-BF35-8EAD05D68932</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1978,27 +2004,6 @@ open "`echo -n $path`"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p add person</string>
-				<key>subtext</key>
-				<string>Can later be found by running `,p people`</string>
-				<key>text</key>
-				<string>Add Project Person</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>EF55BB57-193F-4AA0-B894-3D53DD05C8C3</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -2018,6 +2023,27 @@ open "`echo -n $path`"</string>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>FA59170B-8313-4763-8511-AA2B53509BFB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p add person</string>
+				<key>subtext</key>
+				<string>Can later be found by running `,p people`</string>
+				<key>text</key>
+				<string>Add Project Person</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>EF55BB57-193F-4AA0-B894-3D53DD05C8C3</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2255,6 +2281,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>2960</real>
+		</dict>
+		<key>97FE2D3C-3C92-49A3-BF35-8EAD05D68932</key>
+		<dict>
+			<key>ypos</key>
+			<real>800</real>
 		</dict>
 		<key>9DC17E59-6F9D-4A73-8945-9D3A5064E646</key>
 		<dict>
