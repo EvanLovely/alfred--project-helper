@@ -206,16 +206,7 @@
 			</dict>
 		</array>
 		<key>640B18E7-4CF0-467E-885C-88C49D1CC0E8</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>ECE1374D-0FE1-49BA-866F-619697E46F70</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
+		<array/>
 		<key>6605AEC9-1791-4AC7-B379-2DA029577667</key>
 		<array>
 			<dict>
@@ -1588,6 +1579,31 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Snippet Copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>ECE1374D-0FE1-49BA-866F-619697E46F70</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
@@ -1671,31 +1687,6 @@ cat {query}</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>640B18E7-4CF0-467E-885C-88C49D1CC0E8</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Snippet Copied</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>ECE1374D-0FE1-49BA-866F-619697E46F70</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2448,7 +2439,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>ECE1374D-0FE1-49BA-866F-619697E46F70</key>
 		<dict>
 			<key>ypos</key>
-			<real>2960</real>
+			<real>2860</real>
 		</dict>
 		<key>EF024117-D019-4A92-B0BC-AC1F8A476027</key>
 		<dict>
