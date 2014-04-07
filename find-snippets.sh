@@ -14,8 +14,9 @@ if [ "$2" ]
 
   else
     # List All
+    echo "<item arg=\"add-snippet\"><title>Add New Snippet</title><subtitle>On Snippets below: Enter to Copy and Insert. Hold Cmd to Just Copy. Type to filter.</subtitle></item>"
     find "$dir" \( -name .git -o -name .hg -o -name ".DS_Store" -o -name "Icon?" \) -prune -o \( -type f -print0 \) | xargs -0 -I {} \
-      sh -c 'echo "<item arg=\"$1\" type=\"file\" uid=\"$1\"><title>$(echo "${1/$dir\/}")</title><subtitle>$(/opt/local/bin/tag -Nl "$1") ~ <![CDATA[$(cat "$1")]]></subtitle><icon type=\"fileicon\">$1</icon></item>"' -- {}
+      sh -c 'echo "<item arg=\"$1\" type=\"file\"><title>$(echo "${1/$dir\/}")</title><subtitle>$(/opt/local/bin/tag -Nl "$1") ~ <![CDATA[$(cat "$1")]]></subtitle><icon type=\"fileicon\">$1</icon></item>"' -- {}
 
 fi
 

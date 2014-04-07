@@ -206,7 +206,16 @@
 			</dict>
 		</array>
 		<key>640B18E7-4CF0-467E-885C-88C49D1CC0E8</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ECE1374D-0FE1-49BA-866F-619697E46F70</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>6605AEC9-1791-4AC7-B379-2DA029577667</key>
 		<array>
 			<dict>
@@ -281,17 +290,17 @@
 				<key>destinationuid</key>
 				<string>7DDAECA4-BD3A-44C0-8C47-1BF935D317AC</string>
 				<key>modifiers</key>
-				<integer>0</integer>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Just copy, don't paste.</string>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>640B18E7-4CF0-467E-885C-88C49D1CC0E8</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
-				<string>Paste it!</string>
+				<string></string>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
@@ -1654,12 +1663,7 @@ cat {query}</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cat {query} | pbcopy
-cat {query}
-
-osascript -e 'tell application "System Events"
-	keystroke "v" using {command down}
-end tell'</string>
+				<string>sh snippets-handler.sh {query}</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
