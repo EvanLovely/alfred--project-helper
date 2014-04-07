@@ -423,7 +423,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<string>FDF41E5D-5F06-43A6-AE67-5DCC5B1BF48D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -504,6 +504,8 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>FDF41E5D-5F06-43A6-AE67-5DCC5B1BF48D</key>
+		<array/>
 		<key>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</key>
 		<array>
 			<dict>
@@ -793,51 +795,6 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>6800BE27-5AE1-41C1-8810-FEEE1696FE0A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>source bash_functions
-open {query} -a "`getsetting dev_browser`"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>97FE2D3C-3C92-49A3-BF35-8EAD05D68932</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>,p links</string>
-				<key>runningsubtext</key>
-				<string>searching...</string>
-				<key>script</key>
-				<string>sh find-links.sh "{query}"</string>
-				<key>title</key>
-				<string>Find Links</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>D384052B-1D97-411B-B34B-80E4405F9279</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2108,6 +2065,68 @@ open "`echo -n $path`"</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>source bash_functions
+open {query} -a "`getsetting dev_browser`"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>97FE2D3C-3C92-49A3-BF35-8EAD05D68932</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>sh links-handler.sh "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FDF41E5D-5F06-43A6-AE67-5DCC5B1BF48D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p links</string>
+				<key>runningsubtext</key>
+				<string>searching...</string>
+				<key>script</key>
+				<string>sh find-links.sh "{query}"</string>
+				<key>title</key>
+				<string>Find Links</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D384052B-1D97-411B-B34B-80E4405F9279</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -2260,7 +2279,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>71E32143-C9CA-495E-8B19-AC60B4B56AAE</key>
 		<dict>
 			<key>ypos</key>
-			<real>3940</real>
+			<real>4060</real>
 		</dict>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<dict>
@@ -2285,12 +2304,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>97FE2D3C-3C92-49A3-BF35-8EAD05D68932</key>
 		<dict>
 			<key>ypos</key>
-			<real>800</real>
+			<real>4170</real>
 		</dict>
 		<key>9DC17E59-6F9D-4A73-8945-9D3A5064E646</key>
 		<dict>
 			<key>ypos</key>
-			<real>3940</real>
+			<real>4060</real>
 		</dict>
 		<key>A440DEC7-CFB5-4835-8F5F-304F75D7380E</key>
 		<dict>
@@ -2375,7 +2394,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>D384052B-1D97-411B-B34B-80E4405F9279</key>
 		<dict>
 			<key>ypos</key>
-			<real>900</real>
+			<real>4300</real>
 		</dict>
 		<key>D38A6D98-9D04-4527-83B3-CA50304A3CB2</key>
 		<dict>
@@ -2430,7 +2449,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>EF024117-D019-4A92-B0BC-AC1F8A476027</key>
 		<dict>
 			<key>ypos</key>
-			<real>3940</real>
+			<real>4060</real>
 		</dict>
 		<key>EF55BB57-193F-4AA0-B894-3D53DD05C8C3</key>
 		<dict>
@@ -2446,6 +2465,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
+		</dict>
+		<key>FDF41E5D-5F06-43A6-AE67-5DCC5B1BF48D</key>
+		<dict>
+			<key>ypos</key>
+			<real>4300</real>
 		</dict>
 		<key>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</key>
 		<dict>
