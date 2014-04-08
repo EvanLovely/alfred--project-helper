@@ -302,6 +302,17 @@
 				<string>Edit Snippet</string>
 			</dict>
 		</array>
+		<key>AE22A8DE-969B-4464-AADC-FA7446984DAA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C9EFED0D-BF2A-4933-B227-31EA7122A621</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</key>
 		<array>
 			<dict>
@@ -373,6 +384,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C9EFED0D-BF2A-4933-B227-31EA7122A621</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>37203B3D-F838-4912-A8BD-A35F40F30928</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2122,6 +2144,80 @@ open {query} -a "`getsetting dev_browser`"</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>echo "@include {query};" | pbcopy
+echo "@include {query};"
+
+osascript -e 'tell application "System Events"
+	keystroke "v" using {command down}
+end tell'</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C9EFED0D-BF2A-4933-B227-31EA7122A621</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Mixin Copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>37203B3D-F838-4912-A8BD-A35F40F30928</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p mixins</string>
+				<key>script</key>
+				<string>sh find-mixins.sh ~/active-project/theme/ "{query}"</string>
+				<key>subtext</key>
+				<string>Search SASS Files for @mixin</string>
+				<key>title</key>
+				<string>Find Mixins in Theme</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>AE22A8DE-969B-4464-AADC-FA7446984DAA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -2205,6 +2301,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>1460</real>
+		</dict>
+		<key>37203B3D-F838-4912-A8BD-A35F40F30928</key>
+		<dict>
+			<key>ypos</key>
+			<real>4420</real>
 		</dict>
 		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
 		<dict>
@@ -2311,6 +2412,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>950</real>
 		</dict>
+		<key>AE22A8DE-969B-4464-AADC-FA7446984DAA</key>
+		<dict>
+			<key>ypos</key>
+			<real>4420</real>
+		</dict>
 		<key>B0A5B1A6-C1D8-4641-B2BA-C684D12D61A0</key>
 		<dict>
 			<key>ypos</key>
@@ -2365,6 +2471,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>2760</real>
+		</dict>
+		<key>C9EFED0D-BF2A-4933-B227-31EA7122A621</key>
+		<dict>
+			<key>ypos</key>
+			<real>4420</real>
 		</dict>
 		<key>CA329F9E-F386-482C-B136-268C02D9EA41</key>
 		<dict>
