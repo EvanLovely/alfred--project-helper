@@ -11,9 +11,9 @@ if [ "$2" ]
       sh -c 'echo "
       <item arg=\"$1\" type=\"file\" uid=\"$1\">
         <title>$(echo "${1/$dir\/}")</title>
-        <subtitle>$(/opt/local/bin/tag -Nl "$1") ~ $(if [[ "$(mdls -raw -name kMDItemContentTypeTree "$1")" == *plain-text* ]]; then
+        <subtitle>$(/opt/local/bin/tag -Nl "$1") ~ <![CDATA[$(if [[ "$(mdls -raw -name kMDItemContentTypeTree "$1")" == *plain-text* ]]; then
   egrep -in "${terms// /.*}" "$1"
-fi)
+fi)]]>
         </subtitle>
         <icon type=\"fileicon\">$1</icon>
       </item>"' -- {}
