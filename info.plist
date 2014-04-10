@@ -46,6 +46,14 @@
 				<key>modifiersubtext</key>
 				<string>Add new note</string>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>70D39EE9-9C79-4FDB-A5F0-A51CDB98AC85</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Append to Note</string>
+			</dict>
 		</array>
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<array>
@@ -2343,6 +2351,52 @@ end alfred_script</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
+				<string>source ~/.bash_functions
+osascript -e 'set response to the text returned of (display dialog "What do you want to append to this file?" with title "Append This" default answer return)
+response' &gt;&gt; {query}
+query="{query}"
+terminal-notifier -subtitle "Click to Open File" -title "File Appended To" -message "$(basename $query)" -execute "open {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>70D39EE9-9C79-4FDB-A5F0-A51CDB98AC85</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<true/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Added to Notes</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D9972F46-8BE0-4DC1-941E-0585976534A6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
 				<string>cp {query} ~/active-project/files/notes/
 echo {query}</string>
 				<key>type</key>
@@ -2369,31 +2423,6 @@ echo {query}</string>
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
 			<string>39C0448E-03FB-4BE9-9DC8-E0228BA7233A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<true/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Added to Notes</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>D9972F46-8BE0-4DC1-941E-0585976534A6</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2464,7 +2493,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>1235D073-0D11-4749-919B-5119453F30F1</key>
 		<dict>
 			<key>ypos</key>
-			<real>4600</real>
+			<real>4640</real>
 		</dict>
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<dict>
@@ -2529,7 +2558,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>39C0448E-03FB-4BE9-9DC8-E0228BA7233A</key>
 		<dict>
 			<key>ypos</key>
-			<real>4780</real>
+			<real>4870</real>
 		</dict>
 		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
 		<dict>
@@ -2596,6 +2625,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2500</real>
 		</dict>
+		<key>70D39EE9-9C79-4FDB-A5F0-A51CDB98AC85</key>
+		<dict>
+			<key>ypos</key>
+			<real>4740</real>
+		</dict>
 		<key>71E32143-C9CA-495E-8B19-AC60B4B56AAE</key>
 		<dict>
 			<key>ypos</key>
@@ -2604,7 +2638,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>75270128-7CC8-4FA5-ABF9-5A051EFCA537</key>
 		<dict>
 			<key>ypos</key>
-			<real>4900</real>
+			<real>4970</real>
 		</dict>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<dict>
@@ -2669,7 +2703,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>BB240A6C-5714-4F19-9F0E-54506A7707A0</key>
 		<dict>
 			<key>ypos</key>
-			<real>4780</real>
+			<real>4870</real>
 		</dict>
 		<key>BDBB3D75-535F-4F8B-B20E-4803DFFD1517</key>
 		<dict>
@@ -2729,7 +2763,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>CAF4264B-C884-4F56-A154-D16C2A7FABF4</key>
 		<dict>
 			<key>ypos</key>
-			<real>4660</real>
+			<real>4640</real>
 		</dict>
 		<key>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</key>
 		<dict>
@@ -2779,7 +2813,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>DD9F9CB9-BA18-44B9-B339-8DE985735F1B</key>
 		<dict>
 			<key>ypos</key>
-			<real>4900</real>
+			<real>4970</real>
 		</dict>
 		<key>DE2BA2CD-D3C5-4EFF-9B7B-96AEFF8F2C45</key>
 		<dict>

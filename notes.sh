@@ -11,7 +11,7 @@ if [ "$2" ]
 
   else
     # List All
-    echo "<item arg=\"add-note\"><title>Add New Note with Cmd+Enter</title><subtitle>On Notes below: Enter to Open. Type to filter.</subtitle></item>"
+    echo "<item arg=\"add-note\"><title>Add New Note with Cmd+Enter</title><subtitle>On Notes below: Enter to Open. Option+Enter to Append to Note. Type to filter.</subtitle></item>"
     find "$dir" \( -name .git -o -name .hg -o -name ".DS_Store" -o -name "Icon?" \) -prune -o \( -print0 \) | xargs -0 -I {} \
       sh -c 'echo "<item arg=\"$1\" type=\"file\"><title>$(echo "${1/$dir\/}")</title><subtitle>$(/opt/local/bin/tag -Nl "$1")</subtitle><icon type=\"fileicon\">$1</icon></item>"' -- {}
 
