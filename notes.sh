@@ -1,0 +1,20 @@
+#!/bin/bash
+export dir="$(cd $1 && pwd -P)"
+
+echo "<items>"
+
+if [ "$2" ] 
+  then
+    # Filter List
+    mdfind -0 -onlyin "$dir" "$2" | xargs -0 -I {} \
+      sh -c 'echo "<item arg=\"$1\" type=\"file\" uid=\"$1\"><title>$(echo "${1/$dir\/}")</title><subtitle>$(/opt/local/bin/tag -Nl "$1")</subtitle><icon type=\"fileicon\">$1</icon></item>"' -- {}
+
+  else
+    # List All
+    echo "<item arg=\"add-note\"><title>Add New Note with Cmd+Enter</title><subtitle>On Notes below: Enter to Open. Type to filter.</subtitle></item>"
+    find "$dir" \( -name .git -o -name .hg -o -name ".DS_Store" -o -name "Icon?" \) -prune -o \( -print0 \) | xargs -0 -I {} \
+      sh -c 'echo "<item arg=\"$1\" type=\"file\"><title>$(echo "${1/$dir\/}")</title><subtitle>$(/opt/local/bin/tag -Nl "$1")</subtitle><icon type=\"fileicon\">$1</icon></item>"' -- {}
+
+fi
+
+echo "</items>"

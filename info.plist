@@ -28,6 +28,25 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>1235D073-0D11-4749-919B-5119453F30F1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AC77C22F-2413-4C12-A40A-F629B443E5B5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>CAF4264B-C884-4F56-A154-D16C2A7FABF4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Add new note</string>
+			</dict>
+		</array>
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<array>
 			<dict>
@@ -116,6 +135,17 @@
 				<integer>262144</integer>
 				<key>modifiersubtext</key>
 				<string>Run in ~ in background</string>
+			</dict>
+		</array>
+		<key>39C0448E-03FB-4BE9-9DC8-E0228BA7233A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BB240A6C-5714-4F19-9F0E-54506A7707A0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 			</dict>
 		</array>
 		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
@@ -251,6 +281,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>75270128-7CC8-4FA5-ABF9-5A051EFCA537</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D9972F46-8BE0-4DC1-941E-0585976534A6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<array/>
 		<key>7DDAECA4-BD3A-44C0-8C47-1BF935D317AC</key>
@@ -318,6 +359,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>5F9FBA59-C2CC-4D8B-AC13-B8738B0C37E4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>BB240A6C-5714-4F19-9F0E-54506A7707A0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D9972F46-8BE0-4DC1-941E-0585976534A6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -422,6 +474,8 @@
 				<string>Edit this Person's Info</string>
 			</dict>
 		</array>
+		<key>CAF4264B-C884-4F56-A154-D16C2A7FABF4</key>
+		<array/>
 		<key>D291A93E-DCCF-4FB7-BCF2-65823832034C</key>
 		<array>
 			<dict>
@@ -480,6 +534,17 @@
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>SSH into Production</string>
+			</dict>
+		</array>
+		<key>DD9F9CB9-BA18-44B9-B339-8DE985735F1B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>75270128-7CC8-4FA5-ABF9-5A051EFCA537</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 			</dict>
 		</array>
 		<key>DE2BA2CD-D3C5-4EFF-9B7B-96AEFF8F2C45</key>
@@ -2218,6 +2283,155 @@ end tell'</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>AC77C22F-2413-4C12-A40A-F629B443E5B5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p notes</string>
+				<key>script</key>
+				<string>sh notes.sh ~/active-project/files/notes "{query}"</string>
+				<key>title</key>
+				<string>Notes</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>1235D073-0D11-4749-919B-5119453F30F1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+set defaultPOSIXPath to do shell script "echo $HOME/active-project/files/notes"set defaultPath to POSIX file defaultPOSIXPath as aliastell me	activate	set resultFile to (choose file name with prompt "Save As File" default name "note.md" default location defaultPath)end tell
+set referenceNumber to open for access resultFile with write permissionclose access referenceNumber
+tell application "Finder" to open resultFile
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>CAF4264B-C884-4F56-A154-D16C2A7FABF4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>cp {query} ~/active-project/files/notes/
+echo {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BB240A6C-5714-4F19-9F0E-54506A7707A0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Copy to Project Notes</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>39C0448E-03FB-4BE9-9DC8-E0228BA7233A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<true/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Added to Notes</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D9972F46-8BE0-4DC1-941E-0585976534A6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>mv {query} ~/active-project/files/notes/
+echo {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>75270128-7CC8-4FA5-ABF9-5A051EFCA537</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Move to Project Notes</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>DD9F9CB9-BA18-44B9-B339-8DE985735F1B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -2246,6 +2460,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>2120</real>
+		</dict>
+		<key>1235D073-0D11-4749-919B-5119453F30F1</key>
+		<dict>
+			<key>ypos</key>
+			<real>4600</real>
 		</dict>
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<dict>
@@ -2306,6 +2525,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>4420</real>
+		</dict>
+		<key>39C0448E-03FB-4BE9-9DC8-E0228BA7233A</key>
+		<dict>
+			<key>ypos</key>
+			<real>4780</real>
 		</dict>
 		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
 		<dict>
@@ -2377,6 +2601,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>4060</real>
 		</dict>
+		<key>75270128-7CC8-4FA5-ABF9-5A051EFCA537</key>
+		<dict>
+			<key>ypos</key>
+			<real>4900</real>
+		</dict>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<dict>
 			<key>ypos</key>
@@ -2412,6 +2641,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>950</real>
 		</dict>
+		<key>AC77C22F-2413-4C12-A40A-F629B443E5B5</key>
+		<dict>
+			<key>ypos</key>
+			<real>4540</real>
+		</dict>
 		<key>AE22A8DE-969B-4464-AADC-FA7446984DAA</key>
 		<dict>
 			<key>ypos</key>
@@ -2431,6 +2665,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3270</real>
+		</dict>
+		<key>BB240A6C-5714-4F19-9F0E-54506A7707A0</key>
+		<dict>
+			<key>ypos</key>
+			<real>4780</real>
 		</dict>
 		<key>BDBB3D75-535F-4F8B-B20E-4803DFFD1517</key>
 		<dict>
@@ -2487,6 +2726,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>3580</real>
 		</dict>
+		<key>CAF4264B-C884-4F56-A154-D16C2A7FABF4</key>
+		<dict>
+			<key>ypos</key>
+			<real>4660</real>
+		</dict>
 		<key>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</key>
 		<dict>
 			<key>ypos</key>
@@ -2512,6 +2756,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>1420</real>
 		</dict>
+		<key>D9972F46-8BE0-4DC1-941E-0585976534A6</key>
+		<dict>
+			<key>ypos</key>
+			<real>4840</real>
+		</dict>
 		<key>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</key>
 		<dict>
 			<key>ypos</key>
@@ -2526,6 +2775,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>400</real>
+		</dict>
+		<key>DD9F9CB9-BA18-44B9-B339-8DE985735F1B</key>
+		<dict>
+			<key>ypos</key>
+			<real>4900</real>
 		</dict>
 		<key>DE2BA2CD-D3C5-4EFF-9B7B-96AEFF8F2C45</key>
 		<dict>
