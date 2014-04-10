@@ -1,45 +1,19 @@
 #!/bin/bash
+export dir="$(cd $1 && pwd -P)"
 
-dir=~/active-project/theme/
-OUTPUTSTRING="<items>
-"
-if [ "$1" ] 
+echo "<items>"
+
+if [ "$2" ] 
   then
-  # Filter List
-
-  # Find all files that match, except `.DS_Store`
-  args="${1// /*}" # swap spaces for *
-  # @todo Create ability to search path names, search for multiple kinds of files
-  TO_SEARCH=$(find $dir -type f -iname "*$args*" -iregex '.*\(scss\)' | grep -iv "DS_Store")
+    # Filter List
+    find "$dir" \( -name .git -o -name .hg -o -name ".DS_Store" -o -name "Icon?" \) -prune -o \( -type f -iname "*${2// /*}*" -print0 \) | xargs -0 -I {} \
+      sh -c 'echo "<item arg=\"$1\" type=\"file\" uid=\"$1\"><title>$(echo "${1/$dir\/}")</title><subtitle>$(/opt/local/bin/tag -Nl "$1")</subtitle><icon type=\"fileicon\">$1</icon></item>"' -- {}
 
   else
-  # List All
-  TO_SEARCH=$(find $dir -type f -iregex '.*\(scss\)' -not -iname ".DS_Store")
+    # List All
+    find "$dir" \( -name .git -o -name .hg -o -name ".DS_Store" -o -name "Icon?" \) -prune -o \( -type f -print0 \) | xargs -0 -I {} \
+      sh -c 'echo "<item arg=\"$1\" type=\"file\"><title>$(echo "${1/$dir\/}")</title><subtitle>$(/opt/local/bin/tag -Nl "$1")</subtitle><icon type=\"fileicon\">$1</icon></item>"' -- {}
+
 fi
 
-# Replacing any spaces with seperator b/c the below `for` loop is cycling on spaces
-seperator="☀"
-FILES=${TO_SEARCH// /$seperator}
-
-for i in $FILES; do
- 
-    # Let's get our spaces we took away back by swapping it for the seperator
-    path="${i//$seperator/ }"
-
-    # Extract filename from path. remove everything up to last `/`.`
-    file=`echo ${path/$dir\//}`
-
-    OUTPUTSTRING="$OUTPUTSTRING
-    <item arg='$path' type='file' valid='yes' uid='$path'>
-      <title>$file</title>
-      <icon type='fileicon'>$path</icon>
-      </item>"
-#     foldername=${i##*/};
-#     file="$i";
-    # echo "e $i d";
-done
-
-OUTPUTSTRING="$OUTPUTSTRING
-</items>"
-
-echo "$OUTPUTSTRING"
+echo "</items>"

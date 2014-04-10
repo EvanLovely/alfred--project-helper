@@ -907,7 +907,7 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh find-css.sh "{query}"</string>
+				<string>sh find-css.sh ~/active-project/theme/ "{query}"</string>
 				<key>subtext</key>
 				<string>Show SASS/LESS files in Active Project's Theme</string>
 				<key>title</key>
