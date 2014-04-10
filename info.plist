@@ -2150,8 +2150,8 @@ open {query} -a "`getsetting dev_browser`"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "@include {query};" | pbcopy
-echo "@include {query};"
+				<string>echo '@include {query};' | pbcopy
+echo '@include {query};'
 
 osascript -e 'tell application "System Events"
 	keystroke "v" using {command down}
