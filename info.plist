@@ -898,7 +898,7 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh search-for-files.sh ~/active-project/docs/ "{query}"</string>
+				<string>sh search-for-files.sh ~/active-project/gdocs/ "{query}"</string>
 				<key>subtext</key>
 				<string>Search docs</string>
 				<key>title</key>
@@ -1102,7 +1102,7 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 				<string>,p site</string>
 				<key>scopes</key>
 				<array>
-					<string>~/active-project/site-root</string>
+					<string>~/active-project/site_root</string>
 				</array>
 				<key>subtext</key>
 				<string>For any file</string>
@@ -1224,7 +1224,7 @@ sh {query}</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/active-project/site-root &amp;&amp;
+				<string>cd ~/active-project/site_root &amp;&amp;
 sh "{query}"</string>
 			</dict>
 			<key>type</key>
@@ -1269,7 +1269,7 @@ sh "{query}"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/active-project/site-root &amp;&amp;
+				<string>cd ~/active-project/site_root &amp;&amp;
 sh "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -1361,7 +1361,7 @@ $SSH</string>
 				<integer>127</integer>
 				<key>script</key>
 				<string>source bash_functions
-cd ~/active-project/site-root
+cd ~/active-project/site_root
 git push
 terminal-notifier -title "Project Helper" -message "Git Push Done"</string>
 				<key>type</key>
@@ -1423,7 +1423,7 @@ terminal-notifier -title "Project Helper" -message "Git Push Done"</string>
 				<integer>127</integer>
 				<key>script</key>
 				<string>source bash_functions
-cd ~/active-project/site-root
+cd ~/active-project/site_root
 git pull
 terminal-notifier -title "Project Helper" -message "Git Pull Done"</string>
 				<key>type</key>
@@ -1443,7 +1443,7 @@ terminal-notifier -title "Project Helper" -message "Git Pull Done"</string>
 				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
-cd ~/active-project/site-root
+cd ~/active-project/site_root
 git add . --all
 git commit -m "{query}"
 terminal-notifier -title "Project Helper" -message "Git Commit Added"</string>
@@ -1681,7 +1681,19 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
-set defaultPOSIXPath to do shell script "echo $HOME/active-project/files/snippets"set defaultPath to POSIX file defaultPOSIXPath as aliastell me	activate	set response to the text returned of (display dialog "What is the snippet?" with title "Add Snippet" default answer return &amp; return &amp; return &amp; return)	set resultFile to (choose file name with prompt "Save As File" default name "My Snippet.txt" default location defaultPath)end tellset referenceNumber to open for access resultFile with write permissionwrite response to referenceNumberclose access referenceNumber
+set defaultPOSIXPath to do shell script "echo $HOME/active-project/files/snippets"
+set defaultPath to POSIX file defaultPOSIXPath as alias
+
+tell me
+	activate
+	set response to the text returned of (display dialog "What is the snippet?" with title "Add Snippet" default answer return &amp; return &amp; return &amp; return)
+	set resultFile to (choose file name with prompt "Save As File" default name "My Snippet.txt" default location defaultPath)
+end tell
+set referenceNumber to open for access resultFile with write permission
+
+write response to referenceNumber
+
+close access referenceNumber
 end alfred_script</string>
 				<key>cachescript</key>
 				<false/>
@@ -1824,9 +1836,9 @@ cat {query}</string>
 				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
-replacesetting site_root "{query}"
-rm -rf ~/active-project/site-root
-ln -s "{query}" ~/active-project/site-root</string>
+replacefolder site_root "{query}"
+rm -rf ~/active-project/site_root
+ln -s "{query}" ~/active-project/site_root</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1863,7 +1875,7 @@ ln -s "{query}" ~/active-project/site-root</string>
 				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
-replacesetting theme "{query}"
+replacefolder theme "{query}"
 rm -rf ~/active-project/theme
 ln -s "{query}" ~/active-project/theme</string>
 				<key>type</key>
@@ -1947,9 +1959,9 @@ ln -s "{query}" ~/active-project/theme</string>
 				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
-replacesetting gdocs "{query}" 
-rm -rf ~/active-project/docs
-ln -s "{query}" ~/active-project/docs</string>
+replacefolder gdocs "{query}" 
+rm -rf ~/active-project/gdocs
+ln -s "{query}" ~/active-project/gdocs</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2166,7 +2178,27 @@ open "`echo -n $path`"</string>
 			<key>config</key>
 			<dict>
 				<key>applescript</key>
-				<string>on alfred_script(q)set defaultPOSIXPath to do shell script "echo $HOME/active-project/files/links"set defaultPath to POSIX file defaultPOSIXPath as aliastell me	activate	set theURL to the text returned of (display dialog "What is the URL?" with title "Add URL" default answer "http://google.com")	set resultFile to (choose file name with prompt "Save As File" default name "Name of Link" default location defaultPath) as text		set text item delimiters to ":"		set fileName to last text item of resultFile	set filePath to text 1 thru lastpos(resultFile, ":") of resultFile	end telltell application "Finder"	make new internet location file at filePath to theURL with properties {name:fileName}end tellend alfred_scripton lastpos(textstring, thischar)	return (length of textstring) - (offset of thischar in (reverse of text items of textstring as string))end lastpos</string>
+				<string>on alfred_script(q)
+set defaultPOSIXPath to do shell script "echo $HOME/active-project/files/links"
+set defaultPath to POSIX file defaultPOSIXPath as alias
+tell me
+	activate
+	set theURL to the text returned of (display dialog "What is the URL?" with title "Add URL" default answer "http://google.com")
+	set resultFile to (choose file name with prompt "Save As File" default name "Name of Link" default location defaultPath) as text
+	
+	set text item delimiters to ":"
+	
+	set fileName to last text item of resultFile
+	set filePath to text 1 thru lastpos(resultFile, ":") of resultFile
+	
+end tell
+tell application "Finder"
+	make new internet location file at filePath to theURL with properties {name:fileName}
+end tell
+end alfred_script
+on lastpos(textstring, thischar)
+	return (length of textstring) - (offset of thischar in (reverse of text items of textstring as string))
+end lastpos</string>
 				<key>cachescript</key>
 				<false/>
 			</dict>
@@ -2353,9 +2385,19 @@ end tell'</string>
 			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
-set defaultPOSIXPath to do shell script "echo $HOME/active-project/files/notes"set defaultPath to POSIX file defaultPOSIXPath as aliastell me	activate	set resultFile to (choose file name with prompt "Save As File" default name "note.md" default location defaultPath)end tell
-set referenceNumber to open for access resultFile with write permissionclose access referenceNumber
-tell application "Finder" to open resultFile
+set defaultPOSIXPath to do shell script "echo $HOME/active-project/files/notes"
+set defaultPath to POSIX file defaultPOSIXPath as alias
+
+tell me
+	activate
+	set resultFile to (choose file name with prompt "Save As File" default name "note.md" default location defaultPath)
+end tell
+set referenceNumber to open for access resultFile with write permission
+
+
+
+close access referenceNumber
+tell application "Finder" to open resultFile
 end alfred_script</string>
 				<key>cachescript</key>
 				<false/>

@@ -22,18 +22,35 @@ rdef() {
 }
 
 getsetting() {
-  fdefonly ~/active-project/files/settings.yml $1
+  fdefonly ~/active-project/files/settings/settings.yml $1
 }
 
 addsetting() {
-  echo "$1: $2" >> ~/active-project/files/settings.yml
+  echo "$1: $2" >> ~/active-project/files/settings/settings.yml
 }
 
 replacesetting() {
-  rdef ~/active-project/files/settings.yml $1
+  rdef ~/active-project/files/settings/settings.yml $1
   addsetting "$1" "$2"
 }
 
 removesetting() {
-  rdef ~/active-project/files/settings.yml $1
+  rdef ~/active-project/files/settings/settings.yml $1
+}
+
+getfolder() {
+  fdefonly ~/active-project/files/settings/folders.yml $1
+}
+
+addfolder() {
+  echo "$1: $2" >> ~/active-project/files/settings/folders.yml
+}
+
+replacefolder() {
+  rdef ~/active-project/files/settings/folders.yml $1
+  addfolder "$1" "$2"
+}
+
+removefolder() {
+  rdef ~/active-project/files/settings/folders.yml $1
 }

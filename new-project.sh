@@ -26,7 +26,7 @@ tell application "System Events"
 end tell'`
 if [ "$P_SITE_ROOT" ]
 then
-  addsetting site_root "$P_SITE_ROOT"
+  addfolder site_root "$P_SITE_ROOT"
 fi
 
 # Get Site Root Scripts
@@ -41,7 +41,7 @@ tell application "System Events"
 end tell'`
 if [ "$P_THEME" ]
 then
-  addsetting theme "$P_THEME"
+  addfolder theme "$P_THEME"
 fi
 
 # Get Theme Scripts
@@ -61,7 +61,7 @@ tell application "System Events"
 end tell'`
 if [ "$P_GDOCS" ]
 then
-  addsetting gdocs "$P_GDOCS"
+  addfolder gdocs "$P_GDOCS"
 fi
 
 
