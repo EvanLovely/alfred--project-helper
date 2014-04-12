@@ -1,1 +1,1 @@
-echo "<item arg=\"$1\"><title>$1</title></item>"
+echo "<item uid=\"$1\" arg=\"$1\" autocomplete=\"$(echo $1 | sed "s/[-|_].*//") \"><title>$1</title><subtitle>$(echo "$all_tags" | grep -c "$1") files with this tag in the project</subtitle><icon>tag.png</icon></item>"
