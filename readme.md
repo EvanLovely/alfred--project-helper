@@ -6,6 +6,7 @@ This [Alfred](http://alfredapp.com) Workflow is created by [me](http://evanlovel
 ## Requirements
 
 - [Alfred Powerpack](http://www.alfredapp.com/).
+- The `tag` command line tool for Mavericks Tags. [GitHub page here](https://github.com/jdberry/tag). Install with `sudo port install tag` or `brew install tag`.
 - [Terminal Notifier](https://github.com/alloy/terminal-notifier) (not necessary, but *super* useful). Run `gem install terminal-notifier` to install.
 - Websites that need to be built easier.
 
