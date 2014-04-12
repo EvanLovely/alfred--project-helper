@@ -2516,7 +2516,7 @@ echo {query}</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>tell application "Alfred 2" to search ",p tagged {query} "</string>
+				<string>tell application "Alfred 2" to search ",p tagged {query}➢"</string>
 				<key>type</key>
 				<integer>6</integer>
 			</dict>
