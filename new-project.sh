@@ -13,8 +13,6 @@ mkdir ~/all-projects
 
 # Grab the project files template, move it in, and name it after the project
 cp -r templates/project-files ~/all-projects/$P
-# Rename the notes after the project
-mv ~/all-projects/$P/notes.md ~/all-projects/$P/$P-notes.md
 
 
 # Sym Link the main files directory so we can access the settings.yml file inside
