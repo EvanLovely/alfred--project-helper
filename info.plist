@@ -1828,9 +1828,9 @@ cat {query}</string>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>0</integer>
 				<key>script</key>
-				<string>sh snippets-handler.sh {query}</string>
+				<string>sh snippets-handler.sh "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
