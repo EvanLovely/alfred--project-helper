@@ -138,17 +138,17 @@
 				<key>destinationuid</key>
 				<string>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
-				<string>Run in Terminal Window</string>
+				<string></string>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
 				<key>modifiers</key>
-				<integer>0</integer>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Run in Background. Scripts should use absolute paths.</string>
 			</dict>
 		</array>
 		<key>39C0448E-03FB-4BE9-9DC8-E0228BA7233A</key>
@@ -667,6 +667,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>sh new-project.sh "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FC9F0D22-2740-43D0-A373-ED7F8B97BD9A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
@@ -682,23 +699,6 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>00E3B1DC-4476-45B4-A2B5-D402D1D1A17A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>sh new-project.sh "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>FC9F0D22-2740-43D0-A373-ED7F8B97BD9A</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -791,19 +791,6 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>path</key>
-				<string>~/active-project</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.browseinalfred</string>
-			<key>uid</key>
-			<string>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -819,6 +806,19 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string>~/active-project</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.browseinalfred</string>
+			<key>uid</key>
+			<string>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1227,7 +1227,7 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cat “{query}”
+				<string>cat "{query}"
 sh "{query}"</string>
 			</dict>
 			<key>type</key>
@@ -1249,7 +1249,7 @@ sh "{query}"</string>
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh search-for-files.sh ~/active-project/files/scripts/ "{query}"</string>
+				<string>sh scripts.sh "{query}"</string>
 				<key>subtext</key>
 				<string>Launch Custom Shell Scripts from "scripts" folder.</string>
 				<key>title</key>
@@ -1272,7 +1272,8 @@ sh "{query}"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>sh "{query}"</string>
+				<string>source bash_functions
+sh "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1349,6 +1350,26 @@ $SSH</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>source bash_functions
+cd ~/active-project/site_root
+git push
+terminal-notifier -title "Project Helper" -message "Git Push Done"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>198E6930-07E8-4A45-AC5A-F0349467AE4C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -1364,26 +1385,6 @@ $SSH</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>C0E10F81-8007-4B7F-8EDD-C6113F063CD4</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>source bash_functions
-cd ~/active-project/site_root
-git push
-terminal-notifier -title "Project Helper" -message "Git Push Done"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>198E6930-07E8-4A45-AC5A-F0349467AE4C</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1431,27 +1432,6 @@ terminal-notifier -title "Project Helper" -message "Git Pull Done"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>,p commit</string>
-				<key>subtext</key>
-				<string>Adds all files. Pass in your commit message.</string>
-				<key>text</key>
-				<string>Add &amp; Commit Current Files</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>88CF1D42-4757-4ADE-8C30-A161D62B68F3</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -1467,6 +1447,27 @@ terminal-notifier -title "Project Helper" -message "Git Commit Added"</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p commit</string>
+				<key>subtext</key>
+				<string>Adds all files. Pass in your commit message.</string>
+				<key>text</key>
+				<string>Add &amp; Commit Current Files</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>88CF1D42-4757-4ADE-8C30-A161D62B68F3</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1625,6 +1626,27 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p add snippet</string>
+				<key>subtext</key>
+				<string>These can be easily copied later with `,p snippets`</string>
+				<key>text</key>
+				<string>Add New Snippet</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>BF19C63E-7FA0-4BB7-867C-CB122D54007A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -1644,27 +1666,6 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>C921BB8A-805B-4EE1-AE9D-8901E24E96D6</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p add snippet</string>
-				<key>subtext</key>
-				<string>These can be easily copied later with `,p snippets`</string>
-				<key>text</key>
-				<string>Add New Snippet</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>BF19C63E-7FA0-4BB7-867C-CB122D54007A</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1700,24 +1701,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>cat {query} | pbcopy
-cat {query}</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>7DDAECA4-BD3A-44C0-8C47-1BF935D317AC</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -1743,25 +1726,18 @@ cat {query}</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>hotkey</key>
-				<integer>9</integer>
-				<key>hotmod</key>
-				<integer>262144</integer>
-				<key>hotstring</key>
-				<string>V</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>cat {query} | pbcopy
+cat {query}</string>
+				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>C1F4A37E-38FD-48D1-B62C-2BAEC1B3CE0A</string>
+			<string>7DDAECA4-BD3A-44C0-8C47-1BF935D317AC</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1791,6 +1767,31 @@ cat {query}</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>8C46245E-C3B5-4503-8040-23EF768C2065</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>9</integer>
+				<key>hotmod</key>
+				<integer>262144</integer>
+				<key>hotstring</key>
+				<string>V</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>C1F4A37E-38FD-48D1-B62C-2BAEC1B3CE0A</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1863,25 +1864,6 @@ ln -s "{query}" ~/active-project/site_root</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-				</array>
-				<key>name</key>
-				<string>Set Theme Folder for Project</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -1896,6 +1878,25 @@ ln -s "{query}" ~/active-project/theme</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>5F9FBA59-C2CC-4D8B-AC13-B8738B0C37E4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Set Theme Folder for Project</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1967,6 +1968,23 @@ ln -s "{query}" ~/active-project/gdocs</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>sh add-custom-folder.sh "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1F3FB6DD-A1F7-40A1-BBC4-C3873AF9FAC7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>acceptsmulti</key>
 				<false/>
 				<key>filetypes</key>
@@ -1987,23 +2005,6 @@ ln -s "{query}" ~/active-project/gdocs</string>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>sh add-custom-folder.sh "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>1F3FB6DD-A1F7-40A1-BBC4-C3873AF9FAC7</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
 				<string>query="{query}"
@@ -2017,31 +2018,6 @@ cat "$path/email.txt" | tr -d '\n'</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>5DDDD8C2-BC7B-4C76-807E-A7887EAF5D2B</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Email Copied</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>DCF5E1CC-5D26-4DD8-8B8C-E352DB8B8010</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2077,6 +2053,31 @@ cat "$path/email.txt" | tr -d '\n'</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Email Copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>DCF5E1CC-5D26-4DD8-8B8C-E352DB8B8010</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -2090,6 +2091,23 @@ open "`echo -n $path`"</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>CA329F9E-F386-482C-B136-268C02D9EA41</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>sh add-person.sh</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E15480BB-0719-43BA-B26A-B6FE522F46D9</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2136,23 +2154,6 @@ open "`echo -n $path`"</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>EF55BB57-193F-4AA0-B894-3D53DD05C8C3</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>sh add-person.sh</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>E15480BB-0719-43BA-B26A-B6FE522F46D9</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2302,6 +2303,28 @@ open {query} -a "`getsetting dev_browser`"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>echo '@include {query};' | pbcopy
+echo '@include {query};'
+
+osascript -e 'tell application "System Events"
+	keystroke "v" using {command down}
+end tell'</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C9EFED0D-BF2A-4933-B227-31EA7122A621</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -2321,28 +2344,6 @@ open {query} -a "`getsetting dev_browser`"</string>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>37203B3D-F838-4912-A8BD-A35F40F30928</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>echo '@include {query};' | pbcopy
-echo '@include {query};'
-
-osascript -e 'tell application "System Events"
-	keystroke "v" using {command down}
-end tell'</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>C9EFED0D-BF2A-4933-B227-31EA7122A621</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
