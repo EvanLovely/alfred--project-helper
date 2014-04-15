@@ -136,35 +136,19 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>C70DE9AC-8E6E-4647-B3DA-F9A6522608EC</string>
-				<key>modifiers</key>
-				<integer>524288</integer>
-				<key>modifiersubtext</key>
-				<string>Run in ~ instead of Site Root in a Window</string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</string>
 				<key>modifiers</key>
-				<integer>0</integer>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Run in Terminal Window</string>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
-				<string>Run in Background (no Terminal Window)</string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>32B4EB64-EFF3-4BB3-8659-FDFE2C714C03</string>
-				<key>modifiers</key>
-				<integer>262144</integer>
-				<key>modifiersubtext</key>
-				<string>Run in ~ in background</string>
+				<string></string>
 			</dict>
 		</array>
 		<key>39C0448E-03FB-4BE9-9DC8-E0228BA7233A</key>
@@ -569,6 +553,8 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</key>
+		<array/>
 		<key>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</key>
 		<array>
 			<dict>
@@ -615,6 +601,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>FA59170B-8313-4763-8511-AA2B53509BFB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1B0E50C3-8785-413C-91E5-2A18D584B75C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1145,22 +1142,6 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>1</integer>
-				<key>script</key>
-				<string>cd ~
-sh {query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
-			<key>uid</key>
-			<string>C70DE9AC-8E6E-4647-B3DA-F9A6522608EC</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>anchorfields</key>
 				<true/>
 				<key>daterange</key>
@@ -1246,7 +1227,7 @@ sh {query}</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/active-project/site_root &amp;&amp;
+				<string>cat “{query}”
 sh "{query}"</string>
 			</dict>
 			<key>type</key>
@@ -1270,7 +1251,7 @@ sh "{query}"</string>
 				<key>script</key>
 				<string>sh search-for-files.sh ~/active-project/files/scripts/ "{query}"</string>
 				<key>subtext</key>
-				<string>Launch Custom Shell Scripts from "scripts" folder in Site Root in window. Explore Modifier Keys.</string>
+				<string>Launch Custom Shell Scripts from "scripts" folder.</string>
 				<key>title</key>
 				<string>Launch Scripts</string>
 				<key>type</key>
@@ -1291,8 +1272,7 @@ sh "{query}"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/active-project/site_root &amp;&amp;
-sh "{query}"</string>
+				<string>sh "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1304,20 +1284,10 @@ sh "{query}"</string>
 			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>1</integer>
-				<key>script</key>
-				<string>cd ~
-sh {query}</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.output.largetype</string>
 			<key>uid</key>
-			<string>32B4EB64-EFF3-4BB3-8659-FDFE2C714C03</string>
+			<string>1B0E50C3-8785-413C-91E5-2A18D584B75C</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2664,36 +2634,6 @@ echo {query}</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>481B8182-B6AC-4EF0-9DB3-D53488EDB28A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>A04EDD2A-4D6B-43A8-98B4-16687681AEB9</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -2737,6 +2677,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>2020</real>
+		</dict>
+		<key>1B0E50C3-8785-413C-91E5-2A18D584B75C</key>
+		<dict>
+			<key>ypos</key>
+			<real>1520</real>
 		</dict>
 		<key>1C59F7EA-A54F-4E8B-962F-DBC948A55D25</key>
 		<dict>
@@ -2783,11 +2728,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>1230</real>
 		</dict>
-		<key>32B4EB64-EFF3-4BB3-8659-FDFE2C714C03</key>
-		<dict>
-			<key>ypos</key>
-			<real>1620</real>
-		</dict>
 		<key>36E2AC73-FD53-42AF-8F63-3696DD0BAA72</key>
 		<dict>
 			<key>ypos</key>
@@ -2817,11 +2757,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>230</real>
-		</dict>
-		<key>481B8182-B6AC-4EF0-9DB3-D53488EDB28A</key>
-		<dict>
-			<key>ypos</key>
-			<real>5370</real>
 		</dict>
 		<key>4FAEFE29-F529-4A6E-A103-4CF96880E790</key>
 		<dict>
@@ -2933,11 +2868,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>4060</real>
 		</dict>
-		<key>A04EDD2A-4D6B-43A8-98B4-16687681AEB9</key>
-		<dict>
-			<key>ypos</key>
-			<real>5490</real>
-		</dict>
 		<key>A3B8F52D-96B4-4D2E-8885-E33EA4666701</key>
 		<dict>
 			<key>ypos</key>
@@ -3007,11 +2937,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>1120</real>
-		</dict>
-		<key>C70DE9AC-8E6E-4647-B3DA-F9A6522608EC</key>
-		<dict>
-			<key>ypos</key>
-			<real>1320</real>
 		</dict>
 		<key>C921BB8A-805B-4EE1-AE9D-8901E24E96D6</key>
 		<dict>
