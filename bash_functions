@@ -17,7 +17,7 @@ fdefonly() {
 # Remove all cases of a definition
 rdef() {
   # Use: `rdef file.txt definition`
-  cat "$1" | grep -v $2: > /tmp/definition.txt
+  cat "$1" | egrep -v "^$2:" > /tmp/definition.txt
   cat /tmp/definition.txt > "$1"
 }
 
