@@ -99,17 +99,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>264BCFE5-5582-42A5-801C-A69D6644A7C1</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>0ECAD813-8E11-4FA9-BB00-C776D79E91FE</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>279C4C88-EE1B-4977-AFD5-EC907831075C</key>
 		<array>
 			<dict>
@@ -349,17 +338,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>88CF1D42-4757-4ADE-8C30-A161D62B68F3</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>8C46245E-C3B5-4503-8040-23EF768C2065</key>
 		<array>
 			<dict>
@@ -453,17 +431,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>C0E10F81-8007-4B7F-8EDD-C6113F063CD4</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>198E6930-07E8-4A45-AC5A-F0349467AE4C</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>C10F5290-9DE7-42BD-811D-F3B743911AD5</key>
 		<array>
 			<dict>
@@ -531,17 +498,6 @@
 		</array>
 		<key>CAF4264B-C884-4F56-A154-D16C2A7FABF4</key>
 		<array/>
-		<key>D291A93E-DCCF-4FB7-BCF2-65823832034C</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>B0A5B1A6-C1D8-4641-B2BA-C684D12D61A0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>D384052B-1D97-411B-B34B-80E4405F9279</key>
 		<array>
 			<dict>
@@ -1405,171 +1361,6 @@ $SSH</string>
 			<string>alfred.workflow.action.terminalcommand</string>
 			<key>uid</key>
 			<string>2BACE0E9-E883-43D7-A060-C8FA41872D77</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p push</string>
-				<key>subtext</key>
-				<string>Git Push in Site Root (after pulling)</string>
-				<key>text</key>
-				<string>Push</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>C0E10F81-8007-4B7F-8EDD-C6113F063CD4</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>source bash_functions
-cd ~/active-project/site_root
-git push
-terminal-notifier -title "Project Helper" -message "Git Push Done"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>198E6930-07E8-4A45-AC5A-F0349467AE4C</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p pull</string>
-				<key>subtext</key>
-				<string>Git Pull in Site Root</string>
-				<key>text</key>
-				<string>Pull</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>264BCFE5-5582-42A5-801C-A69D6644A7C1</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>source bash_functions
-cd ~/active-project/site_root
-git pull
-terminal-notifier -title "Project Helper" -message "Git Pull Done"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>0ECAD813-8E11-4FA9-BB00-C776D79E91FE</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>,p commit</string>
-				<key>subtext</key>
-				<string>Adds all files. Pass in your commit message.</string>
-				<key>text</key>
-				<string>Add &amp; Commit Current Files</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>88CF1D42-4757-4ADE-8C30-A161D62B68F3</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>source bash_functions
-cd ~/active-project/site_root
-git add . --all
-git commit -m "{query}"
-terminal-notifier -title "Project Helper" -message "Git Commit Added"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>source bash_functions
-cd ~/active-project/theme
-drush cc all &amp;&amp;
-terminal-notifier -message "Drupal Cache Cleared!" -title "Project Helper"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>B0A5B1A6-C1D8-4641-B2BA-C684D12D61A0</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p cc</string>
-				<key>subtext</key>
-				<string>For Drupal. Uses Drush.</string>
-				<key>text</key>
-				<string>Clear Cache</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>D291A93E-DCCF-4FB7-BCF2-65823832034C</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2720,11 +2511,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>1010</real>
 		</dict>
-		<key>0ECAD813-8E11-4FA9-BB00-C776D79E91FE</key>
-		<dict>
-			<key>ypos</key>
-			<real>2120</real>
-		</dict>
 		<key>1235D073-0D11-4749-919B-5119453F30F1</key>
 		<dict>
 			<key>ypos</key>
@@ -2734,11 +2520,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>2430</real>
-		</dict>
-		<key>198E6930-07E8-4A45-AC5A-F0349467AE4C</key>
-		<dict>
-			<key>ypos</key>
-			<real>2020</real>
 		</dict>
 		<key>1B0E50C3-8785-413C-91E5-2A18D584B75C</key>
 		<dict>
@@ -2769,11 +2550,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3060</real>
-		</dict>
-		<key>264BCFE5-5582-42A5-801C-A69D6644A7C1</key>
-		<dict>
-			<key>ypos</key>
-			<real>2120</real>
 		</dict>
 		<key>279C4C88-EE1B-4977-AFD5-EC907831075C</key>
 		<dict>
@@ -2910,11 +2686,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2860</real>
 		</dict>
-		<key>88CF1D42-4757-4ADE-8C30-A161D62B68F3</key>
-		<dict>
-			<key>ypos</key>
-			<real>2220</real>
-		</dict>
 		<key>8C46245E-C3B5-4503-8040-23EF768C2065</key>
 		<dict>
 			<key>ypos</key>
@@ -2960,11 +2731,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>4420</real>
 		</dict>
-		<key>B0A5B1A6-C1D8-4641-B2BA-C684D12D61A0</key>
-		<dict>
-			<key>ypos</key>
-			<real>2320</real>
-		</dict>
 		<key>B254C2C8-904D-49D8-81CB-3C454E91A9E0</key>
 		<dict>
 			<key>ypos</key>
@@ -2989,11 +2755,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>2760</real>
-		</dict>
-		<key>C0E10F81-8007-4B7F-8EDD-C6113F063CD4</key>
-		<dict>
-			<key>ypos</key>
-			<real>2020</real>
 		</dict>
 		<key>C10F5290-9DE7-42BD-811D-F3B743911AD5</key>
 		<dict>
@@ -3034,16 +2795,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>4640</real>
-		</dict>
-		<key>CEFB2D17-9E0D-49C5-B265-5D93BADE6121</key>
-		<dict>
-			<key>ypos</key>
-			<real>2220</real>
-		</dict>
-		<key>D291A93E-DCCF-4FB7-BCF2-65823832034C</key>
-		<dict>
-			<key>ypos</key>
-			<real>2320</real>
 		</dict>
 		<key>D384052B-1D97-411B-B34B-80E4405F9279</key>
 		<dict>
