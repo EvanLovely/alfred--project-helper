@@ -1568,8 +1568,8 @@ terminal-notifier -message "Drupal Cache Cleared!" -title "Project Helper"</stri
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "open \"{query}\"" &gt;&gt; ~/active-project/files/scripts/open-at-start.sh
-terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/active-project/files/scripts/open-at-start.sh"</string>
+				<string>echo "open \"{query}\"" &gt;&gt; ~/active-project/files/settings/open-at-start.sh
+terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/active-project/files/settings/open-at-start.sh"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>

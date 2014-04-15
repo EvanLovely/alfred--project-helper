@@ -11,28 +11,28 @@ done
 unset IFS
 
 # Start scripts in theme folder, if it's there
-if [ -a ~/active-project/files/scripts/start-in-theme.sh ]
+if [ -a ~/active-project/files/settings/start-in-theme.sh ]
   then
     osascript -e 'tell application "Terminal"
     do script "cd ~/active-project/theme
-    terminal-notifier -title \"Project Helper\" -subtitle \"Theme Scripts Started\" -message \"Click to Edit\" -execute \"open -t ~/active-project/files/scripts/start-in-theme.sh\"
-    sh ~/active-project/files/scripts/start-in-theme.sh"
+    terminal-notifier -title \"Project Helper\" -subtitle \"Theme Scripts Started\" -message \"Click to Edit\" -execute \"open -t ~/active-project/files/settings/start-in-theme.sh\"
+    sh ~/active-project/files/settings/start-in-theme.sh"
     end tell
     '
 fi
 
 # Start scripts in site root folder, if it's there
-if [ -a ~/active-project/files/scripts/start-in-site-root.sh ]
+if [ -a ~/active-project/files/settings/start-in-site-root.sh ]
   then
     osascript -e 'tell application "Terminal"
     do script "cd ~/active-project/site_root
-    terminal-notifier -title \"Project Helper\" -subtitle \"Site Root Scripts Started\" -message \"Click to Edit\" -execute \"open -t ~/active-project/files/scripts/start-in-site-root.sh\"
-    sh ~/active-project/files/scripts/start-in-site-root.sh"
+    terminal-notifier -title \"Project Helper\" -subtitle \"Site Root Scripts Started\" -message \"Click to Edit\" -execute \"open -t ~/active-project/files/settings/start-in-site-root.sh\"
+    sh ~/active-project/files/settings/start-in-site-root.sh"
     end tell
     '
 fi
 
 sh ~/active-project/scripts/open-at-start.sh
-terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/active-project/files/scripts/open-at-start.sh"
+terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/active-project/files/settings/open-at-start.sh"
 
 open `getsetting dev_url` -a "`getsetting dev_browser`"

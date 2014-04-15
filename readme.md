@@ -58,9 +58,9 @@ Once you've made a few projects using `,pn`, you can switch between them by usin
 
 - The `~/active-project` directory is erased - it was all symbolic links anyway.
 - An empty `~/active-project` folder is created and the new project selected gets symbolic links created from the sources you've setup: `~/active-project/files`, `~/active-project/site_root`, `~/active-project/theme` and `~/active-project/gdocs` (Google Docs).
-- Site Root Scripts Run - At the setup, you told what scripts to run in the site root and they run now. Useful for things like `git pull`. You can edit this at `~/active-project/files/scripts/start-in-site-root.sh`. If you don't want that to happen, you can safely delete this file, same with the theme scripts below.
-- Theme Scripts Run - Again, you added this in the setup. Useful for commands like `compass watch`. You can edit this at `~/active-project/files/scripts/start-in-theme.sh`.
-- Open Scripts Run - This just opens stuff you want open when you start a project. Files, folders, or URLs can be added. You can edit this at `~/active-project/files/scripts/open-at-start.sh`. I typically have this open: 
+- Site Root Scripts Run - At the setup, you told what scripts to run in the site root and they run now. Useful for things like `git pull`. You can edit this at `~/active-project/files/settings/start-in-site-root.sh`. If you don't want that to happen, you can safely delete this file, same with the theme scripts below.
+- Theme Scripts Run - Again, you added this in the setup. Useful for commands like `compass watch`. You can edit this at `~/active-project/files/settings/start-in-theme.sh`.
+- Open Scripts Run - This just opens stuff you want open when you start a project. Files, folders, or URLs can be added. You can edit this at `~/active-project/files/settings/open-at-start.sh`. I typically have this open: 
     - Sublime Text project files
     - Markdown Notes File
     - OmniFocus Project URL
