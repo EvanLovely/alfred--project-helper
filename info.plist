@@ -530,25 +530,6 @@
 		</array>
 		<key>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</key>
 		<array/>
-		<key>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>B254C2C8-904D-49D8-81CB-3C454E91A9E0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>2BACE0E9-E883-43D7-A060-C8FA41872D77</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>SSH into Production</string>
-			</dict>
-		</array>
 		<key>DD9F9CB9-BA18-44B9-B339-8DE985735F1B</key>
 		<array>
 			<dict>
@@ -664,7 +645,7 @@
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>0</integer>
+				<integer>127</integer>
 				<key>script</key>
 				<string>sh new-project.sh "{query}"</string>
 				<key>type</key>
@@ -1306,61 +1287,6 @@ sh "{query}"</string>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>A9C1A720-055C-41DE-A9FE-7017E23C96F1</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>SSH="$(cat ~/active-project/files/settings.yml | grep ^ssh_staging: | sed "s/ssh_staging: //")"
-terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/active-project/files/settings.yml"
-$SSH</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
-			<key>uid</key>
-			<string>B254C2C8-904D-49D8-81CB-3C454E91A9E0</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p ssh</string>
-				<key>subtext</key>
-				<string>SSH into Staging. Hold CMD for Production.</string>
-				<key>text</key>
-				<string>SSH</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>SSH="$(cat ~/active-project/files/settings.yml | grep ^ssh_prod: | sed "s/ssh_prod: //")"
-terminal-notifier -title "Project Helper" -subtitle "$SSH" -message "Click to edit" -execute "open ~/active-project/files/settings.yml"
-$SSH</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
-			<key>uid</key>
-			<string>2BACE0E9-E883-43D7-A060-C8FA41872D77</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2556,11 +2482,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>3170</real>
 		</dict>
-		<key>2BACE0E9-E883-43D7-A060-C8FA41872D77</key>
-		<dict>
-			<key>ypos</key>
-			<real>1920</real>
-		</dict>
 		<key>2EA942C4-FA76-4991-A35F-CBB59D380541</key>
 		<dict>
 			<key>ypos</key>
@@ -2731,11 +2652,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>4420</real>
 		</dict>
-		<key>B254C2C8-904D-49D8-81CB-3C454E91A9E0</key>
-		<dict>
-			<key>ypos</key>
-			<real>1820</real>
-		</dict>
 		<key>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</key>
 		<dict>
 			<key>ypos</key>
@@ -2815,11 +2731,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>4840</real>
-		</dict>
-		<key>DADB85EB-9AB0-4FE2-8F5F-7AB6AC5DC862</key>
-		<dict>
-			<key>ypos</key>
-			<real>1870</real>
 		</dict>
 		<key>DCF5E1CC-5D26-4DD8-8B8C-E352DB8B8010</key>
 		<dict>

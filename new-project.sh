@@ -64,18 +64,6 @@ then
   addfolder gdocs "$P_GDOCS"
 fi
 
-
-# # Get Bash App
-# P_BASH=`osascript -e 'set source_folder to choose file with prompt "Please select the Application you want Bash Scripts to open in (Terminal/iTerm)." default location "/Applications"
-
-# tell application "System Events"
-#   set item_list to POSIX path of source_folder
-# end tell'`
-# if [ "$P_BASH" ]
-# then
-#   addsetting bash_app "$P_BASH"
-# fi
-
 # Get Dev Browser
 P_DEV_BROWSER=`osascript -e 'set source_folder to choose file with prompt "Please select the Browser you want to develop in." default location "/Applications"
 
@@ -95,21 +83,6 @@ then
   addsetting dev_url "$P_DEV_URL"
 fi
 
-# Get Staging SSH
-P_SSH_STAGING=`osascript -e 'set response to the text returned of (display dialog "What is your ssh command for getting into the Staging Server?" with title "Staging SSH" default answer "ssh user@server.com")
-response'`
-if [ "$P_SSH_STAGING" ]
-then
-  addsetting ssh_staging "$P_SSH_STAGING"
-fi
-
-# Get Production SSH
-P_SSH_PROD=`osascript -e 'set response to the text returned of (display dialog "What is your ssh command for getting into the Production Server?" with title "Production SSH" default answer "ssh user@server.com")
-response'`
-if [ "$P_SSH_PROD" ]
-then
-  addsetting ssh_prod "$P_SSH_PROD"
-fi
 
 sh start-project.sh
 open ~/all-projects/$P
