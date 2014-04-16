@@ -6,7 +6,7 @@ IFS=$'\n'
 for i in $(cat ~/active-project/files/settings/folders.yml); do
   name=${i%%:*}
   path=${i#* }
-  ln -s $path ~/active-project/$name
+  ln -s "$path" ~/active-project/$name
 done
 unset IFS
 
