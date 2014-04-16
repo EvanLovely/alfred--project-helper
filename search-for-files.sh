@@ -1,20 +1,24 @@
 #!/bin/bash
 # $1: directory
 # $2: search terms
+export dir="$(cd $1 && pwd -P)"
+export args="$2"
+IFS=$'\n'
 
 echo "<items>"
 
-if [ "$2" ] 
+if [ "$args" ] 
   then
     # Filter List
-    mdfind -0 -onlyin "$1" "$2" | xargs -0 -I {} \
-      sh -c 'echo "<item arg=\"$1\" type=\"file\" uid=\"$1\"><title>`basename "$1"`</title><subtitle>In: `dirname "${1/$HOME/~}"`</subtitle><icon type=\"fileicon\">$1</icon></item>"' -- {}
-
+    for i in $(mdfind -onlyin "$dir" "$args"); do
+        sh result-templates/generic.tpl.sh "$i"
+    done
   else
     # List All
-    find "$1" \! -name ".DS_Store" \! -name "Icon?" -maxdepth 2 -type f -print0 | xargs -0 -I {} \
-      sh -c 'echo "<item arg=\"$1\" type=\"file\" uid=\"$1\"><title>`basename "$1"`</title><subtitle>In: `dirname "${1/$HOME/~}"`</subtitle><icon type=\"fileicon\">$1</icon></item>"' -- {}
-
+    for i in $(find "$dir" \! -name ".DS_Store" \! -name "Icon?" -type f); do
+        sh result-templates/generic.tpl.sh "$i"
+    done
 fi
 
 echo "</items>"
+unset IFS
