@@ -1,7 +1,7 @@
 source bash_functions
 
 # Shutdown current project
-sh ~/active-project/files/settings/shutdown.sh
+sh ~/active-project/_files/settings/shutdown.sh
 rm -rf ~/active-project
 mkdir ~/active-project
 
@@ -16,7 +16,7 @@ cp -r templates/project-files ~/all-projects/$P
 
 
 # Sym Link the main files directory so we can access the settings.yml file inside
-ln -s ~/all-projects/$P ~/active-project/files
+ln -s ~/all-projects/$P ~/active-project/_files
 
 # Get Site Root
 P_SITE_ROOT=`osascript -e 'set source_folder to choose folder with prompt "Please select the Site Root directory."
@@ -31,7 +31,7 @@ fi
 
 # Get Site Root Scripts
 osascript -e 'set response to the text returned of (display dialog "What scripts do you want to run in this folder when the project starts? (i.e. git pull)" with title "Site Root Scripts" default answer return & return & return & return)
-response' >> ~/active-project/files/settings/start-in-site-root.sh
+response' >> ~/active-project/_files/settings/start-in-site-root.sh
 
 # Get Theme Root
 P_THEME=`osascript -e 'set source_folder to choose folder with prompt "Please select the Theme directory."
@@ -46,11 +46,11 @@ fi
 
 # Get Theme Scripts
 osascript -e 'set response to the text returned of (display dialog "What scripts do you want to run in this folder when the project starts? (i.e. compass watch)" with title "Theme Directory Scripts" default answer return & return & return & return)
-response' >> ~/active-project/files/settings/start-in-theme.sh
+response' >> ~/active-project/_files/settings/start-in-theme.sh
 
 # Set Shutdown Scripts
 osascript -e 'set response to the text returned of (display dialog "What scripts do you want to run when you switch to another project? (i.e. killall compass)" with title "Shutdown Scripts" default answer return & return & return & return)
-response' >> ~/active-project/files/settings/shutdown.sh
+response' >> ~/active-project/_files/settings/shutdown.sh
 
 
 # Get Google Docs directory

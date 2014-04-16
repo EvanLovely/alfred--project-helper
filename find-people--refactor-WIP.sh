@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export dir="~/active-project/files/people"
+export dir="~/active-project/_files/people"
 export args="$1"
 echo "<items>"
 

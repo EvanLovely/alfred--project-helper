@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=~/active-project/files/links
+dir=~/active-project/_files/links
 export dir="$(cd $dir && pwd -P)"
 echo "<items>"
 

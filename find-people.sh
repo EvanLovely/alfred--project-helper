@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=~/active-project/files/people
+dir=~/active-project/_files/people
 OUTPUTSTRING="<items>
 "
 if [ "$1" ] 

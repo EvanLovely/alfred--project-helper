@@ -826,9 +826,9 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh search-for-files.sh ~/active-project/files/ "{query}"</string>
+				<string>sh search-for-files.sh ~/active-project/_files/ "{query}"</string>
 				<key>subtext</key>
-				<string>A general search (~/active-project/files/) that encompasses assets, people, scripts and more.</string>
+				<string>A general search (~/active-project/_files/) that encompasses assets, people, scripts and more.</string>
 				<key>title</key>
 				<string>Find Files in Files Directory</string>
 				<key>type</key>
@@ -855,7 +855,7 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh search-for-files.sh ~/active-project/files/assets/ "{query}"</string>
+				<string>sh search-for-files.sh ~/active-project/_files/assets/ "{query}"</string>
 				<key>subtext</key>
 				<string>Find Assets in Active Project (Comps, Wireframes, etc)</string>
 				<key>title</key>
@@ -1265,7 +1265,7 @@ sh "{query}"</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>open ~/active-project/files/scripts/</string>
+				<string>open ~/active-project/_files/scripts/</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1328,8 +1328,8 @@ sh "{query}"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "open \"{query}\"" &gt;&gt; ~/active-project/files/settings/open-at-start.sh
-terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/active-project/files/settings/open-at-start.sh"</string>
+				<string>echo "open \"{query}\"" &gt;&gt; ~/active-project/_files/settings/open-at-start.sh
+terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Click to view current list to open" -execute "open ~/active-project/_files/settings/open-at-start.sh"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1363,7 +1363,7 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "ssh_staging: {query}" &gt;&gt; ~/active-project/files/settings.yml</string>
+				<string>echo "ssh_staging: {query}" &gt;&gt; ~/active-project/_files/settings.yml</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1401,7 +1401,7 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "ssh_prod: {query}" &gt;&gt; ~/active-project/files/settings.yml</string>
+				<string>echo "ssh_prod: {query}" &gt;&gt; ~/active-project/_files/settings.yml</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1542,7 +1542,7 @@ cat {query}</string>
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>sh find-snippets.sh ~/active-project/files/snippets/ "{query}"</string>
+				<string>sh find-snippets.sh ~/active-project/_files/snippets/ "{query}"</string>
 				<key>subtext</key>
 				<string>Copies it as well.</string>
 				<key>title</key>
@@ -2183,7 +2183,7 @@ end tell'</string>
 				<key>keyword</key>
 				<string>,p notes</string>
 				<key>script</key>
-				<string>sh notes.sh ~/active-project/files/notes "{query}"</string>
+				<string>sh notes.sh ~/active-project/_files/notes "{query}"</string>
 				<key>title</key>
 				<string>Notes</string>
 				<key>type</key>
@@ -2279,7 +2279,7 @@ terminal-notifier -subtitle "Click to Open File" -title "File Appended To" -mess
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>cp {query} ~/active-project/files/notes/
+				<string>cp {query} ~/active-project/_files/notes/
 echo {query}</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -2314,7 +2314,7 @@ echo {query}</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>mv {query} ~/active-project/files/notes/
+				<string>mv {query} ~/active-project/_files/notes/
 echo {query}</string>
 				<key>type</key>
 				<integer>0</integer>

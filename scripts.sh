@@ -1,7 +1,7 @@
 #!/bin/bash
 # $1: directory
 # $2: search terms
-export dir=~/active-project/files/scripts/
+export dir=~/active-project/_files/scripts/
 export args="$1"
 echo "<items>"
 
