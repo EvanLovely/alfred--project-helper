@@ -5,7 +5,7 @@ fdefonly() {
   # arguments: file to search, defintion to search for. like this: `fd notes.txt url`
   QUESTION="$2"
   # search the text of the file we're looking at ($1) and find any letters, digits, or underscore up to a colon (:) followed by a space (i.e. 'Question: '). Then search that list with what we asked.
-  cat "$1" | grep "^\w*:\s" | grep -i "$QUESTION.*:" > /tmp/answer.txt
+  cat "$1" | grep "^\w*:\s" | grep -i "$QUESTION:" > /tmp/answer.txt
   ANSWER=$(cat /tmp/answer.txt)
   if [ "$ANSWER" != "" ]; then
 
