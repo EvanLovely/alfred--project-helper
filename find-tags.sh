@@ -9,12 +9,12 @@ echo "<items>"
 if [ "$args" ]
   then
   for i in $(echo "$tags" | egrep "${args// /.*}"); do
-    sh tag-template.sh $i
+    sh result-templates/tag.tpl.sh $i
   done
   
 else
   for i in $(echo "$tags"); do
-    sh tag-template.sh $i
+    sh result-templates/tag.tpl.sh $i
   done
 fi
 echo "</items>"
