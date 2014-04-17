@@ -1,5 +1,5 @@
 arg="$1"
-task="$(echo ${arg%%@*} | sed "s/^- //")"
+task="$(echo ${arg%%@*} | sed "s/^[-|+] //")"
 meta="${arg#*@}"
 echo "<item arg=\"$arg\"><title><![CDATA[$task]]></title>"
 if [[ "$arg" == *@* ]]; then
