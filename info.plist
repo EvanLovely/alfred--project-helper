@@ -205,25 +205,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>54F101B9-E517-4EAB-838A-F848D5EC1B89</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>1EFFF3DB-9730-4315-B50C-A9A66EC509BF</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>61DD632E-0BF4-4753-AF16-BB51A044D3C1</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>Set Production SSH</string>
-			</dict>
-		</array>
 		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
 		<array>
 			<dict>
@@ -1466,61 +1447,6 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
 			<string>6FB551F4-2AC6-491B-A2E4-567583FD533C</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>echo "ssh_staging: {query}" &gt;&gt; ~/active-project/_files/settings.yml</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>1EFFF3DB-9730-4315-B50C-A9A66EC509BF</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>,p set ssh</string>
-				<key>subtext</key>
-				<string>Pass in what command you want to start a new Terminal window in (include `ssh`). Hold CMD for Production.</string>
-				<key>text</key>
-				<string>Set SSH</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>54F101B9-E517-4EAB-838A-F848D5EC1B89</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>echo "ssh_prod: {query}" &gt;&gt; ~/active-project/_files/settings.yml</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>61DD632E-0BF4-4753-AF16-BB51A044D3C1</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2916,11 +2842,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>3370</real>
 		</dict>
-		<key>1EFFF3DB-9730-4315-B50C-A9A66EC509BF</key>
-		<dict>
-			<key>ypos</key>
-			<real>2550</real>
-		</dict>
 		<key>1F3FB6DD-A1F7-40A1-BBC4-C3873AF9FAC7</key>
 		<dict>
 			<key>ypos</key>
@@ -2981,11 +2902,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>5130</real>
 		</dict>
-		<key>54F101B9-E517-4EAB-838A-F848D5EC1B89</key>
-		<dict>
-			<key>ypos</key>
-			<real>2590</real>
-		</dict>
 		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
 		<dict>
 			<key>ypos</key>
@@ -3015,11 +2931,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>5250</real>
-		</dict>
-		<key>61DD632E-0BF4-4753-AF16-BB51A044D3C1</key>
-		<dict>
-			<key>ypos</key>
-			<real>2660</real>
 		</dict>
 		<key>640B18E7-4CF0-467E-885C-88C49D1CC0E8</key>
 		<dict>
