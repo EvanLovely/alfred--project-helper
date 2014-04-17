@@ -534,6 +534,8 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>CD678781-2533-4459-BECA-A39480F0E1FC</key>
+		<array/>
 		<key>D384052B-1D97-411B-B34B-80E4405F9279</key>
 		<array>
 			<dict>
@@ -676,6 +678,14 @@
 				<integer>262144</integer>
 				<key>modifiersubtext</key>
 				<string>Open URLs in @url() tags like this: @url(http://google.com)</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7029E031-751B-476B-A925-6ACCD5E861EE</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Open Todo File</string>
 			</dict>
 		</array>
 		<key>EFB05F74-B22D-4D7B-BC6F-F74201FF150B</key>
@@ -2498,7 +2508,8 @@ echo {query}</string>
 				<string>source bash_functions
 export todos=$(getsetting todos)
 export todo="{query}"
-cat $todos | egrep -v "${todo//-/\\-}$" &gt; /tmp/todo.txt
+cleantodo=$(echo $todo | sed "s/^- //" | sed "s/@.*//") # having problems with the @tag()
+cat $todos | egrep -v "$cleantodo" &gt; /tmp/todo.txt
 if [[ "$todo" == *@done* ]]; then
 echo "$todo" | sed "s/@done\(.*\)//" | sed "s/@done//" &gt; $todos
 cat /tmp/todo.txt &gt;&gt; $todos
@@ -2510,7 +2521,12 @@ cat /tmp/todo.txt &gt;&gt; $todos
 cat /tmp/todo.txt &gt; $todos 
 echo "$todo @done($(date +%F))" &gt;&gt; $todos
 /opt/local/bin/terminal-notifier -title "Todo marked as done" -subtitle "and moved to bottom of file" -message "${todo/-/}"
-fi</string>
+fi
+
+if [[ "$(getsetting todos__show_list_after_task_completion)" != "FALSE" ]]; then
+	osascript -e 'tell application "Alfred 2" to search ",p todo"'    
+fi
+</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2518,33 +2534,6 @@ fi</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>CD678781-2533-4459-BECA-A39480F0E1FC</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>,p todo</string>
-				<key>runningsubtext</key>
-				<string>searching...</string>
-				<key>script</key>
-				<string>sh todo.sh "{query}"</string>
-				<key>title</key>
-				<string>To Dos</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>EF7ECCAB-5C07-4D0D-8447-B35A5F219BC5</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2584,6 +2573,33 @@ end alfred_script</string>
 			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
 			<string>615BF5E1-96F8-4440-8833-FD79347EE42E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p todo</string>
+				<key>runningsubtext</key>
+				<string>searching...</string>
+				<key>script</key>
+				<string>sh todo.sh "{query}"</string>
+				<key>title</key>
+				<string>To Dos</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>EF7ECCAB-5C07-4D0D-8447-B35A5F219BC5</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2673,6 +2689,25 @@ fi</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>C9650A73-BD58-4477-BA8B-1C275B502489</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>source bash_functions
+open $(getsetting todos)
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7029E031-751B-476B-A925-6ACCD5E861EE</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2850,7 +2885,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>21E91066-2ED3-4477-A3AE-447A42C58467</key>
 		<dict>
 			<key>ypos</key>
-			<real>5930</real>
+			<real>5990</real>
 		</dict>
 		<key>22C79BFB-1F34-4FE7-A462-4237E6D8F21A</key>
 		<dict>
@@ -2957,6 +2992,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2500</real>
 		</dict>
+		<key>7029E031-751B-476B-A925-6ACCD5E861EE</key>
+		<dict>
+			<key>ypos</key>
+			<real>5780</real>
+		</dict>
 		<key>70D39EE9-9C79-4FDB-A5F0-A51CDB98AC85</key>
 		<dict>
 			<key>ypos</key>
@@ -2975,7 +3015,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>755A62E5-B7B3-41FA-A6FB-A52D390E6467</key>
 		<dict>
 			<key>ypos</key>
-			<real>5930</real>
+			<real>5990</real>
 		</dict>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<dict>
@@ -3000,7 +3040,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>888A75E3-D279-473C-803C-F7AEFB3EAF38</key>
 		<dict>
 			<key>ypos</key>
-			<real>5930</real>
+			<real>5990</real>
 		</dict>
 		<key>8C46245E-C3B5-4503-8040-23EF768C2065</key>
 		<dict>
@@ -3080,7 +3120,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>C2323AB5-6414-4583-87BB-C7F38C57993A</key>
 		<dict>
 			<key>ypos</key>
-			<real>5820</real>
+			<real>5890</real>
 		</dict>
 		<key>C4229CD0-DE92-4CAC-885F-9EEB115FD830</key>
 		<dict>
@@ -3120,7 +3160,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>CC327603-6994-4756-AD3B-948B0C49D604</key>
 		<dict>
 			<key>ypos</key>
-			<real>5820</real>
+			<real>5890</real>
 		</dict>
 		<key>CD678781-2533-4459-BECA-A39480F0E1FC</key>
 		<dict>
@@ -3140,7 +3180,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>D6EA3BAD-5790-4838-A5C4-95E5D235A559</key>
 		<dict>
 			<key>ypos</key>
-			<real>5820</real>
+			<real>5890</real>
 		</dict>
 		<key>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</key>
 		<dict>
@@ -3205,7 +3245,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>EF7ECCAB-5C07-4D0D-8447-B35A5F219BC5</key>
 		<dict>
 			<key>ypos</key>
-			<real>5480</real>
+			<real>5580</real>
 		</dict>
 		<key>EFB05F74-B22D-4D7B-BC6F-F74201FF150B</key>
 		<dict>
