@@ -83,15 +83,6 @@ then
   addsetting dev_url "$P_DEV_URL"
 fi
 
-# Get Tasks File Name
-TODO_FILE=`osascript -e 'set response to the text returned of (display dialog "What do you want to call your todo file?" with title "Todos" default answer "todo.txt")
-response'`
-if [ "$TODO_FILE" ]
-then
-  addsetting todos "$TODO_FILE"
-fi
-
-
 sh start-project.sh
 open ~/all-projects/$P
 terminal-notifier -title "Project Helper" -message "$P Project Made."
