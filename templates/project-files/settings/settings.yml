@@ -1,2 +1,2 @@
 todos: ~/active-project/_files/todo.txt
-todos__show_list_after_task_completion: TRUE
+todos__show_list_after_task_action: TRUE

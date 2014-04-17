@@ -2523,7 +2523,7 @@ echo "$todo @done($(date +%F))" &gt;&gt; $todos
 /opt/local/bin/terminal-notifier -title "Todo marked as done" -subtitle "and moved to bottom of file" -message "${todo/-/}"
 fi
 
-if [[ "$(getsetting todos__show_list_after_task_completion)" != "FALSE" ]]; then
+if [[ "$(getsetting todos__show_list_after_task_action)" != "FALSE" ]]; then
 	osascript -e 'tell application "Alfred 2" to search ",p todo"'    
 fi
 </string>
@@ -2543,8 +2543,14 @@ fi
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo "- {query}" &gt;&gt; ~/active-project/_files/tasks.taskpaper
-/opt/local/bin/terminal-notifier -title "Todo added to bottom" -message "{query}" </string>
+				<string>source bash_functions
+echo "- {query}" &gt;&gt; $(getsetting todos)
+/opt/local/bin/terminal-notifier -title "Todo added to bottom" -message "{query}" 
+
+if [[ "$(getsetting todos__show_list_after_task_action)" != "FALSE" ]]; then
+	osascript -e 'tell application "Alfred 2" to search ",p todo"'    
+fi
+</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2633,7 +2639,12 @@ end alfred_script</string>
 				<string>source bash_functions
 todos=$(getsetting todos)
 cat $todos &gt; /tmp/todo.txt &amp;&amp; echo "- {query}" &gt; $todos &amp;&amp; cat /tmp/todo.txt &gt;&gt; $todos
-/opt/local/bin/terminal-notifier -title "Todo added to top" -message "{query}"</string>
+/opt/local/bin/terminal-notifier -title "Todo added to top" -message "{query}"
+
+if [[ "$(getsetting todos__show_list_after_task_action)" != "FALSE" ]]; then
+	osascript -e 'tell application "Alfred 2" to search ",p todo"'    
+fi
+</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
