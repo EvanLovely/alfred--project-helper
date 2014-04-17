@@ -5,7 +5,11 @@ filter="${1##*➢}"
 echo "<items>"
 
 for i in $(find -x ~/active-project -follow -exec /opt/local/bin/tag -m "$tag" {} +\; | egrep -i "${filter// /.*}"); do
-  echo "<item type=\"file\" arg=\"$i\"><title>${i##*/}</title><subtitle>$(echo "${i/$HOME/~}" | sed "s/${i##*/}//")</subtitle><icon>$i</icon></item>"
+  if [[ "$i" == */snippets/* ]]; then
+    sh result-templates/snippet.tpl.sh "$i"
+  else
+    sh result-templates/generic.tpl.sh "$i"
+  fi
 done
 
 echo "</items>"

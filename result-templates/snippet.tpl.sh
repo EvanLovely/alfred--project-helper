@@ -4,6 +4,6 @@ if [ "$2" == "--no-uid" ]; then
     else
     echo " uid=\"$1\">"
 fi
-echo "<title>$(echo "${1/$dir\/}")</title>"
+echo "<title>$(echo "${1##*/snippets/}")</title>"
 echo "<subtitle>$(/opt/local/bin/tag -Nl "$1") ~ <![CDATA[$(head -1 "$1")]]></subtitle>"
 echo "<icon type=\"fileicon\">$1</icon></item>"

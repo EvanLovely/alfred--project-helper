@@ -264,7 +264,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>A3B8F52D-96B4-4D2E-8885-E33EA4666701</string>
+				<string>002750D9-C3A4-4A84-A546-0E2307AD7422</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2464,16 +2464,6 @@ echo {query}</string>
 		</dict>
 		<dict>
 			<key>config</key>
-			<dict/>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>A3B8F52D-96B4-4D2E-8885-E33EA4666701</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
@@ -2496,6 +2486,23 @@ echo {query}</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>616A35A3-9545-4AE5-BBF7-6F24C8D87235</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>sh tagged-handler.sh "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>002750D9-C3A4-4A84-A546-0E2307AD7422</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2843,6 +2850,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 	gem install terminal-notifier</string>
 	<key>uidata</key>
 	<dict>
+		<key>002750D9-C3A4-4A84-A546-0E2307AD7422</key>
+		<dict>
+			<key>ypos</key>
+			<real>5250</real>
+		</dict>
 		<key>00E3B1DC-4476-45B4-A2B5-D402D1D1A17A</key>
 		<dict>
 			<key>ypos</key>
@@ -3072,11 +3084,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>4060</real>
-		</dict>
-		<key>A3B8F52D-96B4-4D2E-8885-E33EA4666701</key>
-		<dict>
-			<key>ypos</key>
-			<real>5250</real>
 		</dict>
 		<key>A440DEC7-CFB5-4835-8F5F-304F75D7380E</key>
 		<dict>
