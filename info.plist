@@ -2045,7 +2045,7 @@ open "`echo -n $path`"</string>
 			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
-set defaultPOSIXPath to do shell script "echo $HOME/active-project/files/links"
+set defaultPOSIXPath to do shell script "echo $HOME/active-project/_files/links"
 set defaultPath to POSIX file defaultPOSIXPath as alias
 tell me
 	activate
