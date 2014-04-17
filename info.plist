@@ -497,6 +497,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>C9650A73-BD58-4477-BA8B-1C275B502489</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7CEEE57A-C6FA-477D-9F7E-965DC18EEDC7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>C9EFED0D-BF2A-4933-B227-31EA7122A621</key>
 		<array>
 			<dict>
@@ -531,6 +542,17 @@
 		</array>
 		<key>CAF4264B-C884-4F56-A154-D16C2A7FABF4</key>
 		<array/>
+		<key>CC327603-6994-4756-AD3B-948B0C49D604</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D6EA3BAD-5790-4838-A5C4-95E5D235A559</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>D384052B-1D97-411B-B34B-80E4405F9279</key>
 		<array>
 			<dict>
@@ -555,6 +577,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D6EA3BAD-5790-4838-A5C4-95E5D235A559</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C2323AB5-6414-4583-87BB-C7F38C57993A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -654,6 +687,14 @@
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string>Add new task on top</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C9650A73-BD58-4477-BA8B-1C275B502489</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open URLs in @url() tags like this: @url(http://google.com)</string>
 			</dict>
 		</array>
 		<key>EFB05F74-B22D-4D7B-BC6F-F74201FF150B</key>
@@ -2664,6 +2705,106 @@ cat $todos &gt; /tmp/todo.txt &amp;&amp; echo "- {query}" &gt; $todos &amp;&amp;
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Todo URLs</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>7CEEE57A-C6FA-477D-9F7E-965DC18EEDC7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>url_tag="$(echo "{query}" | egrep -o '@url(\S*)')"
+url=$(echo ${url_tag%\)} | sed "s/^@url(//")
+if [[ "$url" ]]; then
+    open $url
+  else 
+    echo "No URL found"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C9650A73-BD58-4477-BA8B-1C275B502489</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string># show the next task in large type
+source bash_functions
+head -1 $(getsetting todos) | sed "s/^- //"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D6EA3BAD-5790-4838-A5C4-95E5D235A559</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>C2323AB5-6414-4583-87BB-C7F38C57993A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>45</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>N</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>CC327603-6994-4756-AD3B-948B0C49D604</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -2788,7 +2929,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>21E91066-2ED3-4477-A3AE-447A42C58467</key>
 		<dict>
 			<key>ypos</key>
-			<real>5700</real>
+			<real>5930</real>
 		</dict>
 		<key>22C79BFB-1F34-4FE7-A462-4237E6D8F21A</key>
 		<dict>
@@ -2923,12 +3064,17 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>755A62E5-B7B3-41FA-A6FB-A52D390E6467</key>
 		<dict>
 			<key>ypos</key>
-			<real>5700</real>
+			<real>5930</real>
 		</dict>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<dict>
 			<key>ypos</key>
 			<real>110</real>
+		</dict>
+		<key>7CEEE57A-C6FA-477D-9F7E-965DC18EEDC7</key>
+		<dict>
+			<key>ypos</key>
+			<real>5680</real>
 		</dict>
 		<key>7DDAECA4-BD3A-44C0-8C47-1BF935D317AC</key>
 		<dict>
@@ -2943,7 +3089,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>888A75E3-D279-473C-803C-F7AEFB3EAF38</key>
 		<dict>
 			<key>ypos</key>
-			<real>5700</real>
+			<real>5930</real>
 		</dict>
 		<key>8C46245E-C3B5-4503-8040-23EF768C2065</key>
 		<dict>
@@ -3020,6 +3166,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2960</real>
 		</dict>
+		<key>C2323AB5-6414-4583-87BB-C7F38C57993A</key>
+		<dict>
+			<key>ypos</key>
+			<real>5820</real>
+		</dict>
 		<key>C4229CD0-DE92-4CAC-885F-9EEB115FD830</key>
 		<dict>
 			<key>ypos</key>
@@ -3029,6 +3180,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>2760</real>
+		</dict>
+		<key>C9650A73-BD58-4477-BA8B-1C275B502489</key>
+		<dict>
+			<key>ypos</key>
+			<real>5680</real>
 		</dict>
 		<key>C9EFED0D-BF2A-4933-B227-31EA7122A621</key>
 		<dict>
@@ -3050,6 +3206,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>4640</real>
 		</dict>
+		<key>CC327603-6994-4756-AD3B-948B0C49D604</key>
+		<dict>
+			<key>ypos</key>
+			<real>5820</real>
+		</dict>
 		<key>CD678781-2533-4459-BECA-A39480F0E1FC</key>
 		<dict>
 			<key>ypos</key>
@@ -3064,6 +3225,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>680</real>
+		</dict>
+		<key>D6EA3BAD-5790-4838-A5C4-95E5D235A559</key>
+		<dict>
+			<key>ypos</key>
+			<real>5820</real>
 		</dict>
 		<key>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</key>
 		<dict>
