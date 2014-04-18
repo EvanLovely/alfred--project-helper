@@ -846,7 +846,7 @@
 				<integer>127</integer>
 				<key>script</key>
 				<string>source bash_functions
-PROJECT="`ls -l ~/active-project | grep files | sed 's,^.*projects/,,' | sed 's,files,,'`"
+PROJECT="`ls -l ~/active-project | grep _files | sed 's,^.*projects/,,' | sed 's,_files,,'`"
 terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to view." -execute "open ~/active-project"</string>
 				<key>type</key>
 				<integer>0</integer>
