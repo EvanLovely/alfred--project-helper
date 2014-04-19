@@ -1,19 +1,36 @@
 #!/bin/bash
-export dir="$(cd $1 && pwd -P)"
+source bash_functions
+export dir=$(cd $HOME/active-project/theme/ && pwd -P)
+# export dir=~/active-project/theme/
+arg="$1"
+extension=$(getsetting css_extension)
+file_paths=$(find $dir -type f -follow -name "*.$extension")
 
+IFS=$'\n'
 echo "<items>"
 
-if [ "$2" ] 
+if [ "$arg" ] 
   then
     # Filter List
-    find "$dir" \( -name .git -o -name .hg -o -name ".DS_Store" -o -name "Icon?" \) -prune -o \( -type f -iname "*${2// /*}*" -print0 \) | xargs -0 -I {} \
-      sh -c 'echo "<item arg=\"$1\" type=\"file\" uid=\"$1\"><title>$(echo "${1/$dir\/}")</title><subtitle>$(/opt/local/bin/tag -Nl "$1")</subtitle><icon type=\"fileicon\">$1</icon></item>"' -- {}
 
+    # Find chunks of text in style files that are at the far left and end with a "{"
+    egrep -lr --include "*.$extension" "^\S.*${arg// /.*}.*{$" $dir > /tmp/css-files.txt
+    # A list of all style files filtered by name and path name
+    echo "$file_paths"  | egrep "${arg// /.*}" >> /tmp/css-files.txt
+    # All theme files tagged with the argument
+    mdfind -onlyin $dir "tag:$arg" >> /tmp/css-files.txt
+
+    for i in $(cat /tmp/css-files.txt | sort -u); do
+
+      sh result-templates/css.tpl.sh "$i" "$arg"
+
+    done
   else
     # List All
-    find "$dir" \( -name .git -o -name .hg -o -name ".DS_Store" -o -name "Icon?" \) -prune -o \( -type f -print0 \) | xargs -0 -I {} \
-      sh -c 'echo "<item arg=\"$1\" type=\"file\"><title>$(echo "${1/$dir\/}")</title><subtitle>$(/opt/local/bin/tag -Nl "$1")</subtitle><icon type=\"fileicon\">$1</icon></item>"' -- {}
-
+    for i in $file_paths; do
+      sh result-templates/css.tpl.sh "$i"
+    done
 fi
 
 echo "</items>"
+unset IFS

@@ -1039,7 +1039,7 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh find-css.sh ~/active-project/theme/ "{query}"</string>
+				<string>sh find-css.sh "{query}"</string>
 				<key>subtext</key>
 				<string>Show SASS/LESS files in Active Project's Theme</string>
 				<key>title</key>
@@ -2561,7 +2561,7 @@ export todo="{query}"
 cleantodo=$(echo $todo | sed "s/^- //" | sed "s/@.*//") # having problems with the @tag()
 cat $todos | egrep -v "$cleantodo" &gt; /tmp/todo.txt
 if [[ "$todo" == *@done* ]]; then
-echo "$todo" | sed "s/@done\(.*\)//" | sed "s/@done//" &gt; $todos
+echo "${todo/+ /- }" | sed "s/@done\(.*\)//" | sed "s/@done//" &gt; $todos
 cat /tmp/todo.txt &gt;&gt; $todos
   /opt/local/bin/terminal-notifier -title "Todo unmarked as done" -subtitle "and moved to top of file" -message "${todo/-/}"
   
@@ -2569,7 +2569,7 @@ cat /tmp/todo.txt &gt;&gt; $todos
 
 
 cat /tmp/todo.txt &gt; $todos 
-echo "$todo @done($(date +%F))" &gt;&gt; $todos
+echo "${todo/- /+ } @done($(date +%F))" &gt;&gt; $todos
 /opt/local/bin/terminal-notifier -title "Todo marked as done" -subtitle "and moved to bottom of file" -message "${todo/-/}"
 fi
 
