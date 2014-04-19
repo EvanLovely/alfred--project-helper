@@ -2594,7 +2594,9 @@ fi
 				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
-echo "- {query}" &gt;&gt; $(getsetting todos)
+todos=$(getsetting todos)
+echo "- {query}" &gt;&gt; "$todos"
+sh todo__done-appender.sh "$todos"
 /opt/local/bin/terminal-notifier -title "Todo added to bottom" -message "{query}" 
 
 if [[ "$(getsetting todos__show_list_after_task_action)" != "FALSE" ]]; then
