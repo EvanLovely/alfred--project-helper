@@ -2251,7 +2251,7 @@ end tell'</string>
 			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
-set defaultPOSIXPath to do shell script "echo $HOME/active-project/files/notes"
+set defaultPOSIXPath to do shell script "echo $HOME/active-project/_files/notes"
 set defaultPath to POSIX file defaultPOSIXPath as alias
 
 tell me

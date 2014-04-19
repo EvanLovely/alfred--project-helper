@@ -19,23 +19,23 @@ tell application "System Events"
   set item_list to POSIX path of photo
 end tell'`
 
-mkdir -p "$HOME/active-project/files/people/$name"
+mkdir -p "$HOME/active-project/_files/people/$name"
 
 if [ "$info" ]
 then
-  echo "$info" > "$HOME/active-project/files/people/$name/info.txt"
+  echo "$info" > "$HOME/active-project/_files/people/$name/info.txt"
 fi
 
 if [ "$email" ]
 then
-  echo "$email" > "$HOME/active-project/files/people/$name/email.txt"
+  echo "$email" > "$HOME/active-project/_files/people/$name/email.txt"
 fi
 
 if [ "$photo" ]
 then
-  cp "$photo" "$HOME/active-project/files/people/$name/photo.jpg"
+  cp "$photo" "$HOME/active-project/_files/people/$name/photo.jpg"
 else
-  cp img/default-person-photo.jpg "$HOME/active-project/files/people/$name/photo.jpg"
+  cp img/default-person-photo.jpg "$HOME/active-project/_files/people/$name/photo.jpg"
 fi
 
 echo "$name Added"
