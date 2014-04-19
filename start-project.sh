@@ -35,4 +35,6 @@ fi
 sh ~/active-project/scripts/open-at-start.sh
 terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/active-project/_files/settings/open-at-start.sh"
 
+# Give the scripts 2 seconds before opening the browser
+osascript -e 'delay 2'
 open `getsetting dev_url` -a "`getsetting dev_browser`"
