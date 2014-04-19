@@ -1511,7 +1511,7 @@ terminal-notifier -title "Project Helper" -subtitle "will open now" -message "Cl
 			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
-set defaultPOSIXPath to do shell script "echo $HOME/active-project/files/snippets"
+set defaultPOSIXPath to do shell script "echo $HOME/active-project/_files/snippets"
 set defaultPath to POSIX file defaultPOSIXPath as alias
 
 tell me
