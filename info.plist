@@ -138,25 +138,25 @@
 				<key>destinationuid</key>
 				<string>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</string>
 				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Run in new tab</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
+				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
-				<key>modifiers</key>
-				<integer>524288</integer>
-				<key>modifiersubtext</key>
-				<string>Run in Background. Scripts should use absolute paths.</string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>9D74BD2C-9D2F-4C12-BE3A-7FC984C0C4FC</string>
+				<string>47D787FC-C675-4FAB-A1A6-C5FC18B26D65</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Add a new script</string>
+				<string>Add new script</string>
 			</dict>
 		</array>
 		<key>39C0448E-03FB-4BE9-9DC8-E0228BA7233A</key>
@@ -227,6 +227,8 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>5CC022EA-613B-48D5-8B6D-C57207E077D0</key>
+		<array/>
 		<key>5DDDD8C2-BC7B-4C76-807E-A7887EAF5D2B</key>
 		<array>
 			<dict>
@@ -406,6 +408,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>5F9FBA59-C2CC-4D8B-AC13-B8738B0C37E4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>BAC8FE1E-EEAF-4BE5-AC90-618D80E6A3F7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5CC022EA-613B-48D5-8B6D-C57207E077D0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1297,7 +1310,8 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cat "{query}"
+				<string>source bash_functions
+cat "{query}"
 sh "{query}"</string>
 			</dict>
 			<key>type</key>
@@ -1401,6 +1415,35 @@ sh "{query}"</string>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>A9C1A720-055C-41DE-A9FE-7017E23C96F1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+set defaultPOSIXPath to do shell script "echo $HOME/active-project/_files/scripts"
+set defaultPath to POSIX file defaultPOSIXPath as alias
+
+tell me
+	activate
+	set resultFile to (choose file name with prompt "Save As File" default name "script.sh" default location defaultPath)
+end tell
+set referenceNumber to open for access resultFile with write permission
+
+
+
+close access referenceNumber
+tell application "Finder" to open resultFile
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>47D787FC-C675-4FAB-A1A6-C5FC18B26D65</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2841,6 +2884,63 @@ replacesetting todos "{query}"</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>15</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>R</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>BAC8FE1E-EEAF-4BE5-AC90-618D80E6A3F7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>source bash_functions
+browser="$(getsetting dev_browser)"
+if [[ "$browser" == *"Google Chrome.app" ]]; then
+    osascript -e 'tell application "Google Chrome"
+        reload active tab of window 1
+      end tell'
+	/opt/local/bin/terminal-notifier -title "Project Helper" -message "Google Chrome Refreshed"
+  elif [[ "$browser" == *"Google Chrome Canary"* ]]; then
+    osascript -e 'tell application "Google Chrome Canary"
+        reload active tab of window 1
+      end tell'
+	/opt/local/bin/terminal-notifier -title "Project Helper" -message "Google Chrome Canary Refreshed"
+  else
+	/opt/local/bin/terminal-notifier -title "No Browser Refreshed" -subtitle "Chrome and Chrome Canary only" -message "Perhaps no Dev Browser was set?"
+fi
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5CC022EA-613B-48D5-8B6D-C57207E077D0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -2955,6 +3055,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>230</real>
 		</dict>
+		<key>47D787FC-C675-4FAB-A1A6-C5FC18B26D65</key>
+		<dict>
+			<key>ypos</key>
+			<real>1720</real>
+		</dict>
 		<key>4FAEFE29-F529-4A6E-A103-4CF96880E790</key>
 		<dict>
 			<key>ypos</key>
@@ -2969,6 +3074,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3170</real>
+		</dict>
+		<key>5CC022EA-613B-48D5-8B6D-C57207E077D0</key>
+		<dict>
+			<key>ypos</key>
+			<real>6110</real>
 		</dict>
 		<key>5DDDD8C2-BC7B-4C76-807E-A7887EAF5D2B</key>
 		<dict>
@@ -3109,6 +3219,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3270</real>
+		</dict>
+		<key>BAC8FE1E-EEAF-4BE5-AC90-618D80E6A3F7</key>
+		<dict>
+			<key>ypos</key>
+			<real>6110</real>
 		</dict>
 		<key>BB240A6C-5714-4F19-9F0E-54506A7707A0</key>
 		<dict>
