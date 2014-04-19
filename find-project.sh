@@ -1,19 +1,20 @@
 #!/bin/bash
-
 dir=~/all-projects/
+IFS=$'\n'
 echo "<items>"
 
 if [ "$1" ] 
   then
     # Filter List
-    find $dir -iname "*$1*" \! -name ".DS_Store" \! -name "Icon?" -depth 1 -type d -print0 | xargs -0 -I {} \
-      sh -c 'echo "<item arg=\"$1\" type=\"file\" uid=\"$1\"><title>`basename "$1"`</title><icon type=\"fileicon\">$1</icon></item>"' -- {}
-
+    for i in $(find $dir -iname "*$1*" \! -name ".DS_Store" \! -name "Icon?" -depth 1 -type d); do
+        sh result-templates/project.tpl.sh "$i"
+    done
   else
     # List All
-    find $dir \! -name ".DS_Store" \! -name "Icon?" -depth 1 -type d -print0 | xargs -0 -I {} \
-      sh -c 'echo "<item arg=\"$1\" type=\"file\" uid=\"$1\"><title>`basename "$1"`</title><icon type=\"fileicon\">$1</icon></item>"' -- {}
-
+    for i in $(find $dir \! -name ".DS_Store" \! -name "Icon?" -depth 1 -type d); do
+        sh result-templates/project.tpl.sh "$i"
+    done
 fi
 
 echo "</items>"
+unset IFS
