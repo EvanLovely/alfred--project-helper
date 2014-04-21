@@ -6,13 +6,13 @@ echo "<items>"
 if [ "$2" ] 
   then
     # Filter List
-    for i in $(find $dir -name "*.scss" -exec grep -rin "@mixin.*${2// /.*}" {} +\;); do
+    for i in $(find $dir -name "*.scss" -not -path "*/.*" -exec grep -rin "@mixin.*${2// /.*}" {} +\;); do
         sh result-templates/mixin.tpl.sh "$i"
     done
 
   else
     # List All
-    for i in $(find $dir -name "*.scss" -exec grep -irn "@mixin" {} +\;); do
+    for i in $(find $dir -name "*.scss" -not -path "*/.*" -exec grep -irn "@mixin" {} +\;); do
         sh result-templates/mixin.tpl.sh "$i"
     done
 fi

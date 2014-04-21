@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.evanlovely.project-helper</string>
+	<key>category</key>
+	<string>Tools</string>
 	<key>connections</key>
 	<dict>
 		<key>00E3B1DC-4476-45B4-A2B5-D402D1D1A17A</key>
@@ -751,7 +753,7 @@
 	<key>createdby</key>
 	<string>Evan Lovely</string>
 	<key>description</key>
-	<string></string>
+	<string>A personal assistant for web developers</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -3501,6 +3503,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string></string>
+	<string>http://evanlovely.com</string>
 </dict>
 </plist>
