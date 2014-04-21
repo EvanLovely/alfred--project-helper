@@ -4,7 +4,7 @@ export dir=$(cd $HOME/active-project/theme/ && pwd -P)
 # export dir=~/active-project/theme/
 arg="$1"
 extension=$(getsetting css_extension)
-file_paths=$(find $dir -type f -follow -name "*.$extension" -not -path "*/.*")
+file_paths=$(find "$dir" -type f -follow -name "*.$extension" -not -path "*/.*")
 
 IFS=$'\n'
 echo "<items>"

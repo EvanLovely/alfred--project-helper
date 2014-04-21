@@ -3,7 +3,7 @@ source bash_functions
 export dir=$(cd $1 && pwd -P)
 # export dir=~/active-project/theme/
 arg="$2"
-file_paths=$(find $dir -type f -follow -not -path "*/.*")
+file_paths=$(find "$dir" -type f -follow -not -path "*/.*")
 
 IFS=$'\n'
 echo "<items>"
