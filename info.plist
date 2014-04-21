@@ -21,7 +21,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<string>134CD52D-ED67-4BF9-8C32-12864FCD5303</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -549,6 +549,17 @@
 		</array>
 		<key>CD678781-2533-4459-BECA-A39480F0E1FC</key>
 		<array/>
+		<key>CE8DC90F-D6F8-4972-86BE-59B3AA98A089</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BEC2F61B-FAAA-4201-BB08-F4D8714469CD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>D384052B-1D97-411B-B34B-80E4405F9279</key>
 		<array>
 			<dict>
@@ -1019,6 +1030,50 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 		</dict>
 		<dict>
 			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>open "$(echo "{query}" | sed "s,^.*module-copies,$HOME/active-project/modules__on_server,")"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BEC2F61B-FAAA-4201-BB08-F4D8714469CD</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p mod</string>
+				<key>runningsubtext</key>
+				<string>searching...</string>
+				<key>script</key>
+				<string>sh find-modules.sh ~/active-project/modules/ "{query}"</string>
+				<key>title</key>
+				<string>Modules (find module files &amp; symbols)</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CE8DC90F-D6F8-4972-86BE-59B3AA98A089</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
 			<dict/>
 			<key>type</key>
 			<string>alfred.workflow.action.openfile</string>
@@ -1053,6 +1108,23 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>0DB146FF-2149-4328-96E2-BA4646551F14</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>open "$(echo "{query}" | sed "s,^.*theme-copies,$HOME/active-project/theme__on_server,")"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>134CD52D-ED67-4BF9-8C32-12864FCD5303</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2982,6 +3054,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>4640</real>
 		</dict>
+		<key>134CD52D-ED67-4BF9-8C32-12864FCD5303</key>
+		<dict>
+			<key>ypos</key>
+			<real>1080</real>
+		</dict>
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<dict>
 			<key>ypos</key>
@@ -3237,6 +3314,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2760</real>
 		</dict>
+		<key>BEC2F61B-FAAA-4201-BB08-F4D8714469CD</key>
+		<dict>
+			<key>ypos</key>
+			<real>810</real>
+		</dict>
 		<key>BF19C63E-7FA0-4BB7-867C-CB122D54007A</key>
 		<dict>
 			<key>ypos</key>
@@ -3301,6 +3383,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>5380</real>
+		</dict>
+		<key>CE8DC90F-D6F8-4972-86BE-59B3AA98A089</key>
+		<dict>
+			<key>ypos</key>
+			<real>900</real>
 		</dict>
 		<key>D384052B-1D97-411B-B34B-80E4405F9279</key>
 		<dict>
