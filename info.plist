@@ -1549,7 +1549,7 @@ end alfred_script</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>sh update.sh</string>
+				<string>sh check-for-update.sh</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
