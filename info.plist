@@ -697,6 +697,14 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>318E6298-B81A-486E-AA2A-38628256798E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>CD678781-2533-4459-BECA-A39480F0E1FC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -2711,31 +2719,35 @@ echo {query}</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
 				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>todo</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>318E6298-B81A-486E-AA2A-38628256798E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>38</integer>
 				<key>script</key>
-				<string>source bash_functions
-export todos=$(getsetting todos)
-export todo="{query}"
-cleantodo=$(echo $todo | sed "s/^- //" | sed "s/@.*//") # having problems with the @tag()
-cat $todos | egrep -v "$cleantodo" &gt; /tmp/todo.txt
-if [[ "$todo" == *@done* ]]; then
-echo "$todo" | sed "s/@done\(.*\)//" | sed "s/@done//" &gt; $todos
-cat /tmp/todo.txt &gt;&gt; $todos
-  /opt/local/bin/terminal-notifier -title "Todo unmarked as done" -subtitle "and moved to top of file" -message "${todo/-/}"
-  
-  else
-
-
-cat /tmp/todo.txt &gt; $todos 
-echo "$todo @done($(date +%F))" &gt;&gt; $todos
-/opt/local/bin/terminal-notifier -title "Todo marked as done" -subtitle "and moved to bottom of file" -message "${todo/-/}"
-fi
-
-if [[ "$(getsetting todos__show_list_after_task_action)" != "FALSE" ]]; then
-	osascript -e 'tell application "Alfred 2" to search ",p todo"'    
-fi
-</string>
+				<string>sh todo-handler.sh '{query}'</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -3190,6 +3202,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>1230</real>
+		</dict>
+		<key>318E6298-B81A-486E-AA2A-38628256798E</key>
+		<dict>
+			<key>ypos</key>
+			<real>5330</real>
 		</dict>
 		<key>36E2AC73-FD53-42AF-8F63-3696DD0BAA72</key>
 		<dict>
