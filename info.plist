@@ -253,6 +253,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>6087975A-0FEA-4303-A486-8D5DF32CF939</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AB31191E-0F57-4AE4-AD24-A6F3B33DFEB1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>615BF5E1-96F8-4440-8833-FD79347EE42E</key>
 		<array>
 			<dict>
@@ -388,6 +399,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>A9C1A720-055C-41DE-A9FE-7017E23C96F1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A0461AFB-C873-4D4C-BD36-AD52FA2FC079</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6087975A-0FEA-4303-A486-8D5DF32CF939</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1518,6 +1540,69 @@ end alfred_script</string>
 			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
 			<string>47D787FC-C675-4FAB-A1A6-C5FC18B26D65</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>sh update.sh</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6087975A-0FEA-4303-A486-8D5DF32CF939</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Project Updater</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>AB31191E-0F57-4AE4-AD24-A6F3B33DFEB1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p update</string>
+				<key>subtext</key>
+				<string>Update the Alfred Project Helper. Settings will be migrated.</string>
+				<key>text</key>
+				<string>Update Me</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A0461AFB-C873-4D4C-BD36-AD52FA2FC079</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -3171,6 +3256,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>3270</real>
 		</dict>
+		<key>6087975A-0FEA-4303-A486-8D5DF32CF939</key>
+		<dict>
+			<key>ypos</key>
+			<real>2290</real>
+		</dict>
 		<key>615BF5E1-96F8-4440-8833-FD79347EE42E</key>
 		<dict>
 			<key>ypos</key>
@@ -3276,6 +3366,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>4060</real>
 		</dict>
+		<key>A0461AFB-C873-4D4C-BD36-AD52FA2FC079</key>
+		<dict>
+			<key>ypos</key>
+			<real>2290</real>
+		</dict>
 		<key>A440DEC7-CFB5-4835-8F5F-304F75D7380E</key>
 		<dict>
 			<key>ypos</key>
@@ -3285,6 +3380,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>1620</real>
+		</dict>
+		<key>AB31191E-0F57-4AE4-AD24-A6F3B33DFEB1</key>
+		<dict>
+			<key>ypos</key>
+			<real>2290</real>
 		</dict>
 		<key>AC77C22F-2413-4C12-A40A-F629B443E5B5</key>
 		<dict>
