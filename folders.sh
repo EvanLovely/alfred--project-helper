@@ -11,17 +11,17 @@ done
 
 echo "<items>"
 
-if [[ "$all_aliases" == "" ]]; then
+# if [[ "$all_aliases" == "" ]]; then
 
-   echo "<item valid=\"no\">
-      <title>No Items Found</title>
-      <subtitle>$args</subtitle>
-      <icon>icons/folder.png</icon>
-    </item>
-  "
+#    echo "<item valid=\"no\">
+#       <title>No Items Found</title>
+#       <subtitle>$args</subtitle>
+#       <icon>icons/folder.png</icon>
+#     </item>
+#   "
 
 
-elif [[ "$all_aliases" == *$args* ]]; then 
+if [[ "$args" != " " ]]; then 
 
   # List/filter all folder aliases
   for i in $folder_listing; do
@@ -48,29 +48,29 @@ elif [[ "$all_aliases" == *$args* ]]; then
 #     exit
 # fi
 
-  else
+#   else
 
 # isn't working
-    if [[ "$args" == *[space]  ]]; then
+    # if [[ "$args" == *[space]  ]]; then
     # if [[ "$args" =~ ^$args\s  ]]; then
 
+  else
         echo "<item valid=\"no\">
             <title>Next up</title>
             <subtitle>$args</subtitle>
             <icon>icons/folder.png</icon>
           </item>
         "
-  else
     
     
-    echo "<item valid=\"no\">
-        <title>No Situation Satisified</title>
-        <subtitle>$args</subtitle>
-        <icon>icons/folder.png</icon>
-      </item>
-    "
+  #   echo "<item valid=\"no\">
+  #       <title>No Situation Satisified</title>
+  #       <subtitle>$args</subtitle>
+  #       <icon>icons/folder.png</icon>
+  #     </item>
+  #   "
 
-    fi
+  #   fi
 fi
 echo "</items>"
 unset IFS
