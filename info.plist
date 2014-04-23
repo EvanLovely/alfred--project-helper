@@ -343,6 +343,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>7828B242-9BC7-4820-A1B4-0CF552AF62A3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>111D1139-3CFD-4C89-BF62-5339E188FF93</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<array/>
 		<key>7DDAECA4-BD3A-44C0-8C47-1BF935D317AC</key>
@@ -3114,6 +3125,60 @@ fi
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>6</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>Z</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>7828B242-9BC7-4820-A1B4-0CF552AF62A3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p folders</string>
+				<key>runningsubtext</key>
+				<string>searching...</string>
+				<key>script</key>
+				<string>sh folders.sh '{query}'</string>
+				<key>subtext</key>
+				<string>Look inside the children of ~/active-project/</string>
+				<key>title</key>
+				<string>Search within Custom Folders</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>111D1139-3CFD-4C89-BF62-5339E188FF93</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -3147,6 +3212,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>5480</real>
+		</dict>
+		<key>111D1139-3CFD-4C89-BF62-5339E188FF93</key>
+		<dict>
+			<key>ypos</key>
+			<real>6350</real>
 		</dict>
 		<key>1235D073-0D11-4749-919B-5119453F30F1</key>
 		<dict>
@@ -3337,6 +3407,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>5990</real>
+		</dict>
+		<key>7828B242-9BC7-4820-A1B4-0CF552AF62A3</key>
+		<dict>
+			<key>ypos</key>
+			<real>6350</real>
 		</dict>
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<dict>
