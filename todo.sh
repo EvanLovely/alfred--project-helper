@@ -4,7 +4,6 @@ task_file="$(getsetting todos)"
 tasks=$(cat "$(getsetting todos)")
 export args="$1"
 IFS=$'\n'
-echo "$tasks" > ~/tasks.txt
 echo "<items>"
 
 if [ "$args" ] 
