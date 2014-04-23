@@ -10,17 +10,17 @@ for i in $folder_listing; do
 done
 
 echo "<items>"
-# if [[ "$args" == *$all_aliases*  ]]; then 
+if [[ "$all_aliases" == *$arg* ]]; then 
   for i in $folder_listing; do
     alias="${i%%:*}"
     path="${i#* }"
     echo "<item uid=\"$alias\" valid=\"no\" autocomplete=\"$alias \">
       <title>$alias</title>
-      <subtitle>$all_aliases</subtitle>
+      <subtitle>"$all_aliases"</subtitle>
       <icon>icons/folder.png</icon>
     </item>
   "
   done
-# fi
+fi
 echo "</items>"
 unset IFS
