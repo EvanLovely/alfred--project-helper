@@ -3179,6 +3179,31 @@ fi
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>;p</string>
+				<key>script</key>
+				<string>sh menu.sh "{query}"</string>
+				<key>title</key>
+				<string>Project Helper</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F25E119F-0794-4C95-A3F1-3893FB31517F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -3667,6 +3692,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>5580</real>
+		</dict>
+		<key>F25E119F-0794-4C95-A3F1-3893FB31517F</key>
+		<dict>
+			<key>ypos</key>
+			<real>6470</real>
 		</dict>
 		<key>F37F50B1-5842-449D-9A24-70E2D04BD072</key>
 		<dict>
