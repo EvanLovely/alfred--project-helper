@@ -20,4 +20,7 @@ if [[ "$1" == "go 2 setting"* ]]; then
   echo "<item autocomplete='settings 2b' arg='settings 2b' valid='no'><title>Setting 2b</title></item>"
     
 fi    
+if [[ "$1" == "go"* ]]; then
+  echo "<item><title>Back to beginning of menu</title></item>"
+fi
 echo "</items>"
