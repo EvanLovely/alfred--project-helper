@@ -697,14 +697,6 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>318E6298-B81A-486E-AA2A-38628256798E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>CD678781-2533-4459-BECA-A39480F0E1FC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -2719,31 +2711,6 @@ echo {query}</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>todo</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>318E6298-B81A-486E-AA2A-38628256798E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>38</integer>
 				<key>script</key>
@@ -2765,7 +2732,7 @@ echo {query}</string>
 				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
-todos=$(getsetting todos)
+todos="$(getsetting todos)"
 echo "- {query}" &gt;&gt; "$todos"
 sh todo__done-appender.sh "$todos"
 /opt/local/bin/terminal-notifier -title "Todo added to bottom" -message "{query}" 
@@ -3202,11 +3169,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>1230</real>
-		</dict>
-		<key>318E6298-B81A-486E-AA2A-38628256798E</key>
-		<dict>
-			<key>ypos</key>
-			<real>5330</real>
 		</dict>
 		<key>36E2AC73-FD53-42AF-8F63-3696DD0BAA72</key>
 		<dict>
