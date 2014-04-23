@@ -10,32 +10,67 @@ for i in $folder_listing; do
 done
 
 echo "<items>"
+
 if [[ "$all_aliases" == "" ]]; then
+
    echo "<item valid=\"no\">
       <title>No Items Found</title>
-      <subtitle>$arg</subtitle>
+      <subtitle>$args</subtitle>
       <icon>icons/folder.png</icon>
     </item>
   "
-elif [[ "$all_aliases" == *$arg* ]]; then 
+
+
+elif [[ "$all_aliases" == *$args* ]]; then 
+
+  # List/filter all folder aliases
   for i in $folder_listing; do
     alias="${i%%:*}"
     path="${i#* }"
-    echo "<item uid=\"$alias\" valid=\"no\" autocomplete=\"$alias \">
-      <title>$alias</title>
+    echo "<item uid=\"$alias\" valid=\"no\" autocomplete=\"$alias\">
+      <title>"$alias"</title>
       <subtitle>"$all_aliases"</subtitle>
       <icon>icons/folder.png</icon>
     </item>
   "
   done
 
+
+#   if [[ "$args" =~ ^$args\s ]]; then
+
+
+#     echo "<item valid=\"no\">
+#         <title>Next up</title>
+#         <subtitle>$args</subtitle>
+#         <icon>icons/folder.png</icon>
+#       </item>
+#     "
+#     exit
+# fi
+
   else
-  echo "<item valid=\"no\">
-      <title>No Situation Satisified</title>
-      <subtitle>$arg</subtitle>
-      <icon>icons/folder.png</icon>
-    </item>
-  "
+
+# isn't working
+    if [[ "$args" == *[space]  ]]; then
+    # if [[ "$args" =~ ^$args\s  ]]; then
+
+        echo "<item valid=\"no\">
+            <title>Next up</title>
+            <subtitle>$args</subtitle>
+            <icon>icons/folder.png</icon>
+          </item>
+        "
+  else
+    
+    
+    echo "<item valid=\"no\">
+        <title>No Situation Satisified</title>
+        <subtitle>$args</subtitle>
+        <icon>icons/folder.png</icon>
+      </item>
+    "
+
+    fi
 fi
 echo "</items>"
 unset IFS
