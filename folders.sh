@@ -10,7 +10,14 @@ for i in $folder_listing; do
 done
 
 echo "<items>"
-if [[ "$all_aliases" == *$arg* ]]; then 
+if [[ "$all_aliases" == "" ]]; then
+   echo "<item valid=\"no\">
+      <title>No Items Found</title>
+      <subtitle>$arg</subtitle>
+      <icon>icons/folder.png</icon>
+    </item>
+  "
+elif [[ "$all_aliases" == *$arg* ]]; then 
   for i in $folder_listing; do
     alias="${i%%:*}"
     path="${i#* }"
@@ -21,6 +28,14 @@ if [[ "$all_aliases" == *$arg* ]]; then
     </item>
   "
   done
+
+  else
+  echo "<item valid=\"no\">
+      <title>No Situation Satisified</title>
+      <subtitle>$arg</subtitle>
+      <icon>icons/folder.png</icon>
+    </item>
+  "
 fi
 echo "</items>"
 unset IFS
