@@ -10,7 +10,9 @@ fi
 
 if [[ "$1" == "go find"* ]]; then
   echo "<item autocomplete='go assets ' valid='no' file='no'><title>Assets</title></item>"
-  echo "<item autocomplete='go css ' valid='no' file='no'><title>CSS</title></item>"
+  if [[ -a ~/active-project/theme ]]; then
+    echo "<item autocomplete='go css ' valid='no' file='no'><title>CSS</title></item>"
+  fi
 fi
 
   if [[ "$1" == "go assets"* ]]; then
