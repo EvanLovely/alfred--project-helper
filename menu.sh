@@ -10,12 +10,18 @@ fi
 
 if [[ "$1" == "go find"* ]]; then
   echo "<item autocomplete='go assets ' valid='no' file='no'><title>Assets</title></item>"
+  echo "<item autocomplete='go css ' valid='no' file='no'><title>CSS</title></item>"
 fi
 
-if [[ "$1" == "go assets"* ]]; then
-  arg="${1//go assets /}"
-  sh search-for-files.sh ~/active-project/_files/assets/ "$arg"
-fi
+  if [[ "$1" == "go assets"* ]]; then
+    arg="${1//go assets /}"
+    sh search-for-files.sh ~/active-project/_files/assets/ "$arg"
+  fi
+
+  if [[ "$1" == "go css"* ]]; then
+    arg="${1//go css /}"
+    sh find-css.sh "$arg"
+  fi
 
 if [[ "$1" == "go set"* ]]; then
   echo "<item arg='sh new-project.sh' valid='yes' file='no'><title>Create New Project</title><subtitle>Creates a new Project that will be focus of all of these Alfred Commands.</subtitle></item>"

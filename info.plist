@@ -3224,7 +3224,16 @@ fi
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>{query}</string>
+				<string>if [[ "{query}" == "sh"* ]]; then
+	    {query}
+	elif [[ "{query}" == "/"* ]]; then
+		open "{query}"
+	elif [[ "{query}" == "~"* ]]; then
+		open "{query}"
+	else
+		echo "{query}"
+fi
+</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
