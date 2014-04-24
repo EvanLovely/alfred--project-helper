@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "<items>"
-if [[ "$1" != "go"* ]]; then
 
+if [[ "$1" != "go"* ]]; then
 echo "<item autocomplete='go find ' valid='no'><title>Find</title></item>"
 echo "<item autocomplete='go ref ' valid='no'><title>Reference</title></item>"
 echo "<item autocomplete='go do ' valid='no'><title>Do</title></item>"
@@ -31,10 +31,24 @@ if [[ "$1" == "go ref"* ]]; then
     echo "<item autocomplete='go people ' valid='no' file='no'><title>People</title></item>"
 fi
 
+  if [[ "$1" == "go links"* ]]; then
+      arg="${1//go links /}"
+      sh find-links.sh "$args"
+  fi
+
+  if [[ "$1" == "go snippets"* ]]; then
+      arg="${1//go snippets /}"
+      sh find-snippets.sh ~/active-project/_files/snippets/ "$args"
+  fi
+
 if [[ "$1" == "go do"* ]]; then
     arg="${1//go do /}"
     sh scripts.sh "$arg"
 fi
+
+# if [[ "$1" != "go"* ]]; then
+#     # next to-do
+# fi
 
 if [[ "$1" == "go set"* ]]; then
   echo "<item arg='sh new-project.sh' valid='yes' file='no'><title>Create New Project</title><subtitle>Creates a new Project that will be focus of all of these Alfred Commands.</subtitle></item>"
@@ -42,12 +56,12 @@ if [[ "$1" == "go set"* ]]; then
   echo "<item arg='sh check-for-update.sh' valid='yes' file='no'><title>Update Me</title></item>"
 fi
 
-if [[ "$1" == "go switch"* ]]; then
-  arg="${1//go switch /}"
-  sh find-project.sh "$arg"
-fi
+  if [[ "$1" == "go switch"* ]]; then
+    arg="${1//go switch /}"
+    sh find-project.sh "$arg"
+  fi
 
-]
+
 
 
 if [[ "$1" == "go"* ]]; then
