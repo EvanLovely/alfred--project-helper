@@ -31,6 +31,11 @@ if [[ "$1" == "go ref"* ]]; then
     echo "<item autocomplete='go people ' valid='no' file='no'><title>People</title></item>"
 fi
 
+if [[ "$1" == "go do"* ]]; then
+    arg="${1//go do /}"
+    sh scripts.sh "$arg"
+fi
+
 if [[ "$1" == "go set"* ]]; then
   echo "<item arg='sh new-project.sh' valid='yes' file='no'><title>Create New Project</title><subtitle>Creates a new Project that will be focus of all of these Alfred Commands.</subtitle></item>"
   echo "<item autocomplete='go switch ' arg='switch-project' valid='no' file='no'><title>Switch Projects</title></item>"
