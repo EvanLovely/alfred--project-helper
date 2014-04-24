@@ -47,6 +47,6 @@ fi
 
 
 if [[ "$1" == "go"* ]]; then
-  echo "<item><title>Back to beginning of menu</title></item>"
+  echo "<item autocomplete='' valid='no'><title>Back to beginning of menu</title></item>"
 fi
 echo "</items>"
