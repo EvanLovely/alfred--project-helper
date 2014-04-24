@@ -5,8 +5,11 @@ sh ~/active-project/_files/settings/shutdown.sh
 rm -rf ~/active-project
 mkdir ~/active-project
 
+project_name=$(osascript -e 'set response to the text returned of (display dialog "What is the name of the project?" with title "New Project" default answer "Name") 
+response')
+
 # Get the project name passed in and replace spaces with dashes
-P=`echo "${1// /-}"`
+P=`echo "${project_name// /-}"`
 
 # Just in case it's not already made
 mkdir ~/all-projects

@@ -405,6 +405,17 @@
 				<string>Edit Snippet</string>
 			</dict>
 		</array>
+		<key>8EBEC66E-B4D2-4F74-8518-7A28C600D46E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8C02FBC7-52D1-4C4A-BC07-4C69254F2005</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>9D74BD2C-9D2F-4C12-BE3A-7FC984C0C4FC</key>
 		<array>
 			<dict>
@@ -758,6 +769,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>F25E119F-0794-4C95-A3F1-3893FB31517F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8EBEC66E-B4D2-4F74-8518-7A28C600D46E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>F37F50B1-5842-449D-9A24-70E2D04BD072</key>
 		<array>
 			<dict>
@@ -820,7 +842,7 @@
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>sh new-project.sh "{query}"</string>
+				<string>sh new-project.sh</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -3171,6 +3193,48 @@ fi
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Project Helper</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8C02FBC7-52D1-4C4A-BC07-4C69254F2005</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>{query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8EBEC66E-B4D2-4F74-8518-7A28C600D46E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -3425,10 +3489,20 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>5990</real>
 		</dict>
+		<key>8C02FBC7-52D1-4C4A-BC07-4C69254F2005</key>
+		<dict>
+			<key>ypos</key>
+			<real>6470</real>
+		</dict>
 		<key>8C46245E-C3B5-4503-8040-23EF768C2065</key>
 		<dict>
 			<key>ypos</key>
 			<real>2960</real>
+		</dict>
+		<key>8EBEC66E-B4D2-4F74-8518-7A28C600D46E</key>
+		<dict>
+			<key>ypos</key>
+			<real>6470</real>
 		</dict>
 		<key>97FE2D3C-3C92-49A3-BF35-8EAD05D68932</key>
 		<dict>
