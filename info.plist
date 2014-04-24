@@ -2403,12 +2403,7 @@ open {query} -a "`getsetting dev_browser`"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo '@include {query};' | pbcopy
-echo '@include {query};'
-
-osascript -e 'tell application "System Events"
-	keystroke "v" using {command down}
-end tell'</string>
+				<string>{query}</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -3224,14 +3219,23 @@ fi
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>if [[ "{query}" == "sh"* ]]; then
-	    {query}
-	elif [[ "{query}" == "/"* ]]; then
-		open "{query}"
-	elif [[ "{query}" == "~"* ]]; then
-		open "{query}"
-	else
-		echo "{query}"
+				<string>echo '{query}' &gt; ~/to-menu-handler.txt
+
+if [[ '{query}' == "sh"* ]]; then
+      {query}
+  elif [[ '{query}' == "/"* ]]; then
+    # custom work for working around complicated project
+    if [[ '{query}' == *"/theme-copies/"* ]]; then
+      open "$(echo '{query}' | sed "s,^.*theme-copies,$HOME/active-project/theme__on_server,")"
+    elif [[ '{query}' == *"/module-copies/"* ]]; then
+      open "$(echo "{query}" | sed "s,^.*module-copies,$HOME/active-project/modules__on_server,")"
+    else
+      open '{query}'
+    fi
+  elif [[ '{query}' == "~"* ]]; then
+    open '{query}'
+  else
+    echo '{query}'
 fi
 </string>
 				<key>type</key>
