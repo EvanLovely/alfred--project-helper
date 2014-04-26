@@ -229,6 +229,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>5BAC028A-B03F-41B7-9E40-0D8CE25AAA27</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>36E2AC73-FD53-42AF-8F63-3696DD0BAA72</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>5CC022EA-613B-48D5-8B6D-C57207E077D0</key>
 		<array/>
 		<key>5DDDD8C2-BC7B-4C76-807E-A7887EAF5D2B</key>
@@ -1439,8 +1450,7 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>source bash_functions
-cat "{query}"
+				<string>cat "{query}"
 sh "{query}"</string>
 			</dict>
 			<key>type</key>
@@ -1486,7 +1496,12 @@ sh "{query}"</string>
 				<integer>0</integer>
 				<key>script</key>
 				<string>source bash_functions
-sh "{query}"</string>
+if [[ "{query}" == *".sh" ]]; then
+	sh "{query}"
+elif [[ "{query}" == *".applescript" ]]; then
+	osascript "{query}"
+fi
+</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1494,6 +1509,33 @@ sh "{query}"</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>renutriv</string>
+				<key>hotkey</key>
+				<integer>16</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>Y</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>5BAC028A-B03F-41B7-9E40-0D8CE25AAA27</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -3391,6 +3433,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3170</real>
+		</dict>
+		<key>5BAC028A-B03F-41B7-9E40-0D8CE25AAA27</key>
+		<dict>
+			<key>ypos</key>
+			<real>1520</real>
 		</dict>
 		<key>5CC022EA-613B-48D5-8B6D-C57207E077D0</key>
 		<dict>
