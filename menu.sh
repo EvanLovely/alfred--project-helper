@@ -70,8 +70,8 @@ fi
   
   # Reference > Links
   if [[ "$1" == "go links"* ]]; then
-      arg="${1//go links /}"
-      sh find-links.sh "$args"
+      arg="${1/go links /}"
+      sh find-links.sh "$arg"
   fi
 
   # Reference > Snippets
