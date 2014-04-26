@@ -3,23 +3,25 @@ source bash_functions
 echo "<items>"
 
 if [[ "$1" != "go"* ]]; then
-  echo "<item autocomplete='go find ' valid='no'><title>Find</title></item>" | grep -i "$1"
-  echo "<item autocomplete='go ref ' valid='no'><title>Reference</title></item>" | grep -i "$1"
-  echo "<item autocomplete='go do ' valid='no'><title>Do</title></item>" | grep -i "$1"
-  echo "<item autocomplete='go set ' valid='no'><title>Settings</title></item>" | grep -i "$1"
+  filter="$1"
+  echo "<item autocomplete='go find ' valid='no'><title>Find</title></item>" | grep -i "$filter"
+  echo "<item autocomplete='go ref ' valid='no'><title>Reference</title></item>" | grep -i "$filter"
+  echo "<item autocomplete='go do ' valid='no'><title>Do</title></item>" | grep -i "$filter"
+  echo "<item autocomplete='go set ' valid='no'><title>Settings</title></item>" | grep -i "$filter"
 fi
 
 # Find
 if [[ "$1" == "go find"* ]]; then
+  filter="${1/go find/}"
   # Assets
-  echo "<item autocomplete='go assets ' valid='no' file='no'><title>Find Assets</title></item>"
+  echo "<item autocomplete='go assets ' valid='no' file='no'><title>Find Assets</title></item>" | grep -i "$filter"
   # CSS
   if [[ -a ~/active-project/theme ]]; then
-    echo "<item autocomplete='go css ' valid='no' file='no'><title>Find CSS</title></item>"
+    echo "<item autocomplete='go css ' valid='no' file='no'><title>Find CSS</title></item>" | grep -i "$filter"
   fi
   # Docs
   if [[ -a ~/active-project/gdocs ]]; then
-  echo "<item autocomplete='go docs ' valid='no' file='no'><title>Find Google Docs</title><subtitle>Searches ~/active-project/gdocs --- Shortcut: ',p docs'</subtitle></item>"
+  echo "<item autocomplete='go docs ' valid='no' file='no'><title>Find Google Docs</title><subtitle>Searches ~/active-project/gdocs --- Shortcut: ',p docs'</subtitle></item>" | grep -i "$filter"
   fi
 fi
 
@@ -31,9 +33,10 @@ fi
 
   # Find > CSS
   if [[ "$1" == "go css"* ]]; then
-    echo "<item autocomplete='go files-css ' valid='no' file='no'><title>Find CSS Files</title><subtitle>Searches those files for non-indented selectors as well.</subtitle></item>"
+    filter="${1/go css/}"
+    echo "<item autocomplete='go files-css ' valid='no' file='no'><title>Find CSS Files</title><subtitle>Searches those files for non-indented selectors as well.</subtitle></item>" | grep -i "$filter"
     if [[ "$(getsetting css_extension)" == "scss" ]]; then
-      echo "<item autocomplete='go mixins-css ' valid='no' file='no'><title>Find CSS Mixins</title><subtitle>Searches theme (not Compass) for mixin declarations and inserts as an include.</subtitle></item>"
+      echo "<item autocomplete='go mixins-css ' valid='no' file='no'><title>Find CSS Mixins</title><subtitle>Searches theme (not Compass) for mixin declarations and inserts as an include.</subtitle></item>" | grep -i "$filter"
     fi
   fi
 
@@ -57,11 +60,12 @@ fi
 
 # Reference
 if [[ "$1" == "go ref"* ]]; then
-    echo "<item autocomplete='go links ' valid='no' file='no'><title>Links</title></item>"
-    echo "<item autocomplete='go snippets ' valid='no' file='no'><title>Snippets</title></item>"
-    echo "<item autocomplete='go notes ' valid='no' file='no'><title>Notes</title></item>"
-    echo "<item autocomplete='go todos ' valid='no' file='no'><title>Todos</title></item>"
-    echo "<item autocomplete='go people ' valid='no' file='no'><title>People</title></item>"
+    filter="${1/go ref/}"
+    echo "<item autocomplete='go links ' valid='no' file='no'><title>Links</title></item>" | grep -i "$filter"
+    echo "<item autocomplete='go snippets ' valid='no' file='no'><title>Snippets</title></item>" | grep -i "$filter"
+    echo "<item autocomplete='go notes ' valid='no' file='no'><title>Notes</title></item>" | grep -i "$filter"
+    echo "<item autocomplete='go todos ' valid='no' file='no'><title>Todos</title></item>" | grep -i "$filter"
+    echo "<item autocomplete='go people ' valid='no' file='no'><title>People</title></item>" | grep -i "$filter"
 fi
   
   # Reference > Links
@@ -88,9 +92,10 @@ fi
 
 # Settings
 if [[ "$1" == "go set"* ]]; then
-  echo "<item arg='sh new-project.sh' valid='yes' file='no'><title>Create New Project</title><subtitle>Creates a new Project that will be focus of all of these Alfred Commands.</subtitle></item>"
-  echo "<item autocomplete='go switch ' arg='switch-project' valid='no' file='no'><title>Switch Projects</title></item>"
-  echo "<item arg='sh check-for-update.sh' valid='yes' file='no'><title>Update Me</title></item>"
+  filter="${1/go set/}"
+  echo "<item arg='sh new-project.sh' valid='yes' file='no'><title>Create New Project</title><subtitle>Creates a new Project that will be focus of all of these Alfred Commands.</subtitle></item>" | egrep -i "$filter"
+  echo "<item autocomplete='go switch ' arg='switch-project' valid='no' file='no'><title>Switch Projects</title></item>" | egrep -i "$filter"
+  echo "<item arg='sh check-for-update.sh' valid='yes' file='no'><title>Update Me</title></item>" | egrep -i "$filter"
 fi
   
   # Settings > Switch Project
