@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.evanlovely.project-helper</string>
+	<string>com.evanlovely.projecthelper</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -823,7 +823,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Project Helper</string>
+	<string>ProjectHelper</string>
 	<key>objects</key>
 	<array>
 		<dict>
