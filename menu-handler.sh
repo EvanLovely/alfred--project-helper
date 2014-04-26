@@ -12,13 +12,8 @@ if [[ "$1" == "sh"* ]]; then
             # end custom work
           else
 
-      # if a link and we want them to open in the dev browser, then do
-      if [[ "$1" == *".webloc" && "$(getsetting links_open_in_dev_browser)" == "TRUE" ]]; then
-        open "$1" -a "$(getsetting dev_browser)"
-      else
         # the majority of all passed into this script, not just links, end up here: simply being opened
         open "$1"
-      fi
 
     fi
     # just in case it's a relative link, open it too
