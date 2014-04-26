@@ -870,7 +870,7 @@
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>sh switch-project.sh "{query}"</string>
+				<string>{query}</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
