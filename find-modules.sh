@@ -26,6 +26,11 @@ if [ "$arg" ]
     # List All
     for i in $file_paths; do
       sh result-templates/modules.tpl.sh "$i"
+      let ++count
+      if [[ count -gt 20 ]]; then
+        unset count
+        break
+      fi
     done
 fi
 

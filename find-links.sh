@@ -16,6 +16,11 @@ if [ "$1" ]
     echo "<item arg=\"add-link\"><title>Add New Link</title><subtitle>On links below: Hold Cmd to Open in Dev Browser. Type to filter.</subtitle></item>"
     for i in $(find "$dir" -name "*.webloc"); do
       sh result-templates/links.tpl.sh "$i" --no-uid
+      let ++count
+      if [[ count -gt 20 ]]; then
+        unset count
+        break
+      fi
     done
 fi
 

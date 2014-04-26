@@ -17,6 +17,11 @@ if [ "$args" ]
     # List All
     for i in $(find "$dir" \! -name ".DS_Store" \! -name "Icon?" -type f); do
         sh result-templates/generic.tpl.sh "$i"
+        let ++count
+        if [[ count -gt 20 ]]; then
+        unset count
+        break
+        fi
     done
 fi
 

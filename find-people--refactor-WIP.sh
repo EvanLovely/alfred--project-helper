@@ -18,7 +18,11 @@ if [ "$args" ]
     sh -c '
     file="{}"
     echo "<item><title>$(echo $file)</title></item>" '
-  
+    let ++count
+    if [[ count -gt 20 ]]; then
+      unset count
+      break
+    fi
 fi
 
 # sort -u /tmp/find-people.txt | egrep --null "." | xargs -0 -I {} \

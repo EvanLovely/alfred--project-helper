@@ -14,6 +14,11 @@ if [ "$2" ]
     # List All
     for i in $(find "$dir" -name "*.scss" -not -path "*/.*" -exec grep -irn "@mixin" {} +\;); do
         sh result-templates/mixin.tpl.sh "$i"
+        let ++count
+        if [[ count -gt 20 ]]; then
+        unset count
+        break
+        fi
     done
 fi
 
