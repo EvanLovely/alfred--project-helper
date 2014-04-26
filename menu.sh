@@ -11,9 +11,15 @@ fi
 
 # Find
 if [[ "$1" == "go find"* ]]; then
+  # Assets
   echo "<item autocomplete='go assets ' valid='no' file='no'><title>Find Assets</title></item>"
+  # CSS
   if [[ -a ~/active-project/theme ]]; then
     echo "<item autocomplete='go css ' valid='no' file='no'><title>Find CSS</title></item>"
+  fi
+  # Docs
+  if [[ -a ~/active-project/gdocs ]]; then
+  echo "<item autocomplete='go docs ' valid='no' file='no'><title>Find Google Docs</title><subtitle>Searches ~/active-project/gdocs --- Shortcut: ',p docs'</subtitle></item>"
   fi
 fi
 
@@ -41,6 +47,12 @@ fi
     if [[ "$1" == "go mixins-css"* ]]; then
       arg="${1//go mixins-css /}"
       sh find-mixins.sh ~/active-project/theme/ "$arg"
+    fi
+
+    # Find > Docs
+    if [[ "$1" == "go docs"* ]]; then
+      arg="${1//go docs /}"
+      sh search-for-files.sh ~/active-project/gdocs/ "$arg"
     fi
 
 # Reference
