@@ -3,10 +3,10 @@ source bash_functions
 echo "<items>"
 
 if [[ "$1" != "go"* ]]; then
-echo "<item autocomplete='go find ' valid='no'><title>Find</title></item>"
-echo "<item autocomplete='go ref ' valid='no'><title>Reference</title></item>"
-echo "<item autocomplete='go do ' valid='no'><title>Do</title></item>"
-echo "<item autocomplete='go set ' valid='no'><title>Settings</title></item>"
+  echo "<item autocomplete='go find ' valid='no'><title>Find</title></item>" | grep -i "$1"
+  echo "<item autocomplete='go ref ' valid='no'><title>Reference</title></item>" | grep -i "$1"
+  echo "<item autocomplete='go do ' valid='no'><title>Do</title></item>" | grep -i "$1"
+  echo "<item autocomplete='go set ' valid='no'><title>Settings</title></item>" | grep -i "$1"
 fi
 
 # Find
