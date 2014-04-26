@@ -3264,20 +3264,38 @@ fi
 				<string>echo '{query}' &gt; ~/to-menu-handler.txt
 
 if [[ '{query}' == "sh"* ]]; then
-      {query}
+      '{query}'
+  elif [[ '{query}' == ",p"* ]]; then
+    osascript -e '
+      tell application "Alfred 2" to search "{query}"
+      #delay .2
+      tell application "System Events"
+        keystroke return
+      end tell'
   elif [[ '{query}' == "/"* ]]; then
-    # custom work for working around complicated project
-    if [[ '{query}' == *"/theme-copies/"* ]]; then
-      open "$(echo '{query}' | sed "s,^.*theme-copies,$HOME/active-project/theme__on_server,")"
-    elif [[ '{query}' == *"/module-copies/"* ]]; then
-      open "$(echo "{query}" | sed "s,^.*module-copies,$HOME/active-project/modules__on_server,")"
-    else
-      open '{query}'
+
+          # custom work for working around complicated project
+          if [[ '{query}' == *"/theme-copies/"* ]]; then
+            open "$(echo '{query}' | sed "s,^.*theme-copies,$HOME/active-project/theme__on_server,")"
+          elif [[ '{query}' == *"/module-copies/"* ]]; then
+            open "$(echo "{query}" | sed "s,^.*module-copies,$HOME/active-project/modules__on_server,")"
+            # end custom work
+          else
+
+          if [[ '{query}' == *"/snippets/"* ]]; then
+            sh snippets-handler.sh '{query}'
+		    exit
+          fi
+          
+        # the majority of all passed into this script, not just links, end up here: simply being opened
+        open '{query}'
+
     fi
+    # just in case it's a relative link, open it too
   elif [[ '{query}' == "~"* ]]; then
     open '{query}'
-  else
-    echo '{query}'
+#  else
+#    echo '{query}'
 fi
 </string>
 				<key>type</key>

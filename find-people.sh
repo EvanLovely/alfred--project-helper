@@ -18,7 +18,7 @@ if [ "$1" ]
   TO_SEARCH=$(find $dir -type d -depth 1)
 
   OUTPUTSTRING="$OUTPUTSTRING
-  <item>
+  <item arg=',p add person'>
     <title>People of this Project:</title>
     <subtitle>Return: copy email ___ Cmd+Return: Edit ___ Cmd+Y: Big Photo</subtitle>
   </item>"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $1 = add-link ]
+if [ "$1" == ",p add link" ]
   then
     osascript -e '
     tell application "Alfred 2" to search ",p add link" 

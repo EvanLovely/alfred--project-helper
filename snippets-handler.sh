@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $1 = add-snippet ]
+if [[ "$1" == ",p add snippet" ]]
   then
     osascript -e '
     tell application "Alfred 2" to search ",p add snippet" 
@@ -10,7 +10,7 @@ if [ $1 = add-snippet ]
 
   else
     cat "$1" | pbcopy
-    cat "$1"
+    cat "$1 copied"
 
     osascript -e 'tell application "System Events"
       keystroke "v" using {command down}
