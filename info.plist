@@ -3261,10 +3261,11 @@ fi
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>echo '{query}' &gt; ~/to-menu-handler.txt
+				<string>source bash_functions
+echo '{query}' &gt; ~/to-menu-handler.txt
 
 if [[ '{query}' == "sh"* ]]; then
-      '{query}'
+      {query}
   elif [[ '{query}' == ",p"* ]]; then
     osascript -e '
       tell application "Alfred 2" to search "{query}"

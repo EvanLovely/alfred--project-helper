@@ -95,6 +95,7 @@ if [[ "$1" == "go set"* ]]; then
   filter="${1/go set/}"
   echo "<item arg='sh new-project.sh' valid='yes' file='no'><title>Create New Project</title><subtitle>Creates a new Project that will be focus of all of these Alfred Commands.</subtitle></item>" | egrep -i "$filter"
   echo "<item autocomplete='go switch ' arg='switch-project' valid='no' file='no'><title>Switch Projects</title></item>" | egrep -i "$filter"
+  echo "<item autocomplete='go proj set ' arg='project-settings' valid='no' file='no'><title>Project Settings for \"$(ls -l ~/active-project/ | grep "_files ->" | sed 's,^.*/,,')\"</title></item>" | egrep -i "$filter"
   echo "<item arg='sh check-for-update.sh' valid='yes' file='no'><title>Update Me</title></item>" | egrep -i "$filter"
 fi
   
@@ -104,7 +105,16 @@ fi
     sh find-project.sh "$arg"
   fi
 
-
+  # Settings > Project Settings
+  if [[ "$1" == "go proj set "* ]]; then
+    IFS=$'\n'
+    for i in $(cat ~/active-project/_files/settings/settings.yml); do
+      value="${i%%:*}"
+      setting="${i#*: }"
+      echo "<item arg='sh setting-replace.sh \"$i\"'><title>$value</title><subtitle>$setting</subtitle></item>"
+    done
+    unset IFS
+  fi
 
 # Anyplace but first layer; appears at bottom so you can go back to beginning. 
 # @todo Add ability to go back one level, not just all the way back
