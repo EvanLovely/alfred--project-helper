@@ -321,6 +321,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>694BE630-1C56-4260-9659-511C07ED7CC9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F25E119F-0794-4C95-A3F1-3893FB31517F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>6FB551F4-2AC6-491B-A2E4-567583FD533C</key>
 		<array>
 			<dict>
@@ -3309,6 +3320,31 @@ fi
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>49</integer>
+				<key>hotmod</key>
+				<integer>262144</integer>
+				<key>hotstring</key>
+				<string>Space</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>694BE630-1C56-4260-9659-511C07ED7CC9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -3502,6 +3538,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>790</real>
+		</dict>
+		<key>694BE630-1C56-4260-9659-511C07ED7CC9</key>
+		<dict>
+			<key>ypos</key>
+			<real>6470</real>
 		</dict>
 		<key>6953C3BF-567F-4A6B-AA9F-1B969CE9A78B</key>
 		<dict>
