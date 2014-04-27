@@ -46,7 +46,7 @@ fi
   # Find > Assets
   if [[ "$1" == "go assets"* ]]; then
     arg="${1//go assets /}"
-    sh search-for-files.sh ~/active-project/_files/assets/ "$arg"
+    sh assets--find.sh ~/active-project/_files/assets/ "$arg"
   fi
 
   # Find > CSS
@@ -73,7 +73,7 @@ fi
     # Find > Docs
     if [[ "$1" == "go docs"* ]]; then
       arg="${1//go docs /}"
-      sh search-for-files.sh ~/active-project/gdocs/ "$arg"
+      sh docs--find.sh ~/active-project/gdocs/ "$arg"
     fi
 
 # Reference
@@ -117,9 +117,13 @@ fi
 # Settings
 if [[ "$1" == "go set"* ]]; then
   filter="${1/go set/}"
+  # New Project
   echo "<item arg='sh new-project.sh' valid='yes' file='no'><title>Create New Project</title><subtitle>Creates a new Project that will be focus of all of these Alfred Commands.</subtitle><icon>icons/plus.png</icon></item>" | egrep -i "$filter"
+  # Switch Project
   echo "<item autocomplete='go switch ' arg='switch-project' valid='no' file='no'><title>Switch Projects</title><subtitle>Point all commands that this Alfred Workflow does to a new project.</subtitle><icon>icons/refresh.png</icon></item>" | egrep -i "$filter"
+  # Project Settings
   echo "<item autocomplete='go proj set ' arg='project-settings' valid='no' file='no'><title>Project Settings for \"$(ls -l ~/active-project/ | grep "_files ->" | sed 's,^.*/,,')\"</title><subtitle>See and change subtle settings for this specific project.</subtitle><icon>icons/settings.png</icon></item>" | egrep -i "$filter"
+  # Check for Updates
   echo "<item arg='sh check-for-update.sh' valid='yes' file='no'><title>Update Me</title><subtitle>Check for updates to this Alfred Workflow.</subtitle><icon>icons/down_arrow.png</icon></item>" | egrep -i "$filter"
 fi
   

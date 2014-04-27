@@ -268,7 +268,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<string>8EBEC66E-B4D2-4F74-8518-7A28C600D46E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -594,7 +594,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+				<string>8EBEC66E-B4D2-4F74-8518-7A28C600D46E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -772,80 +772,104 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>;p</string>
+				<key>script</key>
+				<string>sh menu.sh "{query}"</string>
+				<key>title</key>
+				<string>Project Helper</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F25E119F-0794-4C95-A3F1-3893FB31517F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Project Helper</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8C02FBC7-52D1-4C4A-BC07-4C69254F2005</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>{query}</string>
+				<string>source bash_functions
+echo '{query}' &gt; ~/to-menu-handler.txt
+
+if [[ '{query}' == "sh"* ]]; then
+      {query}
+  elif [[ '{query}' == ",p"* ]]; then
+    osascript -e '
+      tell application "Alfred 2" to search "{query}"
+      #delay .2
+      tell application "System Events"
+        keystroke return
+      end tell'
+  elif [[ '{query}' == "/"* ]]; then
+
+          # custom work for working around complicated project
+          if [[ '{query}' == *"/theme-copies/"* ]]; then
+            open "$(echo '{query}' | sed "s,^.*theme-copies,$HOME/active-project/theme__on_server,")"
+          elif [[ '{query}' == *"/module-copies/"* ]]; then
+            open "$(echo "{query}" | sed "s,^.*module-copies,$HOME/active-project/modules__on_server,")"
+            # end custom work
+          else
+
+          if [[ '{query}' == *"/snippets/"* ]]; then
+            sh snippets-handler.sh '{query}'
+		    exit
+          fi
+          
+        # the majority of all passed into this script, not just links, end up here: simply being opened
+        open '{query}'
+
+    fi
+    # just in case it's a relative link, open it too
+  elif [[ '{query}' == "~"* ]]; then
+    open '{query}'
+#  else
+#    echo '{query}'
+fi
+</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>7BDFD687-1656-4DB8-935D-3096F42E266F</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>,ps</string>
-				<key>runningsubtext</key>
-				<string>searching...</string>
-				<key>script</key>
-				<string>sh find-project.sh "{query}"</string>
-				<key>subtext</key>
-				<string>Change the active project.</string>
-				<key>title</key>
-				<string>Project Switcher</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>C10F5290-9DE7-42BD-811D-F3B743911AD5</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>path</key>
-				<string>~/active-project</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.browseinalfred</string>
-			<key>uid</key>
-			<string>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p go</string>
-				<key>subtext</key>
-				<string>View Project Folder Shortcuts</string>
-				<key>text</key>
-				<string>Go</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</string>
+			<string>8EBEC66E-B4D2-4F74-8518-7A28C600D46E</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -857,11 +881,11 @@
 				<key>argument</key>
 				<integer>0</integer>
 				<key>hotkey</key>
-				<integer>5</integer>
+				<integer>49</integer>
 				<key>hotmod</key>
-				<integer>1966080</integer>
+				<integer>262144</integer>
 				<key>hotstring</key>
-				<string>G</string>
+				<string>Space</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -870,7 +894,7 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>595BB5D1-CBD3-4B99-860D-8C472D67F689</string>
+			<string>694BE630-1C56-4260-9659-511C07ED7CC9</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -886,7 +910,7 @@
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh search-for-files.sh ~/active-project/_files/assets/ "{query}"</string>
+				<string>sh assets--find.sh ~/active-project/_files/assets/ "{query}"</string>
 				<key>subtext</key>
 				<string>Find Assets in Active Project (Comps, Wireframes, etc)</string>
 				<key>title</key>
@@ -915,7 +939,7 @@
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh search-for-files.sh ~/active-project/gdocs/ "{query}"</string>
+				<string>sh docs--find.sh ~/active-project/gdocs/ "{query}"</string>
 				<key>subtext</key>
 				<string>Search docs</string>
 				<key>title</key>
@@ -929,23 +953,6 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>6800BE27-5AE1-41C1-8810-FEEE1696FE0A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>open "$(echo "{query}" | sed "s,^.*module-copies,$HOME/active-project/modules__on_server,")"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>BEC2F61B-FAAA-4201-BB08-F4D8714469CD</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -978,11 +985,18 @@
 		</dict>
 		<dict>
 			<key>config</key>
-			<dict/>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>open "$(echo "{query}" | sed "s,^.*module-copies,$HOME/active-project/modules__on_server,")"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
+			<string>BEC2F61B-FAAA-4201-BB08-F4D8714469CD</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1029,6 +1043,52 @@
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>134CD52D-ED67-4BF9-8C32-12864FCD5303</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>{query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7BDFD687-1656-4DB8-935D-3096F42E266F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,ps</string>
+				<key>runningsubtext</key>
+				<string>searching...</string>
+				<key>script</key>
+				<string>sh find-project.sh "{query}"</string>
+				<key>subtext</key>
+				<string>Change the active project.</string>
+				<key>title</key>
+				<string>Project Switcher</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C10F5290-9DE7-42BD-811D-F3B743911AD5</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1203,6 +1263,65 @@ end alfred_script</string>
 			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
 			<string>47D787FC-C675-4FAB-A1A6-C5FC18B26D65</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string>~/active-project</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.browseinalfred</string>
+			<key>uid</key>
+			<string>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p go</string>
+				<key>subtext</key>
+				<string>View Project Folder Shortcuts</string>
+				<key>text</key>
+				<string>Go</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>5</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>G</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>595BB5D1-CBD3-4B99-860D-8C472D67F689</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2793,135 +2912,6 @@ fi
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>;p</string>
-				<key>script</key>
-				<string>sh menu.sh "{query}"</string>
-				<key>title</key>
-				<string>Project Helper</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>F25E119F-0794-4C95-A3F1-3893FB31517F</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Project Helper</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>8C02FBC7-52D1-4C4A-BC07-4C69254F2005</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>source bash_functions
-echo '{query}' &gt; ~/to-menu-handler.txt
-
-if [[ '{query}' == "sh"* ]]; then
-      {query}
-  elif [[ '{query}' == ",p"* ]]; then
-    osascript -e '
-      tell application "Alfred 2" to search "{query}"
-      #delay .2
-      tell application "System Events"
-        keystroke return
-      end tell'
-  elif [[ '{query}' == "/"* ]]; then
-
-          # custom work for working around complicated project
-          if [[ '{query}' == *"/theme-copies/"* ]]; then
-            open "$(echo '{query}' | sed "s,^.*theme-copies,$HOME/active-project/theme__on_server,")"
-          elif [[ '{query}' == *"/module-copies/"* ]]; then
-            open "$(echo "{query}" | sed "s,^.*module-copies,$HOME/active-project/modules__on_server,")"
-            # end custom work
-          else
-
-          if [[ '{query}' == *"/snippets/"* ]]; then
-            sh snippets-handler.sh '{query}'
-		    exit
-          fi
-          
-        # the majority of all passed into this script, not just links, end up here: simply being opened
-        open '{query}'
-
-    fi
-    # just in case it's a relative link, open it too
-  elif [[ '{query}' == "~"* ]]; then
-    open '{query}'
-#  else
-#    echo '{query}'
-fi
-</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>8EBEC66E-B4D2-4F74-8518-7A28C600D46E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>hotkey</key>
-				<integer>49</integer>
-				<key>hotmod</key>
-				<integer>262144</integer>
-				<key>hotstring</key>
-				<string>Space</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>694BE630-1C56-4260-9659-511C07ED7CC9</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -2964,7 +2954,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>134CD52D-ED67-4BF9-8C32-12864FCD5303</key>
 		<dict>
 			<key>ypos</key>
-			<real>1080</real>
+			<real>1010</real>
 		</dict>
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<dict>
@@ -3039,7 +3029,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
 		<dict>
 			<key>ypos</key>
-			<real>470</real>
+			<real>1960</real>
 		</dict>
 		<key>598A781A-BE08-4063-B23E-5B8426BC63E1</key>
 		<dict>
@@ -3089,12 +3079,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>6800BE27-5AE1-41C1-8810-FEEE1696FE0A</key>
 		<dict>
 			<key>ypos</key>
-			<real>790</real>
+			<real>230</real>
 		</dict>
 		<key>694BE630-1C56-4260-9659-511C07ED7CC9</key>
 		<dict>
 			<key>ypos</key>
-			<real>6470</real>
+			<real>10</real>
 		</dict>
 		<key>6953C3BF-567F-4A6B-AA9F-1B969CE9A78B</key>
 		<dict>
@@ -3139,7 +3129,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>7BDFD687-1656-4DB8-935D-3096F42E266F</key>
 		<dict>
 			<key>ypos</key>
-			<real>110</real>
+			<real>1290</real>
 		</dict>
 		<key>7CEEE57A-C6FA-477D-9F7E-965DC18EEDC7</key>
 		<dict>
@@ -3164,7 +3154,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>8C02FBC7-52D1-4C4A-BC07-4C69254F2005</key>
 		<dict>
 			<key>ypos</key>
-			<real>6470</real>
+			<real>10</real>
 		</dict>
 		<key>8C46245E-C3B5-4503-8040-23EF768C2065</key>
 		<dict>
@@ -3174,7 +3164,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>8EBEC66E-B4D2-4F74-8518-7A28C600D46E</key>
 		<dict>
 			<key>ypos</key>
-			<real>6470</real>
+			<real>10</real>
 		</dict>
 		<key>97FE2D3C-3C92-49A3-BF35-8EAD05D68932</key>
 		<dict>
@@ -3195,11 +3185,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>2290</real>
-		</dict>
-		<key>A440DEC7-CFB5-4835-8F5F-304F75D7380E</key>
-		<dict>
-			<key>ypos</key>
-			<real>950</real>
 		</dict>
 		<key>A9C1A720-055C-41DE-A9FE-7017E23C96F1</key>
 		<dict>
@@ -3244,7 +3229,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>BEC2F61B-FAAA-4201-BB08-F4D8714469CD</key>
 		<dict>
 			<key>ypos</key>
-			<real>810</real>
+			<real>900</real>
 		</dict>
 		<key>BF19C63E-7FA0-4BB7-867C-CB122D54007A</key>
 		<dict>
@@ -3254,7 +3239,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>C10F5290-9DE7-42BD-811D-F3B743911AD5</key>
 		<dict>
 			<key>ypos</key>
-			<real>110</real>
+			<real>1290</real>
 		</dict>
 		<key>C1F4A37E-38FD-48D1-B62C-2BAEC1B3CE0A</key>
 		<dict>
@@ -3319,7 +3304,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>D38A6D98-9D04-4527-83B3-CA50304A3CB2</key>
 		<dict>
 			<key>ypos</key>
-			<real>680</real>
+			<real>120</real>
 		</dict>
 		<key>D6EA3BAD-5790-4838-A5C4-95E5D235A559</key>
 		<dict>
@@ -3344,7 +3329,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</key>
 		<dict>
 			<key>ypos</key>
-			<real>400</real>
+			<real>1880</real>
 		</dict>
 		<key>DD9F9CB9-BA18-44B9-B339-8DE985735F1B</key>
 		<dict>
@@ -3394,7 +3379,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>F25E119F-0794-4C95-A3F1-3893FB31517F</key>
 		<dict>
 			<key>ypos</key>
-			<real>6470</real>
+			<real>10</real>
 		</dict>
 		<key>F37F50B1-5842-449D-9A24-70E2D04BD072</key>
 		<dict>
@@ -3414,7 +3399,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</key>
 		<dict>
 			<key>ypos</key>
-			<real>400</real>
+			<real>1880</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
