@@ -8,17 +8,6 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
-		<key>00E3B1DC-4476-45B4-A2B5-D402D1D1A17A</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>FC9F0D22-2740-43D0-A373-ED7F8B97BD9A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>0DB146FF-2149-4328-96E2-BA4646551F14</key>
 		<array>
 			<dict>
@@ -123,17 +112,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>2EA942C4-FA76-4991-A35F-CBB59D380541</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>36E2AC73-FD53-42AF-8F63-3696DD0BAA72</key>
 		<array>
 			<dict>
@@ -172,24 +150,11 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
-		<array/>
 		<key>3E5A413E-3B68-4D3E-91BD-1789A40CB85D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>E5C20E8F-24B4-4E07-949C-FE1082BCF2BB</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>44D5B0B5-FC29-4217-8655-6EAC07BE2712</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -299,17 +264,6 @@
 		</array>
 		<key>640B18E7-4CF0-467E-885C-88C49D1CC0E8</key>
 		<array/>
-		<key>6605AEC9-1791-4AC7-B379-2DA029577667</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>6800BE27-5AE1-41C1-8810-FEEE1696FE0A</key>
 		<array>
 			<dict>
@@ -548,17 +502,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>C4229CD0-DE92-4CAC-885F-9EEB115FD830</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>C9650A73-BD58-4477-BA8B-1C275B502489</key>
 		<array>
 			<dict>
@@ -676,17 +619,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>75270128-7CC8-4FA5-ABF9-5A051EFCA537</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>DE2BA2CD-D3C5-4EFF-9B7B-96AEFF8F2C45</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A440DEC7-CFB5-4835-8F5F-304F75D7380E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -840,44 +772,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>,pn</string>
-				<key>subtext</key>
-				<string>Add a project base folder</string>
-				<key>text</key>
-				<string>New Project</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>00E3B1DC-4476-45B4-A2B5-D402D1D1A17A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>sh new-project.sh</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>FC9F0D22-2740-43D0-A373-ED7F8B97BD9A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -918,46 +812,6 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>C10F5290-9DE7-42BD-811D-F3B743911AD5</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p?</string>
-				<key>subtext</key>
-				<string>For the Project Helper</string>
-				<key>text</key>
-				<string>What Project am I on?</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>44D5B0B5-FC29-4217-8655-6EAC07BE2712</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>source bash_functions
-PROJECT="`ls -l ~/active-project | grep _files | sed 's,^.*projects/,,' | sed 's,_files,,'`"
-terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to view." -execute "open ~/active-project"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1017,35 +871,6 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
 			<string>595BB5D1-CBD3-4B99-860D-8C472D67F689</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>,p files</string>
-				<key>runningsubtext</key>
-				<string>searching...</string>
-				<key>script</key>
-				<string>sh search-for-files.sh ~/active-project/_files/ "{query}"</string>
-				<key>subtext</key>
-				<string>A general search (~/active-project/_files/) that encompasses assets, people, scripts and more.</string>
-				<key>title</key>
-				<string>Find Files in Files Directory</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>6605AEC9-1791-4AC7-B379-2DA029577667</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1204,254 +1029,6 @@ terminal-notifier -title "Project Helper" -message "You're on $PROJECT. Click to
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>134CD52D-ED67-4BF9-8C32-12864FCD5303</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>anchorfields</key>
-				<true/>
-				<key>daterange</key>
-				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemAlternateNames</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemFinderComment</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<false/>
-						<key>value</key>
-						<string>tpl</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
-				<false/>
-				<key>keyword</key>
-				<string>,p tpl</string>
-				<key>scopes</key>
-				<array>
-					<string>~/active-project/theme</string>
-				</array>
-				<key>subtext</key>
-				<string>Show .tpl.php Files in Theme Directory</string>
-				<key>title</key>
-				<string>TPL Files in Theme</string>
-				<key>types</key>
-				<array>
-					<string>public.php-script</string>
-				</array>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
-			<key>uid</key>
-			<string>C4229CD0-DE92-4CAC-885F-9EEB115FD830</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>anchorfields</key>
-				<true/>
-				<key>daterange</key>
-				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemAlternateNames</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemFinderComment</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemUserTags</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<false/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
-				<false/>
-				<key>keyword</key>
-				<string>,p site</string>
-				<key>scopes</key>
-				<array>
-					<string>~/active-project/site_root</string>
-				</array>
-				<key>subtext</key>
-				<string>For any file</string>
-				<key>title</key>
-				<string>Search Site Root</string>
-				<key>types</key>
-				<array/>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
-			<key>uid</key>
-			<string>2EA942C4-FA76-4991-A35F-CBB59D380541</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>anchorfields</key>
-				<true/>
-				<key>daterange</key>
-				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemAlternateNames</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemFinderComment</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemUserTags</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<false/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
-				<false/>
-				<key>keyword</key>
-				<string>,p theme</string>
-				<key>scopes</key>
-				<array>
-					<string>~/active-project/theme</string>
-				</array>
-				<key>subtext</key>
-				<string>For any file</string>
-				<key>title</key>
-				<string>Search theme</string>
-				<key>types</key>
-				<array/>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
-			<key>uid</key>
-			<string>DE2BA2CD-D3C5-4EFF-9B7B-96AEFF8F2C45</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -3359,11 +2936,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>5250</real>
 		</dict>
-		<key>00E3B1DC-4476-45B4-A2B5-D402D1D1A17A</key>
-		<dict>
-			<key>ypos</key>
-			<real>10</real>
-		</dict>
 		<key>0CC40071-F05B-4DD6-9F85-DBA41A8A2384</key>
 		<dict>
 			<key>ypos</key>
@@ -3434,11 +3006,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>3170</real>
 		</dict>
-		<key>2EA942C4-FA76-4991-A35F-CBB59D380541</key>
-		<dict>
-			<key>ypos</key>
-			<real>1230</real>
-		</dict>
 		<key>36E2AC73-FD53-42AF-8F63-3696DD0BAA72</key>
 		<dict>
 			<key>ypos</key>
@@ -3454,20 +3021,10 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>4870</real>
 		</dict>
-		<key>3D39E70E-5DB3-4780-917C-ACD5CA9C2CEC</key>
-		<dict>
-			<key>ypos</key>
-			<real>230</real>
-		</dict>
 		<key>3E5A413E-3B68-4D3E-91BD-1789A40CB85D</key>
 		<dict>
 			<key>ypos</key>
 			<real>3370</real>
-		</dict>
-		<key>44D5B0B5-FC29-4217-8655-6EAC07BE2712</key>
-		<dict>
-			<key>ypos</key>
-			<real>230</real>
 		</dict>
 		<key>47D787FC-C675-4FAB-A1A6-C5FC18B26D65</key>
 		<dict>
@@ -3528,11 +3085,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>2960</real>
-		</dict>
-		<key>6605AEC9-1791-4AC7-B379-2DA029577667</key>
-		<dict>
-			<key>ypos</key>
-			<real>570</real>
 		</dict>
 		<key>6800BE27-5AE1-41C1-8810-FEEE1696FE0A</key>
 		<dict>
@@ -3714,11 +3266,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>5890</real>
 		</dict>
-		<key>C4229CD0-DE92-4CAC-885F-9EEB115FD830</key>
-		<dict>
-			<key>ypos</key>
-			<real>1120</real>
-		</dict>
 		<key>C921BB8A-805B-4EE1-AE9D-8901E24E96D6</key>
 		<dict>
 			<key>ypos</key>
@@ -3804,11 +3351,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>4970</real>
 		</dict>
-		<key>DE2BA2CD-D3C5-4EFF-9B7B-96AEFF8F2C45</key>
-		<dict>
-			<key>ypos</key>
-			<real>1340</real>
-		</dict>
 		<key>E15480BB-0719-43BA-B26A-B6FE522F46D9</key>
 		<dict>
 			<key>ypos</key>
@@ -3863,11 +3405,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3820</real>
-		</dict>
-		<key>FC9F0D22-2740-43D0-A373-ED7F8B97BD9A</key>
-		<dict>
-			<key>ypos</key>
-			<real>10</real>
 		</dict>
 		<key>FDF41E5D-5F06-43A6-AE67-5DCC5B1BF48D</key>
 		<dict>
