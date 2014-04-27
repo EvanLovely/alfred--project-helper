@@ -2990,7 +2990,7 @@ open $(getsetting todos)
 				<key>script</key>
 				<string># show the next task in large type
 source bash_functions
-head -1 $(getsetting todos) | sed "s/^- //"</string>
+egrep -v "@done" $(getsetting todos) | head -1</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>

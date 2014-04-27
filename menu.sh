@@ -4,10 +4,20 @@ echo "<items>"
 
 if [[ "$1" != "go"* ]]; then
   filter="$1"
-  echo "<item autocomplete='go find ' valid='no'><title>Find</title></item>" | grep -i "$filter"
-  echo "<item autocomplete='go ref ' valid='no'><title>Reference</title></item>" | grep -i "$filter"
-  echo "<item autocomplete='go do ' valid='no'><title>Do</title></item>" | grep -i "$filter"
-  echo "<item autocomplete='go set ' valid='no'><title>Settings</title></item>" | grep -i "$filter"
+  echo "<item autocomplete='go find ' valid='no' file='no'><title>Find</title></item>" | grep -i "$filter"
+  echo "<item autocomplete='go ref ' valid='no' file='no'><title>Reference</title></item>" | grep -i "$filter"
+  echo "<item autocomplete='go do ' valid='no' file='no'><title>Do</title></item>" | grep -i "$filter"
+  echo "<item arg=',p tags ' valid='yes' file='no'><title>Tags</title></item>" | grep -i "$filter"
+  # Next Todo
+  next="$(egrep -v \"@done\" $(getsetting todos) | head -1)"
+  if [[ "$next" != "" ]]; then
+    echo "<item arg=',p todo'><title>Next Todo: "$next"</title><subtitle>Action to see todo list.</subtitle></item>"
+    if [[ "$next" == *"@tag"* ]]; then
+      tag=$(echo "$next" | sed "s,^.*@tag(,," | sed "s,).*,,")
+      echo "<item arg=',p tagged $tag➢'><title>List Supporting Material for Above Task</title><subtitle>Action to open materials tagged with "$tag"</subtitle></item>"
+    fi
+  fi
+  echo "<item autocomplete='go set ' valid='no' file='no'><title>Settings</title></item>" | grep -i "$filter"
 fi
 
 # Find
@@ -64,8 +74,8 @@ if [[ "$1" == "go ref"* ]]; then
     echo "<item autocomplete='go links ' valid='no' file='no'><title>Links</title></item>" | grep -i "$filter"
     echo "<item autocomplete='go snippets ' valid='no' file='no'><title>Snippets</title></item>" | grep -i "$filter"
     echo "<item autocomplete='go notes ' valid='no' file='no'><title>Notes</title></item>" | grep -i "$filter"
-    echo "<item autocomplete='go todos ' valid='no' file='no'><title>Todos</title></item>" | grep -i "$filter"
-    echo "<item autocomplete='go people ' valid='no' file='no'><title>People</title></item>" | grep -i "$filter"
+    echo "<item arg=',p todo ' valid='yes' file='no'><title>Todos</title></item>" | grep -i "$filter"
+    echo "<item arg=',p people ' valid='yes' file='no'><title>People</title></item>" | grep -i "$filter"
 fi
   
   # Reference > Links
@@ -76,8 +86,14 @@ fi
 
   # Reference > Snippets
   if [[ "$1" == "go snippets"* ]]; then
-      arg="${1//go snippets /}"
-      sh find-snippets.sh ~/active-project/_files/snippets/ "$args"
+      arg="${1/go snippets /}"
+      sh find-snippets.sh ~/active-project/_files/snippets/ "$arg"
+  fi
+
+  # Reference > Notes
+  if [[ "$1" == "go notes"* ]]; then
+      arg="${1/go notes /}"
+      sh notes.sh ~/active-project/_files/notes "$arg"
   fi
 
 # Do
