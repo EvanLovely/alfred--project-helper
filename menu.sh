@@ -4,19 +4,27 @@ echo "<items>"
 
 if [[ "$1" != "go"* ]]; then
   filter="$1"
+  # Find
   echo "<item autocomplete='go find ' valid='no' file='no'><title>Find</title><subtitle>Find Assets, CSS, and Shared Docs</subtitle><icon>icons/search.png</icon></item>" | grep -i "$filter"
+  # Reference
   echo "<item autocomplete='go ref ' valid='no' file='no'><title>Reference</title><subtitle>Open Links, Insert Snippets, Search Notes, Work with Todos, and List People on this project.</subtitle><icon>icons/book.png</icon></item>" | grep -i "$filter"
+  # Go to Folder
+  echo "<item arg=',p go' valid='yes' file='no'><title>Go to Folder</title><subtitle>Go to ~/active-project/ where you can jump to any project folder.</subtitle><icon>icons/folder.png</icon></item>" | grep -i "$filter"
+  # Do
   echo "<item autocomplete='go do ' valid='no' file='no'><title>Do</title><subtitle>Fire off actions such as git and drush commands, and any other custom script.</subtitle><icon>icons/process.png</icon></item>" | grep -i "$filter"
+  # Tags
   echo "<item arg=',p tags ' valid='yes' file='no'><title>Tags</title><subtitle>List all tags on any file in this project, then search by that tag.</subtitle><icon>icons/tag.png</icon></item>" | grep -i "$filter"
   # Next Todo
   next="$(egrep -v \"@done\" $(getsetting todos) | head -1)"
   if [[ "$next" != "" ]]; then
     echo "<item arg=',p todo'><title>Next Todo: "$next"</title><subtitle>Action to see todo list.</subtitle><icon>icons/checkmark.png</icon></item>" | grep -i "$filter"
     if [[ "$next" == *"@tag"* ]]; then
+      # Supporting Material
       tag=$(echo "$next" | sed "s,^.*@tag(,," | sed "s,).*,,")
       echo "<item arg=',p tagged $tag➢'><title>List Supporting Material for Above Todo</title><subtitle>Action to open materials tagged with "$tag"</subtitle><icon>icons/pages.png</icon></item>" | grep -i "$filter"
     fi
   fi
+  # Settings
   echo "<item autocomplete='go set ' valid='no' file='no'><title>Settings</title><subtitle>Change or Create Project. Change Settings for this project ($(ls -l ~/active-project/ | grep "_files ->" | sed 's,^.*/,,'))</subtitle><icon>icons/settings.png</icon></item>" | grep -i "$filter"
 fi
 
