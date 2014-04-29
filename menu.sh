@@ -125,6 +125,8 @@ if [[ "$1" == "go set"* ]]; then
   echo "<item autocomplete='go proj set ' arg='project-settings' valid='no' file='no'><title>Project Settings for \"$(ls -l ~/active-project/ | grep "_files ->" | sed 's,^.*/,,')\"</title><subtitle>See and change subtle settings for this specific project.</subtitle><icon>icons/settings.png</icon></item>" | egrep -i "$filter"
   # Check for Updates
   echo "<item arg='sh check-for-update.sh' valid='yes' file='no'><title>Update Me</title><subtitle>Check for updates to this Alfred Workflow.</subtitle><icon>icons/down_arrow.png</icon></item>" | egrep -i "$filter"
+  # Report Issue
+  echo "<item arg='sh -c \"open https://github.com/evanlovely/alfred--project-helper/issues/new\"' valid='yes' file='no'><title>Report Issue on this Alfred Workflow</title><subtitle>Let me know what is broken so I can fix it!</subtitle><icon>icons/warning.png</icon></item>" | egrep -i "$filter"
 fi
   
   # Settings > Switch Project
