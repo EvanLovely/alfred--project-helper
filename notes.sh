@@ -12,11 +12,10 @@ if [ "$2" ]
     done
   else
     # List All
-    echo "<item arg=\"add-note\"><title>Add New Note with Cmd+Enter</title><subtitle>On Notes below: Enter to Open. Option+Enter to Append to Note. Type to filter.</subtitle></item>"
+    echo "<item arg=\",p add note\"><title>Add New Note</title><subtitle>On Notes below: Enter to Open. Type to filter.</subtitle><icon>icons/plus.png</icon></item>"
     for i in $(find "$dir" -type f -not -name ".DS_Store"); do
       sh result-templates/note.tpl.sh "$i" --no-uid
     done
-    
 fi
 
 echo "</items>"

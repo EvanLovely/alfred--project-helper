@@ -16,7 +16,7 @@ if [ "$2" ]
 
   else
     # List All
-    echo "<item arg=\",p add snippet\"><title>Add New Snippet</title><subtitle>On Snippets below: Enter to Copy and Insert. Hold Cmd to Just Copy. Type to filter.</subtitle></item>"
+    echo "<item arg=\",p add snippet\"><title>Add New Snippet</title><subtitle>On Snippets below: Enter to Copy and Insert. Type to filter.</subtitle></item>"
     for i in $(find "$dir" -type f -not -name "*DS_Store*"); do
           sh result-templates/snippet.tpl.sh "$i" --no-uid
           let ++count
