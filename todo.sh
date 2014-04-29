@@ -14,7 +14,7 @@ if [ "$args" ]
     done
   else
     # List All
-    echo "<item><title>Append new task with CMD+Enter. Enter on a task to complete.</title><subtitle>Prepend new task with Option+Enter. Open @url() tags with Ctrl+Enter.</subtitle></item>"
+    echo "<item arg=',p add todo'><title>Add new todo at bottom. (Hold CMD to add to top) </title><subtitle>Shift+Enter to open task file. Action tasks with @url with Ctrl; @tag with Option.</subtitle></item>"
     for i in $(echo "$tasks"); do
         sh result-templates/todo.tpl.sh "$i"
     done

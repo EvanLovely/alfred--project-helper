@@ -78,7 +78,7 @@ fi
 
 # Reference
 if [[ "$1" == "go ref"* ]]; then
-    filter="${1/go ref/}"
+    filter="${1/go ref /}"
     echo "<item autocomplete='go links ' valid='no' file='no'><title>Links</title><subtitle>Seach for URLs to open --- Shortcut: ',p links'</subtitle><icon>icons/link.png</icon></item>" | grep -i "$filter"
     echo "<item autocomplete='go snippets ' valid='no' file='no'><title>Snippets</title><subtitle>Search for chunks of text to copy and insert --- Shortcut: ',p snippets'</subtitle><icon>icons/scissor.png</icon></item>" | grep -i "$filter"
     echo "<item autocomplete='go notes ' valid='no' file='no'><title>Notes</title><subtitle>Searches ~/active-project/_files/notes --- Shortcut: ',p notes'</subtitle><icon>icons/edit.png</icon></item>" | grep -i "$filter"

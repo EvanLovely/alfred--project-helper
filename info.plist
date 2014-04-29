@@ -41,6 +41,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>1328BE94-4E72-4AF0-81D1-66A767935D4F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>615BF5E1-96F8-4440-8833-FD79347EE42E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>1598DDC5-71B3-4FA8-A2D4-721C9A7FE06F</key>
 		<array>
 			<dict>
@@ -270,6 +281,17 @@
 		</array>
 		<key>640B18E7-4CF0-467E-885C-88C49D1CC0E8</key>
 		<array/>
+		<key>65939AD9-6716-4E01-B2BD-B5C2121F45AA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>754A4BB6-D69A-482D-8F73-9D6FC83542D6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>665A6028-414A-466E-B111-A3DD5D34E0D1</key>
 		<array>
 			<dict>
@@ -707,27 +729,27 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>CD678781-2533-4459-BECA-A39480F0E1FC</string>
+				<string>65939AD9-6716-4E01-B2BD-B5C2121F45AA</string>
 				<key>modifiers</key>
-				<integer>0</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>615BF5E1-96F8-4440-8833-FD79347EE42E</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>Add New Task</string>
+				<string>If the todo has a @tag(), search for files with that tag.</string>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>EFB05F74-B22D-4D7B-BC6F-F74201FF150B</string>
 				<key>modifiers</key>
-				<integer>524288</integer>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Add new task on top</string>
+				<string>Add todo top of list.</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>CD678781-2533-4459-BECA-A39480F0E1FC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
@@ -1323,6 +1345,31 @@ open {query} -a "`getsetting dev_browser`"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Mixin Copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>37203B3D-F838-4912-A8BD-A35F40F30928</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -1403,12 +1450,12 @@ open {query} -a "`getsetting dev_browser`"</string>
 				<key>text</key>
 				<string>{query}</string>
 				<key>title</key>
-				<string>Mixin Copied</string>
+				<string>Todos</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>37203B3D-F838-4912-A8BD-A35F40F30928</string>
+			<string>754A4BB6-D69A-482D-8F73-9D6FC83542D6</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1418,40 +1465,23 @@ open {query} -a "`getsetting dev_browser`"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>source bash_functions
-todos="$(getsetting todos)"
-echo "- {query}" &gt;&gt; "$todos"
-sh todo__done-appender.sh "$todos"
-/opt/local/bin/terminal-notifier -title "Todo added to bottom" -message "{query}" 
-
-if [[ "$(getsetting todos__show_list_after_task_action)" != "FALSE" ]]; then
-	osascript -e 'tell application "Alfred 2" to search ",p todo"'    
-fi
-</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.script</string>
-			<key>uid</key>
-			<string>0FBB4DDB-586C-4104-B81F-9C5525B095EA</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>38</integer>
-				<key>script</key>
-				<string>sh todo-handler.sh '{query}'</string>
+				<string>if [[ "{query}" != *"@tag("* ]]; then
+  echo "No @tag() found on todo."
+else
+  export tag=$(echo '{query}' | sed "s,^.*@tag(,," | sed "s,).*,,")
+  if [[ '{query}' != ",p"* ]]; then
+      osascript -e '
+      set query to do shell script "echo $tag"
+        tell application "Alfred 2" to search ",p tagged " &amp; query &amp; "➢"'
+  fi
+fi</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>CD678781-2533-4459-BECA-A39480F0E1FC</string>
+			<string>65939AD9-6716-4E01-B2BD-B5C2121F45AA</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1472,7 +1502,7 @@ end alfred_script</string>
 			<key>type</key>
 			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
-			<string>615BF5E1-96F8-4440-8833-FD79347EE42E</string>
+			<string>EFB05F74-B22D-4D7B-BC6F-F74201FF150B</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1482,7 +1512,9 @@ end alfred_script</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>source bash_functions
+				<string>if [[ '{query}' != '' ]]; then
+
+source bash_functions
 todos=$(getsetting todos)
 cat $todos &gt; /tmp/todo.txt &amp;&amp; echo "- {query}" &gt; $todos &amp;&amp; cat /tmp/todo.txt &gt;&gt; $todos
 /opt/local/bin/terminal-notifier -title "Todo added to top" -message "{query}"
@@ -1490,7 +1522,8 @@ cat $todos &gt; /tmp/todo.txt &amp;&amp; echo "- {query}" &gt; $todos &amp;&amp;
 if [[ "$(getsetting todos__show_list_after_task_action)" != "FALSE" ]]; then
 	osascript -e 'tell application "Alfred 2" to search ",p todo"'    
 fi
-</string>
+
+fi</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -1554,44 +1587,17 @@ fi
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)
-  tell me
-	activate
-	set response to the text returned of (display dialog "Add Task" with title "Task" default answer "Task")
-response
-end tell
-end alfred_script</string>
-				<key>cachescript</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
-			<key>uid</key>
-			<string>EFB05F74-B22D-4D7B-BC6F-F74201FF150B</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
-				<integer>0</integer>
+				<integer>38</integer>
 				<key>script</key>
-				<string>url_tag="$(echo "{query}" | egrep -o '@url(\S*)')"
-url=$(echo ${url_tag%\)} | sed "s/^@url(//")
-if [[ "$url" ]]; then
-    open $url
-  else 
-    echo "No URL found"
-fi</string>
+				<string>sh todo-handler.sh '{query}'</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>C9650A73-BD58-4477-BA8B-1C275B502489</string>
+			<string>CD678781-2533-4459-BECA-A39480F0E1FC</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1617,6 +1623,29 @@ fi</string>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>7CEEE57A-C6FA-477D-9F7E-965DC18EEDC7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>url_tag="$(echo "{query}" | egrep -o '@url(\S*)')"
+url=$(echo ${url_tag%\)} | sed "s/^@url(//")
+if [[ "$url" ]]; then
+    open $url
+  else 
+    echo "No URL found"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C9650A73-BD58-4477-BA8B-1C275B502489</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1658,6 +1687,37 @@ sh "{query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>source bash_functions
+if [[ "{query}" == *".sh" ]]; then
+	sh "{query}"
+elif [[ "{query}" == *".applescript" ]]; then
+	osascript "{query}"
+fi
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>1B0E50C3-8785-413C-91E5-2A18D584B75C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -1687,29 +1747,6 @@ sh "{query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>source bash_functions
-if [[ "{query}" == *".sh" ]]; then
-	sh "{query}"
-elif [[ "{query}" == *".applescript" ]]; then
-	osascript "{query}"
-fi
-</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -1731,14 +1768,6 @@ fi
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
 			<string>5BAC028A-B03F-41B7-9E40-0D8CE25AAA27</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>1B0E50C3-8785-413C-91E5-2A18D584B75C</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1787,31 +1816,6 @@ fi
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>hotkey</key>
-				<integer>5</integer>
-				<key>hotmod</key>
-				<integer>1966080</integer>
-				<key>hotstring</key>
-				<string>G</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>595BB5D1-CBD3-4B99-860D-8C472D67F689</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
 set defaultPOSIXPath to do shell script "echo $HOME/active-project/_files/scripts"
@@ -1841,21 +1845,25 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p go</string>
-				<key>subtext</key>
-				<string>View Project Folder Shortcuts</string>
-				<key>text</key>
-				<string>Go</string>
-				<key>withspace</key>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>5</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>G</string>
+				<key>leftcursor</key>
 				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</string>
+			<string>595BB5D1-CBD3-4B99-860D-8C472D67F689</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1878,45 +1886,18 @@ end alfred_script</string>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>,p add note</string>
+				<string>,p go</string>
+				<key>subtext</key>
+				<string>View Project Folder Shortcuts</string>
 				<key>text</key>
-				<string>Add New Note</string>
+				<string>Go</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>04A3E4F7-F327-47C4-84DB-6F1E701FBBC0</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)
-set defaultPOSIXPath to do shell script "echo $HOME/active-project/_files/notes"
-set defaultPath to POSIX file defaultPOSIXPath as alias
-
-tell me
-	activate
-	set resultFile to (choose file name with prompt "Save As File" default name "note.md" default location defaultPath)
-end tell
-set referenceNumber to open for access resultFile with write permission
-
-
-
-close access referenceNumber
-tell application "Finder" to open resultFile
-end alfred_script</string>
-				<key>cachescript</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
-			<key>uid</key>
-			<string>CAF4264B-C884-4F56-A154-D16C2A7FABF4</string>
+			<string>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -2623,6 +2604,123 @@ end lastpos</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p add note</string>
+				<key>text</key>
+				<string>Add New Note</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>04A3E4F7-F327-47C4-84DB-6F1E701FBBC0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+set defaultPOSIXPath to do shell script "echo $HOME/active-project/_files/notes"
+set defaultPath to POSIX file defaultPOSIXPath as alias
+
+tell me
+	activate
+	set resultFile to (choose file name with prompt "Save As File" default name "note.md" default location defaultPath)
+end tell
+set referenceNumber to open for access resultFile with write permission
+
+
+
+close access referenceNumber
+tell application "Finder" to open resultFile
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>CAF4264B-C884-4F56-A154-D16C2A7FABF4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p add todo</string>
+				<key>text</key>
+				<string>Add Todo Item</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1328BE94-4E72-4AF0-81D1-66A767935D4F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>if [[ '{query}' != '' ]]; then
+
+source bash_functions
+todos="$(getsetting todos)"
+echo "- {query}" &gt;&gt; "$todos"
+sh todo__done-appender.sh "$todos"
+/opt/local/bin/terminal-notifier -title "Todo added to bottom" -message "{query}" 
+
+if [[ "$(getsetting todos__show_list_after_task_action)" != "FALSE" ]]; then
+	osascript -e 'tell application "Alfred 2" to search ",p todo"'    
+fi
+
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>0FBB4DDB-586C-4104-B81F-9C5525B095EA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell me
+	activate
+	set response to the text returned of (display dialog "Add Task" with title "Task" default answer "Task")
+response
+end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>615BF5E1-96F8-4440-8833-FD79347EE42E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<true/>
 				<key>onlyshowifquerypopulated</key>
@@ -3070,7 +3168,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>04A3E4F7-F327-47C4-84DB-6F1E701FBBC0</key>
 		<dict>
 			<key>ypos</key>
-			<real>2050</real>
+			<real>4170</real>
 		</dict>
 		<key>0CC40071-F05B-4DD6-9F85-DBA41A8A2384</key>
 		<dict>
@@ -3085,7 +3183,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>0FBB4DDB-586C-4104-B81F-9C5525B095EA</key>
 		<dict>
 			<key>ypos</key>
-			<real>1110</real>
+			<real>4290</real>
 		</dict>
 		<key>111D1139-3CFD-4C89-BF62-5339E188FF93</key>
 		<dict>
@@ -3096,6 +3194,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>340</real>
+		</dict>
+		<key>1328BE94-4E72-4AF0-81D1-66A767935D4F</key>
+		<dict>
+			<key>ypos</key>
+			<real>4290</real>
 		</dict>
 		<key>134CD52D-ED67-4BF9-8C32-12864FCD5303</key>
 		<dict>
@@ -3110,7 +3213,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>1B0E50C3-8785-413C-91E5-2A18D584B75C</key>
 		<dict>
 			<key>ypos</key>
-			<real>1520</real>
+			<real>1820</real>
 		</dict>
 		<key>1C59F7EA-A54F-4E8B-962F-DBC948A55D25</key>
 		<dict>
@@ -3140,12 +3243,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>36E2AC73-FD53-42AF-8F63-3696DD0BAA72</key>
 		<dict>
 			<key>ypos</key>
-			<real>1520</real>
+			<real>1930</real>
 		</dict>
 		<key>37203B3D-F838-4912-A8BD-A35F40F30928</key>
 		<dict>
 			<key>ypos</key>
-			<real>900</real>
+			<real>890</real>
 		</dict>
 		<key>39C0448E-03FB-4BE9-9DC8-E0228BA7233A</key>
 		<dict>
@@ -3165,7 +3268,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>47D787FC-C675-4FAB-A1A6-C5FC18B26D65</key>
 		<dict>
 			<key>ypos</key>
-			<real>1720</real>
+			<real>2070</real>
 		</dict>
 		<key>4FAEFE29-F529-4A6E-A103-4CF96880E790</key>
 		<dict>
@@ -3175,7 +3278,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
 		<dict>
 			<key>ypos</key>
-			<real>1690</real>
+			<real>2080</real>
 		</dict>
 		<key>598A781A-BE08-4063-B23E-5B8426BC63E1</key>
 		<dict>
@@ -3185,7 +3288,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>5BAC028A-B03F-41B7-9E40-0D8CE25AAA27</key>
 		<dict>
 			<key>ypos</key>
-			<real>1520</real>
+			<real>1930</real>
 		</dict>
 		<key>5CC022EA-613B-48D5-8B6D-C57207E077D0</key>
 		<dict>
@@ -3210,7 +3313,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>615BF5E1-96F8-4440-8833-FD79347EE42E</key>
 		<dict>
 			<key>ypos</key>
-			<real>1180</real>
+			<real>4290</real>
 		</dict>
 		<key>616A35A3-9545-4AE5-BBF7-6F24C8D87235</key>
 		<dict>
@@ -3221,6 +3324,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>450</real>
+		</dict>
+		<key>65939AD9-6716-4E01-B2BD-B5C2121F45AA</key>
+		<dict>
+			<key>ypos</key>
+			<real>1010</real>
 		</dict>
 		<key>665A6028-414A-466E-B111-A3DD5D34E0D1</key>
 		<dict>
@@ -3250,7 +3358,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>7029E031-751B-476B-A925-6ACCD5E861EE</key>
 		<dict>
 			<key>ypos</key>
-			<real>1310</real>
+			<real>1470</real>
 		</dict>
 		<key>71E32143-C9CA-495E-8B19-AC60B4B56AAE</key>
 		<dict>
@@ -3261,6 +3369,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>4970</real>
+		</dict>
+		<key>754A4BB6-D69A-482D-8F73-9D6FC83542D6</key>
+		<dict>
+			<key>ypos</key>
+			<real>1010</real>
 		</dict>
 		<key>755A62E5-B7B3-41FA-A6FB-A52D390E6467</key>
 		<dict>
@@ -3285,7 +3398,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>8290C1FA-3C7D-4CCA-B035-B2113E3B2E1A</key>
 		<dict>
 			<key>ypos</key>
-			<real>1210</real>
+			<real>1190</real>
 		</dict>
 		<key>881CAA3B-EF59-4362-A2F3-64631FFCAEDB</key>
 		<dict>
@@ -3320,7 +3433,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>9D74BD2C-9D2F-4C12-BE3A-7FC984C0C4FC</key>
 		<dict>
 			<key>ypos</key>
-			<real>1620</real>
+			<real>1950</real>
 		</dict>
 		<key>9DC17E59-6F9D-4A73-8945-9D3A5064E646</key>
 		<dict>
@@ -3335,7 +3448,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>A9C1A720-055C-41DE-A9FE-7017E23C96F1</key>
 		<dict>
 			<key>ypos</key>
-			<real>1620</real>
+			<real>1950</real>
 		</dict>
 		<key>AB31191E-0F57-4AE4-AD24-A6F3B33DFEB1</key>
 		<dict>
@@ -3410,7 +3523,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>C9650A73-BD58-4477-BA8B-1C275B502489</key>
 		<dict>
 			<key>ypos</key>
-			<real>1260</real>
+			<real>1350</real>
 		</dict>
 		<key>C9EFED0D-BF2A-4933-B227-31EA7122A621</key>
 		<dict>
@@ -3430,7 +3543,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>CAF4264B-C884-4F56-A154-D16C2A7FABF4</key>
 		<dict>
 			<key>ypos</key>
-			<real>2050</real>
+			<real>4170</real>
 		</dict>
 		<key>CC327603-6994-4756-AD3B-948B0C49D604</key>
 		<dict>
@@ -3440,7 +3553,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>CD678781-2533-4459-BECA-A39480F0E1FC</key>
 		<dict>
 			<key>ypos</key>
-			<real>1110</real>
+			<real>1240</real>
 		</dict>
 		<key>CE8DC90F-D6F8-4972-86BE-59B3AA98A089</key>
 		<dict>
@@ -3465,7 +3578,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</key>
 		<dict>
 			<key>ypos</key>
-			<real>1420</real>
+			<real>1740</real>
 		</dict>
 		<key>D9972F46-8BE0-4DC1-941E-0585976534A6</key>
 		<dict>
@@ -3480,7 +3593,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</key>
 		<dict>
 			<key>ypos</key>
-			<real>1830</real>
+			<real>2180</real>
 		</dict>
 		<key>DD9F9CB9-BA18-44B9-B339-8DE985735F1B</key>
 		<dict>
@@ -3500,12 +3613,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>E7733D65-37AA-4BC2-B2F2-6C4A7A15394A</key>
 		<dict>
 			<key>ypos</key>
-			<real>1520</real>
+			<real>1820</real>
 		</dict>
 		<key>E8C27477-2BDE-40E6-8721-599FD0FA8770</key>
 		<dict>
 			<key>ypos</key>
-			<real>1230</real>
+			<real>1240</real>
 		</dict>
 		<key>EF024117-D019-4A92-B0BC-AC1F8A476027</key>
 		<dict>
@@ -3520,12 +3633,12 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>EF7ECCAB-5C07-4D0D-8447-B35A5F219BC5</key>
 		<dict>
 			<key>ypos</key>
-			<real>1230</real>
+			<real>1240</real>
 		</dict>
 		<key>EFB05F74-B22D-4D7B-BC6F-F74201FF150B</key>
 		<dict>
 			<key>ypos</key>
-			<real>1230</real>
+			<real>1120</real>
 		</dict>
 		<key>F25E119F-0794-4C95-A3F1-3893FB31517F</key>
 		<dict>
@@ -3555,7 +3668,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>FE3F9D20-0B87-485E-BB9C-4FDA91F23BB0</key>
 		<dict>
 			<key>ypos</key>
-			<real>1770</real>
+			<real>2180</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
