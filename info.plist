@@ -900,10 +900,15 @@ if [[ '{query}' == "sh"* ]]; then
   elif [[ '{query}' == ",p"* ]]; then
     osascript -e '
       tell application "Alfred 2" to search "{query}"
-      #delay .2
-      tell application "System Events"
-        keystroke return
-      end tell'
+      '
+      if [[ '{query}' == ",p add"* ]]; then
+	      osascript -e '
+	      	delay .2
+		      tell application "System Events"
+		        keystroke return
+		      end tell
+	      '
+      fi
   elif [[ '{query}' == "/"* ]]; then
 
           # custom work for working around complicated project

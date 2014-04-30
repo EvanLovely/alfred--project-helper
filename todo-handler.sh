@@ -2,11 +2,14 @@ export arg="$1"
 if [[ "$1" == ",p"* ]]; then
     osascript -e '
       set query to do shell script "echo $arg"
-      tell application "Alfred 2" to search query
-      #delay .2
-      tell application "System Events"
-        keystroke return
-      end tell'
+      tell application "Alfred 2" to search query'
+      if [[ "$1" == ",p add"* ]]; then
+        osascript -e '
+          tell application "System Events"
+            keystroke return
+          end tell
+        '
+      fi
 else
   source bash_functions
   export todos=$(getsetting todos)
