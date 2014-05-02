@@ -16,7 +16,7 @@ if [ -a ~/active-project/_files/settings/start-in-theme.sh ]
     osascript -e 'tell application "Terminal"
     do script "cd ~/active-project/theme
     terminal-notifier -title \"Project Helper\" -subtitle \"Theme Scripts Started\" -message \"Click to Edit\" -execute \"open -t ~/active-project/_files/settings/start-in-theme.sh\"
-    sh ~/active-project/_files/settings/start-in-theme.sh"
+    exec sh ~/active-project/_files/settings/start-in-theme.sh"
     end tell
     '
 fi
@@ -27,7 +27,7 @@ if [ -a ~/active-project/_files/settings/start-in-site-root.sh ]
     osascript -e 'tell application "Terminal"
     do script "cd ~/active-project/site_root
     terminal-notifier -title \"Project Helper\" -subtitle \"Site Root Scripts Started\" -message \"Click to Edit\" -execute \"open -t ~/active-project/_files/settings/start-in-site-root.sh\"
-    sh ~/active-project/_files/settings/start-in-site-root.sh"
+    exec sh ~/active-project/_files/settings/start-in-site-root.sh"
     end tell
     '
 fi
