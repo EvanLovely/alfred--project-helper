@@ -1,3 +1,4 @@
+source bash_functions
 arg="$1"
 task="$(echo ${arg%%@*} | sed "s/^[-|+] //")"
 meta="${arg#*@}"
@@ -13,7 +14,7 @@ elif [[ "$(echo $arg | sed "s,^-.*,,")" != "" ]]; then
   echo "<subtitle><![CDATA[$arg]]></subtitle>"
 elif [[ "$arg" == *"- "* ]]; then
   # tasks
-  echo "<item arg=\"$(echo $arg | sed "s,^-,task:,")\"><title><![CDATA[$arg]]></title>"
+  echo "<item arg=\"$(xmlEncode "$(echo $arg | sed "s,^-,task:,")")\"><title><![CDATA[$arg]]></title>"
     if [[ "$arg" == *@done* ]]; then
         echo "<icon>icons/checkmark.png</icon>"
       else

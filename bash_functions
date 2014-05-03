@@ -54,3 +54,11 @@ replacefolder() {
 removefolder() {
   rdef ~/active-project/_files/settings/folders.yml $1
 }
+
+
+#######################################
+# Escapes XML special characters with their entities (from: https://github.com/markokaestner/bash-workflow-handler/)
+#######################################
+xmlEncode() {
+  echo "$1" | sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g' -e "s/'/\&apos;/g" -e 's/"/\&quot;/g'
+}
