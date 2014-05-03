@@ -14,7 +14,7 @@ unset IFS
 if [ -a ~/active-project/_files/settings/start-in-theme.sh ]
   then
     osascript -e 'tell application "Terminal"
-    do script "cd ~/active-project/theme
+    do script "cd $(cd ~/active-project/theme && pwd -P)
     terminal-notifier -title \"Project Helper\" -subtitle \"Theme Scripts Started\" -message \"Click to Edit\" -execute \"open -t ~/active-project/_files/settings/start-in-theme.sh\"
     exec sh ~/active-project/_files/settings/start-in-theme.sh"
     end tell
@@ -25,7 +25,7 @@ fi
 if [ -a ~/active-project/_files/settings/start-in-site-root.sh ]
   then
     osascript -e 'tell application "Terminal"
-    do script "cd ~/active-project/site_root
+    do script "cd $(cd ~/active-project/site_root && pwd -P)
     terminal-notifier -title \"Project Helper\" -subtitle \"Site Root Scripts Started\" -message \"Click to Edit\" -execute \"open -t ~/active-project/_files/settings/start-in-site-root.sh\"
     exec sh ~/active-project/_files/settings/start-in-site-root.sh"
     end tell
@@ -36,5 +36,5 @@ sh ~/active-project/scripts/open-at-start.sh
 terminal-notifier -title "Project Helper" -subtitle "Done opening" -message "Click to edit" -execute "open ~/active-project/_files/settings/open-at-start.sh"
 
 # Give the scripts 2 seconds before opening the browser
-osascript -e 'delay 2'
+sleep 2
 open `getsetting dev_url` -a "`getsetting dev_browser`"
