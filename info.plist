@@ -966,7 +966,7 @@ if [[ '{query}' == "sh"* ]]; then
           else
 
           if [[ '{query}' == *"/snippets/"* ]]; then
-            sh snippets-handler.sh '{query}'
+            sh snippets/snippets__handler.sh '{query}'
 		    exit
           fi
           
@@ -2775,7 +2775,7 @@ end alfred_script</string>
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>sh find-snippets.sh ~/active-project/_files/snippets/ "{query}"</string>
+				<string>sh snippets/snippets__view.sh ~/active-project/_files/snippets/ "{query}"</string>
 				<key>title</key>
 				<string>Snippets</string>
 				<key>type</key>
@@ -2796,7 +2796,7 @@ end alfred_script</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>sh snippets-handler.sh "{query}"</string>
+				<string>sh snippets/snippets__handler.sh "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
