@@ -10,13 +10,13 @@ if [ "$args" ]
   then
     # Filter List
     for i in $(echo "$tasks" | egrep -i "${args// /.*}"); do
-        sh result-templates/todo.tpl.sh "$i"
+        sh todos/todo.tpl.sh "$i"
     done
   else
     # List All
     echo "<item arg='add: todo'><title>Add new todo at bottom. (Hold CMD to add to top) </title><subtitle>Shift+Enter to open task file. Action tasks with @url with Ctrl; @tag with Option.</subtitle></item>"
     for i in $(echo "$tasks"); do
-        sh result-templates/todo.tpl.sh "$i"
+        sh todos/todo.tpl.sh "$i"
     done
 fi
 

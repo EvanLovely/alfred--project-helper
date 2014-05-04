@@ -17,7 +17,7 @@ if [[ "$1" != "go"* ]]; then
   # Next Todo
   next="$(egrep -v \"@done\" $(getsetting todos) | head -1)"
   if [[ "$next" != "" ]]; then
-    echo "<item arg=',p todo'><title>Next Todo: "$next"</title><subtitle>Action to see todo list.</subtitle><icon>icons/checkmark.png</icon></item>" | grep -i "$filter"
+    echo "<item arg=',p todo'><title>Next Todo: "$next"</title><subtitle>Action to see todo list.</subtitle><icon>todos/checkmark.png</icon></item>" | grep -i "$filter"
     if [[ "$next" == *"@tag"* ]]; then
       # Supporting Material
       tag=$(echo "$next" | sed "s,^.*@tag(,," | sed "s,).*,,")
@@ -81,8 +81,8 @@ if [[ "$1" == "go ref"* ]]; then
     filter="${1/go ref /}"
     echo "<item autocomplete='go links ' valid='no' file='no'><title>Links</title><subtitle>Seach for URLs to open --- Shortcut: ',p links'</subtitle><icon>icons/link.png</icon></item>" | grep -i "$filter"
     echo "<item autocomplete='go snippets ' valid='no' file='no'><title>Snippets</title><subtitle>Search for chunks of text to copy and insert --- Shortcut: ',p snippets'</subtitle><icon>icons/scissor.png</icon></item>" | grep -i "$filter"
-    echo "<item autocomplete='go notes ' valid='no' file='no'><title>Notes</title><subtitle>Searches ~/active-project/_files/notes --- Shortcut: ',p notes'</subtitle><icon>icons/edit.png</icon></item>" | grep -i "$filter"
-    echo "<item arg='go: todo' valid='yes' file='no'><title>Todos</title><subtitle>List actions in the TaskPaper format kept at ~/active-project/_files/$(basename $(getsetting todos)) --- Shortcut: ',p todo'</subtitle><icon>icons/checkmark.png</icon></item>" | grep -i "$filter"
+    echo "<item autocomplete='go notes ' valid='no' file='no'><title>Notes</title><subtitle>Searches ~/active-project/_files/notes --- Shortcut: ',p notes'</subtitle><icon>todos/edit.png</icon></item>" | grep -i "$filter"
+    echo "<item arg='go: todo' valid='yes' file='no'><title>Todos</title><subtitle>List actions in the TaskPaper format kept at ~/active-project/_files/$(basename $(getsetting todos)) --- Shortcut: ',p todo'</subtitle><icon>todos/checkmark.png</icon></item>" | grep -i "$filter"
     echo "<item arg=',p people ' valid='yes' file='no'><title>People</title><subtitle>Search for People on this Project --- Shortcut: ',p people'</subtitle><icon>icons/users.png</icon></item>" | grep -i "$filter"
 fi
   

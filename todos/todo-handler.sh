@@ -5,7 +5,6 @@ if [[ "$1" == "add"* ]]; then
     tell application "Alfred 2" to run trigger query in workflow "com.evanlovely.projecthelper"
   '
 else
-/opt/local/bin/terminal-notifier -message "h"
   source bash_functions
   export todos=$(getsetting todos)
   export todo="$1" # has had initial `- ` replaced with `task: `

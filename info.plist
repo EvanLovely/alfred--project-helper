@@ -1590,7 +1590,7 @@ fi</string>
 				<key>runningsubtext</key>
 				<string>searching...</string>
 				<key>script</key>
-				<string>sh todo.sh "{query}"</string>
+				<string>sh todos/todo__view.sh '{query}'</string>
 				<key>title</key>
 				<string>To Dos</string>
 				<key>type</key>
@@ -1624,7 +1624,7 @@ fi</string>
 				<key>escaping</key>
 				<integer>38</integer>
 				<key>script</key>
-				<string>sh todo-handler.sh '{query}'</string>
+				<string>sh todos/todo-handler.sh '{query}'</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -2774,7 +2774,7 @@ end alfred_script</string>
 source bash_functions
 todos="$(getsetting todos)"
 echo "- {query}" &gt;&gt; "$todos"
-sh todo__done-appender.sh "$todos"
+sh todos/todo__done-appender.sh "$todos"
 /opt/local/bin/terminal-notifier -title "Todo added to bottom" -message "{query}" 
 
 if [[ "$(getsetting todos__show_list_after_task_action)" != "FALSE" ]]; then
