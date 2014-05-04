@@ -1,16 +1,11 @@
 export arg="$1"
-if [[ "$1" == ",p"* ]]; then
-    osascript -e '
-      set query to do shell script "echo $arg"
-      tell application "Alfred 2" to search query'
-      if [[ "$1" == ",p add"* ]]; then
-        osascript -e '
-          tell application "System Events"
-            keystroke return
-          end tell
-        '
-      fi
+if [[ "$1" == "add"* ]]; then
+  osascript -e '
+    set query to do shell script "echo $arg"
+    tell application "Alfred 2" to run trigger query in workflow "com.evanlovely.projecthelper"
+  '
 else
+/opt/local/bin/terminal-notifier -message "h"
   source bash_functions
   export todos=$(getsetting todos)
   export todo="$1" # has had initial `- ` replaced with `task: `
@@ -30,6 +25,6 @@ else
   fi
 
   if [[ "$(getsetting todos__show_list_after_task_action)" != "FALSE" ]]; then
-    osascript -e 'tell application "Alfred 2" to search ",p todo"'    
+    osascript -e 'tell application "Alfred 2" to run trigger "go: todo" in workflow "com.evanlovely.projecthelper"'    
   fi
 fi
