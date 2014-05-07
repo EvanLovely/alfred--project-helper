@@ -13,7 +13,7 @@ if [ "$1" ]
 
   else
     # List All
-    echo "<item arg=\",p add link\"><title>Add New Link</title><subtitle>Type to filter.</subtitle></item>"
+    echo "<item arg=\",p add link\"><title>Add New Link</title><subtitle>Type to filter. Cmd+C to copy link. Cmd+Enter to open in Dev Browser.</subtitle></item>"
     for i in $(find "$dir" -name "*.webloc"); do
       sh result-templates/links.tpl.sh "$i" --no-uid
       let ++count
