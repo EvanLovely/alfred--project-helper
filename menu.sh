@@ -100,6 +100,7 @@ fi
 
 # Do
 if [[ "$1" == "go do"* ]]; then
+    echo "<item arg='go: commit' valid='yes' file='no'><title>Git Commit Changed Files in Site Root</title><icon>icons/plus.png</icon></item>"
     arg="${1//go do /}"
     sh scripts.sh "$arg"
 fi
