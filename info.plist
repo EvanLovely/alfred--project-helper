@@ -448,6 +448,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>9357C530-7E2F-463C-830B-13EE38C5D405</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D9B56A67-0B90-489D-9A94-34C33E23C17E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>9D74BD2C-9D2F-4C12-BE3A-7FC984C0C4FC</key>
 		<array>
 			<dict>
@@ -486,6 +497,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>6800BE27-5AE1-41C1-8810-FEEE1696FE0A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B1E5AB02-B98A-4B02-82AC-AFBCE24FCDB2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1ADB6877-A997-4057-827F-5460FBAC27D6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -574,6 +596,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>D38A6D98-9D04-4527-83B3-CA50304A3CB2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C9040CA1-04C7-4C84-8116-531865990556</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D9B56A67-0B90-489D-9A94-34C33E23C17E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -692,6 +725,17 @@
 		</array>
 		<key>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</key>
 		<array/>
+		<key>D9B56A67-0B90-489D-9A94-34C33E23C17E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B1E5AB02-B98A-4B02-82AC-AFBCE24FCDB2</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Add These Files &amp; Commit It!</string>
+			</dict>
+		</array>
 		<key>DD9F9CB9-BA18-44B9-B339-8DE985735F1B</key>
 		<array>
 			<dict>
@@ -3315,6 +3359,120 @@ fi
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>do commit</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>9357C530-7E2F-463C-830B-13EE38C5D405</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>cd ~/active-project/site_root/
+git add . --all
+git commit -m '{query}'
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B1E5AB02-B98A-4B02-82AC-AFBCE24FCDB2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p commit</string>
+				<key>runningsubtext</key>
+				<string>checking git status</string>
+				<key>script</key>
+				<string>sh do-git-commit.sh '{query}'</string>
+				<key>subtext</key>
+				<string>In Site Root</string>
+				<key>title</key>
+				<string>Commit Git Changes</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D9B56A67-0B90-489D-9A94-34C33E23C17E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Files Commited</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>1ADB6877-A997-4057-827F-5460FBAC27D6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>C9040CA1-04C7-4C84-8116-531865990556</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Suggested Utilities
@@ -3373,6 +3531,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>2430</real>
+		</dict>
+		<key>1ADB6877-A997-4057-827F-5460FBAC27D6</key>
+		<dict>
+			<key>ypos</key>
+			<real>6470</real>
 		</dict>
 		<key>1B0E50C3-8785-413C-91E5-2A18D584B75C</key>
 		<dict>
@@ -3614,6 +3777,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>450</real>
 		</dict>
+		<key>9357C530-7E2F-463C-830B-13EE38C5D405</key>
+		<dict>
+			<key>ypos</key>
+			<real>6470</real>
+		</dict>
 		<key>97FE2D3C-3C92-49A3-BF35-8EAD05D68932</key>
 		<dict>
 			<key>ypos</key>
@@ -3653,6 +3821,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>230</real>
+		</dict>
+		<key>B1E5AB02-B98A-4B02-82AC-AFBCE24FCDB2</key>
+		<dict>
+			<key>ypos</key>
+			<real>6470</real>
 		</dict>
 		<key>B4D74AB3-7F81-49AE-B7EE-6A91486A92A6</key>
 		<dict>
@@ -3703,6 +3876,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>120</real>
+		</dict>
+		<key>C9040CA1-04C7-4C84-8116-531865990556</key>
+		<dict>
+			<key>ypos</key>
+			<real>6590</real>
 		</dict>
 		<key>C921BB8A-805B-4EE1-AE9D-8901E24E96D6</key>
 		<dict>
@@ -3773,6 +3951,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>4840</real>
+		</dict>
+		<key>D9B56A67-0B90-489D-9A94-34C33E23C17E</key>
+		<dict>
+			<key>ypos</key>
+			<real>6470</real>
 		</dict>
 		<key>DCF5E1CC-5D26-4DD8-8B8C-E352DB8B8010</key>
 		<dict>
