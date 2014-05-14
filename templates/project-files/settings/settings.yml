@@ -1,3 +1,4 @@
 todos: ~/active-project/_files/todo.txt
 todos__show_list_after_task_action: TRUE
 css_extension: scss
+git_push_after_commit: FALSE

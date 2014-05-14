@@ -507,7 +507,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>1ADB6877-A997-4057-827F-5460FBAC27D6</string>
+				<string>1D40D9D0-9590-4DA8-A237-1FD7CE467CC9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -880,17 +880,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>8EBEC66E-B4D2-4F74-8518-7A28C600D46E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>F37F50B1-5842-449D-9A24-70E2D04BD072</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>616A35A3-9545-4AE5-BBF7-6F24C8D87235</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1915,7 +1904,7 @@ fi
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>renutriv</string>
+				<string>aerin</string>
 				<key>hotkey</key>
 				<integer>16</integer>
 				<key>hotmod</key>
@@ -3068,35 +3057,6 @@ echo {query}</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>3</integer>
-				<key>argumenttext</key>
-				<string>feature__estee-edit➢</string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>1966080</integer>
-				<key>hotstring</key>
-				<string>A</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>F37F50B1-5842-449D-9A24-70E2D04BD072</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -3291,12 +3251,10 @@ if [[ "$browser" == *"Google Chrome.app" ]]; then
     osascript -e 'tell application "Google Chrome"
         reload active tab of window 1
       end tell'
-	/opt/local/bin/terminal-notifier -title "Project Helper" -message "Google Chrome Refreshed"
   elif [[ "$browser" == *"Google Chrome Canary"* ]]; then
     osascript -e 'tell application "Google Chrome Canary"
         reload active tab of window 1
       end tell'
-	/opt/local/bin/terminal-notifier -title "Project Helper" -message "Google Chrome Canary Refreshed"
   else
 	/opt/local/bin/terminal-notifier -title "No Browser Refreshed" -subtitle "Chrome and Chrome Canary only" -message "Perhaps no Dev Browser was set?"
 fi
@@ -3386,10 +3344,7 @@ fi
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>cd ~/active-project/site_root/
-git add . --all
-git commit -m '{query}'
-</string>
+				<string>sh do-git-commit-handler.sh '{query}'</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -3416,12 +3371,12 @@ git commit -m '{query}'
 				<key>text</key>
 				<string>{query}</string>
 				<key>title</key>
-				<string>Files Commited</string>
+				<string>Git Commit</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>1ADB6877-A997-4057-827F-5460FBAC27D6</string>
+			<string>1D40D9D0-9590-4DA8-A237-1FD7CE467CC9</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -3565,11 +3520,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2430</real>
 		</dict>
-		<key>1ADB6877-A997-4057-827F-5460FBAC27D6</key>
-		<dict>
-			<key>ypos</key>
-			<real>6470</real>
-		</dict>
 		<key>1B0E50C3-8785-413C-91E5-2A18D584B75C</key>
 		<dict>
 			<key>ypos</key>
@@ -3579,6 +3529,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>3470</real>
+		</dict>
+		<key>1D40D9D0-9590-4DA8-A237-1FD7CE467CC9</key>
+		<dict>
+			<key>ypos</key>
+			<real>6470</real>
 		</dict>
 		<key>1E772088-EAB6-4417-A2C5-14300A4A039E</key>
 		<dict>
@@ -4059,11 +4014,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
-		</dict>
-		<key>F37F50B1-5842-449D-9A24-70E2D04BD072</key>
-		<dict>
-			<key>ypos</key>
-			<real>5250</real>
 		</dict>
 		<key>FA59170B-8313-4763-8511-AA2B53509BFB</key>
 		<dict>

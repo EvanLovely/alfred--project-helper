@@ -17,7 +17,7 @@ if [[ "$1" != "go"* ]]; then
   # Next Todo
   next="$(egrep -v \"@done\" $(getsetting todos) | head -1)"
   if [[ "$next" != "" ]]; then
-    echo "<item arg=',p todo'><title>Next Todo: "$next"</title><subtitle>Action to see todo list.</subtitle><icon>todos/checkmark.png</icon></item>" | grep -i "$filter"
+    echo "<item arg=',p todo'><title><![CDATA[Next Todo: "$next"]]></title><subtitle>Action to see todo list.</subtitle><icon>todos/checkmark.png</icon></item>" | grep -i "$filter"
     if [[ "$next" == *"@tag"* ]]; then
       # Supporting Material
       tag=$(echo "$next" | sed "s,^.*@tag(,," | sed "s,).*,,")
