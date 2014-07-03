@@ -200,17 +200,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>598A781A-BE08-4063-B23E-5B8426BC63E1</key>
 		<array>
 			<dict>
@@ -233,8 +222,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>5CC022EA-613B-48D5-8B6D-C57207E077D0</key>
-		<array/>
 		<key>5DDDD8C2-BC7B-4C76-807E-A7887EAF5D2B</key>
 		<array>
 			<dict>
@@ -525,17 +512,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>BAC8FE1E-EEAF-4BE5-AC90-618D80E6A3F7</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>5CC022EA-613B-48D5-8B6D-C57207E077D0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>BB240A6C-5714-4F19-9F0E-54506A7707A0</key>
 		<array>
 			<dict>
@@ -613,6 +589,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>C9552EE0-4088-4294-94BF-EDC5E4A839A0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DCF97E7D-74E2-497E-B0DC-A44EACF9165E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>C9650A73-BD58-4477-BA8B-1C275B502489</key>
 		<array>
 			<dict>
@@ -658,17 +645,6 @@
 		</array>
 		<key>CAF4264B-C884-4F56-A154-D16C2A7FABF4</key>
 		<array/>
-		<key>CC327603-6994-4756-AD3B-948B0C49D604</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>D6EA3BAD-5790-4838-A5C4-95E5D235A559</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>CD678781-2533-4459-BECA-A39480F0E1FC</key>
 		<array/>
 		<key>CE8DC90F-D6F8-4972-86BE-59B3AA98A089</key>
@@ -706,17 +682,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>8EBEC66E-B4D2-4F74-8518-7A28C600D46E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>D6EA3BAD-5790-4838-A5C4-95E5D235A559</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>C2323AB5-6414-4583-87BB-C7F38C57993A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1760,6 +1725,27 @@ open $(getsetting todos)
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>,p todo</string>
+				<key>subtext</key>
+				<string>Shortcut to tasks</string>
+				<key>text</key>
+				<string>Todos</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3548B610-A4E1-45DC-A9DD-849B31CFFF08</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -1768,6 +1754,8 @@ open $(getsetting todos)
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1788,35 +1776,27 @@ open $(getsetting todos)
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>tell application "Alfred 2" to run trigger "go: todo" in workflow "com.evanlovely.projecthelper"</string>
+				<string>source bash_functions
+
+#todos="$(getsetting todos)"
+todos="omnifocus://"
+if [[ "$todos" == "omnifocus"* ]]; then
+  #omnifocus todo handling
+  osascript -e 'tell application "Alfred 2" to run trigger "show tasks" in workflow "com.evanlovely.omnifocus"'
+
+elif [[ "$todos" == "/"* ]]; then
+  osascript -e 'tell application "Alfred 2" to run trigger "go: todo" in workflow "com.evanlovely.projecthelper"'
+else
+  echo "None"
+fi
+</string>
 				<key>type</key>
-				<integer>6</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>2F92C764-6825-4C86-A388-FDAA4BDD40E2</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>,p todo</string>
-				<key>subtext</key>
-				<string>Shortcut to tasks</string>
-				<key>text</key>
-				<string>Todos</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>3548B610-A4E1-45DC-A9DD-849B31CFFF08</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1902,9 +1882,7 @@ fi
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
-				<integer>3</integer>
-				<key>argumenttext</key>
-				<string>aerin</string>
+				<integer>0</integer>
 				<key>hotkey</key>
 				<integer>16</integer>
 				<key>hotmod</key>
@@ -2004,11 +1982,11 @@ end alfred_script</string>
 				<key>argument</key>
 				<integer>0</integer>
 				<key>hotkey</key>
-				<integer>5</integer>
+				<integer>35</integer>
 				<key>hotmod</key>
 				<integer>1966080</integer>
 				<key>hotstring</key>
-				<string>G</string>
+				<string>P</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -2019,7 +1997,7 @@ end alfred_script</string>
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>595BB5D1-CBD3-4B99-860D-8C472D67F689</string>
+			<string>C9552EE0-4088-4294-94BF-EDC5E4A839A0</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -3104,60 +3082,6 @@ echo {query}</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string># show the next task in large type
-source bash_functions
-egrep -v "@done" $(getsetting todos) | head -1</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>D6EA3BAD-5790-4838-A5C4-95E5D235A559</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>C2323AB5-6414-4583-87BB-C7F38C57993A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>hotkey</key>
-				<integer>45</integer>
-				<key>hotmod</key>
-				<integer>1966080</integer>
-				<key>hotstring</key>
-				<string>N</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>CC327603-6994-4756-AD3B-948B0C49D604</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
 				<string>source bash_functions
 replacesetting todos "{query}"</string>
 				<key>type</key>
@@ -3209,63 +3133,6 @@ replacesetting todos "{query}"</string>
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
 			<string>888A75E3-D279-473C-803C-F7AEFB3EAF38</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>hotkey</key>
-				<integer>15</integer>
-				<key>hotmod</key>
-				<integer>1966080</integer>
-				<key>hotstring</key>
-				<string>R</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>BAC8FE1E-EEAF-4BE5-AC90-618D80E6A3F7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>source bash_functions
-browser="$(getsetting dev_browser)"
-if [[ "$browser" == *"Google Chrome.app" ]]; then
-    osascript -e 'tell application "Google Chrome"
-        reload active tab of window 1
-      end tell'
-  elif [[ "$browser" == *"Google Chrome Canary"* ]]; then
-    osascript -e 'tell application "Google Chrome Canary"
-        reload active tab of window 1
-      end tell'
-  else
-	/opt/local/bin/terminal-notifier -title "No Browser Refreshed" -subtitle "Chrome and Chrome Canary only" -message "Perhaps no Dev Browser was set?"
-fi
-</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>5CC022EA-613B-48D5-8B6D-C57207E077D0</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -3437,6 +3304,21 @@ fi
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7CB8D914-F175-49C9-A66D-4B598D29ADA9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -3460,6 +3342,31 @@ fi
 			<string>C9040CA1-04C7-4C84-8116-531865990556</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>,p log</string>
+				<key>script</key>
+				<string>sh log/log__view.sh '{query}'</string>
+				<key>title</key>
+				<string>Log</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8B611093-F379-40C5-BD58-FAF8F89DF52A</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -3563,7 +3470,7 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<key>3548B610-A4E1-45DC-A9DD-849B31CFFF08</key>
 		<dict>
 			<key>ypos</key>
-			<real>1590</real>
+			<real>1540</real>
 		</dict>
 		<key>36E2AC73-FD53-42AF-8F63-3696DD0BAA72</key>
 		<dict>
@@ -3600,11 +3507,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>5130</real>
 		</dict>
-		<key>595BB5D1-CBD3-4B99-860D-8C472D67F689</key>
-		<dict>
-			<key>ypos</key>
-			<real>2080</real>
-		</dict>
 		<key>598A781A-BE08-4063-B23E-5B8426BC63E1</key>
 		<dict>
 			<key>ypos</key>
@@ -3614,11 +3516,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>1930</real>
-		</dict>
-		<key>5CC022EA-613B-48D5-8B6D-C57207E077D0</key>
-		<dict>
-			<key>ypos</key>
-			<real>6110</real>
 		</dict>
 		<key>5DDDD8C2-BC7B-4C76-807E-A7887EAF5D2B</key>
 		<dict>
@@ -3725,6 +3622,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>2640</real>
 		</dict>
+		<key>7CB8D914-F175-49C9-A66D-4B598D29ADA9</key>
+		<dict>
+			<key>ypos</key>
+			<real>6590</real>
+		</dict>
 		<key>7CEEE57A-C6FA-477D-9F7E-965DC18EEDC7</key>
 		<dict>
 			<key>ypos</key>
@@ -3744,6 +3646,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>5990</real>
+		</dict>
+		<key>8B611093-F379-40C5-BD58-FAF8F89DF52A</key>
+		<dict>
+			<key>ypos</key>
+			<real>6710</real>
 		</dict>
 		<key>8C02FBC7-52D1-4C4A-BC07-4C69254F2005</key>
 		<dict>
@@ -3825,11 +3732,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>3270</real>
 		</dict>
-		<key>BAC8FE1E-EEAF-4BE5-AC90-618D80E6A3F7</key>
-		<dict>
-			<key>ypos</key>
-			<real>6110</real>
-		</dict>
 		<key>BB240A6C-5714-4F19-9F0E-54506A7707A0</key>
 		<dict>
 			<key>ypos</key>
@@ -3860,11 +3762,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>450</real>
 		</dict>
-		<key>C2323AB5-6414-4583-87BB-C7F38C57993A</key>
-		<dict>
-			<key>ypos</key>
-			<real>5890</real>
-		</dict>
 		<key>C53ABACB-F2F2-4DE0-B335-6CCEB9C56A78</key>
 		<dict>
 			<key>ypos</key>
@@ -3879,6 +3776,11 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>4590</real>
+		</dict>
+		<key>C9552EE0-4088-4294-94BF-EDC5E4A839A0</key>
+		<dict>
+			<key>ypos</key>
+			<real>2100</real>
 		</dict>
 		<key>C9650A73-BD58-4477-BA8B-1C275B502489</key>
 		<dict>
@@ -3905,11 +3807,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 			<key>ypos</key>
 			<real>4170</real>
 		</dict>
-		<key>CC327603-6994-4756-AD3B-948B0C49D604</key>
-		<dict>
-			<key>ypos</key>
-			<real>5890</real>
-		</dict>
 		<key>CD678781-2533-4459-BECA-A39480F0E1FC</key>
 		<dict>
 			<key>ypos</key>
@@ -3929,11 +3826,6 @@ If you install Terminal Notifier, the workflow can provide you with richer notif
 		<dict>
 			<key>ypos</key>
 			<real>120</real>
-		</dict>
-		<key>D6EA3BAD-5790-4838-A5C4-95E5D235A559</key>
-		<dict>
-			<key>ypos</key>
-			<real>5890</real>
 		</dict>
 		<key>D8658B2F-A490-4096-80F1-E4ED46DAA3E6</key>
 		<dict>
