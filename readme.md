@@ -19,7 +19,7 @@ The default setup creates a folder at `~/all-projects` to keep all the projects.
 
 ## Inital Config
 
-1. Install [Workflow](https://github.com/EvanLovely/alfred--project-helper/blob/master/Project%20Helper.alfredworkflow?raw=true)
+1. Install [Workflow](https://github.com/EvanLovely/alfred--project-helper/blob/master/ProjectHelper.alfredworkflow?raw=true)
 2. Invoke Alfred, type `,pn {name of new project}` to create a new project. 
 3. Answer the questions about your project like site root, theme folder, files directory, and more.
 
